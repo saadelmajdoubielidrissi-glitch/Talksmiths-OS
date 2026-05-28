@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Fattah — Connectors | Talksmiths</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Playfair+Display:ital,wght@0,800;1,700&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --teal: #007575; --gold: #D4A843; --navy: #1A2744;
@@ -124,421 +125,469 @@
   @media screen and (max-width: 768px) {
     .vocab-grid { grid-template-columns: 1fr !important; }
   }
+
+  /* --- Talksmiths Avatar Integration Styles --- */
+  .ts-avatar-circle {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 2px solid var(--teal);
+    object-fit: cover;
+    object-position: center 20%;
+    box-shadow: 0 4px 8px rgba(0, 117, 117, 0.15);
+    flex-shrink: 0;
+  }
+  .teacher-chat-bubble {
+    display: flex;
+    gap: 14px;
+    background: #FFFBF2;
+    border: 1px solid #EAD295;
+    border-radius: 14px;
+    padding: 14px;
+    margin: 12px 0;
+    align-items: flex-start;
+    box-shadow: 0 2px 10px rgba(212, 168, 67, 0.05);
+    break-inside: avoid;
+  }
+  .chat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: left;
+  }
+  .chat-header {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--teal);
+  }
+  .chat-text {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #614B15;
+  }
+  .family-reading-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+    break-inside: avoid;
+  }
+  .family-member-card {
+    display: flex;
+    gap: 14px;
+    background: #FDFDFD;
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 14px;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: left;
+  }
+  .family-member-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  }
+  .polaroid-card {
+    background: var(--white);
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 16px 16px 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    text-align: center;
+    max-width: 340px;
+    margin: 20px auto;
+    transform: rotate(-1.5deg);
+    transition: transform 0.3s ease;
+    display: block !important;
+  }
+  .polaroid-card:hover {
+    transform: rotate(0deg) scale(1.03);
+  }
+  .polaroid-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #EAEAEA;
+  }
+  .polaroid-caption {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 700;
+    margin-top: 14px;
+    color: var(--navy);
+  }
+  @media screen and (max-width: 1200px) {
+    .family-reading-grid { grid-template-columns: 1fr !important; }
+    .family-member-card[style*="grid-column: span 2"] { grid-column: span 1 !important; }
+  }
+  @media print {
+    .ts-avatar-circle, 
+    .teacher-chat-bubble, 
+    .polaroid-card { 
+      display: none !important; 
+    }
+  }
 </style>
 </head>
 <body class="student-mode">
-
 <!-- VIEW TOGGLE -->
 <div class="view-toggle">
-  <button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
-  <button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
+<button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
+<button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
 </div>
 <button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
-
 <!-- ==================== PAGE 1 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-  <div class="logo">Talksmiths — Lesson Engine™</div>
-  <h1>Connectors</h1>
-  <div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 5</div>
-  <div class="badges">
-    <span class="badge badge-teal">A1 — Beginner</span>
-    <span class="badge badge-gold">60 min</span>
-    <span class="badge badge-gray">Grammar Foundations</span>
-    <span class="badge badge-gray">Lesson 5</span>
-  </div>
-  <div class="divider"></div>
-
-  <!-- CFO-ROW: Step 1 (left) + Baba's Notebook (right) -->
-  <div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
-
-      <!-- STEP 1: WARM-UP -->
-      <div class="step">
-        <div class="step-header">
-          <div class="step-num">1</div>
-          <div>
-            <div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
-            <div class="step-title">The Magic Glue</div>
-          </div>
-          <div class="step-time">8 min</div>
-        </div>
-        <div class="objective">Objective: Learn how to connect two short sentences into one long sentence.</div>
-
-        <div class="student-note">
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<div class="logo">Talksmiths — Lesson Engine™</div>
+<h1>Connectors</h1>
+<div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 5</div>
+<div class="badges">
+<span class="badge badge-teal">A1 — Beginner</span>
+<span class="badge badge-gold">60 min</span>
+<span class="badge badge-gray">Grammar Foundations</span>
+<span class="badge badge-gray">Lesson 5</span>
+</div>
+<div class="divider"></div>
+<!-- CFO-ROW: Step 1 (left) + Baba's Notebook (right) -->
+<div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
+<!-- STEP 1: WARM-UP -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">1</div>
+<div>
+<div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
+<div class="step-title">The Magic Glue</div>
+</div>
+<div class="step-time">8 min</div>
+</div>
+<div class="objective">Objective: Learn how to connect two short sentences into one long sentence.</div>
+<div class="student-note">
           🎓 <strong>Student Strategy:</strong> Short sentences sound robotic. "I like tea. I like coffee." Connectors make you sound like a native speaker: "I like tea AND coffee."
         </div>
-
-        <div class="teacher-note">
-          📋 <strong>Teacher Note:</strong> Connectors (Conjunctions) are the secret to moving from A1 to A2. They are the "glue" of language. Emphasize how much smoother speech sounds when we use "But" and "Because" instead of full stops.
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Connectors (Conjunctions) are the secret to moving from A1 to A2. They are the "glue" of language. Emphasize how much smoother speech sounds when we use "But" and "Because" instead of full stops.
+        </div></div></div>
+<div class="exercise">
+<div class="ex-label">🗣️ Speaking Warm-Up — Combine the Sentences</div>
+<p class="ex-item">What word can we put in the middle?</p>
+<div style="display:grid; gap:8px; margin-top:6px;">
+<div style="font-size:12px;">"I am tired." ➕ "I want to sleep."<br/>
+            → I am tired, <input class="answer-inline" data-id="warmup-1" placeholder="???" style="width:50px;" type="text"/> I want to sleep.</div>
+<div style="font-size:12px; margin-top:4px;">"I love Morocco." ➕ "I don't like the heat."<br/>
+            → I love Morocco, <input class="answer-inline" data-id="warmup-2" placeholder="???" style="width:50px;" type="text"/> I don't like the heat.</div>
+</div>
+</div>
+<div class="darija-box">
+<span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> In Darija we say "Ou" (And), "Walakin" (But), "7it" (Because). Today we learn their English twins!
         </div>
-
-        <div class="exercise">
-          <div class="ex-label">🗣️ Speaking Warm-Up — Combine the Sentences</div>
-          <p class="ex-item">What word can we put in the middle?</p>
-          <div style="display:grid; gap:8px; margin-top:6px;">
-            <div style="font-size:12px;">"I am tired." ➕ "I want to sleep."<br>
-            → I am tired, <input type="text" class="answer-inline" data-id="warmup-1" style="width:50px;" placeholder="???"> I want to sleep.</div>
-            <div style="font-size:12px; margin-top:4px;">"I love Morocco." ➕ "I don't like the heat."<br>
-            → I love Morocco, <input type="text" class="answer-inline" data-id="warmup-2" style="width:50px;" placeholder="???"> I don't like the heat.</div>
-          </div>
-        </div>
-
-        <div class="darija-box">
-          <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> In Darija we say "Ou" (And), "Walakin" (But), "7it" (Because). Today we learn their English twins!
-        </div>
-      </div>
-    </div>
-
-    <!-- BABA'S NOTEBOOK (right column) -->
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
-      <div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
-        <div class="step-header" style="margin-bottom:6px;">
-          <div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
-        </div>
-        <div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
-          <p style="font-size:12px; line-height:1.4; color:var(--gray);">
+</div>
+</div>
+<!-- BABA'S NOTEBOOK (right column) -->
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
+<div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
+<div class="step-header" style="margin-bottom:6px;">
+<div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
+</div>
+<div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
+<p style="font-size:12px; line-height:1.4; color:var(--gray);">
             Write down the 5 main connectors. They are short but incredibly powerful.
           </p>
-          <ul style="font-size:12px; margin-left:16px; line-height:1.4; color:var(--navy); list-style-type:square;">
-            <li>AND = __________</li>
-            <li>BUT = __________</li>
-            <li>BECAUSE = __________</li>
-            <li>SO = __________</li>
-          </ul>
-          <textarea class="answer-area" data-id="baba-notebook-p1" style="flex:1; min-height:180px; font-size:12px;" placeholder="Notes / ملاحظات / Notes en français..."></textarea>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- VOCABULARY SECTION -->
-  <div style="column-span:all !important; margin-top:8px;">
-    <div class="step">
-      <div class="step-header">
-        <div class="step-name">📖 The 5 Essential Connectors</div>
-      </div>
-
-      <div class="vocab-grid">
-        <div class="vocab-card">
-          <div class="vocab-term">And → و → Et</div>
-          <div class="vocab-def">Adds information (+).</div>
-          <div class="vocab-ex">"I like reading <strong>and</strong> I like painting."</div>
-          <div class="vocab-bridge">🇲🇦 Ou / 🇫🇷 Et</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">But → ولكن → Mais</div>
-          <div class="vocab-def">Shows a difference or contrast (-).</div>
-          <div class="vocab-ex">"I like tea, <strong>but</strong> I don't like coffee."</div>
-          <div class="vocab-bridge">🇲🇦 Walakin / 🇫🇷 Mais</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Because → حيت / لحقاش → Parce que</div>
-          <div class="vocab-def">Gives a reason (Why).</div>
-          <div class="vocab-ex">"I am happy <strong>because</strong> my son is here."</div>
-          <div class="vocab-bridge">🇲🇦 7it / La7qash / 🇫🇷 Parce que / Car</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">So → داكشي علاش → Donc</div>
-          <div class="vocab-def">Shows a result (The consequence).</div>
-          <div class="vocab-ex">"It is raining, <strong>so</strong> I will stay at home."</div>
-          <div class="vocab-bridge">🇲🇦 Dakshi 3lash / 🇫🇷 Donc / Alors</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Or → ولا / أو → Ou / Ou bien</div>
-          <div class="vocab-def">Gives a choice (Option A or Option B).</div>
-          <div class="vocab-ex">"Do you want tea <strong>or</strong> coffee?"</div>
-          <div class="vocab-bridge">🇲🇦 Wla / 🇫🇷 Ou</div>
-        </div>
-        
-        <div class="vocab-card" style="border-left-color:var(--gold);">
-          <div class="vocab-term" style="color:var(--gold);">💡 Because vs So</div>
-          <div class="vocab-def">They are opposites! Reason vs Result.</div>
-          <div class="vocab-ex">"I sleep <strong>because</strong> I am tired."<br>"I am tired, <strong>so</strong> I sleep."</div>
-          <div class="vocab-bridge">🇫🇷 Parce que vs Donc</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 5</span>
-    <span>Page 1 of 4</span>
-  </div>
+<ul style="font-size:12px; margin-left:16px; line-height:1.4; color:var(--navy); list-style-type:square;">
+<li>AND = __________</li>
+<li>BUT = __________</li>
+<li>BECAUSE = __________</li>
+<li>SO = __________</li>
+</ul>
+<textarea class="answer-area" data-id="baba-notebook-p1" placeholder="Notes / ملاحظات / Notes en français..." style="flex:1; min-height:180px; font-size:12px;"></textarea>
 </div>
-
+</div>
+</div>
+</div>
+<!-- VOCABULARY SECTION -->
+<div style="column-span:all !important; margin-top:8px;">
+<div class="step">
+<div class="step-header">
+<div class="step-name">📖 The 5 Essential Connectors</div>
+</div>
+<div class="vocab-grid">
+<div class="vocab-card">
+<div class="vocab-term">And → و → Et</div>
+<div class="vocab-def">Adds information (+).</div>
+<div class="vocab-ex">"I like reading <strong>and</strong> I like painting."</div>
+<div class="vocab-bridge">🇲🇦 Ou / 🇫🇷 Et</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">But → ولكن → Mais</div>
+<div class="vocab-def">Shows a difference or contrast (-).</div>
+<div class="vocab-ex">"I like tea, <strong>but</strong> I don't like coffee."</div>
+<div class="vocab-bridge">🇲🇦 Walakin / 🇫🇷 Mais</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Because → حيت / لحقاش → Parce que</div>
+<div class="vocab-def">Gives a reason (Why).</div>
+<div class="vocab-ex">"I am happy <strong>because</strong> my son is here."</div>
+<div class="vocab-bridge">🇲🇦 7it / La7qash / 🇫🇷 Parce que / Car</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">So → داكشي علاش → Donc</div>
+<div class="vocab-def">Shows a result (The consequence).</div>
+<div class="vocab-ex">"It is raining, <strong>so</strong> I will stay at home."</div>
+<div class="vocab-bridge">🇲🇦 Dakshi 3lash / 🇫🇷 Donc / Alors</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Or → ولا / أو → Ou / Ou bien</div>
+<div class="vocab-def">Gives a choice (Option A or Option B).</div>
+<div class="vocab-ex">"Do you want tea <strong>or</strong> coffee?"</div>
+<div class="vocab-bridge">🇲🇦 Wla / 🇫🇷 Ou</div>
+</div>
+<div class="vocab-card" style="border-left-color:var(--gold);">
+<div class="vocab-term" style="color:var(--gold);">💡 Because vs So</div>
+<div class="vocab-def">They are opposites! Reason vs Result.</div>
+<div class="vocab-ex">"I sleep <strong>because</strong> I am tired."<br/>"I am tired, <strong>so</strong> I sleep."</div>
+<div class="vocab-bridge">🇫🇷 Parce que vs Donc</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 5</span>
+<span>Page 1 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 2 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 2: MINI-STORY -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">2</div>
-      <div>
-        <div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
-        <div class="step-title">A Letter About Anthropology</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Read an email and identify the connectors.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This is a letter Fattah is "writing". Have him read it aloud. Whenever he hits a bold connector, ask him to translate just that word to French or Darija.
-    </div>
-
-    <div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
-      <p style="font-size:12px; color:var(--gray); margin-bottom:10px;">Subject: My Studies at the University 🎓</p>
-      <p>Hello my friend,</p>
-      <p style="margin-top:6px;">I am writing to you <strong>because</strong> I have exciting news. I am studying Anthropology at the university now! I read many books every day <strong>and</strong> I go to lectures in the afternoon.</p>
-      <p style="margin-top:6px;">It is very interesting, <strong>but</strong> it is also difficult. The books are in French, <strong>so</strong> I have to focus a lot. Sometimes I study in the library, <strong>or</strong> I study at home in the garden.</p>
-      <p style="margin-top:6px;">I am very busy, <strong>so</strong> I don't paint as much as before. <strong>But</strong> I am very happy <strong>because</strong> I am learning new things every day.</p>
-      <p style="margin-top:6px;">Best regards,<br>Fattah</p>
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">📝 Check Your Understanding</div>
-      <p class="ex-item"><strong>1.</strong> Why is Fattah writing the letter?</p>
-      <textarea class="answer-area" data-id="comp-1" placeholder="Because..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>2.</strong> Why does he have to focus a lot?</p>
-      <textarea class="answer-area" data-id="comp-2" placeholder="Because..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What is the result of him being very busy?</p>
-      <textarea class="answer-area" data-id="comp-3" placeholder="So he..."></textarea>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 3: GRAMMAR IN ACTION -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">3</div>
-      <div>
-        <div class="step-name">Step 3 — 🏗️ Grammar in Action</div>
-        <div class="step-title">Linking Ideas</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Practice choosing the correct connector for the sentence.</div>
-
-    <div class="expressions-box">
-      <div class="exp-title">📐 The Logic Test</div>
-      <div class="exp-item">If the idea is a <strong>SURPRISE</strong> or <strong>OPPOSITE</strong> → Use <strong>BUT</strong></div>
-      <div class="exp-item">If the idea is a <strong>REASON</strong> (Why?) → Use <strong>BECAUSE</strong></div>
-      <div class="exp-item">If the idea is a <strong>RESULT</strong> (Action) → Use <strong>SO</strong></div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px;">
-      <span class="flag">🇫🇷</span> <strong>French Check:</strong> <br>
-      <em>Il pleut, <strong>donc</strong> je reste.</em> = It is raining, <strong>so</strong> I stay.<br>
-      <em>Je reste <strong>parce qu'il</strong> pleut.</em> = I stay <strong>because</strong> it is raining.
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">✏️ Choose: AND, BUT, BECAUSE, or SO</div>
-      <p class="ex-item"><strong>1.</strong> I like football, <input type="text" class="answer-inline" data-id="grammar-1" placeholder="..."> I don't like basketball.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> I am hungry, <input type="text" class="answer-inline" data-id="grammar-2" placeholder="..."> I will eat an apple.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>3.</strong> I will eat an apple <input type="text" class="answer-inline" data-id="grammar-3" placeholder="..."> I am hungry.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>4.</strong> I have a pen <input type="text" class="answer-inline" data-id="grammar-4" placeholder="..."> a notebook.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>5.</strong> Do you want to go to the beach <input type="text" class="answer-inline" data-id="grammar-5" placeholder="..."> the forest?</p>
-    </div>
-
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 5</span>
-    <span>Page 2 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 2: MINI-STORY -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">2</div>
+<div>
+<div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
+<div class="step-title">A Letter About Anthropology</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Read an email and identify the connectors.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This is a letter Fattah is "writing". Have him read it aloud. Whenever he hits a bold connector, ask him to translate just that word to French or Darija.
+    </div></div></div>
+<div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
+<p style="font-size:12px; color:var(--gray); margin-bottom:10px;">Subject: My Studies at the University 🎓</p>
+<p>Hello my friend,</p>
+<p style="margin-top:6px;">I am writing to you <strong>because</strong> I have exciting news. I am studying Anthropology at the university now! I read many books every day <strong>and</strong> I go to lectures in the afternoon.</p>
+<p style="margin-top:6px;">It is very interesting, <strong>but</strong> it is also difficult. The books are in French, <strong>so</strong> I have to focus a lot. Sometimes I study in the library, <strong>or</strong> I study at home in the garden.</p>
+<p style="margin-top:6px;">I am very busy, <strong>so</strong> I don't paint as much as before. <strong>But</strong> I am very happy <strong>because</strong> I am learning new things every day.</p>
+<p style="margin-top:6px;">Best regards,<br/>Fattah</p>
+</div>
+<div class="exercise">
+<div class="ex-label">📝 Check Your Understanding</div>
+<p class="ex-item"><strong>1.</strong> Why is Fattah writing the letter?</p>
+<textarea class="answer-area" data-id="comp-1" placeholder="Because..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>2.</strong> Why does he have to focus a lot?</p>
+<textarea class="answer-area" data-id="comp-2" placeholder="Because..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What is the result of him being very busy?</p>
+<textarea class="answer-area" data-id="comp-3" placeholder="So he..."></textarea>
+</div>
+</div>
+<div class="divider"></div>
+<!-- STEP 3: GRAMMAR IN ACTION -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">3</div>
+<div>
+<div class="step-name">Step 3 — 🏗️ Grammar in Action</div>
+<div class="step-title">Linking Ideas</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Practice choosing the correct connector for the sentence.</div>
+<div class="expressions-box">
+<div class="exp-title">📐 The Logic Test</div>
+<div class="exp-item">If the idea is a <strong>SURPRISE</strong> or <strong>OPPOSITE</strong> → Use <strong>BUT</strong></div>
+<div class="exp-item">If the idea is a <strong>REASON</strong> (Why?) → Use <strong>BECAUSE</strong></div>
+<div class="exp-item">If the idea is a <strong>RESULT</strong> (Action) → Use <strong>SO</strong></div>
+</div>
+<div class="darija-box" style="margin-top:10px;">
+<span class="flag">🇫🇷</span> <strong>French Check:</strong> <br/>
+<em>Il pleut, <strong>donc</strong> je reste.</em> = It is raining, <strong>so</strong> I stay.<br/>
+<em>Je reste <strong>parce qu'il</strong> pleut.</em> = I stay <strong>because</strong> it is raining.
+    </div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">✏️ Choose: AND, BUT, BECAUSE, or SO</div>
+<p class="ex-item"><strong>1.</strong> I like football, <input class="answer-inline" data-id="grammar-1" placeholder="..." type="text"/> I don't like basketball.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>2.</strong> I am hungry, <input class="answer-inline" data-id="grammar-2" placeholder="..." type="text"/> I will eat an apple.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>3.</strong> I will eat an apple <input class="answer-inline" data-id="grammar-3" placeholder="..." type="text"/> I am hungry.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>4.</strong> I have a pen <input class="answer-inline" data-id="grammar-4" placeholder="..." type="text"/> a notebook.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>5.</strong> Do you want to go to the beach <input class="answer-inline" data-id="grammar-5" placeholder="..." type="text"/> the forest?</p>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 5</span>
+<span>Page 2 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 3 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 4: GAME ZONE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">4</div>
-      <div>
-        <div class="step-name">Step 4 — 🎮 Game Zone</div>
-        <div class="step-title">The Connector Train!</div>
-      </div>
-      <div class="step-time">10 min</div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 4: GAME ZONE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">4</div>
+<div>
+<div class="step-name">Step 4 — 🎮 Game Zone</div>
+<div class="step-title">The Connector Train!</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Choose the right connector to link the two carriages of the train!</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Read the first part of the sentence, then pause. Have him guess the connector before he even looks at the second part!
+    </div></div></div>
+<div class="game-container" id="conn-game">
+<div class="game-title">🚂 THE CONNECTOR TRAIN</div>
+<div style="display:flex; align-items:center; justify-content:center; gap:8px; margin:16px 0;">
+<div id="conn-part1" style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:10px; font-weight:700; font-size:14px; text-align:center; flex:1;">Part 1</div>
+<div style="font-size:24px; color:var(--teal);">🔗</div>
+<div id="conn-part2" style="background:var(--white); border:2px dashed var(--teal); border-radius:6px; padding:10px; font-weight:700; font-size:14px; text-align:center; flex:1;">Part 2</div>
+</div>
+<div id="conn-question" style="font-size:13px; text-align:center; margin-bottom:12px; color:var(--gray);">Which connector links them?</div>
+<div id="conn-options" style="display:flex; justify-content:center; gap:8px; margin-top:10px; flex-wrap:wrap;"></div>
+<div class="game-feedback" id="conn-feedback"></div>
+<div class="game-score" id="conn-score"></div>
+<div style="text-align:center; margin-top:12px;">
+<button class="game-btn" id="conn-next" onclick="connNext()" style="display:none;">Next Sentence →</button>
+<button class="game-btn" id="conn-restart" onclick="connStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
+</div>
+</div>
+<div class="darija-box" style="margin-top:10px;">
+<span class="flag">🇲🇦</span> <strong>"Shwia b shwia kay7mel lwad"</strong> — Little by little, the river rises. Keep linking those sentences!
     </div>
-    <div class="objective">Objective: Choose the right connector to link the two carriages of the train!</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Read the first part of the sentence, then pause. Have him guess the connector before he even looks at the second part!
-    </div>
-
-    <div class="game-container" id="conn-game">
-      <div class="game-title">🚂 THE CONNECTOR TRAIN</div>
-      <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin:16px 0;">
-        <div id="conn-part1" style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:10px; font-weight:700; font-size:14px; text-align:center; flex:1;">Part 1</div>
-        <div style="font-size:24px; color:var(--teal);">🔗</div>
-        <div id="conn-part2" style="background:var(--white); border:2px dashed var(--teal); border-radius:6px; padding:10px; font-weight:700; font-size:14px; text-align:center; flex:1;">Part 2</div>
-      </div>
-      
-      <div id="conn-question" style="font-size:13px; text-align:center; margin-bottom:12px; color:var(--gray);">Which connector links them?</div>
-      
-      <div id="conn-options" style="display:flex; justify-content:center; gap:8px; margin-top:10px; flex-wrap:wrap;"></div>
-      <div id="conn-feedback" class="game-feedback"></div>
-      <div id="conn-score" class="game-score"></div>
-      <div style="text-align:center; margin-top:12px;">
-        <button class="game-btn" id="conn-next" onclick="connNext()" style="display:none;">Next Sentence →</button>
-        <button class="game-btn" id="conn-restart" onclick="connStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
-      </div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px;">
-      <span class="flag">🇲🇦</span> <strong>"Shwia b shwia kay7mel lwad"</strong> — Little by little, the river rises. Keep linking those sentences!
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 5: SPEAKING CHALLENGE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">5</div>
-      <div>
-        <div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
-        <div class="step-title">My Weekend Plans</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Speak for 1 minute using AND, BUT, BECAUSE, and SO.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This is a free-speaking exercise. Ask him: "What are you doing this weekend?". Every time he stops speaking, give him a connector card: "BUT...", "SO...", "BECAUSE..." to force him to keep going!
-    </div>
-
-    <div class="gold-banner">
-      <p><strong>🎤 Weekend Story Challenge</strong></p>
-      <p style="margin-top:6px;">Tell me about your plans for Saturday. You MUST use:</p>
-      <ul style="margin-top:6px; margin-left:16px; font-size:13px;">
-        <li>✅ <strong>And</strong> (to add an activity)</li>
-        <li>✅ <strong>But</strong> (to mention a problem)</li>
-        <li>✅ <strong>Because</strong> (to give a reason)</li>
-        <li>✅ <strong>So</strong> (what you will do instead)</li>
-      </ul>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">📝 Example to read aloud</div>
-      <div style="font-size:13px; font-style:italic; line-height:1.6;">
+</div>
+<div class="divider"></div>
+<!-- STEP 5: SPEAKING CHALLENGE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">5</div>
+<div>
+<div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
+<div class="step-title">My Weekend Plans</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Speak for 1 minute using AND, BUT, BECAUSE, and SO.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This is a free-speaking exercise. Ask him: "What are you doing this weekend?". Every time he stops speaking, give him a connector card: "BUT...", "SO...", "BECAUSE..." to force him to keep going!
+    </div></div></div>
+<div class="gold-banner">
+<p><strong>🎤 Weekend Story Challenge</strong></p>
+<p style="margin-top:6px;">Tell me about your plans for Saturday. You MUST use:</p>
+<ul style="margin-top:6px; margin-left:16px; font-size:13px;">
+<li>✅ <strong>And</strong> (to add an activity)</li>
+<li>✅ <strong>But</strong> (to mention a problem)</li>
+<li>✅ <strong>Because</strong> (to give a reason)</li>
+<li>✅ <strong>So</strong> (what you will do instead)</li>
+</ul>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">📝 Example to read aloud</div>
+<div style="font-size:13px; font-style:italic; line-height:1.6;">
         "On Saturday, I want to go to the beach <strong>AND</strong> swim. <strong>BUT</strong> the weather is cold, <strong>SO</strong> I will stay home. I will paint <strong>BECAUSE</strong> I love art."
       </div>
-      <div class="ex-label" style="margin-top:12px;">Now write your own ideas!</div>
-      <textarea class="answer-area" data-id="speaking-notes" style="min-height:80px;" placeholder="On Saturday, I want to..."></textarea>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 5</span>
-    <span>Page 3 of 4</span>
-  </div>
+<div class="ex-label" style="margin-top:12px;">Now write your own ideas!</div>
+<textarea class="answer-area" data-id="speaking-notes" placeholder="On Saturday, I want to..." style="min-height:80px;"></textarea>
 </div>
-
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 5</span>
+<span>Page 3 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 4 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 6: BOSS LEVEL -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">6</div>
-      <div>
-        <div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
-        <div class="step-title">Fixing the Broken Text</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Add the missing glue to this broken story.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This is a "fill in the blanks" exercise inside a full paragraph. It requires high context comprehension.
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">🔧 The Mechanic</div>
-      <p class="ex-item">Complete the story with <strong>and, but, because, so, or</strong>.</p>
-      <div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
-        Saad lives in Hungary, <input type="text" class="answer-inline" data-id="boss-1" style="width:60px;" placeholder="..."> he visits Morocco often. He visits <input type="text" class="answer-inline" data-id="boss-2" style="width:60px;" placeholder="..."> he misses his family <input type="text" class="answer-inline" data-id="boss-3" style="width:60px;" placeholder="..."> the food! 
-        <br>When he comes, we drink tea <input type="text" class="answer-inline" data-id="boss-4" style="width:60px;" placeholder="..."> we eat tagine. Sometimes he wants to eat fish <input type="text" class="answer-inline" data-id="boss-5" style="width:60px;" placeholder="..."> meat, <input type="text" class="answer-inline" data-id="boss-6" style="width:60px;" placeholder="..."> we go to the market. 
-        <br>I want to speak English with him, <input type="text" class="answer-inline" data-id="boss-7" style="width:60px;" placeholder="..."> I study hard every day!
-      </div>
-    </div>
-
-    <div class="darija-box">
-      <span class="flag">🇲🇦</span> <strong>"Alhamdulillah!"</strong> — Look at you, writing full complex paragraphs in English!
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 7: HOMEWORK -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">7</div>
-      <div>
-        <div class="step-name">Step 7 — 📚 Homework & Fun Challenge</div>
-        <div class="step-title">The Glue Master!</div>
-      </div>
-    </div>
-
-    <div class="body">
-      <div class="hw-item">
-        <div class="hw-num">1</div>
-        <div>
-          <strong>Writing Task — "Two Truths and a Lie"</strong><br>
-          <span style="font-size:12px; color:var(--gray);">Write 3 sentences about yourself. Connect ideas. Make one sentence a LIE. Next time, Saad has to guess the lie! (E.g. "I love Anthropology AND history, BUT I hate reading.")</span>
-          <textarea class="answer-area" data-id="hw-1" style="min-height:80px; margin-top:6px;" placeholder="1. ...&#10;2. ...&#10;3. ..."></textarea>
-        </div>
-      </div>
-
-      <div class="hw-item">
-        <div class="hw-num">2</div>
-        <div>
-          <strong>Because vs So — "Flip the Sentence"</strong><br>
-          <span style="font-size:12px; color:var(--gray);">Rewrite the sentence using the OTHER word.
-          <br>A: "I am studying English <strong>because</strong> I want to travel."
-          <br>B: "I want to travel, <strong>so</strong> I am studying English."
-          <br><br>Now do this one: "I am drinking water <strong>because</strong> I am thirsty."</span>
-          <textarea class="answer-area" data-id="hw-2" style="min-height:40px; margin-top:6px;" placeholder="I am thirsty, so..."></textarea>
-        </div>
-      </div>
-    </div>
-
-    <div class="expressions-box" style="margin-top:10px;">
-      <div class="exp-title">📋 Lesson 5 Summary — What You Learned Today</div>
-      <div class="exp-item">✅ <strong>AND</strong> = Add things together (+)</div>
-      <div class="exp-item">✅ <strong>BUT</strong> = Show a difference or problem (-)</div>
-      <div class="exp-item">✅ <strong>BECAUSE</strong> = Give a reason (Why?)</div>
-      <div class="exp-item">✅ <strong>SO</strong> = Give a result (Action!)</div>
-      <div class="exp-item">✅ <strong>OR</strong> = Make a choice (A or B)</div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
-      <span class="flag">🌟</span> <strong>Message from your teacher (your son!):</strong><br>
-      <em>Baba, you have just crossed the bridge from A1 to A2! Connectors make your English sound natural and fluid. Next lesson we will learn Comparatives (Bigger, Better, Faster). Keep making me proud! 💪🇲🇦</em>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 5</span>
-    <span>Page 4 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 6: BOSS LEVEL -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">6</div>
+<div>
+<div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
+<div class="step-title">Fixing the Broken Text</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Add the missing glue to this broken story.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This is a "fill in the blanks" exercise inside a full paragraph. It requires high context comprehension.
+    </div></div></div>
+<div class="exercise">
+<div class="ex-label">🔧 The Mechanic</div>
+<p class="ex-item">Complete the story with <strong>and, but, because, so, or</strong>.</p>
+<div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
+        Saad lives in Hungary, <input class="answer-inline" data-id="boss-1" placeholder="..." style="width:60px;" type="text"/> he visits Morocco often. He visits <input class="answer-inline" data-id="boss-2" placeholder="..." style="width:60px;" type="text"/> he misses his family <input class="answer-inline" data-id="boss-3" placeholder="..." style="width:60px;" type="text"/> the food! 
+        <br/>When he comes, we drink tea <input class="answer-inline" data-id="boss-4" placeholder="..." style="width:60px;" type="text"/> we eat tagine. Sometimes he wants to eat fish <input class="answer-inline" data-id="boss-5" placeholder="..." style="width:60px;" type="text"/> meat, <input class="answer-inline" data-id="boss-6" placeholder="..." style="width:60px;" type="text"/> we go to the market. 
+        <br/>I want to speak English with him, <input class="answer-inline" data-id="boss-7" placeholder="..." style="width:60px;" type="text"/> I study hard every day!
+      </div>
+</div>
+<div class="darija-box">
+<span class="flag">🇲🇦</span> <strong>"Alhamdulillah!"</strong> — Look at you, writing full complex paragraphs in English!
+    </div>
+</div>
+<div class="divider"></div>
+<!-- STEP 7: HOMEWORK -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">7</div>
+<div>
+<div class="step-name">Step 7 — 📚 Homework &amp; Fun Challenge</div>
+<div class="step-title">The Glue Master!</div>
+</div>
+</div>
+<div class="body">
+<div class="hw-item">
+<div class="hw-num">1</div>
+<div>
+<strong>Writing Task — "Two Truths and a Lie"</strong><br/>
+<span style="font-size:12px; color:var(--gray);">Write 3 sentences about yourself. Connect ideas. Make one sentence a LIE. Next time, Saad has to guess the lie! (E.g. "I love Anthropology AND history, BUT I hate reading.")</span>
+<textarea class="answer-area" data-id="hw-1" placeholder="1. ...
+2. ...
+3. ..." style="min-height:80px; margin-top:6px;"></textarea>
+</div>
+</div>
+<div class="hw-item">
+<div class="hw-num">2</div>
+<div>
+<strong>Because vs So — "Flip the Sentence"</strong><br/>
+<span style="font-size:12px; color:var(--gray);">Rewrite the sentence using the OTHER word.
+          <br/>A: "I am studying English <strong>because</strong> I want to travel."
+          <br/>B: "I want to travel, <strong>so</strong> I am studying English."
+          <br/><br/>Now do this one: "I am drinking water <strong>because</strong> I am thirsty."</span>
+<textarea class="answer-area" data-id="hw-2" placeholder="I am thirsty, so..." style="min-height:40px; margin-top:6px;"></textarea>
+</div>
+</div>
+</div>
+<div class="expressions-box" style="margin-top:10px;">
+<div class="exp-title">📋 Lesson 5 Summary — What You Learned Today</div>
+<div class="exp-item">✅ <strong>AND</strong> = Add things together (+)</div>
+<div class="exp-item">✅ <strong>BUT</strong> = Show a difference or problem (-)</div>
+<div class="exp-item">✅ <strong>BECAUSE</strong> = Give a reason (Why?)</div>
+<div class="exp-item">✅ <strong>SO</strong> = Give a result (Action!)</div>
+<div class="exp-item">✅ <strong>OR</strong> = Make a choice (A or B)</div>
+</div>
+<div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
+<span class="flag">🌟</span> <strong>Message from your teacher (your son!):</strong><br/>
+<em>Baba, you have just crossed the bridge from A1 to A2! Connectors make your English sound natural and fluid. Next lesson we will learn Comparatives (Bigger, Better, Faster). Keep making me proud! 💪🇲🇦</em>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 5</span>
+<span>Page 4 of 4</span>
+</div>
+</div>
 <!-- CONGRATULATIONS PAGE -->
-<div class="page congratulations-page">
-  <img src="../Congratulations.png" alt="Congratulations" class="congrats-img">
-</div>
-
+<div class="page congratulations-page"><div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%;"><img alt="Congratulations" class="congrats-img" src="../Congratulations.png" style="max-height: 180px; object-fit: contain;"/><div class="polaroid-card"><img class="polaroid-img" src="../Mama_Avatar/Family.jfif"/><div class="polaroid-caption">Bravo Baba! 🇲🇦🏆</div><div style="font-family:'Inter', sans-serif; font-size:11.5px; margin-top:8px; color:var(--gray); font-weight:600; line-height:1.4;">"Knowledge is light, Baba! We are all incredibly proud of you for completing Lesson 5! Keep going! 💪❤️"</div></div></div></div>
 <!-- SAVE STATUS -->
 <div class="save-status" id="save-status">✓ Progress saved</div>
-
 <script>
 const STORAGE_KEY = 'ts-lesson-fattah-connectors';
 

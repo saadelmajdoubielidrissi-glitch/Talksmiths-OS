@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fattah — Describing Appearance & Personality | Talksmiths</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fattah — Describing Appearance &amp; Personality | Talksmiths</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Playfair+Display:ital,wght@0,800;1,700&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --teal: #007575; --gold: #D4A843; --navy: #1A2744;
@@ -122,394 +123,445 @@
   @media screen and (max-width: 768px) {
     .vocab-grid { grid-template-columns: 1fr !important; }
   }
+
+  /* --- Talksmiths Avatar Integration Styles --- */
+  .ts-avatar-circle {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 2px solid var(--teal);
+    object-fit: cover;
+    object-position: center 20%;
+    box-shadow: 0 4px 8px rgba(0, 117, 117, 0.15);
+    flex-shrink: 0;
+  }
+  .teacher-chat-bubble {
+    display: flex;
+    gap: 14px;
+    background: #FFFBF2;
+    border: 1px solid #EAD295;
+    border-radius: 14px;
+    padding: 14px;
+    margin: 12px 0;
+    align-items: flex-start;
+    box-shadow: 0 2px 10px rgba(212, 168, 67, 0.05);
+    break-inside: avoid;
+  }
+  .chat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: left;
+  }
+  .chat-header {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--teal);
+  }
+  .chat-text {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #614B15;
+  }
+  .family-reading-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+    break-inside: avoid;
+  }
+  .family-member-card {
+    display: flex;
+    gap: 14px;
+    background: #FDFDFD;
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 14px;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: left;
+  }
+  .family-member-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  }
+  .polaroid-card {
+    background: var(--white);
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 16px 16px 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    text-align: center;
+    max-width: 340px;
+    margin: 20px auto;
+    transform: rotate(-1.5deg);
+    transition: transform 0.3s ease;
+    display: block !important;
+  }
+  .polaroid-card:hover {
+    transform: rotate(0deg) scale(1.03);
+  }
+  .polaroid-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #EAEAEA;
+  }
+  .polaroid-caption {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 700;
+    margin-top: 14px;
+    color: var(--navy);
+  }
+  @media screen and (max-width: 1200px) {
+    .family-reading-grid { grid-template-columns: 1fr !important; }
+    .family-member-card[style*="grid-column: span 2"] { grid-column: span 1 !important; }
+  }
+  @media print {
+    .ts-avatar-circle, 
+    .teacher-chat-bubble, 
+    .polaroid-card { 
+      display: none !important; 
+    }
+  }
 </style>
 </head>
 <body class="student-mode">
-
 <!-- VIEW TOGGLE -->
 <div class="view-toggle">
-  <button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
-  <button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
+<button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
+<button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
 </div>
 <button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
-
 <!-- ==================== PAGE 1 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-  <div class="logo">Talksmiths — Lesson Engine™</div>
-  <h1>Describing Appearance & Personality</h1>
-  <div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 14</div>
-  <div class="badges">
-    <span class="badge badge-teal">A1 — Beginner</span>
-    <span class="badge badge-gold">60 min</span>
-    <span class="badge badge-gray">Vocabulary Foundations</span>
-    <span class="badge badge-gray">Lesson 14</span>
-  </div>
-  <div class="divider"></div>
-
-  <!-- Step 1 + Notebook row -->
-  <div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
-
-      <!-- STEP 1: WARM-UP -->
-      <div class="step">
-        <div class="step-header">
-          <div class="step-num">1</div>
-          <div>
-            <div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
-            <div class="step-title">The People in Our Lives</div>
-          </div>
-          <div class="step-time">8 min</div>
-        </div>
-        <div class="objective">Objective: Describe the looks and characteristics of family members and friends.</div>
-
-        <div class="student-note">
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<div class="logo">Talksmiths — Lesson Engine™</div>
+<h1>Describing Appearance &amp; Personality</h1>
+<div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 14</div>
+<div class="badges">
+<span class="badge badge-teal">A1 — Beginner</span>
+<span class="badge badge-gold">60 min</span>
+<span class="badge badge-gray">Vocabulary Foundations</span>
+<span class="badge badge-gray">Lesson 14</span>
+</div>
+<div class="divider"></div>
+<!-- Step 1 + Notebook row -->
+<div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
+<!-- STEP 1: WARM-UP -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">1</div>
+<div>
+<div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
+<div class="step-title">The People in Our Lives</div>
+</div>
+<div class="step-time">8 min</div>
+</div>
+<div class="objective">Objective: Describe the looks and characteristics of family members and friends.</div>
+<div class="student-note">
           🎓 <strong>Student Strategy:</strong> We use **"to be"** for physical height or character qualities (He is tall, he is kind). We use **"to have"** for physical parts like hair and eyes (He has gray hair).
         </div>
-
-        <div class="teacher-note">
-          📋 <strong>Teacher Note:</strong> Prompt Baba to describe himself and his son Saad. Make sure he correctly separates "is" and "has" during the speaking phase.
-        </div>
-
-        <div class="exercise">
-          <div class="ex-label">🗣️ Speaking Warm-Up — Family Portraits</div>
-          <p class="ex-item">Describe these details using English:</p>
-          <ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
-            <li>🧑 What does your son Saad look like? (Is he tall?)</li>
-            <li>🎨 Describe your own character. (Are you quiet or active?)</li>
-            <li>👓 Do you have gray hair and glasses?</li>
-          </ul>
-          <div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Prompt Baba to describe himself and his son Saad. Make sure he correctly separates "is" and "has" during the speaking phase.
+        </div></div></div>
+<div class="exercise">
+<div class="ex-label">🗣️ Speaking Warm-Up — Family Portraits</div>
+<p class="ex-item">Describe these details using English:</p>
+<ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
+<li>🧑 What does your son Saad look like? (Is he tall?)</li>
+<li>🎨 Describe your own character. (Are you quiet or active?)</li>
+<li>👓 Do you have gray hair and glasses?</li>
+</ul>
+<div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
             Example: "My son Saad is tall and handsome. I am quiet and creative."
           </div>
+</div>
+<div class="darija-box">
+<span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> We say *Twil* (Tall), *Drayef* (Kind), and *3inih kahlin* (He has black eyes). Let's learn them in English!
         </div>
-
-        <div class="darija-box">
-          <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> We say *Twil* (Tall), *Drayef* (Kind), and *3inih kahlin* (He has black eyes). Let's learn them in English!
-        </div>
-      </div>
-    </div>
-
-    <!-- BABA'S NOTEBOOK -->
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
-      <div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
-        <div class="step-header" style="margin-bottom:6px;">
-          <div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
-        </div>
-        <div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
-          <p style="font-size:12px; line-height:1.4; color:var(--gray);">
+</div>
+</div>
+<!-- BABA'S NOTEBOOK -->
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
+<div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
+<div class="step-header" style="margin-bottom:6px;">
+<div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
+</div>
+<div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
+<p style="font-size:12px; line-height:1.4; color:var(--gray);">
             Describe yourself using 3 character words (like kind, hardworking, creative) and 2 appearance details.
           </p>
-          <textarea class="answer-area" data-id="baba-notebook-p1" style="flex:1; min-height:180px; font-size:12px;" placeholder="My portrait notes / تفاصيل الوصف ديالي..."></textarea>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- VOCABULARY SECTION -->
-  <div style="column-span:all !important; margin-top:8px;">
-    <div class="step">
-      <div class="step-header">
-        <div class="step-name">📖 Physical Appearance & Personality Vocabulary</div>
-      </div>
-
-      <div class="vocab-grid">
-        <div class="vocab-card">
-          <div class="vocab-term">Tall / Short</div>
-          <div class="vocab-def">Describing height. Used with "is".</div>
-          <div class="vocab-ex">"Saad is **tall**, but his younger cousin is **short**."</div>
-          <div class="vocab-bridge">🇲🇦 Twil / Qsir / 🇫🇷 Grand / Petit</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Gray hair / Brown eyes</div>
-          <div class="vocab-def">Physical details. Used with "has/have".</div>
-          <div class="vocab-ex">"I have **gray hair** and **brown eyes**."</div>
-          <div class="vocab-bridge">🇲🇦 Sh3r khrif / 3inin qehwyin / 🇫🇷 Cheveux gris / Yeux marrons</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Kind / Friendly</div>
-          <div class="vocab-def">Warm personality qualities.</div>
-          <div class="vocab-ex">"The banker was always **kind** and **friendly** to customers."</div>
-          <div class="vocab-bridge">🇲🇦 Drayef / Sadiqi / 🇫🇷 Gentil / Sympathique</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Creative / Hardworking</div>
-          <div class="vocab-def">Active, productive qualities.</div>
-          <div class="vocab-ex">"A painter must be very **creative**."</div>
-          <div class="vocab-bridge">🇲🇦 Mobdi3 / Khdam / 🇫🇷 Créatif / Travailleur</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Quiet / Intelligent</div>
-          <div class="vocab-def">Calm, intellectual qualities.</div>
-          <div class="vocab-ex">"My art room is **quiet** and study is interesting."</div>
-          <div class="vocab-bridge">🇲🇦 Hadi / Daki / 🇫🇷 Calme / Intelligent</div>
-        </div>
-        
-        <div class="vocab-card" style="border-left-color:var(--gold);">
-          <div class="vocab-term" style="color:var(--gold);">💡 Grammar Rule: "IS" vs "HAS"</div>
-          <div class="vocab-def">The description split:</div>
-          <div class="vocab-ex">He **is** [Adjective] (e.g. intelligent)<br>He **has** [Noun] (e.g. gray beard)</div>
-          <div class="vocab-bridge">🇫🇷 Il est (intelligent) vs Il a (une barbe grise)</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 14</span>
-    <span>Page 1 of 4</span>
-  </div>
+<textarea class="answer-area" data-id="baba-notebook-p1" placeholder="My portrait notes / تفاصيل الوصف ديالي..." style="flex:1; min-height:180px; font-size:12px;"></textarea>
 </div>
-
+</div>
+</div>
+</div>
+<!-- VOCABULARY SECTION -->
+<div style="column-span:all !important; margin-top:8px;">
+<div class="step">
+<div class="step-header">
+<div class="step-name">📖 Physical Appearance &amp; Personality Vocabulary</div>
+</div>
+<div class="vocab-grid">
+<div class="vocab-card">
+<div class="vocab-term">Tall / Short</div>
+<div class="vocab-def">Describing height. Used with "is".</div>
+<div class="vocab-ex">"Saad is **tall**, but his younger cousin is **short**."</div>
+<div class="vocab-bridge">🇲🇦 Twil / Qsir / 🇫🇷 Grand / Petit</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Gray hair / Brown eyes</div>
+<div class="vocab-def">Physical details. Used with "has/have".</div>
+<div class="vocab-ex">"I have **gray hair** and **brown eyes**."</div>
+<div class="vocab-bridge">🇲🇦 Sh3r khrif / 3inin qehwyin / 🇫🇷 Cheveux gris / Yeux marrons</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Kind / Friendly</div>
+<div class="vocab-def">Warm personality qualities.</div>
+<div class="vocab-ex">"The banker was always **kind** and **friendly** to customers."</div>
+<div class="vocab-bridge">🇲🇦 Drayef / Sadiqi / 🇫🇷 Gentil / Sympathique</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Creative / Hardworking</div>
+<div class="vocab-def">Active, productive qualities.</div>
+<div class="vocab-ex">"A painter must be very **creative**."</div>
+<div class="vocab-bridge">🇲🇦 Mobdi3 / Khdam / 🇫🇷 Créatif / Travailleur</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Quiet / Intelligent</div>
+<div class="vocab-def">Calm, intellectual qualities.</div>
+<div class="vocab-ex">"My art room is **quiet** and study is interesting."</div>
+<div class="vocab-bridge">🇲🇦 Hadi / Daki / 🇫🇷 Calme / Intelligent</div>
+</div>
+<div class="vocab-card" style="border-left-color:var(--gold);">
+<div class="vocab-term" style="color:var(--gold);">💡 Grammar Rule: "IS" vs "HAS"</div>
+<div class="vocab-def">The description split:</div>
+<div class="vocab-ex">He **is** [Adjective] (e.g. intelligent)<br/>He **has** [Noun] (e.g. gray beard)</div>
+<div class="vocab-bridge">🇫🇷 Il est (intelligent) vs Il a (une barbe grise)</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 14</span>
+<span>Page 1 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 2 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 2: MINI-STORY -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">2</div>
-      <div>
-        <div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
-        <div class="step-title">Saad's Portrait of His Father</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Read a descriptive text about Baba Fattah's appearance and traits.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Have him read the text. It describes him perfectly. Ask him: "Do you agree with Saad's description?"
-    </div>
-
-    <div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
-      <p>My father, Fattah, **is** a retired bank director. He **is** sixty-two years old, but he is very **active** and **healthy**. He **has** gray hair, a kind smile, and brown eyes.</p>
-      <p style="margin-top:6px;">He **is** a very **creative** painter. In his studio, he works **peacefully** for hours. He **is** also a **hardworking** anthropology student at Ibn Tofail University. Everyone thinks he **is** extremely **intelligent** and **quiet**.</p>
-      <p style="margin-top:6px;">He **is** **friendly** to his university friends and loves to drink sweet mint tea with them. He is the best father in the world!</p>
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">📝 Check Your Understanding</div>
-      <p class="ex-item"><strong>1.</strong> What physical appearance details does Fattah have?</p>
-      <textarea class="answer-area" data-id="comp-1" placeholder="He has..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>2.</strong> Name three personality traits of Baba Fattah mentioned in the text.</p>
-      <textarea class="answer-area" data-id="comp-2" placeholder="He is... and..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What makes him a friendly host?</p>
-      <textarea class="answer-area" data-id="comp-3" placeholder="He is friendly to... and loves to..."></textarea>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 3: GRAMMAR IN ACTION -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">3</div>
-      <div>
-        <div class="step-name">Step 3 — 🏗️ Vocabulary in Action</div>
-        <div class="step-title">Choosing "Is" or "Has"</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Correctly apply the physical descriptive verbs in sentences.</div>
-
-    <div class="expressions-box">
-      <div class="exp-title">📐 Decision Guide:</div>
-      <div class="exp-item">Use **IS** for height, age, and character adjectives (e.g. He is kind, he is old).</div>
-      <div class="exp-item">Use **HAS** for hair, eyes, beard, or clothes nouns (e.g. He has a blue shirt).</div>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">✏️ Write: "is" or "has"</div>
-      <p class="ex-item"><strong>1.</strong> Saad <input type="text" class="answer-inline" data-id="grammar-1" placeholder="..."> very tall and friendly.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> My father <input type="text" class="answer-inline" data-id="grammar-2" placeholder="..."> gray hair and brown eyes.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>3.</strong> A creative painter <input type="text" class="answer-inline" data-id="grammar-3" placeholder="..."> very imaginative.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>4.</strong> Ibn Tofail University <input type="text" class="answer-inline" data-id="grammar-4" placeholder="..."> many intelligent students.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>5.</strong> He <input type="text" class="answer-inline" data-id="grammar-5" placeholder="..."> a kind smile on his face.</p>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 14</span>
-    <span>Page 2 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 2: MINI-STORY -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">2</div>
+<div>
+<div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
+<div class="step-title">Saad's Portrait of His Father</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Read a descriptive text about Baba Fattah's appearance and traits.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Have him read the text. It describes him perfectly. Ask him: "Do you agree with Saad's description?"
+    </div></div></div>
+<div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
+<p>My father, Fattah, **is** a retired bank director. He **is** sixty-two years old, but he is very **active** and **healthy**. He **has** gray hair, a kind smile, and brown eyes.</p>
+<p style="margin-top:6px;">He **is** a very **creative** painter. In his studio, he works **peacefully** for hours. He **is** also a **hardworking** anthropology student at Ibn Tofail University. Everyone thinks he **is** extremely **intelligent** and **quiet**.</p>
+<p style="margin-top:6px;">He **is** **friendly** to his university friends and loves to drink sweet mint tea with them. He is the best father in the world!</p>
+</div>
+<div class="exercise">
+<div class="ex-label">📝 Check Your Understanding</div>
+<p class="ex-item"><strong>1.</strong> What physical appearance details does Fattah have?</p>
+<textarea class="answer-area" data-id="comp-1" placeholder="He has..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>2.</strong> Name three personality traits of Baba Fattah mentioned in the text.</p>
+<textarea class="answer-area" data-id="comp-2" placeholder="He is... and..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What makes him a friendly host?</p>
+<textarea class="answer-area" data-id="comp-3" placeholder="He is friendly to... and loves to..."></textarea>
+</div>
+</div>
+<div class="divider"></div>
+<!-- STEP 3: GRAMMAR IN ACTION -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">3</div>
+<div>
+<div class="step-name">Step 3 — 🏗️ Vocabulary in Action</div>
+<div class="step-title">Choosing "Is" or "Has"</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Correctly apply the physical descriptive verbs in sentences.</div>
+<div class="expressions-box">
+<div class="exp-title">📐 Decision Guide:</div>
+<div class="exp-item">Use **IS** for height, age, and character adjectives (e.g. He is kind, he is old).</div>
+<div class="exp-item">Use **HAS** for hair, eyes, beard, or clothes nouns (e.g. He has a blue shirt).</div>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">✏️ Write: "is" or "has"</div>
+<p class="ex-item"><strong>1.</strong> Saad <input class="answer-inline" data-id="grammar-1" placeholder="..." type="text"/> very tall and friendly.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>2.</strong> My father <input class="answer-inline" data-id="grammar-2" placeholder="..." type="text"/> gray hair and brown eyes.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>3.</strong> A creative painter <input class="answer-inline" data-id="grammar-3" placeholder="..." type="text"/> very imaginative.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>4.</strong> Ibn Tofail University <input class="answer-inline" data-id="grammar-4" placeholder="..." type="text"/> many intelligent students.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>5.</strong> He <input class="answer-inline" data-id="grammar-5" placeholder="..." type="text"/> a kind smile on his face.</p>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 14</span>
+<span>Page 2 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 3 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 4: GAME ZONE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">4</div>
-      <div>
-        <div class="step-name">Step 4 — 🎮 Game Zone</div>
-        <div class="step-title">The Portrait Painter!</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Choose the correct word or verb to complete the portrait description!</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Read the questions aloud. Watch for the classic mix-ups of "He is gray hair" instead of "He has gray hair".
-    </div>
-
-    <div class="game-container" id="port-game">
-      <div class="game-title">🎨 THE PORTRAIT PAINTER</div>
-      <div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:15px; margin-bottom:10px;">
-        <span id="port-sent">Sentence loading...</span>
-      </div>
-      
-      <div id="port-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">Which choice is grammatically correct?</div>
-      
-      <div id="port-options" style="display:flex; justify-content:center; gap:8px; margin-top:10px;"></div>
-      <div id="port-feedback" class="game-feedback"></div>
-      <div id="port-score" class="game-score"></div>
-      <div style="text-align:center; margin-top:12px;">
-        <button class="game-btn" id="port-next" onclick="portNext()" style="display:none;">Next Question →</button>
-        <button class="game-btn" id="port-restart" onclick="portStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
-      </div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px;">
-      <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> Every person is unique. "Subhan Allah!" Let's paint the perfect verbal portrait!
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 5: SPEAKING CHALLENGE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">5</div>
-      <div>
-        <div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
-        <div class="step-title">My Family Members</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Describe one of your close family members or a dear friend in detail.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Have him describe his wife or one of his sons. Prompt him for details: "Is she kind?", "What color eyes does he have?", "Is he active or quiet?"
-    </div>
-
-    <div class="gold-banner">
-      <p><strong>🎤 Family Portrait Challenge</strong></p>
-      <p style="margin-top:6px; font-size:12px;">Describe a family member. You must include:</p>
-      <ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
-        <li>✅ "He/She **is** very..." (Personality)</li>
-        <li>✅ "He/She **has** beautiful..." (Eyes/Hair)</li>
-        <li>✅ "I love him/her because..."</li>
-      </ul>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">📝 Notes for your presentation</div>
-      <textarea class="answer-area" data-id="speaking-notes" style="min-height:90px;" placeholder="My family member is very kind. She has brown eyes and a friendly smile. She is always hardworking..."></textarea>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 14</span>
-    <span>Page 3 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 4: GAME ZONE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">4</div>
+<div>
+<div class="step-name">Step 4 — 🎮 Game Zone</div>
+<div class="step-title">The Portrait Painter!</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Choose the correct word or verb to complete the portrait description!</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Read the questions aloud. Watch for the classic mix-ups of "He is gray hair" instead of "He has gray hair".
+    </div></div></div>
+<div class="game-container" id="port-game">
+<div class="game-title">🎨 THE PORTRAIT PAINTER</div>
+<div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:15px; margin-bottom:10px;">
+<span id="port-sent">Sentence loading...</span>
+</div>
+<div id="port-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">Which choice is grammatically correct?</div>
+<div id="port-options" style="display:flex; justify-content:center; gap:8px; margin-top:10px;"></div>
+<div class="game-feedback" id="port-feedback"></div>
+<div class="game-score" id="port-score"></div>
+<div style="text-align:center; margin-top:12px;">
+<button class="game-btn" id="port-next" onclick="portNext()" style="display:none;">Next Question →</button>
+<button class="game-btn" id="port-restart" onclick="portStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
+</div>
+</div>
+<div class="darija-box" style="margin-top:10px;">
+<span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> Every person is unique. "Subhan Allah!" Let's paint the perfect verbal portrait!
+    </div>
+</div>
+<div class="divider"></div>
+<!-- STEP 5: SPEAKING CHALLENGE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">5</div>
+<div>
+<div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
+<div class="step-title">My Family Members</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Describe one of your close family members or a dear friend in detail.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Have him describe his wife or one of his sons. Prompt him for details: "Is she kind?", "What color eyes does he have?", "Is he active or quiet?"
+    </div></div></div>
+<div class="gold-banner">
+<p><strong>🎤 Family Portrait Challenge</strong></p>
+<p style="margin-top:6px; font-size:12px;">Describe a family member. You must include:</p>
+<ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
+<li>✅ "He/She **is** very..." (Personality)</li>
+<li>✅ "He/She **has** beautiful..." (Eyes/Hair)</li>
+<li>✅ "I love him/her because..."</li>
+</ul>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">📝 Notes for your presentation</div>
+<textarea class="answer-area" data-id="speaking-notes" placeholder="My family member is very kind. She has brown eyes and a friendly smile. She is always hardworking..." style="min-height:90px;"></textarea>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 14</span>
+<span>Page 3 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 4 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 6: BOSS LEVEL -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">6</div>
-      <div>
-        <div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
-        <div class="step-title">The Classroom Portrait</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Place appearance and personality adjectives correctly in a story.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This challenges his vocabulary and the correct linking verb logic in a single paragraph.
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">🎓 Meet My Anthropology Professor</div>
-      <p class="ex-item">Complete the text using: <strong>intelligent, has, tall, is, gray</strong>.</p>
-      <div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
-        My university professor is very <input type="text" class="answer-inline" data-id="boss-1" style="width:100px;" placeholder="...">. 
-        He is <input type="text" class="answer-inline" data-id="boss-2" style="width:100px;" placeholder="..."> and walks quickly to the blackboard.
-        He <input type="text" class="answer-inline" data-id="boss-3" style="width:100px;" placeholder="..."> a warm voice and a friendly smile.
-        His hair is quite <input type="text" class="answer-inline" data-id="boss-4" style="width:100px;" placeholder="..."> but his eyes are bright blue.
-        In my opinion, his lecture <input type="text" class="answer-inline" data-id="boss-5" style="width:100px;" placeholder="..."> the most interesting one in the curriculum!
-      </div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 7: HOMEWORK -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">7</div>
-      <div>
-        <div class="step-name">Step 7 — 📚 Homework & Fun Challenge</div>
-        <div class="step-title">The Portrait Master</div>
-      </div>
-    </div>
-
-    <div class="body">
-      <div class="hw-item">
-        <div class="hw-num">1</div>
-        <div>
-          <strong>Writing Task — A Portrait Description</strong><br>
-          <span style="font-size:12px; color:var(--gray);">Write 3 sentences describing a fictional character in one of your paintings. Mention one color, one appearance word, and one personality word.</span>
-          <textarea class="answer-area" data-id="hw-1" style="min-height:80px; margin-top:6px;" placeholder="1. In my painting, the man is...&#10;2. He has...&#10;3. He is very..."></textarea>
-        </div>
-      </div>
-
-      <div class="hw-item">
-        <div class="hw-num">2</div>
-        <div>
-          <strong>Grammar Check — Choose Is or Has</strong><br>
-          <span style="font-size:12px; color:var(--gray);">Fill in the correct verb:
-          <br>1. He _______ creative. → <input type="text" class="answer-inline" data-id="hw-check-1" style="width:120px;" placeholder="Is / Has">
-          <br>2. She _______ brown eyes. → <input type="text" class="answer-inline" data-id="hw-check-2" style="width:120px;" placeholder="Is / Has"></span>
-        </div>
-      </div>
-    </div>
-
-    <div class="expressions-box" style="margin-top:10px;">
-      <div class="exp-title">📋 Lesson 14 Summary — What You Learned Today</div>
-      <div class="exp-item">✅ **IS** → Used for age, height, and personality (e.g. He is hardworking)</div>
-      <div class="exp-item">✅ **HAS** → Used for physical features (e.g. He has gray beard)</div>
-      <div class="exp-item">✅ **Personality words** → kind, hardworking, creative, intelligent, quiet</div>
-      <div class="exp-item">✅ **Appearance words** → tall, short, gray hair, brown eyes</div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
-      <span class="flag">🌟</span> <strong>Message from Saad:</strong><br>
-      <em>Baba, you have just mastered descriptions! Now you can paint a verbal picture of anyone with great detail. In the next and final lesson (Lesson 15), we will explore "Everyday Life Idioms" to give your English a beautiful native touch. Let's finish strong, Baba! 💪🇲🇦</em>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 14</span>
-    <span>Page 4 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 6: BOSS LEVEL -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">6</div>
+<div>
+<div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
+<div class="step-title">The Classroom Portrait</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Place appearance and personality adjectives correctly in a story.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This challenges his vocabulary and the correct linking verb logic in a single paragraph.
+    </div></div></div>
+<div class="exercise">
+<div class="ex-label">🎓 Meet My Anthropology Professor</div>
+<p class="ex-item">Complete the text using: <strong>intelligent, has, tall, is, gray</strong>.</p>
+<div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
+        My university professor is very <input class="answer-inline" data-id="boss-1" placeholder="..." style="width:100px;" type="text"/>. 
+        He is <input class="answer-inline" data-id="boss-2" placeholder="..." style="width:100px;" type="text"/> and walks quickly to the blackboard.
+        He <input class="answer-inline" data-id="boss-3" placeholder="..." style="width:100px;" type="text"/> a warm voice and a friendly smile.
+        His hair is quite <input class="answer-inline" data-id="boss-4" placeholder="..." style="width:100px;" type="text"/> but his eyes are bright blue.
+        In my opinion, his lecture <input class="answer-inline" data-id="boss-5" placeholder="..." style="width:100px;" type="text"/> the most interesting one in the curriculum!
+      </div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- STEP 7: HOMEWORK -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">7</div>
+<div>
+<div class="step-name">Step 7 — 📚 Homework &amp; Fun Challenge</div>
+<div class="step-title">The Portrait Master</div>
+</div>
+</div>
+<div class="body">
+<div class="hw-item">
+<div class="hw-num">1</div>
+<div>
+<strong>Writing Task — A Portrait Description</strong><br/>
+<span style="font-size:12px; color:var(--gray);">Write 3 sentences describing a fictional character in one of your paintings. Mention one color, one appearance word, and one personality word.</span>
+<textarea class="answer-area" data-id="hw-1" placeholder="1. In my painting, the man is...
+2. He has...
+3. He is very..." style="min-height:80px; margin-top:6px;"></textarea>
+</div>
+</div>
+<div class="hw-item">
+<div class="hw-num">2</div>
+<div>
+<strong>Grammar Check — Choose Is or Has</strong><br/>
+<span style="font-size:12px; color:var(--gray);">Fill in the correct verb:
+          <br/>1. He _______ creative. → <input class="answer-inline" data-id="hw-check-1" placeholder="Is / Has" style="width:120px;" type="text"/>
+<br/>2. She _______ brown eyes. → <input class="answer-inline" data-id="hw-check-2" placeholder="Is / Has" style="width:120px;" type="text"/></span>
+</div>
+</div>
+</div>
+<div class="expressions-box" style="margin-top:10px;">
+<div class="exp-title">📋 Lesson 14 Summary — What You Learned Today</div>
+<div class="exp-item">✅ **IS** → Used for age, height, and personality (e.g. He is hardworking)</div>
+<div class="exp-item">✅ **HAS** → Used for physical features (e.g. He has gray beard)</div>
+<div class="exp-item">✅ **Personality words** → kind, hardworking, creative, intelligent, quiet</div>
+<div class="exp-item">✅ **Appearance words** → tall, short, gray hair, brown eyes</div>
+</div>
+<div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
+<span class="flag">🌟</span> <strong>Message from Saad:</strong><br/>
+<em>Baba, you have just mastered descriptions! Now you can paint a verbal picture of anyone with great detail. In the next and final lesson (Lesson 15), we will explore "Everyday Life Idioms" to give your English a beautiful native touch. Let's finish strong, Baba! 💪🇲🇦</em>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 14</span>
+<span>Page 4 of 4</span>
+</div>
+</div>
 <!-- CONGRATULATIONS PAGE -->
-<div class="page congratulations-page">
-  <img src="../Congratulations.png" alt="Congratulations" class="congrats-img">
-</div>
-
+<div class="page congratulations-page"><div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%;"><img alt="Congratulations" class="congrats-img" src="../Congratulations.png" style="max-height: 180px; object-fit: contain;"/><div class="polaroid-card"><img class="polaroid-img" src="../Mama_Avatar/Family.jfif"/><div class="polaroid-caption">Bravo Baba! 🇲🇦🏆</div><div style="font-family:'Inter', sans-serif; font-size:11.5px; margin-top:8px; color:var(--gray); font-weight:600; line-height:1.4;">"Knowledge is light, Baba! We are all incredibly proud of you for completing Lesson 14! Keep going! 💪❤️"</div></div></div></div>
 <!-- SAVE STATUS -->
 <div class="save-status" id="save-status">✓ Progress saved</div>
-
 <script>
 const STORAGE_KEY = 'ts-lesson-fattah-description';
 

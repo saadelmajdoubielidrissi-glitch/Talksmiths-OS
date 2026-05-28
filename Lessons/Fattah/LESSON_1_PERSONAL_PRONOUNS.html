@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Fattah — Personal Pronouns | Talksmiths</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Playfair+Display:ital,wght@0,800;1,700&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --teal: #007575; --gold: #D4A843; --navy: #1A2744;
@@ -124,514 +125,587 @@
   @media screen and (max-width: 768px) {
     .vocab-grid { grid-template-columns: 1fr !important; }
   }
+
+  /* --- Talksmiths Avatar Integration Styles --- */
+  .ts-avatar-circle {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 2px solid var(--teal);
+    object-fit: cover;
+    object-position: center 20%;
+    box-shadow: 0 4px 8px rgba(0, 117, 117, 0.15);
+    flex-shrink: 0;
+  }
+  .teacher-chat-bubble {
+    display: flex;
+    gap: 14px;
+    background: #FFFBF2;
+    border: 1px solid #EAD295;
+    border-radius: 14px;
+    padding: 14px;
+    margin: 12px 0;
+    align-items: flex-start;
+    box-shadow: 0 2px 10px rgba(212, 168, 67, 0.05);
+    break-inside: avoid;
+  }
+  .chat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: left;
+  }
+  .chat-header {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--teal);
+  }
+  .chat-text {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #614B15;
+  }
+  .family-reading-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+    break-inside: avoid;
+  }
+  .family-member-card {
+    display: flex;
+    gap: 14px;
+    background: #FDFDFD;
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 14px;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: left;
+  }
+  .family-member-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  }
+  .polaroid-card {
+    background: var(--white);
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 16px 16px 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    text-align: center;
+    max-width: 340px;
+    margin: 20px auto;
+    transform: rotate(-1.5deg);
+    transition: transform 0.3s ease;
+    display: block !important;
+  }
+  .polaroid-card:hover {
+    transform: rotate(0deg) scale(1.03);
+  }
+  .polaroid-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #EAEAEA;
+  }
+  .polaroid-caption {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 700;
+    margin-top: 14px;
+    color: var(--navy);
+  }
+  @media screen and (max-width: 1200px) {
+    .family-reading-grid { grid-template-columns: 1fr !important; }
+    .family-member-card[style*="grid-column: span 2"] { grid-column: span 1 !important; }
+  }
+  @media print {
+    .ts-avatar-circle, 
+    .teacher-chat-bubble, 
+    .polaroid-card { 
+      display: none !important; 
+    }
+  }
 </style>
 </head>
 <body class="student-mode">
-
 <!-- VIEW TOGGLE -->
 <div class="view-toggle">
-  <button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
-  <button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
+<button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
+<button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
 </div>
 <button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
-
 <!-- ==================== PAGE 1 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-  <div class="logo">Talksmiths — Lesson Engine™</div>
-  <h1>Personal Pronouns</h1>
-  <div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 1</div>
-  <div class="badges">
-    <span class="badge badge-teal">A1 — Beginner</span>
-    <span class="badge badge-gold">60 min</span>
-    <span class="badge badge-gray">Grammar Foundations</span>
-    <span class="badge badge-gray">Lesson 1</span>
-  </div>
-  <div class="divider"></div>
-
-  <!-- CFO-ROW: Step 1 (left) + Baba's Notebook (right) -->
-  <div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
-
-      <!-- STEP 1: WARM-UP -->
-      <div class="step">
-        <div class="step-header">
-          <div class="step-num">1</div>
-          <div>
-            <div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
-            <div class="step-title">Who Are You? Who Am I?</div>
-          </div>
-          <div class="step-time">8 min</div>
-        </div>
-        <div class="objective">Objective: Introduce yourself and describe people around you using personal pronouns.</div>
-
-        <div class="student-note">
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<div class="logo">Talksmiths — Lesson Engine™</div>
+<h1>Personal Pronouns</h1>
+<div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 1</div>
+<div class="badges">
+<span class="badge badge-teal">A1 — Beginner</span>
+<span class="badge badge-gold">60 min</span>
+<span class="badge badge-gray">Grammar Foundations</span>
+<span class="badge badge-gray">Lesson 1</span>
+</div>
+<div class="divider"></div>
+<!-- CFO-ROW: Step 1 (left) + Baba's Notebook (right) -->
+<div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
+<!-- STEP 1: WARM-UP -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">1</div>
+<div>
+<div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
+<div class="step-title">Who Are You? Who Am I?</div>
+</div>
+<div class="step-time">8 min</div>
+</div>
+<div class="objective">Objective: Introduce yourself and describe people around you using personal pronouns.</div>
+<div class="student-note">
           🎓 <strong>Student Strategy:</strong> Don't think in Darija first! Try to say each sentence directly in English. It's okay to make mistakes — <em>ghir jreb!</em> (just try!)
         </div>
-
-        <div class="teacher-note">
-          📋 <strong>Teacher Note:</strong> Start warm — ask Baba to introduce himself in English. If he hesitates, give him the first word "I am..." and let him complete. Point at yourself, at him, at imaginary people to make pronouns physical and visual. Use gestures a lot — point at "he/she/they" in the room or through examples.
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Start warm — ask Baba to introduce himself in English. If he hesitates, give him the first word "I am..." and let him complete. Point at yourself, at him, at imaginary people to make pronouns physical and visual. Use gestures a lot — point at "he/she/they" in the room or through examples.
+        </div></div></div>
+<div class="exercise">
+<div class="ex-label">🗣️ Speaking Warm-Up — Introduce Yourself</div>
+<p class="ex-item">Practice saying these sentences out loud, then write them about <strong>yourself</strong>:</p>
+<p class="ex-item" style="margin-top:8px;"><strong>1.</strong> "My name is ___. <strong>I</strong> am from ___."</p>
+<textarea class="answer-area" data-id="warmup-1" placeholder="Write your answer... Example: My name is Fattah. I am from Morocco."></textarea>
+<p class="ex-item" style="margin-top:8px;"><strong>2.</strong> "I am ___ years old. <strong>I</strong> live in ___."</p>
+<textarea class="answer-area" data-id="warmup-2" placeholder="Write your answer..."></textarea>
+<p class="ex-item" style="margin-top:8px;"><strong>3.</strong> Now describe a family member: "<strong>He/She</strong> is ___."</p>
+<textarea class="answer-area" data-id="warmup-3" placeholder="Example: She is my wife. Her name is Lamia. She is kind."></textarea>
+</div>
+<div class="darija-box">
+<span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> In Darija, you say <em>"Ana smiti Fattah"</em> — in English it's <strong>"My name is Fattah"</strong>. Same idea, just different order! In French: <em>"Je m'appelle Fattah"</em>. Three languages, one meaning — <em>sahl bezzaf!</em> (very easy!)
         </div>
-
-        <div class="exercise">
-          <div class="ex-label">🗣️ Speaking Warm-Up — Introduce Yourself</div>
-          <p class="ex-item">Practice saying these sentences out loud, then write them about <strong>yourself</strong>:</p>
-          <p class="ex-item" style="margin-top:8px;"><strong>1.</strong> "My name is ___. <strong>I</strong> am from ___."</p>
-          <textarea class="answer-area" data-id="warmup-1" placeholder="Write your answer... Example: My name is Fattah. I am from Morocco."></textarea>
-          <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> "I am ___ years old. <strong>I</strong> live in ___."</p>
-          <textarea class="answer-area" data-id="warmup-2" placeholder="Write your answer..."></textarea>
-          <p class="ex-item" style="margin-top:8px;"><strong>3.</strong> Now describe a family member: "<strong>He/She</strong> is ___."</p>
-          <textarea class="answer-area" data-id="warmup-3" placeholder="Example: She is my wife. Her name is Lamia. She is kind."></textarea>
-        </div>
-
-        <div class="darija-box">
-          <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> In Darija, you say <em>"Ana smiti Fattah"</em> — in English it's <strong>"My name is Fattah"</strong>. Same idea, just different order! In French: <em>"Je m'appelle Fattah"</em>. Three languages, one meaning — <em>sahl bezzaf!</em> (very easy!)
-        </div>
-      </div>
-    </div>
-
-    <!-- BABA'S NOTEBOOK (right column) -->
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
-      <div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
-        <div class="step-header" style="margin-bottom:6px;">
-          <div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
-        </div>
-        <div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
-          <p style="font-size:12px; line-height:1.4; color:var(--gray);">
+</div>
+</div>
+<!-- BABA'S NOTEBOOK (right column) -->
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
+<div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
+<div class="step-header" style="margin-bottom:6px;">
+<div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
+</div>
+<div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
+<p style="font-size:12px; line-height:1.4; color:var(--gray);">
             Use this space to take notes in any language. Write down words you want to remember, things that confuse you, or sentences you want to practice.
           </p>
-          <ul style="font-size:12px; margin-left:16px; line-height:1.4; color:var(--navy); list-style-type:square;">
-            <li>✍️ Write 3 English words you already know</li>
-            <li>❓ What is difficult about pronouns in English?</li>
-            <li>🎯 One thing you want to master today</li>
-          </ul>
-          <textarea class="answer-area" data-id="baba-notebook-p1" style="flex:1; min-height:180px; font-size:12px;" placeholder="Notes / ملاحظات / Notes en français..."></textarea>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- VOCABULARY SECTION -->
-  <div style="column-span:all !important; margin-top:8px;">
-    <div class="step">
-      <div class="step-header">
-        <div class="step-name">📖 Personal Pronouns — The Complete Family</div>
-      </div>
-
-      <div class="body">
-        <p>In English, we use <strong>pronouns</strong> instead of repeating people's names. Just like in French: <em>je, tu, il, elle...</em></p>
-      </div>
-
-      <div class="vocab-grid">
-        <div class="vocab-card">
-          <div class="vocab-term">I → أنا → Je</div>
-          <div class="vocab-def">The person speaking (yourself)</div>
-          <div class="vocab-ex">"<strong>I</strong> am a painter." — "<strong>I</strong> love football."</div>
-          <div class="vocab-bridge">🇲🇦 Ana / 🇫🇷 Je</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">You → أنت/أنتِ → Tu / Vous</div>
-          <div class="vocab-def">The person you're talking to (singular AND plural!)</div>
-          <div class="vocab-ex">"<strong>You</strong> are my son." — "<strong>You</strong> are all welcome."</div>
-          <div class="vocab-bridge">🇲🇦 Nta / Nti / Ntouma / 🇫🇷 Tu / Vous</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">He → هو → Il</div>
-          <div class="vocab-def">A man or boy you're talking about</div>
-          <div class="vocab-ex">"<strong>He</strong> is my son. <strong>He</strong> studies engineering."</div>
-          <div class="vocab-bridge">🇲🇦 Huwa / 🇫🇷 Il</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">She → هي → Elle</div>
-          <div class="vocab-def">A woman or girl you're talking about</div>
-          <div class="vocab-ex">"<strong>She</strong> is the headmistress. <strong>She</strong> works very hard."</div>
-          <div class="vocab-bridge">🇲🇦 Hiya / 🇫🇷 Elle</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">It → (no equivalent) → Il / Elle / Ça</div>
-          <div class="vocab-def">Things, animals, ideas (not people!)</div>
-          <div class="vocab-ex">"<strong>It</strong> is a beautiful painting." — "<strong>It</strong> is raining."</div>
-          <div class="vocab-bridge">🇲🇦 No exact match — hadshi/hadak / 🇫🇷 Il (impersonnel), Ça</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">We → حنا → Nous</div>
-          <div class="vocab-def">You + one or more other people</div>
-          <div class="vocab-ex">"<strong>We</strong> watch football together." — "<strong>We</strong> are a family."</div>
-          <div class="vocab-bridge">🇲🇦 7na / 🇫🇷 Nous / On</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">They → هم → Ils / Elles</div>
-          <div class="vocab-def">Other people (2 or more, men, women, or mixed)</div>
-          <div class="vocab-ex">"<strong>They</strong> are good players." — "<strong>They</strong> live in Kenitra."</div>
-          <div class="vocab-bridge">🇲🇦 Huma / 🇫🇷 Ils / Elles</div>
-        </div>
-        <div class="vocab-card" style="border-left-color:var(--gold);">
-          <div class="vocab-term" style="color:var(--gold);">💡 English Bonus!</div>
-          <div class="vocab-def">English is SIMPLER than French & Darija here:</div>
-          <div class="vocab-ex">Only <strong>"you"</strong> for nta, nti, ntouma, tu, AND vous! One word does it all! 🎉</div>
-          <div class="vocab-bridge">🇲🇦 Sahl bezzaf! / 🇫🇷 Plus simple que le français!</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 1</span>
-    <span>Page 1 of 4</span>
-  </div>
+<ul style="font-size:12px; margin-left:16px; line-height:1.4; color:var(--navy); list-style-type:square;">
+<li>✍️ Write 3 English words you already know</li>
+<li>❓ What is difficult about pronouns in English?</li>
+<li>🎯 One thing you want to master today</li>
+</ul>
+<textarea class="answer-area" data-id="baba-notebook-p1" placeholder="Notes / ملاحظات / Notes en français..." style="flex:1; min-height:180px; font-size:12px;"></textarea>
 </div>
-
+</div>
+</div>
+</div>
+<!-- VOCABULARY SECTION -->
+<div style="column-span:all !important; margin-top:8px;">
+<div class="step">
+<div class="step-header">
+<div class="step-name">📖 Personal Pronouns — The Complete Family</div>
+</div>
+<div class="body">
+<p>In English, we use <strong>pronouns</strong> instead of repeating people's names. Just like in French: <em>je, tu, il, elle...</em></p>
+</div>
+<div class="vocab-grid">
+<div class="vocab-card">
+<div class="vocab-term">I → أنا → Je</div>
+<div class="vocab-def">The person speaking (yourself)</div>
+<div class="vocab-ex">"<strong>I</strong> am a painter." — "<strong>I</strong> love football."</div>
+<div class="vocab-bridge">🇲🇦 Ana / 🇫🇷 Je</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">You → أنت/أنتِ → Tu / Vous</div>
+<div class="vocab-def">The person you're talking to (singular AND plural!)</div>
+<div class="vocab-ex">"<strong>You</strong> are my son." — "<strong>You</strong> are all welcome."</div>
+<div class="vocab-bridge">🇲🇦 Nta / Nti / Ntouma / 🇫🇷 Tu / Vous</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">He → هو → Il</div>
+<div class="vocab-def">A man or boy you're talking about</div>
+<div class="vocab-ex">"<strong>He</strong> is my son. <strong>He</strong> studies engineering."</div>
+<div class="vocab-bridge">🇲🇦 Huwa / 🇫🇷 Il</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">She → هي → Elle</div>
+<div class="vocab-def">A woman or girl you're talking about</div>
+<div class="vocab-ex">"<strong>She</strong> is the headmistress. <strong>She</strong> works very hard."</div>
+<div class="vocab-bridge">🇲🇦 Hiya / 🇫🇷 Elle</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">It → (no equivalent) → Il / Elle / Ça</div>
+<div class="vocab-def">Things, animals, ideas (not people!)</div>
+<div class="vocab-ex">"<strong>It</strong> is a beautiful painting." — "<strong>It</strong> is raining."</div>
+<div class="vocab-bridge">🇲🇦 No exact match — hadshi/hadak / 🇫🇷 Il (impersonnel), Ça</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">We → حنا → Nous</div>
+<div class="vocab-def">You + one or more other people</div>
+<div class="vocab-ex">"<strong>We</strong> watch football together." — "<strong>We</strong> are a family."</div>
+<div class="vocab-bridge">🇲🇦 7na / 🇫🇷 Nous / On</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">They → هم → Ils / Elles</div>
+<div class="vocab-def">Other people (2 or more, men, women, or mixed)</div>
+<div class="vocab-ex">"<strong>They</strong> are good players." — "<strong>They</strong> live in Kenitra."</div>
+<div class="vocab-bridge">🇲🇦 Huma / 🇫🇷 Ils / Elles</div>
+</div>
+<div class="vocab-card" style="border-left-color:var(--gold);">
+<div class="vocab-term" style="color:var(--gold);">💡 English Bonus!</div>
+<div class="vocab-def">English is SIMPLER than French &amp; Darija here:</div>
+<div class="vocab-ex">Only <strong>"you"</strong> for nta, nti, ntouma, tu, AND vous! One word does it all! 🎉</div>
+<div class="vocab-bridge">🇲🇦 Sahl bezzaf! / 🇫🇷 Plus simple que le français!</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 1</span>
+<span>Page 1 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 2 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 2: MINI-STORY (Reading) -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">2</div>
+<div>
+<div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
+<div class="step-title">A Family Portrait</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Read a short text and identify all the pronouns. Understand who each pronoun refers to.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Read the story aloud first while Baba follows with his eyes. Then ask him to read it aloud. Circle or underline every pronoun together. Ask "Who is HE here? Who is SHE?" for each one. This builds the pronoun-referent connection that Darija speakers sometimes skip.
+    </div></div></div>
 
-  <!-- STEP 2: MINI-STORY (Reading) -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">2</div>
-      <div>
-        <div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
-        <div class="step-title">A Family Portrait</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Read a short text and identify all the pronouns. Understand who each pronoun refers to.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Read the story aloud first while Baba follows with his eyes. Then ask him to read it aloud. Circle or underline every pronoun together. Ask "Who is HE here? Who is SHE?" for each one. This builds the pronoun-referent connection that Darija speakers sometimes skip.
-    </div>
-
-    <div class="body" style="background:var(--cream); border-radius:8px; padding:14px 16px; margin-top:8px; line-height:1.8;">
-      <p><strong>I</strong> am Fattah. <strong>I</strong> am from Morocco. <strong>I</strong> live in Mehdya with my family.</p>
-      <p style="margin-top:6px;">My wife is Lamia. <strong>She</strong> is a headmistress. <strong>She</strong> is very kind and hardworking. <strong>We</strong> have two sons.</p>
-      <p style="margin-top:6px;">My first son is Saad. <strong>He</strong> lives in Hungary. <strong>He</strong> is a language teacher. My second son is Anas. <strong>He</strong> is an engineering student. <strong>He</strong> studies at ENSA in Kenitra.</p>
-      <p style="margin-top:6px;"><strong>We</strong> all love football. <strong>We</strong> watch Morocco games together. When Saad is not home, <strong>we</strong> call each other. <strong>We</strong> talk about the match, the players, and the tactics. <strong>It</strong> is our tradition.</p>
-      <p style="margin-top:6px;"><strong>They</strong> are my family. <strong>I</strong> am very proud of <strong>them</strong>.</p>
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">📝 Comprehension — Answer in English</div>
-      <p class="ex-item"><strong>1.</strong> Where does Fattah live?</p>
-      <textarea class="answer-area" data-id="comp-1" placeholder="He lives in..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>2.</strong> Who is Lamia? What does she do?</p>
-      <textarea class="answer-area" data-id="comp-2" placeholder="She is..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>3.</strong> How many sons does Fattah have? What are their names?</p>
-      <textarea class="answer-area" data-id="comp-3" placeholder="He has..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>4.</strong> What is the family tradition?</p>
-      <textarea class="answer-area" data-id="comp-4" placeholder="They..."></textarea>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">🔍 Pronoun Hunt — Find & Write</div>
-      <p class="ex-item">Go back to the story. Count how many times each pronoun appears:</p>
-      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-top:6px;">
-        <div style="text-align:center;"><strong>I</strong><br><input type="text" class="answer-inline" data-id="hunt-i" style="width:40px; text-align:center;" placeholder="?"></div>
-        <div style="text-align:center;"><strong>He</strong><br><input type="text" class="answer-inline" data-id="hunt-he" style="width:40px; text-align:center;" placeholder="?"></div>
-        <div style="text-align:center;"><strong>She</strong><br><input type="text" class="answer-inline" data-id="hunt-she" style="width:40px; text-align:center;" placeholder="?"></div>
-        <div style="text-align:center;"><strong>We</strong><br><input type="text" class="answer-inline" data-id="hunt-we" style="width:40px; text-align:center;" placeholder="?"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 3: GRAMMAR IN ACTION -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">3</div>
-      <div>
-        <div class="step-name">Step 3 — 🏗️ Grammar in Action</div>
-        <div class="step-title">Pronouns + "To Be" = Magic Formula</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Master the correct form of "to be" (am/is/are) with each pronoun.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This is THE foundational formula. Drill it like a football chant — repetition is key. Have Baba say each one while pointing (I AM → points to self, YOU ARE → points to you). Make it physical and rhythmic. Then cover the right column and quiz him.
-    </div>
-
-    <!-- Grammar Rule Box -->
-    <div class="expressions-box">
-      <div class="exp-title">📐 The Rule — Pronouns + "To Be"</div>
-      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:4px; font-size:13px;">
-        <div><strong>I</strong> → <strong>am</strong></div>
-        <div style="color:var(--gray);">Je <strong>suis</strong></div>
-        <div style="color:var(--gray);">Ana <strong>——</strong></div>
-        <div><strong>You</strong> → <strong>are</strong></div>
-        <div style="color:var(--gray);">Tu <strong>es</strong></div>
-        <div style="color:var(--gray);">Nta/Nti <strong>——</strong></div>
-        <div><strong>He/She/It</strong> → <strong>is</strong></div>
-        <div style="color:var(--gray);">Il/Elle <strong>est</strong></div>
-        <div style="color:var(--gray);">Huwa/Hiya <strong>——</strong></div>
-        <div><strong>We</strong> → <strong>are</strong></div>
-        <div style="color:var(--gray);">Nous <strong>sommes</strong></div>
-        <div style="color:var(--gray);">7na <strong>——</strong></div>
-        <div><strong>They</strong> → <strong>are</strong></div>
-        <div style="color:var(--gray);">Ils/Elles <strong>sont</strong></div>
-        <div style="color:var(--gray);">Huma <strong>——</strong></div>
-      </div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px;">
-      <span class="flag">🇫🇷</span> <strong>French Parallel:</strong> In French, "être" has <em>6 different forms</em> (suis, es, est, sommes, êtes, sont). In English, "to be" has only <strong>3 forms</strong>: <em>am, is, are</em>. English is actually easier here! 🎉<br>
-      <span class="flag">🇲🇦</span> <em>F darija, ma kaynsh "to be" — "Ana Fattah" is enough! But in English you NEED it: "I <strong>am</strong> Fattah."</em>
-    </div>
-
-    <!-- Practice Exercises -->
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">✏️ Fill in the Blank — am / is / are</div>
-      <p class="ex-item"><strong>1.</strong> I ___ from Morocco.</p>
-      <input type="text" class="answer-inline" data-id="grammar-1" placeholder="am / is / are">
-      <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> She ___ a headmistress.</p>
-      <input type="text" class="answer-inline" data-id="grammar-2" placeholder="am / is / are">
-      <p class="ex-item" style="margin-top:8px;"><strong>3.</strong> We ___ football fans.</p>
-      <input type="text" class="answer-inline" data-id="grammar-3" placeholder="am / is / are">
-      <p class="ex-item" style="margin-top:8px;"><strong>4.</strong> They ___ at the university.</p>
-      <input type="text" class="answer-inline" data-id="grammar-4" placeholder="am / is / are">
-      <p class="ex-item" style="margin-top:8px;"><strong>5.</strong> He ___ an engineering student.</p>
-      <input type="text" class="answer-inline" data-id="grammar-5" placeholder="am / is / are">
-      <p class="ex-item" style="margin-top:8px;"><strong>6.</strong> You ___ my best friend.</p>
-      <input type="text" class="answer-inline" data-id="grammar-6" placeholder="am / is / are">
-      <p class="ex-item" style="margin-top:8px;"><strong>7.</strong> It ___ a beautiful day in Mehdya.</p>
-      <input type="text" class="answer-inline" data-id="grammar-7" placeholder="am / is / are">
-      <p class="ex-item" style="margin-top:8px;"><strong>8.</strong> Morocco ___ ranked 8th in the world!</p>
-      <input type="text" class="answer-inline" data-id="grammar-8" placeholder="am / is / are">
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">🔄 Replace the Name with the Correct Pronoun</div>
-      <p class="ex-item" style="margin-bottom:8px;"><em>Example: <strong>Lamia</strong> is kind. → <strong>She</strong> is kind.</em></p>
-      <p class="ex-item"><strong>1.</strong> <strong>Saad</strong> lives in Hungary. → ___ lives in Hungary.</p>
-      <input type="text" class="answer-inline" data-id="replace-1" placeholder="He / She / They...">
-      <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> <strong>Fattah and Lamia</strong> love their sons. → ___ love their sons.</p>
-      <input type="text" class="answer-inline" data-id="replace-2" placeholder="He / She / They...">
-      <p class="ex-item" style="margin-top:8px;"><strong>3.</strong> <strong>The painting</strong> is beautiful. → ___ is beautiful.</p>
-      <input type="text" class="answer-inline" data-id="replace-3" placeholder="He / She / It...">
-      <p class="ex-item" style="margin-top:8px;"><strong>4.</strong> <strong>Anas</strong> studies engineering. → ___ studies engineering.</p>
-      <input type="text" class="answer-inline" data-id="replace-4" placeholder="He / She / They...">
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 1</span>
-    <span>Page 2 of 4</span>
-  </div>
+<div class="family-reading-grid" style="margin-top:10px;">
+<div class="family-member-card">
+<img class="ts-avatar-circle" src="../Baba_Avatar/baba_main_avatar.jfif" style="width:60px; height:60px;"/>
+<div>
+<div style="font-size:10px; font-weight:800; text-transform:uppercase; color:var(--teal); margin-bottom:2px;">Baba Fattah</div>
+<p style="font-size:12.5px; line-height:1.4; color:var(--navy);"><strong>I</strong> am Fattah. <strong>I</strong> am from Morocco. <strong>I</strong> live in Mehdya with my family.</p>
+</div>
+</div>
+<div class="family-member-card">
+<img class="ts-avatar-circle" src="../Mama_Avatar/Mama_Main_Avatar.jfif" style="width:60px; height:60px;"/>
+<div>
+<div style="font-size:10px; font-weight:800; text-transform:uppercase; color:var(--teal); margin-bottom:2px;">Mama Lamia</div>
+<p style="font-size:12.5px; line-height:1.4; color:var(--navy);">My wife is Lamia. <strong>She</strong> is a headmistress. <strong>She</strong> is very kind and hardworking. <strong>We</strong> have two sons.</p>
+</div>
+</div>
+<div class="family-member-card">
+<img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Main_Avatar.jfif" style="width:60px; height:60px;"/>
+<div>
+<div style="font-size:10px; font-weight:800; text-transform:uppercase; color:var(--teal); margin-bottom:2px;">Saad</div>
+<p style="font-size:12.5px; line-height:1.4; color:var(--navy);">My first son is Saad. <strong>He</strong> lives in Hungary. <strong>He</strong> is a language teacher.</p>
+</div>
+</div>
+<div class="family-member-card">
+<img class="ts-avatar-circle" src="../Anas_Avatar/Anas_Main_Avatar.jfif" style="width:60px; height:60px;"/>
+<div>
+<div style="font-size:10px; font-weight:800; text-transform:uppercase; color:var(--teal); margin-bottom:2px;">Anas</div>
+<p style="font-size:12.5px; line-height:1.4; color:var(--navy);">My second son is Anas. <strong>He</strong> is an engineering student. <strong>He</strong> studies at ENSA in Kenitra.</p>
+</div>
+</div>
+<div class="family-member-card" style="grid-column: span 2;">
+<img class="ts-avatar-circle" src="../Mama_Avatar/Family.jfif" style="width:60px; height:60px;"/>
+<div>
+<div style="font-size:10px; font-weight:800; text-transform:uppercase; color:var(--teal); margin-bottom:2px;">Our Family &amp; Tradition</div>
+<p style="font-size:12.5px; line-height:1.4; color:var(--navy);"><strong>We</strong> all love football. <strong>We</strong> watch Morocco games together. When Saad is not home, <strong>we</strong> call each other. <strong>We</strong> talk about the match, the players, and the tactics. <strong>It</strong> is our tradition. <strong>They</strong> are my family. <strong>I</strong> am very proud of <strong>them</strong>.</p>
+</div>
+</div>
 </div>
 
+<div class="exercise">
+<div class="ex-label">📝 Comprehension — Answer in English</div>
+<p class="ex-item"><strong>1.</strong> Where does Fattah live?</p>
+<textarea class="answer-area" data-id="comp-1" placeholder="He lives in..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>2.</strong> Who is Lamia? What does she do?</p>
+<textarea class="answer-area" data-id="comp-2" placeholder="She is..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>3.</strong> How many sons does Fattah have? What are their names?</p>
+<textarea class="answer-area" data-id="comp-3" placeholder="He has..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>4.</strong> What is the family tradition?</p>
+<textarea class="answer-area" data-id="comp-4" placeholder="They..."></textarea>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">🔍 Pronoun Hunt — Find &amp; Write</div>
+<p class="ex-item">Go back to the story. Count how many times each pronoun appears:</p>
+<div style="display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-top:6px;">
+<div style="text-align:center;"><strong>I</strong><br/><input class="answer-inline" data-id="hunt-i" placeholder="?" style="width:40px; text-align:center;" type="text"/></div>
+<div style="text-align:center;"><strong>He</strong><br/><input class="answer-inline" data-id="hunt-he" placeholder="?" style="width:40px; text-align:center;" type="text"/></div>
+<div style="text-align:center;"><strong>She</strong><br/><input class="answer-inline" data-id="hunt-she" placeholder="?" style="width:40px; text-align:center;" type="text"/></div>
+<div style="text-align:center;"><strong>We</strong><br/><input class="answer-inline" data-id="hunt-we" placeholder="?" style="width:40px; text-align:center;" type="text"/></div>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- STEP 3: GRAMMAR IN ACTION -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">3</div>
+<div>
+<div class="step-name">Step 3 — 🏗️ Grammar in Action</div>
+<div class="step-title">Pronouns + "To Be" = Magic Formula</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Master the correct form of "to be" (am/is/are) with each pronoun.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This is THE foundational formula. Drill it like a football chant — repetition is key. Have Baba say each one while pointing (I AM → points to self, YOU ARE → points to you). Make it physical and rhythmic. Then cover the right column and quiz him.
+    </div></div></div>
+<!-- Grammar Rule Box -->
+<div class="expressions-box">
+<div class="exp-title">📐 The Rule — Pronouns + "To Be"</div>
+<div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:4px; font-size:13px;">
+<div><strong>I</strong> → <strong>am</strong></div>
+<div style="color:var(--gray);">Je <strong>suis</strong></div>
+<div style="color:var(--gray);">Ana <strong>——</strong></div>
+<div><strong>You</strong> → <strong>are</strong></div>
+<div style="color:var(--gray);">Tu <strong>es</strong></div>
+<div style="color:var(--gray);">Nta/Nti <strong>——</strong></div>
+<div><strong>He/She/It</strong> → <strong>is</strong></div>
+<div style="color:var(--gray);">Il/Elle <strong>est</strong></div>
+<div style="color:var(--gray);">Huwa/Hiya <strong>——</strong></div>
+<div><strong>We</strong> → <strong>are</strong></div>
+<div style="color:var(--gray);">Nous <strong>sommes</strong></div>
+<div style="color:var(--gray);">7na <strong>——</strong></div>
+<div><strong>They</strong> → <strong>are</strong></div>
+<div style="color:var(--gray);">Ils/Elles <strong>sont</strong></div>
+<div style="color:var(--gray);">Huma <strong>——</strong></div>
+</div>
+</div>
+<div class="darija-box" style="margin-top:10px;">
+<span class="flag">🇫🇷</span> <strong>French Parallel:</strong> In French, "être" has <em>6 different forms</em> (suis, es, est, sommes, êtes, sont). In English, "to be" has only <strong>3 forms</strong>: <em>am, is, are</em>. English is actually easier here! 🎉<br/>
+<span class="flag">🇲🇦</span> <em>F darija, ma kaynsh "to be" — "Ana Fattah" is enough! But in English you NEED it: "I <strong>am</strong> Fattah."</em>
+</div>
+<!-- Practice Exercises -->
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">✏️ Fill in the Blank — am / is / are</div>
+<p class="ex-item"><strong>1.</strong> I ___ from Morocco.</p>
+<input class="answer-inline" data-id="grammar-1" placeholder="am / is / are" type="text"/>
+<p class="ex-item" style="margin-top:8px;"><strong>2.</strong> She ___ a headmistress.</p>
+<input class="answer-inline" data-id="grammar-2" placeholder="am / is / are" type="text"/>
+<p class="ex-item" style="margin-top:8px;"><strong>3.</strong> We ___ football fans.</p>
+<input class="answer-inline" data-id="grammar-3" placeholder="am / is / are" type="text"/>
+<p class="ex-item" style="margin-top:8px;"><strong>4.</strong> They ___ at the university.</p>
+<input class="answer-inline" data-id="grammar-4" placeholder="am / is / are" type="text"/>
+<p class="ex-item" style="margin-top:8px;"><strong>5.</strong> He ___ an engineering student.</p>
+<input class="answer-inline" data-id="grammar-5" placeholder="am / is / are" type="text"/>
+<p class="ex-item" style="margin-top:8px;"><strong>6.</strong> You ___ my best friend.</p>
+<input class="answer-inline" data-id="grammar-6" placeholder="am / is / are" type="text"/>
+<p class="ex-item" style="margin-top:8px;"><strong>7.</strong> It ___ a beautiful day in Mehdya.</p>
+<input class="answer-inline" data-id="grammar-7" placeholder="am / is / are" type="text"/>
+<p class="ex-item" style="margin-top:8px;"><strong>8.</strong> Morocco ___ ranked 8th in the world!</p>
+<input class="answer-inline" data-id="grammar-8" placeholder="am / is / are" type="text"/>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">🔄 Replace the Name with the Correct Pronoun</div>
+<p class="ex-item" style="margin-bottom:8px;"><em>Example: <strong>Lamia</strong> is kind. → <strong>She</strong> is kind.</em></p>
+<p class="ex-item"><strong>1.</strong> <strong>Saad</strong> lives in Hungary. → ___ lives in Hungary.</p>
+<input class="answer-inline" data-id="replace-1" placeholder="He / She / They..." type="text"/>
+<p class="ex-item" style="margin-top:8px;"><strong>2.</strong> <strong>Fattah and Lamia</strong> love their sons. → ___ love their sons.</p>
+<input class="answer-inline" data-id="replace-2" placeholder="He / She / They..." type="text"/>
+<p class="ex-item" style="margin-top:8px;"><strong>3.</strong> <strong>The painting</strong> is beautiful. → ___ is beautiful.</p>
+<input class="answer-inline" data-id="replace-3" placeholder="He / She / It..." type="text"/>
+<p class="ex-item" style="margin-top:8px;"><strong>4.</strong> <strong>Anas</strong> studies engineering. → ___ studies engineering.</p>
+<input class="answer-inline" data-id="replace-4" placeholder="He / She / They..." type="text"/>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 1</span>
+<span>Page 2 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 3 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 4: GAME ZONE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">4</div>
-      <div>
-        <div class="step-name">Step 4 — 🎮 Game Zone</div>
-        <div class="step-title">Pronoun Quick-Fire Quiz!</div>
-      </div>
-      <div class="step-time">10 min</div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 4: GAME ZONE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">4</div>
+<div>
+<div class="step-name">Step 4 — 🎮 Game Zone</div>
+<div class="step-title">Pronoun Quick-Fire Quiz!</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Test your pronoun knowledge in a fun, fast-paced interactive quiz!</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Let Baba play this solo first — he clicks the answers himself. Celebrate every correct answer with energy! If he gets one wrong, quickly explain why. The goal is 8/10 or higher. If he scores below, play again until he gets it. Make it competitive and fun — "Yallah Baba, let's beat your score!"
+    </div></div></div>
+<div class="game-container" id="quiz-game">
+<div class="game-title">🏆 PRONOUN QUIZ — Pick the Right Pronoun!</div>
+<div id="quiz-question" style="font-size:15px; font-weight:700; text-align:center; margin:12px 0; min-height:40px;"></div>
+<div id="quiz-options" style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:10px;"></div>
+<div class="game-feedback" id="quiz-feedback"></div>
+<div class="game-score" id="quiz-score"></div>
+<div style="text-align:center; margin-top:12px;">
+<button class="game-btn" id="quiz-next" onclick="nextQuestion()" style="display:none;">Next Question →</button>
+<button class="game-btn" id="quiz-restart" onclick="startQuiz()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
+</div>
+</div>
+<div class="darija-box" style="margin-top:10px;">
+<span class="flag">🇲🇦</span> <strong>"Qtra qtra taymtla l7awed!"</strong> — Drop by drop, the pool fills up. Each correct answer is one more drop, Baba! 💧
     </div>
-    <div class="objective">Objective: Test your pronoun knowledge in a fun, fast-paced interactive quiz!</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Let Baba play this solo first — he clicks the answers himself. Celebrate every correct answer with energy! If he gets one wrong, quickly explain why. The goal is 8/10 or higher. If he scores below, play again until he gets it. Make it competitive and fun — "Yallah Baba, let's beat your score!"
-    </div>
-
-    <div class="game-container" id="quiz-game">
-      <div class="game-title">🏆 PRONOUN QUIZ — Pick the Right Pronoun!</div>
-      <div id="quiz-question" style="font-size:15px; font-weight:700; text-align:center; margin:12px 0; min-height:40px;"></div>
-      <div id="quiz-options" style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:10px;"></div>
-      <div id="quiz-feedback" class="game-feedback"></div>
-      <div id="quiz-score" class="game-score"></div>
-      <div style="text-align:center; margin-top:12px;">
-        <button class="game-btn" id="quiz-next" onclick="nextQuestion()" style="display:none;">Next Question →</button>
-        <button class="game-btn" id="quiz-restart" onclick="startQuiz()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
-      </div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px;">
-      <span class="flag">🇲🇦</span> <strong>"Qtra qtra taymtla l7awed!"</strong> — Drop by drop, the pool fills up. Each correct answer is one more drop, Baba! 💧
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 5: SPEAKING CHALLENGE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">5</div>
-      <div>
-        <div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
-        <div class="step-title">Describe Your Family — In English!</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Talk about your family for 2 minutes using all the pronouns you've learned.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This is the production moment. Set a timer for 2 minutes. Let him speak freely. Note errors but don't interrupt. After he finishes, give 3 compliments and 2 corrections. Focus on pronoun usage — does he use "he" for Lamia? Does he forget "it"? Does he avoid "we"? Encourage longer sentences: "I am proud of him BECAUSE he is hardworking."
-    </div>
-
-    <div class="student-note">
+</div>
+<div class="divider"></div>
+<!-- STEP 5: SPEAKING CHALLENGE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">5</div>
+<div>
+<div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
+<div class="step-title">Describe Your Family — In English!</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Talk about your family for 2 minutes using all the pronouns you've learned.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This is the production moment. Set a timer for 2 minutes. Let him speak freely. Note errors but don't interrupt. After he finishes, give 3 compliments and 2 corrections. Focus on pronoun usage — does he use "he" for Lamia? Does he forget "it"? Does he avoid "we"? Encourage longer sentences: "I am proud of him BECAUSE he is hardworking."
+    </div></div></div>
+<div class="student-note">
       🎓 <strong>Your Mission:</strong> Talk about your family for 2 minutes! Use <strong>I, you, he, she, we, they</strong>. Try to say at least <strong>8 sentences</strong>. Don't worry about mistakes — <em>l'mouhim tjreb!</em> (the important thing is to try!)
     </div>
-
-    <div class="gold-banner">
-      <p><strong>🏆 Speaking Challenge — "My Family"</strong></p>
-      <p style="margin-top:6px;">Describe each person in your family using pronouns. Try to include:</p>
-      <ul style="margin-top:6px; margin-left:16px; font-size:13px;">
-        <li>✅ <strong>I</strong> am... (about yourself)</li>
-        <li>✅ <strong>She</strong> is... (about Lamia)</li>
-        <li>✅ <strong>He</strong> is... (about Saad and/or Anas)</li>
-        <li>✅ <strong>We</strong> are... (about your family together)</li>
-        <li>✅ <strong>They</strong> are... (about your sons, or the football team!)</li>
-      </ul>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">📝 Write your mini-speech here (or take notes after speaking)</div>
-      <textarea class="answer-area" data-id="speaking-notes" style="min-height:100px;" placeholder="I am Fattah. I am from Morocco. She is my wife Lamia. She is... He is my son Saad. He lives in..."></textarea>
-    </div>
-
-    <div class="exercise" style="margin-top:8px;">
-      <div class="ex-label">🌟 Self-Evaluation — How did you do?</div>
-      <p class="ex-item">Rate yourself honestly:</p>
-      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-top:6px; text-align:center; font-size:12px;">
-        <div style="background:#E8F5F5; padding:8px; border-radius:8px; cursor:pointer;">😊<br><strong>Good!</strong><br>I used most pronouns</div>
-        <div style="background:#FFF8E7; padding:8px; border-radius:8px; cursor:pointer;">🤔<br><strong>OK</strong><br>I need more practice</div>
-        <div style="background:#FFEBEE; padding:8px; border-radius:8px; cursor:pointer;">😅<br><strong>Hard!</strong><br>I forgot some pronouns</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 1</span>
-    <span>Page 3 of 4</span>
-  </div>
+<div class="gold-banner">
+<p><strong>🏆 Speaking Challenge — "My Family"</strong></p>
+<p style="margin-top:6px;">Describe each person in your family using pronouns. Try to include:</p>
+<ul style="margin-top:6px; margin-left:16px; font-size:13px;">
+<li>✅ <strong>I</strong> am... (about yourself)</li>
+<li>✅ <strong>She</strong> is... (about Lamia)</li>
+<li>✅ <strong>He</strong> is... (about Saad and/or Anas)</li>
+<li>✅ <strong>We</strong> are... (about your family together)</li>
+<li>✅ <strong>They</strong> are... (about your sons, or the football team!)</li>
+</ul>
 </div>
-
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">📝 Write your mini-speech here (or take notes after speaking)</div>
+<textarea class="answer-area" data-id="speaking-notes" placeholder="I am Fattah. I am from Morocco. She is my wife Lamia. She is... He is my son Saad. He lives in..." style="min-height:100px;"></textarea>
+</div>
+<div class="exercise" style="margin-top:8px;">
+<div class="ex-label">🌟 Self-Evaluation — How did you do?</div>
+<p class="ex-item">Rate yourself honestly:</p>
+<div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-top:6px; text-align:center; font-size:12px;">
+<div style="background:#E8F5F5; padding:8px; border-radius:8px; cursor:pointer;">😊<br/><strong>Good!</strong><br/>I used most pronouns</div>
+<div style="background:#FFF8E7; padding:8px; border-radius:8px; cursor:pointer;">🤔<br/><strong>OK</strong><br/>I need more practice</div>
+<div style="background:#FFEBEE; padding:8px; border-radius:8px; cursor:pointer;">😅<br/><strong>Hard!</strong><br/>I forgot some pronouns</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 1</span>
+<span>Page 3 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 4 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 6: BOSS LEVEL -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">6</div>
-      <div>
-        <div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
-        <div class="step-title">The Morocco Match Report!</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Use pronouns in a more complex scenario — describing a football match!</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This is the stretch exercise. It's deliberately harder — mixing pronouns in a real-world scenario he LOVES. Read the scenario together, then have him fill the gaps. If he struggles, give the first letter as a hint. Then challenge him to describe a REAL recent match using the same pattern.
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">⚽ Fill in the Pronouns — Morocco vs. Brazil Match Report</div>
-      <div style="background:var(--cream); border-radius:8px; padding:12px; line-height:2; font-size:13px; margin-top:6px;">
-        <p>Morocco played against Brazil yesterday. <input type="text" class="answer-inline" data-id="boss-1" style="width:60px;" placeholder="___"> was an amazing match!</p>
-        <p style="margin-top:4px;">Hakimi played very well. <input type="text" class="answer-inline" data-id="boss-2" style="width:60px;" placeholder="___"> scored a goal in the first half.</p>
-        <p style="margin-top:4px;">The Brazilian fans were loud, but <input type="text" class="answer-inline" data-id="boss-3" style="width:60px;" placeholder="___"> could not stop our team.</p>
-        <p style="margin-top:4px;">Lamia and <input type="text" class="answer-inline" data-id="boss-4" style="width:60px;" placeholder="___"> watched the game at home. <input type="text" class="answer-inline" data-id="boss-5" style="width:60px;" placeholder="___"> were so happy!</p>
-        <p style="margin-top:4px;">After the game, <input type="text" class="answer-inline" data-id="boss-6" style="width:60px;" placeholder="___"> called Saad. <input type="text" class="answer-inline" data-id="boss-7" style="width:60px;" placeholder="___"> said: "Baba, <input type="text" class="answer-inline" data-id="boss-8" style="width:60px;" placeholder="___"> am so proud of our team!"</p>
-        <p style="margin-top:4px;"><input type="text" class="answer-inline" data-id="boss-9" style="width:60px;" placeholder="___"> is the best national team in Africa. And <input type="text" class="answer-inline" data-id="boss-10" style="width:60px;" placeholder="___"> believe <input type="text" class="answer-inline" data-id="boss-11" style="width:60px;" placeholder="___"> can win the World Cup! 🇲🇦🏆</p>
-      </div>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">🗣️ Bonus Challenge — Describe a Real Match!</div>
-      <p class="ex-item">Think of a recent Morocco match you watched. Write 5 sentences about it using at least 4 different pronouns:</p>
-      <textarea class="answer-area" data-id="boss-writing" style="min-height:80px;" placeholder="Morocco played against... He scored... We watched... They were..."></textarea>
-    </div>
-
-    <div class="darija-box">
-      <span class="flag">🇲🇦</span> <strong>"Kul youm ou t3alem!"</strong> — Every day, learn something new. Today you learned how to talk about people in English. Baba, you're doing incredible! <strong>Dima Maghrib! 🇲🇦⚽</strong>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 7: HOMEWORK -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">7</div>
-      <div>
-        <div class="step-name">Step 7 — 📚 Homework & Fun Challenge</div>
-        <div class="step-title">Practice Makes Perfect!</div>
-      </div>
-    </div>
-
-    <div class="body">
-      <div class="hw-item">
-        <div class="hw-num">1</div>
-        <div>
-          <strong>Writing Task — "My Best Friend"</strong> (50-80 words)<br>
-          <span style="font-size:12px; color:var(--gray);">Write a short paragraph about your best friend (or a close family member). Use at least 5 different pronouns (I, he/she, we, they, it). Include: their name, where they live, what they do, and why you like them.</span>
-          <textarea class="answer-area" data-id="hw-1" style="min-height:80px; margin-top:6px;" placeholder="My best friend is... He/She is... We always..."></textarea>
-        </div>
-      </div>
-
-      <div class="hw-item">
-        <div class="hw-num">2</div>
-        <div>
-          <strong>Speaking Task — "The Pronoun Walk"</strong> (5 minutes)<br>
-          <span style="font-size:12px; color:var(--gray);">Walk around your house in Mehdya. Point at things and people and say sentences out loud:
-          <br>• Point at yourself → "I am in the kitchen"
-          <br>• Point at a painting → "It is a beautiful painting"
-          <br>• Think of Lamia → "She is the best wife"
-          <br>• Look at the forest outside → "It is so green!"
-          <br>Try to make at least 10 sentences!</span>
-          <textarea class="answer-area" data-id="hw-2" style="min-height:60px; margin-top:6px;" placeholder="Write down the sentences you practiced..."></textarea>
-        </div>
-      </div>
-
-      <div class="hw-item">
-        <div class="hw-num">3</div>
-        <div>
-          <strong>Fun Challenge — "Football Commentary"</strong> 🎙️⚽<br>
-          <span style="font-size:12px; color:var(--gray);">Watch a short football highlight (2-3 minutes). Try to describe what happens using English pronouns:
-          <br>"<strong>He</strong> passes the ball. <strong>They</strong> attack! <strong>He</strong> shoots! <strong>It</strong> is a goal! <strong>We</strong> are happy!"
-          <br>Record yourself on your phone if you can!</span>
-          <textarea class="answer-area" data-id="hw-3" style="min-height:60px; margin-top:6px;" placeholder="Write your commentary here..."></textarea>
-        </div>
-      </div>
-    </div>
-
-    <div class="expressions-box" style="margin-top:10px;">
-      <div class="exp-title">📋 Lesson 1 Summary — What You Learned Today</div>
-      <div class="exp-item">✅ 7 personal pronouns: I, you, he, she, it, we, they</div>
-      <div class="exp-item">✅ "To be" conjugation: am, is, are</div>
-      <div class="exp-item">✅ How to describe people and things using pronouns</div>
-      <div class="exp-item">✅ English has only 1 "you" — simpler than French & Darija!</div>
-      <div class="exp-item">✅ "To be" is required in English (unlike Darija!)</div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
-      <span class="flag">🌟</span> <strong>Message from your teacher (your son!):</strong><br>
-      <em>Baba, you completed Lesson 1! I'm proud of you. L3lm nour — Knowledge is light, and you're shining! See you in Lesson 2 where we learn about Articles. Yallah, on continue! 💪🇲🇦</em>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 1</span>
-    <span>Page 4 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 6: BOSS LEVEL -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">6</div>
+<div>
+<div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
+<div class="step-title">The Morocco Match Report!</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Use pronouns in a more complex scenario — describing a football match!</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This is the stretch exercise. It's deliberately harder — mixing pronouns in a real-world scenario he LOVES. Read the scenario together, then have him fill the gaps. If he struggles, give the first letter as a hint. Then challenge him to describe a REAL recent match using the same pattern.
+    </div></div></div>
+<div class="exercise">
+<div class="ex-label">⚽ Fill in the Pronouns — Morocco vs. Brazil Match Report</div>
+<div style="background:var(--cream); border-radius:8px; padding:12px; line-height:2; font-size:13px; margin-top:6px;">
+<p>Morocco played against Brazil yesterday. <input class="answer-inline" data-id="boss-1" placeholder="___" style="width:60px;" type="text"/> was an amazing match!</p>
+<p style="margin-top:4px;">Hakimi played very well. <input class="answer-inline" data-id="boss-2" placeholder="___" style="width:60px;" type="text"/> scored a goal in the first half.</p>
+<p style="margin-top:4px;">The Brazilian fans were loud, but <input class="answer-inline" data-id="boss-3" placeholder="___" style="width:60px;" type="text"/> could not stop our team.</p>
+<p style="margin-top:4px;">Lamia and <input class="answer-inline" data-id="boss-4" placeholder="___" style="width:60px;" type="text"/> watched the game at home. <input class="answer-inline" data-id="boss-5" placeholder="___" style="width:60px;" type="text"/> were so happy!</p>
+<p style="margin-top:4px;">After the game, <input class="answer-inline" data-id="boss-6" placeholder="___" style="width:60px;" type="text"/> called Saad. <input class="answer-inline" data-id="boss-7" placeholder="___" style="width:60px;" type="text"/> said: "Baba, <input class="answer-inline" data-id="boss-8" placeholder="___" style="width:60px;" type="text"/> am so proud of our team!"</p>
+<p style="margin-top:4px;"><input class="answer-inline" data-id="boss-9" placeholder="___" style="width:60px;" type="text"/> is the best national team in Africa. And <input class="answer-inline" data-id="boss-10" placeholder="___" style="width:60px;" type="text"/> believe <input class="answer-inline" data-id="boss-11" placeholder="___" style="width:60px;" type="text"/> can win the World Cup! 🇲🇦🏆</p>
+</div>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">🗣️ Bonus Challenge — Describe a Real Match!</div>
+<p class="ex-item">Think of a recent Morocco match you watched. Write 5 sentences about it using at least 4 different pronouns:</p>
+<textarea class="answer-area" data-id="boss-writing" placeholder="Morocco played against... He scored... We watched... They were..." style="min-height:80px;"></textarea>
+</div>
+<div class="darija-box">
+<span class="flag">🇲🇦</span> <strong>"Kul youm ou t3alem!"</strong> — Every day, learn something new. Today you learned how to talk about people in English. Baba, you're doing incredible! <strong>Dima Maghrib! 🇲🇦⚽</strong>
+</div>
+</div>
+<div class="divider"></div>
+<!-- STEP 7: HOMEWORK -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">7</div>
+<div>
+<div class="step-name">Step 7 — 📚 Homework &amp; Fun Challenge</div>
+<div class="step-title">Practice Makes Perfect!</div>
+</div>
+</div>
+<div class="body">
+<div class="hw-item">
+<div class="hw-num">1</div>
+<div>
+<strong>Writing Task — "My Best Friend"</strong> (50-80 words)<br/>
+<span style="font-size:12px; color:var(--gray);">Write a short paragraph about your best friend (or a close family member). Use at least 5 different pronouns (I, he/she, we, they, it). Include: their name, where they live, what they do, and why you like them.</span>
+<textarea class="answer-area" data-id="hw-1" placeholder="My best friend is... He/She is... We always..." style="min-height:80px; margin-top:6px;"></textarea>
+</div>
+</div>
+<div class="hw-item">
+<div class="hw-num">2</div>
+<div>
+<strong>Speaking Task — "The Pronoun Walk"</strong> (5 minutes)<br/>
+<span style="font-size:12px; color:var(--gray);">Walk around your house in Mehdya. Point at things and people and say sentences out loud:
+          <br/>• Point at yourself → "I am in the kitchen"
+          <br/>• Point at a painting → "It is a beautiful painting"
+          <br/>• Think of Lamia → "She is the best wife"
+          <br/>• Look at the forest outside → "It is so green!"
+          <br/>Try to make at least 10 sentences!</span>
+<textarea class="answer-area" data-id="hw-2" placeholder="Write down the sentences you practiced..." style="min-height:60px; margin-top:6px;"></textarea>
+</div>
+</div>
+<div class="hw-item">
+<div class="hw-num">3</div>
+<div>
+<strong>Fun Challenge — "Football Commentary"</strong> 🎙️⚽<br/>
+<span style="font-size:12px; color:var(--gray);">Watch a short football highlight (2-3 minutes). Try to describe what happens using English pronouns:
+          <br/>"<strong>He</strong> passes the ball. <strong>They</strong> attack! <strong>He</strong> shoots! <strong>It</strong> is a goal! <strong>We</strong> are happy!"
+          <br/>Record yourself on your phone if you can!</span>
+<textarea class="answer-area" data-id="hw-3" placeholder="Write your commentary here..." style="min-height:60px; margin-top:6px;"></textarea>
+</div>
+</div>
+</div>
+<div class="expressions-box" style="margin-top:10px;">
+<div class="exp-title">📋 Lesson 1 Summary — What You Learned Today</div>
+<div class="exp-item">✅ 7 personal pronouns: I, you, he, she, it, we, they</div>
+<div class="exp-item">✅ "To be" conjugation: am, is, are</div>
+<div class="exp-item">✅ How to describe people and things using pronouns</div>
+<div class="exp-item">✅ English has only 1 "you" — simpler than French &amp; Darija!</div>
+<div class="exp-item">✅ "To be" is required in English (unlike Darija!)</div>
+</div>
+<div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
+<span class="flag">🌟</span> <strong>Message from your teacher (your son!):</strong><br/>
+<em>Baba, you completed Lesson 1! I'm proud of you. L3lm nour — Knowledge is light, and you're shining! See you in Lesson 2 where we learn about Articles. Yallah, on continue! 💪🇲🇦</em>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 1</span>
+<span>Page 4 of 4</span>
+</div>
+</div>
 <!-- CONGRATULATIONS PAGE -->
-<div class="page congratulations-page">
-  <img src="../Congratulations.png" alt="Congratulations" class="congrats-img">
-</div>
-
+<div class="page congratulations-page"><div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%;"><img alt="Congratulations" class="congrats-img" src="../Congratulations.png" style="max-height: 180px; object-fit: contain;"/><div class="polaroid-card"><img class="polaroid-img" src="../Mama_Avatar/Family.jfif"/><div class="polaroid-caption">Bravo Baba! 🇲🇦🏆</div><div style="font-family:'Inter', sans-serif; font-size:11.5px; margin-top:8px; color:var(--gray); font-weight:600; line-height:1.4;">"Knowledge is light, Baba! We are all incredibly proud of you for completing Lesson 1! Keep going! 💪❤️"</div></div></div></div>
 <!-- SAVE STATUS -->
 <div class="save-status" id="save-status">✓ Progress saved</div>
-
 <script>
 const STORAGE_KEY = 'ts-lesson-fattah-personal-pronouns';
 
@@ -682,16 +756,16 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 // ==================== QUIZ GAME ====================
 const quizData = [
-  { q: "Lamia is a headmistress. ___ is very kind.", opts: ["He","She","They","It"], ans: 1 },
-  { q: "Saad lives in Hungary. ___ is a teacher.", opts: ["She","It","He","We"], ans: 2 },
-  { q: "The painting is beautiful. ___ is colorful.", opts: ["He","She","It","They"], ans: 2 },
-  { q: "Fattah and Lamia watch football. ___ love Morocco.", opts: ["He","She","We","They"], ans: 3 },
-  { q: "___ am from Mehdya.", opts: ["He","I","She","You"], ans: 1 },
-  { q: "Anas studies at ENSA. ___ wants to be an engineer.", opts: ["She","They","It","He"], ans: 3 },
-  { q: "My family is great. ___ are all football fans.", opts: ["It","He","We","She"], ans: 2 },
-  { q: "___ are my student today, Baba!", opts: ["He","They","She","You"], ans: 3 },
-  { q: "The match was exciting. ___ was a great game!", opts: ["He","She","It","They"], ans: 2 },
-  { q: "Saad and Anas are brothers. ___ are both students.", opts: ["We","He","They","She"], ans: 2 }
+  { q: "Lamia is a headmistress. ___ is very kind.", opts: ["He","She","They","It"], ans: 1, img: "../Mama_Avatar/Mama_Main_Avatar.jfif" },
+  { q: "Saad lives in Hungary. ___ is a teacher.", opts: ["She","It","He","We"], ans: 2, img: "../Saad_Avatar/Saad_Main_Avatar.jfif" },
+  { q: "The painting is beautiful. ___ is colorful.", opts: ["He","She","It","They"], ans: 2, img: "" },
+  { q: "Fattah and Lamia watch football. ___ love Morocco.", opts: ["He","She","We","They"], ans: 3, img: "../Mama_Avatar/Family.jfif" },
+  { q: "___ am from Mehdya.", opts: ["He","I","She","You"], ans: 1, img: "../Baba_Avatar/baba_main_avatar.jfif" },
+  { q: "Anas studies at ENSA. ___ wants to be an engineer.", opts: ["She","They","It","He"], ans: 3, img: "../Anas_Avatar/Anas_Main_Avatar.jfif" },
+  { q: "My family is great. ___ are all football fans.", opts: ["It","He","We","She"], ans: 2, img: "../Mama_Avatar/Family.jfif" },
+  { q: "___ are my student today, Baba!", opts: ["He","They","She","You"], ans: 3, img: "../Saad_Avatar/Saad_Main_Avatar.jfif" },
+  { q: "The match was exciting. ___ was a great game!", opts: ["He","She","It","They"], ans: 2, img: "../Baba_Avatar/baba_morocco.jfif" },
+  { q: "Saad and Anas are brothers. ___ are both students.", opts: ["We","He","They","She"], ans: 2, img: "../Mama_Avatar/Family.jfif" }
 ];
 
 let currentQ = 0;
@@ -715,7 +789,8 @@ function showQuestion() {
   }
   answered = false;
   const q = quizData[currentQ];
-  document.getElementById('quiz-question').innerHTML = `<span style="color:var(--gray);font-size:11px;">Question ${currentQ+1} of ${quizData.length}</span><br>${q.q}`;
+  const qImg = q.img ? `<img src="${q.img}" class="ts-avatar-circle" style="width:80px; height:80px; margin: 10px auto; display:block; border: 3px solid var(--teal);">` : '';
+  document.getElementById('quiz-question').innerHTML = `<span style="color:var(--gray);font-size:11px;">Question ${currentQ+1} of ${quizData.length}</span><br>${qImg}${q.q}`;
   const optDiv = document.getElementById('quiz-options');
   optDiv.innerHTML = '';
   q.opts.forEach((opt, i) => {

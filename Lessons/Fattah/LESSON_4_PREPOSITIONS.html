@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fattah — Prepositions & Quantifiers | Talksmiths</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fattah — Prepositions &amp; Quantifiers | Talksmiths</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Playfair+Display:ital,wght@0,800;1,700&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --teal: #007575; --gold: #D4A843; --navy: #1A2744;
@@ -124,469 +125,516 @@
   @media screen and (max-width: 768px) {
     .vocab-grid { grid-template-columns: 1fr !important; }
   }
+
+  /* --- Talksmiths Avatar Integration Styles --- */
+  .ts-avatar-circle {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 2px solid var(--teal);
+    object-fit: cover;
+    object-position: center 20%;
+    box-shadow: 0 4px 8px rgba(0, 117, 117, 0.15);
+    flex-shrink: 0;
+  }
+  .teacher-chat-bubble {
+    display: flex;
+    gap: 14px;
+    background: #FFFBF2;
+    border: 1px solid #EAD295;
+    border-radius: 14px;
+    padding: 14px;
+    margin: 12px 0;
+    align-items: flex-start;
+    box-shadow: 0 2px 10px rgba(212, 168, 67, 0.05);
+    break-inside: avoid;
+  }
+  .chat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: left;
+  }
+  .chat-header {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--teal);
+  }
+  .chat-text {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #614B15;
+  }
+  .family-reading-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+    break-inside: avoid;
+  }
+  .family-member-card {
+    display: flex;
+    gap: 14px;
+    background: #FDFDFD;
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 14px;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: left;
+  }
+  .family-member-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  }
+  .polaroid-card {
+    background: var(--white);
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 16px 16px 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    text-align: center;
+    max-width: 340px;
+    margin: 20px auto;
+    transform: rotate(-1.5deg);
+    transition: transform 0.3s ease;
+    display: block !important;
+  }
+  .polaroid-card:hover {
+    transform: rotate(0deg) scale(1.03);
+  }
+  .polaroid-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #EAEAEA;
+  }
+  .polaroid-caption {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 700;
+    margin-top: 14px;
+    color: var(--navy);
+  }
+  @media screen and (max-width: 1200px) {
+    .family-reading-grid { grid-template-columns: 1fr !important; }
+    .family-member-card[style*="grid-column: span 2"] { grid-column: span 1 !important; }
+  }
+  @media print {
+    .ts-avatar-circle, 
+    .teacher-chat-bubble, 
+    .polaroid-card { 
+      display: none !important; 
+    }
+  }
 </style>
 </head>
 <body class="student-mode">
-
 <!-- VIEW TOGGLE -->
 <div class="view-toggle">
-  <button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
-  <button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
+<button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
+<button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
 </div>
 <button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
-
 <!-- ==================== PAGE 1 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-  <div class="logo">Talksmiths — Lesson Engine™</div>
-  <h1>Prepositions & Quantifiers</h1>
-  <div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 4</div>
-  <div class="badges">
-    <span class="badge badge-teal">A1 — Beginner</span>
-    <span class="badge badge-gold">60 min</span>
-    <span class="badge badge-gray">Grammar Foundations</span>
-    <span class="badge badge-gray">Lesson 4</span>
-  </div>
-  <div class="divider"></div>
-
-  <!-- CFO-ROW: Step 1 (left) + Baba's Notebook (right) -->
-  <div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
-
-      <!-- STEP 1: WARM-UP -->
-      <div class="step">
-        <div class="step-header">
-          <div class="step-num">1</div>
-          <div>
-            <div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
-            <div class="step-title">Where is it?</div>
-          </div>
-          <div class="step-time">8 min</div>
-        </div>
-        <div class="objective">Objective: Describe the location of objects and talk about quantities.</div>
-
-        <div class="student-note">
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<div class="logo">Talksmiths — Lesson Engine™</div>
+<h1>Prepositions &amp; Quantifiers</h1>
+<div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 4</div>
+<div class="badges">
+<span class="badge badge-teal">A1 — Beginner</span>
+<span class="badge badge-gold">60 min</span>
+<span class="badge badge-gray">Grammar Foundations</span>
+<span class="badge badge-gray">Lesson 4</span>
+</div>
+<div class="divider"></div>
+<!-- CFO-ROW: Step 1 (left) + Baba's Notebook (right) -->
+<div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
+<!-- STEP 1: WARM-UP -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">1</div>
+<div>
+<div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
+<div class="step-title">Where is it?</div>
+</div>
+<div class="step-time">8 min</div>
+</div>
+<div class="objective">Objective: Describe the location of objects and talk about quantities.</div>
+<div class="student-note">
           🎓 <strong>Student Strategy:</strong> Look at your desk or room right now. Put a pen on a book. Then put it in a cup. How do we describe this in English?
         </div>
-
-        <div class="teacher-note">
-          📋 <strong>Teacher Note:</strong> Prepositions of place (in, on, at) are very confusing for French/Arabic speakers because "f" or "à" is used for almost everything. Be very visual. Put your phone ON the desk. Put a pen IN a bag. Show him the difference clearly.
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Prepositions of place (in, on, at) are very confusing for French/Arabic speakers because "f" or "à" is used for almost everything. Be very visual. Put your phone ON the desk. Put a pen IN a bag. Show him the difference clearly.
+        </div></div></div>
+<div class="exercise">
+<div class="ex-label">🗣️ Speaking Warm-Up — Look Around You</div>
+<p class="ex-item">Fill in the missing words (in, on, or at):</p>
+<div style="display:grid; gap:8px; margin-top:6px;">
+<div><strong>1.</strong> My phone is <input class="answer-inline" data-id="warmup-1" placeholder="in/on/at" style="width:50px;" type="text"/> the table.</div>
+<div><strong>2.</strong> I am <input class="answer-inline" data-id="warmup-2" placeholder="in/on/at" style="width:50px;" type="text"/> home.</div>
+<div><strong>3.</strong> The water is <input class="answer-inline" data-id="warmup-3" placeholder="in/on/at" style="width:50px;" type="text"/> the glass.</div>
+</div>
+</div>
+<div class="darija-box">
+<span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> In Darija, we say "f ddar" (at home), "f lkas" (in the glass), and sometimes "f tabla" (on the table). We use <strong>"f"</strong> for almost everything! But English has 3 specific words: <strong>in, on, at</strong>. Let's learn when to use them!
         </div>
-
-        <div class="exercise">
-          <div class="ex-label">🗣️ Speaking Warm-Up — Look Around You</div>
-          <p class="ex-item">Fill in the missing words (in, on, or at):</p>
-          <div style="display:grid; gap:8px; margin-top:6px;">
-            <div><strong>1.</strong> My phone is <input type="text" class="answer-inline" data-id="warmup-1" style="width:50px;" placeholder="in/on/at"> the table.</div>
-            <div><strong>2.</strong> I am <input type="text" class="answer-inline" data-id="warmup-2" style="width:50px;" placeholder="in/on/at"> home.</div>
-            <div><strong>3.</strong> The water is <input type="text" class="answer-inline" data-id="warmup-3" style="width:50px;" placeholder="in/on/at"> the glass.</div>
-          </div>
-        </div>
-
-        <div class="darija-box">
-          <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> In Darija, we say "f ddar" (at home), "f lkas" (in the glass), and sometimes "f tabla" (on the table). We use <strong>"f"</strong> for almost everything! But English has 3 specific words: <strong>in, on, at</strong>. Let's learn when to use them!
-        </div>
-      </div>
-    </div>
-
-    <!-- BABA'S NOTEBOOK (right column) -->
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
-      <div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
-        <div class="step-header" style="margin-bottom:6px;">
-          <div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
-        </div>
-        <div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
-          <p style="font-size:12px; line-height:1.4; color:var(--gray);">
+</div>
+</div>
+<!-- BABA'S NOTEBOOK (right column) -->
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
+<div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
+<div class="step-header" style="margin-bottom:6px;">
+<div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
+</div>
+<div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
+<p style="font-size:12px; line-height:1.4; color:var(--gray);">
             Prepositions are tricky! Use this space to write down examples that help you remember.
           </p>
-          <ul style="font-size:12px; margin-left:16px; line-height:1.4; color:var(--navy); list-style-type:square;">
-            <li>IN = Inside a box / room</li>
-            <li>ON = Touching a surface</li>
-            <li>AT = A specific point or place</li>
-          </ul>
-          <textarea class="answer-area" data-id="baba-notebook-p1" style="flex:1; min-height:180px; font-size:12px;" placeholder="Notes / ملاحظات / Notes en français..."></textarea>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- VOCABULARY SECTION -->
-  <div style="column-span:all !important; margin-top:8px;">
-    <div class="step">
-      <div class="step-header">
-        <div class="step-name">📖 Prepositions & Quantifiers Vocabulary</div>
-      </div>
-
-      <div class="body">
-        <p>These small words tell us <strong>Where, When,</strong> and <strong>How Much</strong>.</p>
-      </div>
-
-      <div class="vocab-grid">
-        <div class="vocab-card">
-          <div class="vocab-term">In → ف (الداخل) → Dans / En</div>
-          <div class="vocab-def">Used for enclosed spaces, months, years, and countries.</div>
-          <div class="vocab-ex">"<strong>In</strong> the box" — "<strong>In</strong> Morocco" — "<strong>In</strong> July"</div>
-          <div class="vocab-bridge">🇲🇦 Ldakhl / F / 🇫🇷 Dans / En</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">On → فوق → Sur / Le</div>
-          <div class="vocab-def">Used for surfaces and days of the week.</div>
-          <div class="vocab-ex">"<strong>On</strong> the table" — "<strong>On</strong> Sunday"</div>
-          <div class="vocab-bridge">🇲🇦 Fou9 / 🇫🇷 Sur / (Le dimanche)</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">At → ف (المكان) → À</div>
-          <div class="vocab-def">Used for specific points, events, and times.</div>
-          <div class="vocab-ex">"<strong>At</strong> the door" — "<strong>At</strong> 8:00 PM" — "<strong>At</strong> home"</div>
-          <div class="vocab-bridge">🇲🇦 F / 🇫🇷 À</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Some → شوية / بعض → Du / De la / Quelques</div>
-          <div class="vocab-def">An unspecified quantity. Used in positive (+) sentences.</div>
-          <div class="vocab-ex">"I have <strong>some</strong> books." — "I want <strong>some</strong> water."</div>
-          <div class="vocab-bridge">🇲🇦 Shwiya dial / 🇫🇷 Un peu de / Quelques</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Any → حتى شي / واش كاين → De / Aucun(e)</div>
-          <div class="vocab-def">Used in negative (-) sentences and questions (?).</div>
-          <div class="vocab-ex">"Do you have <strong>any</strong> books?" — "I don't have <strong>any</strong> water."</div>
-          <div class="vocab-bridge">🇲🇦 7ta shi / Wesh kayn shi / 🇫🇷 Aucun(e) / De</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Many → بزاف (يتحسب) → Beaucoup de</div>
-          <div class="vocab-def">Used for things you can count (Plural nouns).</div>
-          <div class="vocab-ex">"I have <strong>many</strong> paintings." (1, 2, 3 paintings)</div>
-          <div class="vocab-bridge">🇲🇦 Bezzaf dial (for countable) / 🇫🇷 Beaucoup de</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Much → بزاف (مايتحسبش) → Beaucoup de</div>
-          <div class="vocab-def">Used for things you CANNOT count (Uncountable nouns). Usually in negative/questions.</div>
-          <div class="vocab-ex">"I don't have <strong>much</strong> time." (You can't say "1 time, 2 times")</div>
-          <div class="vocab-bridge">🇲🇦 Bezzaf dial (for uncountable) / 🇫🇷 Beaucoup de</div>
-        </div>
-        <div class="vocab-card" style="border-left-color:var(--gold);">
-          <div class="vocab-term" style="color:var(--gold);">💡 A lot of = Bezzaf!</div>
-          <div class="vocab-def">"A lot of" is safe! It works for BOTH countable and uncountable in positive sentences!</div>
-          <div class="vocab-ex">"I have <strong>a lot of</strong> paintings" AND "I have <strong>a lot of</strong> time"</div>
-          <div class="vocab-bridge">🇲🇦 The easiest way to say "Bezzaf" in English!</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 4</span>
-    <span>Page 1 of 4</span>
-  </div>
+<ul style="font-size:12px; margin-left:16px; line-height:1.4; color:var(--navy); list-style-type:square;">
+<li>IN = Inside a box / room</li>
+<li>ON = Touching a surface</li>
+<li>AT = A specific point or place</li>
+</ul>
+<textarea class="answer-area" data-id="baba-notebook-p1" placeholder="Notes / ملاحظات / Notes en français..." style="flex:1; min-height:180px; font-size:12px;"></textarea>
 </div>
-
+</div>
+</div>
+</div>
+<!-- VOCABULARY SECTION -->
+<div style="column-span:all !important; margin-top:8px;">
+<div class="step">
+<div class="step-header">
+<div class="step-name">📖 Prepositions &amp; Quantifiers Vocabulary</div>
+</div>
+<div class="body">
+<p>These small words tell us <strong>Where, When,</strong> and <strong>How Much</strong>.</p>
+</div>
+<div class="vocab-grid">
+<div class="vocab-card">
+<div class="vocab-term">In → ف (الداخل) → Dans / En</div>
+<div class="vocab-def">Used for enclosed spaces, months, years, and countries.</div>
+<div class="vocab-ex">"<strong>In</strong> the box" — "<strong>In</strong> Morocco" — "<strong>In</strong> July"</div>
+<div class="vocab-bridge">🇲🇦 Ldakhl / F / 🇫🇷 Dans / En</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">On → فوق → Sur / Le</div>
+<div class="vocab-def">Used for surfaces and days of the week.</div>
+<div class="vocab-ex">"<strong>On</strong> the table" — "<strong>On</strong> Sunday"</div>
+<div class="vocab-bridge">🇲🇦 Fou9 / 🇫🇷 Sur / (Le dimanche)</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">At → ف (المكان) → À</div>
+<div class="vocab-def">Used for specific points, events, and times.</div>
+<div class="vocab-ex">"<strong>At</strong> the door" — "<strong>At</strong> 8:00 PM" — "<strong>At</strong> home"</div>
+<div class="vocab-bridge">🇲🇦 F / 🇫🇷 À</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Some → شوية / بعض → Du / De la / Quelques</div>
+<div class="vocab-def">An unspecified quantity. Used in positive (+) sentences.</div>
+<div class="vocab-ex">"I have <strong>some</strong> books." — "I want <strong>some</strong> water."</div>
+<div class="vocab-bridge">🇲🇦 Shwiya dial / 🇫🇷 Un peu de / Quelques</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Any → حتى شي / واش كاين → De / Aucun(e)</div>
+<div class="vocab-def">Used in negative (-) sentences and questions (?).</div>
+<div class="vocab-ex">"Do you have <strong>any</strong> books?" — "I don't have <strong>any</strong> water."</div>
+<div class="vocab-bridge">🇲🇦 7ta shi / Wesh kayn shi / 🇫🇷 Aucun(e) / De</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Many → بزاف (يتحسب) → Beaucoup de</div>
+<div class="vocab-def">Used for things you can count (Plural nouns).</div>
+<div class="vocab-ex">"I have <strong>many</strong> paintings." (1, 2, 3 paintings)</div>
+<div class="vocab-bridge">🇲🇦 Bezzaf dial (for countable) / 🇫🇷 Beaucoup de</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Much → بزاف (مايتحسبش) → Beaucoup de</div>
+<div class="vocab-def">Used for things you CANNOT count (Uncountable nouns). Usually in negative/questions.</div>
+<div class="vocab-ex">"I don't have <strong>much</strong> time." (You can't say "1 time, 2 times")</div>
+<div class="vocab-bridge">🇲🇦 Bezzaf dial (for uncountable) / 🇫🇷 Beaucoup de</div>
+</div>
+<div class="vocab-card" style="border-left-color:var(--gold);">
+<div class="vocab-term" style="color:var(--gold);">💡 A lot of = Bezzaf!</div>
+<div class="vocab-def">"A lot of" is safe! It works for BOTH countable and uncountable in positive sentences!</div>
+<div class="vocab-ex">"I have <strong>a lot of</strong> paintings" AND "I have <strong>a lot of</strong> time"</div>
+<div class="vocab-bridge">🇲🇦 The easiest way to say "Bezzaf" in English!</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 4</span>
+<span>Page 1 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 2 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 2: MINI-STORY -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">2</div>
-      <div>
-        <div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
-        <div class="step-title">Packing for Hungary</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Read a short story and notice how prepositions and quantifiers are used.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This story is about a future trip to visit you in Hungary. Read together. Emphasize the bold words. Ask concept questions: "Why 'in' the suitcase?" (It's an enclosed space). "Why 'much' money?" (Money is uncountable).
-    </div>
-
-    <div class="body" style="background:var(--cream); border-radius:8px; padding:14px 16px; margin-top:8px; line-height:1.9;">
-      <p>Fattah is packing his bag. He is going to visit Saad <strong>in</strong> Hungary. His flight is <strong>on</strong> Monday <strong>at</strong> 10:00 AM.</p>
-      <p style="margin-top:6px;">He puts <strong>some</strong> clothes <strong>in</strong> his suitcase. He puts his passport <strong>on</strong> the table. "Lamia," he asks, "Do we have <strong>any</strong> Moroccan tea?" Lamia smiles. "Yes, we have <strong>a lot of</strong> tea."</p>
-      <p style="margin-top:6px;">He wants to bring <strong>some</strong> paintings, but he doesn't have <strong>much</strong> space <strong>in</strong> the bag. He only brings two. He has <strong>many</strong> books, but they are too heavy.</p>
-      <p style="margin-top:6px;">"Do you have <strong>any</strong> money?" Lamia asks. Fattah laughs. "I don't have <strong>much</strong> cash, but I have my bank card." He is ready to see his son.</p>
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">📝 Comprehension — Answer in English</div>
-      <p class="ex-item"><strong>1.</strong> Where is Fattah going?</p>
-      <textarea class="answer-area" data-id="comp-1" placeholder="He is going..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>2.</strong> When is his flight? (Day and time)</p>
-      <textarea class="answer-area" data-id="comp-2" placeholder="His flight is..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>3.</strong> Why doesn't he bring many books?</p>
-      <textarea class="answer-area" data-id="comp-3" placeholder="Because..."></textarea>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">🔍 Preposition Detective</div>
-      <p class="ex-item">Look at the story and complete these rules:</p>
-      <div style="display:grid; grid-template-columns:1fr; gap:6px; margin-top:6px;">
-        <div>For a <strong>country</strong> (Hungary), we use: <input type="text" class="answer-inline" data-id="detective-1" style="width:50px;"></div>
-        <div>For a <strong>day of the week</strong> (Monday), we use: <input type="text" class="answer-inline" data-id="detective-2" style="width:50px;"></div>
-        <div>For a <strong>specific time</strong> (10:00 AM), we use: <input type="text" class="answer-inline" data-id="detective-3" style="width:50px;"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 3: GRAMMAR IN ACTION -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">3</div>
-      <div>
-        <div class="step-name">Step 3 — 🏗️ Grammar in Action</div>
-        <div class="step-title">Time, Place, and Quantity</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Practice using in, on, at, some, any, much, and many.</div>
-
-    <!-- Grammar Rules -->
-    <div class="expressions-box">
-      <div class="exp-title">📐 The Preposition Triangle</div>
-      <div class="exp-item"><strong>IN (General/Big)</strong>: Countries (In Morocco), Months (In May), Years (In 2026), Enclosed spaces (In the house)</div>
-      <div class="exp-item"><strong>ON (More Specific)</strong>: Days (On Monday), Dates (On May 5th), Surfaces (On the table)</div>
-      <div class="exp-item"><strong>AT (Very Specific)</strong>: Times (At 8:00), Specific locations (At school, At home)</div>
-    </div>
-
-    <div class="expressions-box" style="background:#E8F5F5; border-left-color:var(--teal);">
-      <div class="exp-title">📐 The Quantifier Rules</div>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
-        <div>
-          <div class="exp-item"><strong>Some</strong>: Used in (+) positive sentences. <br><span style="color:var(--gray);font-size:11px;">"I have some friends."</span></div>
-          <div class="exp-item"><strong>Any</strong>: Used in (-) negative and (?) questions. <br><span style="color:var(--gray);font-size:11px;">"I don't have any money." "Do you have any questions?"</span></div>
-        </div>
-        <div>
-          <div class="exp-item"><strong>Many</strong>: For things you can count (1,2,3). <br><span style="color:var(--gray);font-size:11px;">"Many books, many days."</span></div>
-          <div class="exp-item"><strong>Much</strong>: For things you CAN'T count. <br><span style="color:var(--gray);font-size:11px;">"Much water, much time."</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">✏️ Fill in — IN, ON, or AT</div>
-      <p class="ex-item"><strong>1.</strong> The match is ___ Sunday ___ 8:00 PM.</p>
-      <input type="text" class="answer-inline" data-id="grammar-1" placeholder="on / at">
-      <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> Saad lives ___ Europe.</p>
-      <input type="text" class="answer-inline" data-id="grammar-2" placeholder="in">
-      <p class="ex-item" style="margin-top:8px;"><strong>3.</strong> The painting is ___ the wall ___ the living room.</p>
-      <input type="text" class="answer-inline" data-id="grammar-3" placeholder="on / in">
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">✏️ Fill in — SOME, ANY, MUCH, or MANY</div>
-      <p class="ex-item"><strong>1.</strong> Do you have ___ brothers?</p>
-      <input type="text" class="answer-inline" data-id="grammar-4" placeholder="any">
-      <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> I have ___ good news for you!</p>
-      <input type="text" class="answer-inline" data-id="grammar-5" placeholder="some">
-      <p class="ex-item" style="margin-top:8px;"><strong>3.</strong> How ___ times did Morocco play in the World Cup?</p>
-      <input type="text" class="answer-inline" data-id="grammar-6" placeholder="many">
-      <p class="ex-item" style="margin-top:8px;"><strong>4.</strong> We don't have ___ time left before the match starts.</p>
-      <input type="text" class="answer-inline" data-id="grammar-7" placeholder="much">
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 4</span>
-    <span>Page 2 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 2: MINI-STORY -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">2</div>
+<div>
+<div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
+<div class="step-title">Packing for Hungary</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Read a short story and notice how prepositions and quantifiers are used.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This story is about a future trip to visit you in Hungary. Read together. Emphasize the bold words. Ask concept questions: "Why 'in' the suitcase?" (It's an enclosed space). "Why 'much' money?" (Money is uncountable).
+    </div></div></div>
+<div class="body" style="background:var(--cream); border-radius:8px; padding:14px 16px; margin-top:8px; line-height:1.9;">
+<p>Fattah is packing his bag. He is going to visit Saad <strong>in</strong> Hungary. His flight is <strong>on</strong> Monday <strong>at</strong> 10:00 AM.</p>
+<p style="margin-top:6px;">He puts <strong>some</strong> clothes <strong>in</strong> his suitcase. He puts his passport <strong>on</strong> the table. "Lamia," he asks, "Do we have <strong>any</strong> Moroccan tea?" Lamia smiles. "Yes, we have <strong>a lot of</strong> tea."</p>
+<p style="margin-top:6px;">He wants to bring <strong>some</strong> paintings, but he doesn't have <strong>much</strong> space <strong>in</strong> the bag. He only brings two. He has <strong>many</strong> books, but they are too heavy.</p>
+<p style="margin-top:6px;">"Do you have <strong>any</strong> money?" Lamia asks. Fattah laughs. "I don't have <strong>much</strong> cash, but I have my bank card." He is ready to see his son.</p>
+</div>
+<div class="exercise">
+<div class="ex-label">📝 Comprehension — Answer in English</div>
+<p class="ex-item"><strong>1.</strong> Where is Fattah going?</p>
+<textarea class="answer-area" data-id="comp-1" placeholder="He is going..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>2.</strong> When is his flight? (Day and time)</p>
+<textarea class="answer-area" data-id="comp-2" placeholder="His flight is..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>3.</strong> Why doesn't he bring many books?</p>
+<textarea class="answer-area" data-id="comp-3" placeholder="Because..."></textarea>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">🔍 Preposition Detective</div>
+<p class="ex-item">Look at the story and complete these rules:</p>
+<div style="display:grid; grid-template-columns:1fr; gap:6px; margin-top:6px;">
+<div>For a <strong>country</strong> (Hungary), we use: <input class="answer-inline" data-id="detective-1" style="width:50px;" type="text"/></div>
+<div>For a <strong>day of the week</strong> (Monday), we use: <input class="answer-inline" data-id="detective-2" style="width:50px;" type="text"/></div>
+<div>For a <strong>specific time</strong> (10:00 AM), we use: <input class="answer-inline" data-id="detective-3" style="width:50px;" type="text"/></div>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- STEP 3: GRAMMAR IN ACTION -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">3</div>
+<div>
+<div class="step-name">Step 3 — 🏗️ Grammar in Action</div>
+<div class="step-title">Time, Place, and Quantity</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Practice using in, on, at, some, any, much, and many.</div>
+<!-- Grammar Rules -->
+<div class="expressions-box">
+<div class="exp-title">📐 The Preposition Triangle</div>
+<div class="exp-item"><strong>IN (General/Big)</strong>: Countries (In Morocco), Months (In May), Years (In 2026), Enclosed spaces (In the house)</div>
+<div class="exp-item"><strong>ON (More Specific)</strong>: Days (On Monday), Dates (On May 5th), Surfaces (On the table)</div>
+<div class="exp-item"><strong>AT (Very Specific)</strong>: Times (At 8:00), Specific locations (At school, At home)</div>
+</div>
+<div class="expressions-box" style="background:#E8F5F5; border-left-color:var(--teal);">
+<div class="exp-title">📐 The Quantifier Rules</div>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+<div>
+<div class="exp-item"><strong>Some</strong>: Used in (+) positive sentences. <br/><span style="color:var(--gray);font-size:11px;">"I have some friends."</span></div>
+<div class="exp-item"><strong>Any</strong>: Used in (-) negative and (?) questions. <br/><span style="color:var(--gray);font-size:11px;">"I don't have any money." "Do you have any questions?"</span></div>
+</div>
+<div>
+<div class="exp-item"><strong>Many</strong>: For things you can count (1,2,3). <br/><span style="color:var(--gray);font-size:11px;">"Many books, many days."</span></div>
+<div class="exp-item"><strong>Much</strong>: For things you CAN'T count. <br/><span style="color:var(--gray);font-size:11px;">"Much water, much time."</span></div>
+</div>
+</div>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">✏️ Fill in — IN, ON, or AT</div>
+<p class="ex-item"><strong>1.</strong> The match is ___ Sunday ___ 8:00 PM.</p>
+<input class="answer-inline" data-id="grammar-1" placeholder="on / at" type="text"/>
+<p class="ex-item" style="margin-top:8px;"><strong>2.</strong> Saad lives ___ Europe.</p>
+<input class="answer-inline" data-id="grammar-2" placeholder="in" type="text"/>
+<p class="ex-item" style="margin-top:8px;"><strong>3.</strong> The painting is ___ the wall ___ the living room.</p>
+<input class="answer-inline" data-id="grammar-3" placeholder="on / in" type="text"/>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">✏️ Fill in — SOME, ANY, MUCH, or MANY</div>
+<p class="ex-item"><strong>1.</strong> Do you have ___ brothers?</p>
+<input class="answer-inline" data-id="grammar-4" placeholder="any" type="text"/>
+<p class="ex-item" style="margin-top:8px;"><strong>2.</strong> I have ___ good news for you!</p>
+<input class="answer-inline" data-id="grammar-5" placeholder="some" type="text"/>
+<p class="ex-item" style="margin-top:8px;"><strong>3.</strong> How ___ times did Morocco play in the World Cup?</p>
+<input class="answer-inline" data-id="grammar-6" placeholder="many" type="text"/>
+<p class="ex-item" style="margin-top:8px;"><strong>4.</strong> We don't have ___ time left before the match starts.</p>
+<input class="answer-inline" data-id="grammar-7" placeholder="much" type="text"/>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 4</span>
+<span>Page 2 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 3 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 4: GAME ZONE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">4</div>
-      <div>
-        <div class="step-name">Step 4 — 🎮 Game Zone</div>
-        <div class="step-title">The Preposition & Quantifier Quiz!</div>
-      </div>
-      <div class="step-time">10 min</div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 4: GAME ZONE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">4</div>
+<div>
+<div class="step-name">Step 4 — 🎮 Game Zone</div>
+<div class="step-title">The Preposition &amp; Quantifier Quiz!</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Choose the right word fast in this combined challenge!</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This quiz mixes prepositions and quantifiers. It forces him to think about whether a word is countable (many) or uncountable (much), and whether it's a day (on), time (at), or month (in). Guide him to look at the word IMMEDIATELY AFTER the blank.
+    </div></div></div>
+<div class="game-container" id="prep-game">
+<div class="game-title">🏆 GRAMMAR CHAMPION — Pick the right word!</div>
+<div id="prep-question" style="font-size:15px; font-weight:700; text-align:center; margin:12px 0; min-height:40px;"></div>
+<div id="prep-options" style="display:flex; justify-content:center; gap:10px; margin-top:10px;"></div>
+<div class="game-feedback" id="prep-feedback"></div>
+<div class="game-score" id="prep-score"></div>
+<div style="text-align:center; margin-top:12px;">
+<button class="game-btn" id="prep-next" onclick="prepNext()" style="display:none;">Next Question →</button>
+<button class="game-btn" id="prep-restart" onclick="prepStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
+</div>
+</div>
+<div class="darija-box" style="margin-top:10px;">
+<span class="flag">🇲🇦</span> <strong>"Zreb t3tel!"</strong> — Haste makes waste. Take your time, read the sentence carefully before you click!
     </div>
-    <div class="objective">Objective: Choose the right word fast in this combined challenge!</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This quiz mixes prepositions and quantifiers. It forces him to think about whether a word is countable (many) or uncountable (much), and whether it's a day (on), time (at), or month (in). Guide him to look at the word IMMEDIATELY AFTER the blank.
-    </div>
-
-    <div class="game-container" id="prep-game">
-      <div class="game-title">🏆 GRAMMAR CHAMPION — Pick the right word!</div>
-      <div id="prep-question" style="font-size:15px; font-weight:700; text-align:center; margin:12px 0; min-height:40px;"></div>
-      <div id="prep-options" style="display:flex; justify-content:center; gap:10px; margin-top:10px;"></div>
-      <div id="prep-feedback" class="game-feedback"></div>
-      <div id="prep-score" class="game-score"></div>
-      <div style="text-align:center; margin-top:12px;">
-        <button class="game-btn" id="prep-next" onclick="prepNext()" style="display:none;">Next Question →</button>
-        <button class="game-btn" id="prep-restart" onclick="prepStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
-      </div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px;">
-      <span class="flag">🇲🇦</span> <strong>"Zreb t3tel!"</strong> — Haste makes waste. Take your time, read the sentence carefully before you click!
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 5: SPEAKING CHALLENGE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">5</div>
-      <div>
-        <div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
-        <div class="step-title">Tour of Your Home</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Describe your house using prepositions of place and quantifiers.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Have him describe the room he is currently in. E.g., "In my living room, there is a sofa on the left. On the wall, there are many paintings. On the table, there is some tea."
-    </div>
-
-    <div class="student-note">
+</div>
+<div class="divider"></div>
+<!-- STEP 5: SPEAKING CHALLENGE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">5</div>
+<div>
+<div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
+<div class="step-title">Tour of Your Home</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Describe your house using prepositions of place and quantifiers.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Have him describe the room he is currently in. E.g., "In my living room, there is a sofa on the left. On the wall, there are many paintings. On the table, there is some tea."
+    </div></div></div>
+<div class="student-note">
       🎓 <strong>Your Mission:</strong> Describe the room you are in right now. Tell me what is IN the room, what is ON the walls or tables, and how MANY things there are.
     </div>
-
-    <div class="gold-banner">
-      <p><strong>🏠 Room Tour Challenge</strong></p>
-      <p style="margin-top:6px;">Try to use these words:</p>
-      <ul style="margin-top:6px; margin-left:16px; font-size:13px;">
-        <li>✅ <strong>In</strong> (the room, the corner...)</li>
-        <li>✅ <strong>On</strong> (the table, the wall, the floor...)</li>
-        <li>✅ <strong>Some / Many / A lot of</strong></li>
-      </ul>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">📝 Write your description here</div>
-      <textarea class="answer-area" data-id="speaking-notes" style="min-height:100px;" placeholder="I am in the living room. On the wall, there is a beautiful painting. There are many books on the shelf..."></textarea>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 4</span>
-    <span>Page 3 of 4</span>
-  </div>
+<div class="gold-banner">
+<p><strong>🏠 Room Tour Challenge</strong></p>
+<p style="margin-top:6px;">Try to use these words:</p>
+<ul style="margin-top:6px; margin-left:16px; font-size:13px;">
+<li>✅ <strong>In</strong> (the room, the corner...)</li>
+<li>✅ <strong>On</strong> (the table, the wall, the floor...)</li>
+<li>✅ <strong>Some / Many / A lot of</strong></li>
+</ul>
 </div>
-
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">📝 Write your description here</div>
+<textarea class="answer-area" data-id="speaking-notes" placeholder="I am in the living room. On the wall, there is a beautiful painting. There are many books on the shelf..." style="min-height:100px;"></textarea>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 4</span>
+<span>Page 3 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 4 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 6: BOSS LEVEL -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">6</div>
-      <div>
-        <div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
-        <div class="step-title">Giving Directions in Mehdya!</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Use prepositions and quantifiers in a real-world dialogue.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This dialogue imagines an English-speaking tourist asking Fattah for directions in Mehdya. This is exactly what he wants to be able to do! Have him fill in the blanks, then roleplay the dialogue together.
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">🗺️ Complete the Conversation</div>
-      <div style="background:var(--cream); border-radius:8px; padding:12px; line-height:2; font-size:13px; margin-top:6px;">
-        <p><strong>Tourist:</strong> Excuse me, I am lost. Is the beach near here?</p>
-        <p style="margin-top:4px;"><strong>Fattah:</strong> Yes! We are <input type="text" class="answer-inline" data-id="boss-1" style="width:60px;" placeholder="in/on"> Mehdya. The beach is very close.</p>
-        <p style="margin-top:4px;"><strong>Tourist:</strong> How <input type="text" class="answer-inline" data-id="boss-2" style="width:60px;" placeholder="much/many"> minutes does it take to walk there?</p>
-        <p style="margin-top:4px;"><strong>Fattah:</strong> Only 10 minutes. Go straight, the beach is <input type="text" class="answer-inline" data-id="boss-3" style="width:60px;" placeholder="in/on"> the left.</p>
-        <p style="margin-top:4px;"><strong>Tourist:</strong> Thank you! Do you know if there are <input type="text" class="answer-inline" data-id="boss-4" style="width:60px;" placeholder="some/any"> good cafés there?</p>
-        <p style="margin-top:4px;"><strong>Fattah:</strong> Yes, there are <input type="text" class="answer-inline" data-id="boss-5" style="width:60px;" placeholder="much/many"> good cafés. You should try <input type="text" class="answer-inline" data-id="boss-6" style="width:60px;" placeholder="some/any"> Moroccan tea!</p>
-        <p style="margin-top:4px;"><strong>Tourist:</strong> I will! What time does the sun set today?</p>
-        <p style="margin-top:4px;"><strong>Fattah:</strong> The sun sets <input type="text" class="answer-inline" data-id="boss-7" style="width:60px;" placeholder="in/at"> 8:00 PM. It is beautiful <input type="text" class="answer-inline" data-id="boss-8" style="width:60px;" placeholder="in/on"> summer.</p>
-      </div>
-    </div>
-
-    <div class="darija-box">
-      <span class="flag">🇲🇦</span> <strong>"Welhmdoulilah!"</strong> — You just helped an English tourist in Mehdya! This is exactly why you are learning!
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 7: HOMEWORK -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">7</div>
-      <div>
-        <div class="step-name">Step 7 — 📚 Homework & Fun Challenge</div>
-        <div class="step-title">Mastering the Little Words!</div>
-      </div>
-    </div>
-
-    <div class="body">
-      <div class="hw-item">
-        <div class="hw-num">1</div>
-        <div>
-          <strong>Writing Task — "My Weekly Schedule"</strong><br>
-          <span style="font-size:12px; color:var(--gray);">Write a short paragraph about what you do in a normal week. Use "in", "on", and "at". (Example: "On Monday, I go to the university. At 8:00 PM, I watch football...")</span>
-          <textarea class="answer-area" data-id="hw-1" style="min-height:80px; margin-top:6px;" placeholder="On Monday..."></textarea>
-        </div>
-      </div>
-
-      <div class="hw-item">
-        <div class="hw-num">2</div>
-        <div>
-          <strong>Grammar Check — "Fix the Mistakes"</strong><br>
-          <span style="font-size:12px; color:var(--gray);">These sentences have mistakes. Write the correct sentence below.
-          <br>1. I live on Kenitra.
-          <br>2. The match is in Sunday.
-          <br>3. I don't have many time.</span>
-          <textarea class="answer-area" data-id="hw-2" style="min-height:60px; margin-top:6px;" placeholder="1. I live IN Kenitra.&#10;2. ...&#10;3. ..."></textarea>
-        </div>
-      </div>
-
-      <div class="hw-item">
-        <div class="hw-num">3</div>
-        <div>
-          <strong>Fun Challenge — "The Refrigerator Check"</strong> 🍎🧊<br>
-          <span style="font-size:12px; color:var(--gray);">Open your fridge. Describe what is inside using some, any, much, many, a lot of. Talk out loud! (Example: "We have some apples. We don't have any milk. We have a lot of water.")</span>
-          <textarea class="answer-area" data-id="hw-3" style="min-height:60px; margin-top:6px;" placeholder="What did you find in the fridge?"></textarea>
-        </div>
-      </div>
-    </div>
-
-    <div class="expressions-box" style="margin-top:10px;">
-      <div class="exp-title">📋 Lesson 4 Summary — What You Learned Today</div>
-      <div class="exp-item">✅ IN (countries, months, enclosed spaces)</div>
-      <div class="exp-item">✅ ON (days of the week, surfaces)</div>
-      <div class="exp-item">✅ AT (specific times, specific places)</div>
-      <div class="exp-item">✅ SOME (+) vs ANY (-, ?)</div>
-      <div class="exp-item">✅ MANY (countable) vs MUCH (uncountable)</div>
-      <div class="exp-item">✅ A LOT OF (Works for everything!)</div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
-      <span class="flag">🌟</span> <strong>Message from your teacher (your son!):</strong><br>
-      <em>Baba, these small words (in/on/at) are annoying, I know! But the more you read and listen, the more natural they will feel. You are doing fantastic. Next up: Connectors (And, But, Because). Keep shining! 💪🇲🇦</em>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 4</span>
-    <span>Page 4 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 6: BOSS LEVEL -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">6</div>
+<div>
+<div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
+<div class="step-title">Giving Directions in Mehdya!</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Use prepositions and quantifiers in a real-world dialogue.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This dialogue imagines an English-speaking tourist asking Fattah for directions in Mehdya. This is exactly what he wants to be able to do! Have him fill in the blanks, then roleplay the dialogue together.
+    </div></div></div>
+<div class="exercise">
+<div class="ex-label">🗺️ Complete the Conversation</div>
+<div style="background:var(--cream); border-radius:8px; padding:12px; line-height:2; font-size:13px; margin-top:6px;">
+<p><strong>Tourist:</strong> Excuse me, I am lost. Is the beach near here?</p>
+<p style="margin-top:4px;"><strong>Fattah:</strong> Yes! We are <input class="answer-inline" data-id="boss-1" placeholder="in/on" style="width:60px;" type="text"/> Mehdya. The beach is very close.</p>
+<p style="margin-top:4px;"><strong>Tourist:</strong> How <input class="answer-inline" data-id="boss-2" placeholder="much/many" style="width:60px;" type="text"/> minutes does it take to walk there?</p>
+<p style="margin-top:4px;"><strong>Fattah:</strong> Only 10 minutes. Go straight, the beach is <input class="answer-inline" data-id="boss-3" placeholder="in/on" style="width:60px;" type="text"/> the left.</p>
+<p style="margin-top:4px;"><strong>Tourist:</strong> Thank you! Do you know if there are <input class="answer-inline" data-id="boss-4" placeholder="some/any" style="width:60px;" type="text"/> good cafés there?</p>
+<p style="margin-top:4px;"><strong>Fattah:</strong> Yes, there are <input class="answer-inline" data-id="boss-5" placeholder="much/many" style="width:60px;" type="text"/> good cafés. You should try <input class="answer-inline" data-id="boss-6" placeholder="some/any" style="width:60px;" type="text"/> Moroccan tea!</p>
+<p style="margin-top:4px;"><strong>Tourist:</strong> I will! What time does the sun set today?</p>
+<p style="margin-top:4px;"><strong>Fattah:</strong> The sun sets <input class="answer-inline" data-id="boss-7" placeholder="in/at" style="width:60px;" type="text"/> 8:00 PM. It is beautiful <input class="answer-inline" data-id="boss-8" placeholder="in/on" style="width:60px;" type="text"/> summer.</p>
+</div>
+</div>
+<div class="darija-box">
+<span class="flag">🇲🇦</span> <strong>"Welhmdoulilah!"</strong> — You just helped an English tourist in Mehdya! This is exactly why you are learning!
+    </div>
+</div>
+<div class="divider"></div>
+<!-- STEP 7: HOMEWORK -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">7</div>
+<div>
+<div class="step-name">Step 7 — 📚 Homework &amp; Fun Challenge</div>
+<div class="step-title">Mastering the Little Words!</div>
+</div>
+</div>
+<div class="body">
+<div class="hw-item">
+<div class="hw-num">1</div>
+<div>
+<strong>Writing Task — "My Weekly Schedule"</strong><br/>
+<span style="font-size:12px; color:var(--gray);">Write a short paragraph about what you do in a normal week. Use "in", "on", and "at". (Example: "On Monday, I go to the university. At 8:00 PM, I watch football...")</span>
+<textarea class="answer-area" data-id="hw-1" placeholder="On Monday..." style="min-height:80px; margin-top:6px;"></textarea>
+</div>
+</div>
+<div class="hw-item">
+<div class="hw-num">2</div>
+<div>
+<strong>Grammar Check — "Fix the Mistakes"</strong><br/>
+<span style="font-size:12px; color:var(--gray);">These sentences have mistakes. Write the correct sentence below.
+          <br/>1. I live on Kenitra.
+          <br/>2. The match is in Sunday.
+          <br/>3. I don't have many time.</span>
+<textarea class="answer-area" data-id="hw-2" placeholder="1. I live IN Kenitra.
+2. ...
+3. ..." style="min-height:60px; margin-top:6px;"></textarea>
+</div>
+</div>
+<div class="hw-item">
+<div class="hw-num">3</div>
+<div>
+<strong>Fun Challenge — "The Refrigerator Check"</strong> 🍎🧊<br/>
+<span style="font-size:12px; color:var(--gray);">Open your fridge. Describe what is inside using some, any, much, many, a lot of. Talk out loud! (Example: "We have some apples. We don't have any milk. We have a lot of water.")</span>
+<textarea class="answer-area" data-id="hw-3" placeholder="What did you find in the fridge?" style="min-height:60px; margin-top:6px;"></textarea>
+</div>
+</div>
+</div>
+<div class="expressions-box" style="margin-top:10px;">
+<div class="exp-title">📋 Lesson 4 Summary — What You Learned Today</div>
+<div class="exp-item">✅ IN (countries, months, enclosed spaces)</div>
+<div class="exp-item">✅ ON (days of the week, surfaces)</div>
+<div class="exp-item">✅ AT (specific times, specific places)</div>
+<div class="exp-item">✅ SOME (+) vs ANY (-, ?)</div>
+<div class="exp-item">✅ MANY (countable) vs MUCH (uncountable)</div>
+<div class="exp-item">✅ A LOT OF (Works for everything!)</div>
+</div>
+<div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
+<span class="flag">🌟</span> <strong>Message from your teacher (your son!):</strong><br/>
+<em>Baba, these small words (in/on/at) are annoying, I know! But the more you read and listen, the more natural they will feel. You are doing fantastic. Next up: Connectors (And, But, Because). Keep shining! 💪🇲🇦</em>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 4</span>
+<span>Page 4 of 4</span>
+</div>
+</div>
 <!-- CONGRATULATIONS PAGE -->
-<div class="page congratulations-page">
-  <img src="../Congratulations.png" alt="Congratulations" class="congrats-img">
-</div>
-
+<div class="page congratulations-page"><div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%;"><img alt="Congratulations" class="congrats-img" src="../Congratulations.png" style="max-height: 180px; object-fit: contain;"/><div class="polaroid-card"><img class="polaroid-img" src="../Mama_Avatar/Family.jfif"/><div class="polaroid-caption">Bravo Baba! 🇲🇦🏆</div><div style="font-family:'Inter', sans-serif; font-size:11.5px; margin-top:8px; color:var(--gray); font-weight:600; line-height:1.4;">"Knowledge is light, Baba! We are all incredibly proud of you for completing Lesson 4! Keep going! 💪❤️"</div></div></div></div>
 <!-- SAVE STATUS -->
 <div class="save-status" id="save-status">✓ Progress saved</div>
-
 <script>
 const STORAGE_KEY = 'ts-lesson-fattah-prepositions';
 

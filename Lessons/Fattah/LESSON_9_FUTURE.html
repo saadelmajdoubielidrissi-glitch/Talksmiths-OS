@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Fattah — Future: Will vs Going to | Talksmiths</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Playfair+Display:ital,wght@0,800;1,700&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --teal: #007575; --gold: #D4A843; --navy: #1A2744;
@@ -122,400 +123,451 @@
   @media screen and (max-width: 768px) {
     .vocab-grid { grid-template-columns: 1fr !important; }
   }
+
+  /* --- Talksmiths Avatar Integration Styles --- */
+  .ts-avatar-circle {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 2px solid var(--teal);
+    object-fit: cover;
+    object-position: center 20%;
+    box-shadow: 0 4px 8px rgba(0, 117, 117, 0.15);
+    flex-shrink: 0;
+  }
+  .teacher-chat-bubble {
+    display: flex;
+    gap: 14px;
+    background: #FFFBF2;
+    border: 1px solid #EAD295;
+    border-radius: 14px;
+    padding: 14px;
+    margin: 12px 0;
+    align-items: flex-start;
+    box-shadow: 0 2px 10px rgba(212, 168, 67, 0.05);
+    break-inside: avoid;
+  }
+  .chat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: left;
+  }
+  .chat-header {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--teal);
+  }
+  .chat-text {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #614B15;
+  }
+  .family-reading-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+    break-inside: avoid;
+  }
+  .family-member-card {
+    display: flex;
+    gap: 14px;
+    background: #FDFDFD;
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 14px;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: left;
+  }
+  .family-member-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  }
+  .polaroid-card {
+    background: var(--white);
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 16px 16px 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    text-align: center;
+    max-width: 340px;
+    margin: 20px auto;
+    transform: rotate(-1.5deg);
+    transition: transform 0.3s ease;
+    display: block !important;
+  }
+  .polaroid-card:hover {
+    transform: rotate(0deg) scale(1.03);
+  }
+  .polaroid-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #EAEAEA;
+  }
+  .polaroid-caption {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 700;
+    margin-top: 14px;
+    color: var(--navy);
+  }
+  @media screen and (max-width: 1200px) {
+    .family-reading-grid { grid-template-columns: 1fr !important; }
+    .family-member-card[style*="grid-column: span 2"] { grid-column: span 1 !important; }
+  }
+  @media print {
+    .ts-avatar-circle, 
+    .teacher-chat-bubble, 
+    .polaroid-card { 
+      display: none !important; 
+    }
+  }
 </style>
 </head>
 <body class="student-mode">
-
 <!-- VIEW TOGGLE -->
 <div class="view-toggle">
-  <button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
-  <button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
+<button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
+<button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
 </div>
 <button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
-
 <!-- ==================== PAGE 1 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-  <div class="logo">Talksmiths — Lesson Engine™</div>
-  <h1>Future plans: Will vs Going to</h1>
-  <div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 9</div>
-  <div class="badges">
-    <span class="badge badge-teal">A1 — Beginner</span>
-    <span class="badge badge-gold">60 min</span>
-    <span class="badge badge-gray">Grammar Foundations</span>
-    <span class="badge badge-gray">Lesson 9</span>
-  </div>
-  <div class="divider"></div>
-
-  <!-- Step 1 + Notebook row -->
-  <div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
-
-      <!-- STEP 1: WARM-UP -->
-      <div class="step">
-        <div class="step-header">
-          <div class="step-num">1</div>
-          <div>
-            <div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
-            <div class="step-title">My Tomorrow & My Next Year</div>
-          </div>
-          <div class="step-time">8 min</div>
-        </div>
-        <div class="objective">Objective: Learn the difference between sudden decisions and fixed plans.</div>
-
-        <div class="student-note">
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<div class="logo">Talksmiths — Lesson Engine™</div>
+<h1>Future plans: Will vs Going to</h1>
+<div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 9</div>
+<div class="badges">
+<span class="badge badge-teal">A1 — Beginner</span>
+<span class="badge badge-gold">60 min</span>
+<span class="badge badge-gray">Grammar Foundations</span>
+<span class="badge badge-gray">Lesson 9</span>
+</div>
+<div class="divider"></div>
+<!-- Step 1 + Notebook row -->
+<div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
+<!-- STEP 1: WARM-UP -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">1</div>
+<div>
+<div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
+<div class="step-title">My Tomorrow &amp; My Next Year</div>
+</div>
+<div class="step-time">8 min</div>
+</div>
+<div class="objective">Objective: Learn the difference between sudden decisions and fixed plans.</div>
+<div class="student-note">
           🎓 <strong>Student Strategy:</strong> In English, we use two structures for the future. We use **Going to** for fixed plans we made in advance. We use **Will** for quick decisions or guesses.
         </div>
-
-        <div class="teacher-note">
-          📋 <strong>Teacher Note:</strong> Use standard examples to show the gap. "I am going to visit Saad in Hungary" (plan already made, flights booked) vs. "I think the weather will be hot tomorrow" (guess/prediction).
-        </div>
-
-        <div class="exercise">
-          <div class="ex-label">🗣️ Speaking Warm-Up — Look Ahead!</div>
-          <p class="ex-item">Answer these future questions:</p>
-          <ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
-            <li>🌍 What are you **going to** study next week?</li>
-            <li>⚽ Who do you think **will** win the next World Cup?</li>
-            <li>🍵 What will you drink after this lesson? (Decision now!)</li>
-          </ul>
-          <div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Use standard examples to show the gap. "I am going to visit Saad in Hungary" (plan already made, flights booked) vs. "I think the weather will be hot tomorrow" (guess/prediction).
+        </div></div></div>
+<div class="exercise">
+<div class="ex-label">🗣️ Speaking Warm-Up — Look Ahead!</div>
+<p class="ex-item">Answer these future questions:</p>
+<ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
+<li>🌍 What are you **going to** study next week?</li>
+<li>⚽ Who do you think **will** win the next World Cup?</li>
+<li>🍵 What will you drink after this lesson? (Decision now!)</li>
+</ul>
+<div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
             Example: "I am going to study anthropology, and I think Morocco will win!"
           </div>
+</div>
+<div class="darija-box">
+<span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> In Darija we say "Ghadin..." (Going to/Plan) or use the prefix "Gha-" (Will). Today we learn how English splits them!
         </div>
-
-        <div class="darija-box">
-          <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> In Darija we say "Ghadin..." (Going to/Plan) or use the prefix "Gha-" (Will). Today we learn how English splits them!
-        </div>
-      </div>
-    </div>
-
-    <!-- BABA'S NOTEBOOK -->
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
-      <div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
-        <div class="step-header" style="margin-bottom:6px;">
-          <div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
-        </div>
-        <div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
-          <p style="font-size:12px; line-height:1.4; color:var(--gray);">
+</div>
+</div>
+<!-- BABA'S NOTEBOOK -->
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
+<div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
+<div class="step-header" style="margin-bottom:6px;">
+<div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
+</div>
+<div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
+<p style="font-size:12px; line-height:1.4; color:var(--gray);">
             Write down 2 future plans (using *going to*) and 2 future predictions (using *will*).
           </p>
-          <ul style="font-size:11px; margin-left:16px; line-height:1.4; color:var(--navy); list-style-type:square;">
-            <li>Plan: I am going to paint __________ next month.</li>
-            <li>Guess: I think tomorrow will be __________ .</li>
-          </ul>
-          <textarea class="answer-area" data-id="baba-notebook-p1" style="flex:1; min-height:180px; font-size:12px;" placeholder="My future dreams / الأحلام ديالي..."></textarea>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- VOCABULARY SECTION -->
-  <div style="column-span:all !important; margin-top:8px;">
-    <div class="step">
-      <div class="step-header">
-        <div class="step-name">📖 Future Forms: Will vs Going to</div>
-      </div>
-
-      <div class="vocab-grid">
-        <div class="vocab-card">
-          <div class="vocab-term">Going to (Plans)</div>
-          <div class="vocab-def">Subject + to be + going to + verb. Used for decisions made BEFORE speaking.</div>
-          <div class="vocab-ex">"I <strong>am going to study</strong> history next semester."</div>
-          <div class="vocab-bridge">🇲🇦 Ghadin... / 🇫🇷 Aller + verbe (Je vais étudier)</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Will (Quick Decisions)</div>
-          <div class="vocab-def">Subject + will + verb. Used for decisions made AT the moment of speaking.</div>
-          <div class="vocab-ex">"The phone is ringing. I <strong>will answer</strong> it!"</div>
-          <div class="vocab-bridge">🇲🇦 Gha-... / 🇫🇷 Futur simple (Je répondrai)</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Will (Predictions)</div>
-          <div class="vocab-def">Used for predictions or guesses about the future.</div>
-          <div class="vocab-ex">"I think it <strong>will rain</strong> tomorrow in Kenitra."</div>
-          <div class="vocab-bridge">🇫🇷 Je pense qu'il pleuvra</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Won't (Will Not)</div>
-          <div class="vocab-def">The negative form of "will".</div>
-          <div class="vocab-ex">"Don't worry, I <strong>won't forget</strong> my keys."</div>
-          <div class="vocab-bridge">🇲🇦 Ma-ghadin-sh / 🇫🇷 Je n'oublierai pas</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Not going to</div>
-          <div class="vocab-def">The negative form of "going to".</div>
-          <div class="vocab-ex">"I <strong>am not going to watch</strong> the movie tonight."</div>
-          <div class="vocab-bridge">🇲🇦 Ma-ghadi-sh / 🇫🇷 Je ne vais pas regarder</div>
-        </div>
-        
-        <div class="vocab-card" style="border-left-color:var(--gold);">
-          <div class="vocab-term" style="color:var(--gold);">💡 Decision Test</div>
-          <div class="vocab-def">Did you prepare the plan?</div>
-          <div class="vocab-ex">YES → Use <strong>Going to</strong>.<br>NO (Instant/Guess) → Use <strong>Will</strong>.</div>
-          <div class="vocab-bridge">🇫🇷 Projet vs Décision instantanée</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 9</span>
-    <span>Page 1 of 4</span>
-  </div>
+<ul style="font-size:11px; margin-left:16px; line-height:1.4; color:var(--navy); list-style-type:square;">
+<li>Plan: I am going to paint __________ next month.</li>
+<li>Guess: I think tomorrow will be __________ .</li>
+</ul>
+<textarea class="answer-area" data-id="baba-notebook-p1" placeholder="My future dreams / الأحلام ديالي..." style="flex:1; min-height:180px; font-size:12px;"></textarea>
 </div>
-
+</div>
+</div>
+</div>
+<!-- VOCABULARY SECTION -->
+<div style="column-span:all !important; margin-top:8px;">
+<div class="step">
+<div class="step-header">
+<div class="step-name">📖 Future Forms: Will vs Going to</div>
+</div>
+<div class="vocab-grid">
+<div class="vocab-card">
+<div class="vocab-term">Going to (Plans)</div>
+<div class="vocab-def">Subject + to be + going to + verb. Used for decisions made BEFORE speaking.</div>
+<div class="vocab-ex">"I <strong>am going to study</strong> history next semester."</div>
+<div class="vocab-bridge">🇲🇦 Ghadin... / 🇫🇷 Aller + verbe (Je vais étudier)</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Will (Quick Decisions)</div>
+<div class="vocab-def">Subject + will + verb. Used for decisions made AT the moment of speaking.</div>
+<div class="vocab-ex">"The phone is ringing. I <strong>will answer</strong> it!"</div>
+<div class="vocab-bridge">🇲🇦 Gha-... / 🇫🇷 Futur simple (Je répondrai)</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Will (Predictions)</div>
+<div class="vocab-def">Used for predictions or guesses about the future.</div>
+<div class="vocab-ex">"I think it <strong>will rain</strong> tomorrow in Kenitra."</div>
+<div class="vocab-bridge">🇫🇷 Je pense qu'il pleuvra</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Won't (Will Not)</div>
+<div class="vocab-def">The negative form of "will".</div>
+<div class="vocab-ex">"Don't worry, I <strong>won't forget</strong> my keys."</div>
+<div class="vocab-bridge">🇲🇦 Ma-ghadin-sh / 🇫🇷 Je n'oublierai pas</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Not going to</div>
+<div class="vocab-def">The negative form of "going to".</div>
+<div class="vocab-ex">"I <strong>am not going to watch</strong> the movie tonight."</div>
+<div class="vocab-bridge">🇲🇦 Ma-ghadi-sh / 🇫🇷 Je ne vais pas regarder</div>
+</div>
+<div class="vocab-card" style="border-left-color:var(--gold);">
+<div class="vocab-term" style="color:var(--gold);">💡 Decision Test</div>
+<div class="vocab-def">Did you prepare the plan?</div>
+<div class="vocab-ex">YES → Use <strong>Going to</strong>.<br/>NO (Instant/Guess) → Use <strong>Will</strong>.</div>
+<div class="vocab-bridge">🇫🇷 Projet vs Décision instantanée</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 9</span>
+<span>Page 1 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 2 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 2: MINI-STORY -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">2</div>
-      <div>
-        <div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
-        <div class="step-title">Saad's Visit & Future Exhibitions</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Read a conversation about future projects and identify plans vs guesses.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Have him read the dialogue aloud. Point out that "am going to travel" and "are going to host" are fixed plans, while "will love" is a prediction.
-    </div>
-
-    <div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
-      <p><strong>Fattah:</strong> I have exciting news! Next month, I **am going to travel** to Budapest to visit you, Saad!</p>
-      <p style="margin-top:6px;"><strong>Saad:</strong> Excellent, Baba! We **are going to explore** the historical sights of Hungary together. I think you **will love** the architecture!</p>
-      <p style="margin-top:6px;"><strong>Fattah:</strong> Yes, I am very excited. I **will buy** some local art supplies there, too. When I return, I **am going to paint** a large canvas about my journey.</p>
-      <p style="margin-top:6px;"><strong>Saad:</strong> That sounds wonderful. I am sure it **will be** a masterpiece!</p>
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">📝 Comprehension & Logic Check</div>
-      <p class="ex-item"><strong>1.</strong> Where is Fattah going to travel next month?</p>
-      <textarea class="answer-area" data-id="comp-1" placeholder="He is going to..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>2.</strong> What does Saad predict about Fattah's reaction?</p>
-      <textarea class="answer-area" data-id="comp-2" placeholder="Saad thinks..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What is Fattah going to do when he returns to Morocco?</p>
-      <textarea class="answer-area" data-id="comp-3" placeholder="He is going to..."></textarea>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 3: GRAMMAR IN ACTION -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">3</div>
-      <div>
-        <div class="step-name">Step 3 — 🏗️ Grammar in Action</div>
-        <div class="step-title">Building Future Sentences</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Practice choosing between Will and Going to.</div>
-
-    <div class="expressions-box">
-      <div class="exp-title">📐 Quick Test:</div>
-      <div class="exp-item">If there is **evidence** now (e.g. black clouds, a plane ticket) → Use **Going to**</div>
-      <div class="exp-item">If it is a **promise** or **quick offer** (e.g. "I will help you") → Use **Will**</div>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">✏️ Write: "will" or "going to" (with "am/is/are" where needed)</div>
-      <p class="ex-item"><strong>1.</strong> I have my ticket. I <input type="text" class="answer-inline" data-id="grammar-1" placeholder="..."> visit Saad next month.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> (The phone rings) Don't stand up. I <input type="text" class="answer-inline" data-id="grammar-2" placeholder="..."> answer it.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>3.</strong> Look at those dark clouds! It <input type="text" class="answer-inline" data-id="grammar-3" placeholder="..."> rain.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>4.</strong> I think Morocco <input type="text" class="answer-inline" data-id="grammar-4" placeholder="..."> win the match tonight.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>5.</strong> I bought some canvas. I <input type="text" class="answer-inline" data-id="grammar-5" placeholder="..."> paint a sunset tomorrow.</p>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 9</span>
-    <span>Page 2 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 2: MINI-STORY -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">2</div>
+<div>
+<div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
+<div class="step-title">Saad's Visit &amp; Future Exhibitions</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Read a conversation about future projects and identify plans vs guesses.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Have him read the dialogue aloud. Point out that "am going to travel" and "are going to host" are fixed plans, while "will love" is a prediction.
+    </div></div></div>
+<div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
+<p><strong>Fattah:</strong> I have exciting news! Next month, I **am going to travel** to Budapest to visit you, Saad!</p>
+<p style="margin-top:6px;"><strong>Saad:</strong> Excellent, Baba! We **are going to explore** the historical sights of Hungary together. I think you **will love** the architecture!</p>
+<p style="margin-top:6px;"><strong>Fattah:</strong> Yes, I am very excited. I **will buy** some local art supplies there, too. When I return, I **am going to paint** a large canvas about my journey.</p>
+<p style="margin-top:6px;"><strong>Saad:</strong> That sounds wonderful. I am sure it **will be** a masterpiece!</p>
+</div>
+<div class="exercise">
+<div class="ex-label">📝 Comprehension &amp; Logic Check</div>
+<p class="ex-item"><strong>1.</strong> Where is Fattah going to travel next month?</p>
+<textarea class="answer-area" data-id="comp-1" placeholder="He is going to..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>2.</strong> What does Saad predict about Fattah's reaction?</p>
+<textarea class="answer-area" data-id="comp-2" placeholder="Saad thinks..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What is Fattah going to do when he returns to Morocco?</p>
+<textarea class="answer-area" data-id="comp-3" placeholder="He is going to..."></textarea>
+</div>
+</div>
+<div class="divider"></div>
+<!-- STEP 3: GRAMMAR IN ACTION -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">3</div>
+<div>
+<div class="step-name">Step 3 — 🏗️ Grammar in Action</div>
+<div class="step-title">Building Future Sentences</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Practice choosing between Will and Going to.</div>
+<div class="expressions-box">
+<div class="exp-title">📐 Quick Test:</div>
+<div class="exp-item">If there is **evidence** now (e.g. black clouds, a plane ticket) → Use **Going to**</div>
+<div class="exp-item">If it is a **promise** or **quick offer** (e.g. "I will help you") → Use **Will**</div>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">✏️ Write: "will" or "going to" (with "am/is/are" where needed)</div>
+<p class="ex-item"><strong>1.</strong> I have my ticket. I <input class="answer-inline" data-id="grammar-1" placeholder="..." type="text"/> visit Saad next month.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>2.</strong> (The phone rings) Don't stand up. I <input class="answer-inline" data-id="grammar-2" placeholder="..." type="text"/> answer it.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>3.</strong> Look at those dark clouds! It <input class="answer-inline" data-id="grammar-3" placeholder="..." type="text"/> rain.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>4.</strong> I think Morocco <input class="answer-inline" data-id="grammar-4" placeholder="..." type="text"/> win the match tonight.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>5.</strong> I bought some canvas. I <input class="answer-inline" data-id="grammar-5" placeholder="..." type="text"/> paint a sunset tomorrow.</p>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 9</span>
+<span>Page 2 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 3 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 4: GAME ZONE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">4</div>
-      <div>
-        <div class="step-name">Step 4 — 🎮 Game Zone</div>
-        <div class="step-title">The Future Planner!</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Choose the correct future block to launch the future planner!</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This game will test the nuance between plans and sudden choices. Focus on context clues (e.g. "I bought...", "I think...").
-    </div>
-
-    <div class="game-container" id="fut-game">
-      <div class="game-title">🚀 THE FUTURE PLANNER</div>
-      <div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:14px; margin-bottom:10px;">
-        <span id="fut-sent">Sentence loading...</span>
-      </div>
-      
-      <div id="fut-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">Which future form fits best?</div>
-      
-      <div id="fut-options" style="display:flex; justify-content:center; gap:8px; margin-top:10px;"></div>
-      <div id="fut-feedback" class="game-feedback"></div>
-      <div id="fut-score" class="game-score"></div>
-      <div style="text-align:center; margin-top:12px;">
-        <button class="game-btn" id="fut-next" onclick="futNext()" style="display:none;">Next Sentence →</button>
-        <button class="game-btn" id="fut-restart" onclick="futStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
-      </div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px;">
-      <span class="flag">🇲🇦</span> <strong>Moroccan encouragement:</strong> <em>"Insha'Allah!"</em> — If God wills! Same with our future planning, Baba!
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 5: SPEAKING CHALLENGE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">5</div>
-      <div>
-        <div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
-        <div class="step-title">My Projects For Next Month</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Speak for 1 minute about your upcoming projects and predictions.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Prompt him: "What are your plans for next week?" or "What are you going to paint?" Help him separate his plans ("I am going to...") from his guesses ("I think it will...").
-    </div>
-
-    <div class="gold-banner">
-      <p><strong>🎤 Future Plans Challenge</strong></p>
-      <p style="margin-top:6px; font-size:12px;">Describe your dreams and next week's schedule. You must use:</p>
-      <ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
-        <li>✅ "I **am going to** study..." (Plan)</li>
-        <li>✅ "I **am going to** paint..." (Plan)</li>
-        <li>✅ "I think I **will** visit..." (Guess/Hope)</li>
-        <li>✅ "I **will** make tea after this." (Sudden choice)</li>
-      </ul>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">📝 Notes for your presentation</div>
-      <textarea class="answer-area" data-id="speaking-notes" style="min-height:90px;" placeholder="Next month, I am going to buy some paint. I think I will paint the beach of Kenitra again..."></textarea>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 9</span>
-    <span>Page 3 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 4: GAME ZONE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">4</div>
+<div>
+<div class="step-name">Step 4 — 🎮 Game Zone</div>
+<div class="step-title">The Future Planner!</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Choose the correct future block to launch the future planner!</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This game will test the nuance between plans and sudden choices. Focus on context clues (e.g. "I bought...", "I think...").
+    </div></div></div>
+<div class="game-container" id="fut-game">
+<div class="game-title">🚀 THE FUTURE PLANNER</div>
+<div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:14px; margin-bottom:10px;">
+<span id="fut-sent">Sentence loading...</span>
+</div>
+<div id="fut-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">Which future form fits best?</div>
+<div id="fut-options" style="display:flex; justify-content:center; gap:8px; margin-top:10px;"></div>
+<div class="game-feedback" id="fut-feedback"></div>
+<div class="game-score" id="fut-score"></div>
+<div style="text-align:center; margin-top:12px;">
+<button class="game-btn" id="fut-next" onclick="futNext()" style="display:none;">Next Sentence →</button>
+<button class="game-btn" id="fut-restart" onclick="futStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
+</div>
+</div>
+<div class="darija-box" style="margin-top:10px;">
+<span class="flag">🇲🇦</span> <strong>Moroccan encouragement:</strong> <em>"Insha'Allah!"</em> — If God wills! Same with our future planning, Baba!
+    </div>
+</div>
+<div class="divider"></div>
+<!-- STEP 5: SPEAKING CHALLENGE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">5</div>
+<div>
+<div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
+<div class="step-title">My Projects For Next Month</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Speak for 1 minute about your upcoming projects and predictions.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Prompt him: "What are your plans for next week?" or "What are you going to paint?" Help him separate his plans ("I am going to...") from his guesses ("I think it will...").
+    </div></div></div>
+<div class="gold-banner">
+<p><strong>🎤 Future Plans Challenge</strong></p>
+<p style="margin-top:6px; font-size:12px;">Describe your dreams and next week's schedule. You must use:</p>
+<ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
+<li>✅ "I **am going to** study..." (Plan)</li>
+<li>✅ "I **am going to** paint..." (Plan)</li>
+<li>✅ "I think I **will** visit..." (Guess/Hope)</li>
+<li>✅ "I **will** make tea after this." (Sudden choice)</li>
+</ul>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">📝 Notes for your presentation</div>
+<textarea class="answer-area" data-id="speaking-notes" placeholder="Next month, I am going to buy some paint. I think I will paint the beach of Kenitra again..." style="min-height:90px;"></textarea>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 9</span>
+<span>Page 3 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 4 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 6: BOSS LEVEL -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">6</div>
-      <div>
-        <div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
-        <div class="step-title">The Master's Vision</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Complete a paragraph about the upcoming anthropology semester.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Make sure he uses "is going to" or "will" depending on plan vs prediction logic.
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">🎓 Next Semester Goals</div>
-      <p class="ex-item">Fill in: <strong>am going to study, will pass, is going to start, will buy, will love</strong>.</p>
-      <div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
-        Next Monday, my university classes <input type="text" class="answer-inline" data-id="boss-1" style="width:120px;" placeholder="...">. 
-        I <input type="text" class="answer-inline" data-id="boss-2" style="width:120px;" placeholder="..."> social anthropology very hard. 
-        Saad told me: "You <input type="text" class="answer-inline" data-id="boss-3" style="width:120px;" placeholder="..."> this topic!"
-        I need some new books, so I <input type="text" class="answer-inline" data-id="boss-4" style="width:120px;" placeholder="..."> them this afternoon.
-        I am very confident, and I am sure I <input type="text" class="answer-inline" data-id="boss-5" style="width:120px;" placeholder="..."> my exams in winter!
-      </div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 7: HOMEWORK -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">7</div>
-      <div>
-        <div class="step-name">Step 7 — 📚 Homework & Fun Challenge</div>
-        <div class="step-title">The Dream Weaver</div>
-      </div>
-    </div>
-
-    <div class="body">
-      <div class="hw-item">
-        <div class="hw-num">1</div>
-        <div>
-          <strong>Writing Task — My Projects</strong><br>
-          <span style="font-size:12px; color:var(--gray);">Write 3 sentences about your plans for next weekend. Use **am/is/are going to**.</span>
-          <textarea class="answer-area" data-id="hw-1" style="min-height:80px; margin-top:6px;" placeholder="1. Next Saturday, I am going to...&#10;2. ...&#10;3. ..."></textarea>
-        </div>
-      </div>
-
-      <div class="hw-item">
-        <div class="hw-num">2</div>
-        <div>
-          <strong>Future Fixer</strong><br>
-          <span style="font-size:12px; color:var(--gray);">Correct these common mistakes:
-          <br>1. "I will visiting my son tomorrow." → <input type="text" class="answer-inline" data-id="hw-fut-1" style="width:200px;" placeholder="Correction...">
-          <br>2. "I going to paint a canvas." → <input type="text" class="answer-inline" data-id="hw-fut-2" style="width:200px;" placeholder="Correction..."></span>
-        </div>
-      </div>
-    </div>
-
-    <div class="expressions-box" style="margin-top:10px;">
-      <div class="exp-title">📋 Lesson 9 Summary — What You Learned Today</div>
-      <div class="exp-item">✅ **Going to** → Fixed plans made BEFORE speaking (e.g. travel, study)</div>
-      <div class="exp-item">✅ **Will** → Sudden choices made NOW or future predictions/guesses</div>
-      <div class="exp-item">✅ **Won't** → "Will not" (Negative prediction/promise)</div>
-      <div class="exp-item">✅ **Insha'Allah** → The perfect Moroccan twin of hopeful predictions!</div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
-      <span class="flag">🌟</span> <strong>Message from Saad:</strong><br>
-      <em>Baba, you have completed the GRAMMAR foundations batch! What an incredible journey! You now know pronouns, articles, questions, prepositions, connectors, comparatives, simple past, adverbs, and future forms! In the next lesson, we start the VOCABULARY series, starting with essential greetings and phrases. Keep it up, Baba! 💪🇲🇦</em>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 9</span>
-    <span>Page 4 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 6: BOSS LEVEL -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">6</div>
+<div>
+<div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
+<div class="step-title">The Master's Vision</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Complete a paragraph about the upcoming anthropology semester.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Make sure he uses "is going to" or "will" depending on plan vs prediction logic.
+    </div></div></div>
+<div class="exercise">
+<div class="ex-label">🎓 Next Semester Goals</div>
+<p class="ex-item">Fill in: <strong>am going to study, will pass, is going to start, will buy, will love</strong>.</p>
+<div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
+        Next Monday, my university classes <input class="answer-inline" data-id="boss-1" placeholder="..." style="width:120px;" type="text"/>. 
+        I <input class="answer-inline" data-id="boss-2" placeholder="..." style="width:120px;" type="text"/> social anthropology very hard. 
+        Saad told me: "You <input class="answer-inline" data-id="boss-3" placeholder="..." style="width:120px;" type="text"/> this topic!"
+        I need some new books, so I <input class="answer-inline" data-id="boss-4" placeholder="..." style="width:120px;" type="text"/> them this afternoon.
+        I am very confident, and I am sure I <input class="answer-inline" data-id="boss-5" placeholder="..." style="width:120px;" type="text"/> my exams in winter!
+      </div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- STEP 7: HOMEWORK -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">7</div>
+<div>
+<div class="step-name">Step 7 — 📚 Homework &amp; Fun Challenge</div>
+<div class="step-title">The Dream Weaver</div>
+</div>
+</div>
+<div class="body">
+<div class="hw-item">
+<div class="hw-num">1</div>
+<div>
+<strong>Writing Task — My Projects</strong><br/>
+<span style="font-size:12px; color:var(--gray);">Write 3 sentences about your plans for next weekend. Use **am/is/are going to**.</span>
+<textarea class="answer-area" data-id="hw-1" placeholder="1. Next Saturday, I am going to...
+2. ...
+3. ..." style="min-height:80px; margin-top:6px;"></textarea>
+</div>
+</div>
+<div class="hw-item">
+<div class="hw-num">2</div>
+<div>
+<strong>Future Fixer</strong><br/>
+<span style="font-size:12px; color:var(--gray);">Correct these common mistakes:
+          <br/>1. "I will visiting my son tomorrow." → <input class="answer-inline" data-id="hw-fut-1" placeholder="Correction..." style="width:200px;" type="text"/>
+<br/>2. "I going to paint a canvas." → <input class="answer-inline" data-id="hw-fut-2" placeholder="Correction..." style="width:200px;" type="text"/></span>
+</div>
+</div>
+</div>
+<div class="expressions-box" style="margin-top:10px;">
+<div class="exp-title">📋 Lesson 9 Summary — What You Learned Today</div>
+<div class="exp-item">✅ **Going to** → Fixed plans made BEFORE speaking (e.g. travel, study)</div>
+<div class="exp-item">✅ **Will** → Sudden choices made NOW or future predictions/guesses</div>
+<div class="exp-item">✅ **Won't** → "Will not" (Negative prediction/promise)</div>
+<div class="exp-item">✅ **Insha'Allah** → The perfect Moroccan twin of hopeful predictions!</div>
+</div>
+<div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
+<span class="flag">🌟</span> <strong>Message from Saad:</strong><br/>
+<em>Baba, you have completed the GRAMMAR foundations batch! What an incredible journey! You now know pronouns, articles, questions, prepositions, connectors, comparatives, simple past, adverbs, and future forms! In the next lesson, we start the VOCABULARY series, starting with essential greetings and phrases. Keep it up, Baba! 💪🇲🇦</em>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 9</span>
+<span>Page 4 of 4</span>
+</div>
+</div>
 <!-- CONGRATULATIONS PAGE -->
-<div class="page congratulations-page">
-  <img src="../Congratulations.png" alt="Congratulations" class="congrats-img">
-</div>
-
+<div class="page congratulations-page"><div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%;"><img alt="Congratulations" class="congrats-img" src="../Congratulations.png" style="max-height: 180px; object-fit: contain;"/><div class="polaroid-card"><img class="polaroid-img" src="../Mama_Avatar/Family.jfif"/><div class="polaroid-caption">Bravo Baba! 🇲🇦🏆</div><div style="font-family:'Inter', sans-serif; font-size:11.5px; margin-top:8px; color:var(--gray); font-weight:600; line-height:1.4;">"Knowledge is light, Baba! We are all incredibly proud of you for completing Lesson 9! Keep going! 💪❤️"</div></div></div></div>
 <!-- SAVE STATUS -->
 <div class="save-status" id="save-status">✓ Progress saved</div>
-
 <script>
 const STORAGE_KEY = 'ts-lesson-fattah-future';
 

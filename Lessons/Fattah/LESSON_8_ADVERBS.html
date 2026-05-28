@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Fattah — Adverbs | Talksmiths</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Playfair+Display:ital,wght@0,800;1,700&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --teal: #007575; --gold: #D4A843; --navy: #1A2744;
@@ -122,401 +123,452 @@
   @media screen and (max-width: 768px) {
     .vocab-grid { grid-template-columns: 1fr !important; }
   }
+
+  /* --- Talksmiths Avatar Integration Styles --- */
+  .ts-avatar-circle {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 2px solid var(--teal);
+    object-fit: cover;
+    object-position: center 20%;
+    box-shadow: 0 4px 8px rgba(0, 117, 117, 0.15);
+    flex-shrink: 0;
+  }
+  .teacher-chat-bubble {
+    display: flex;
+    gap: 14px;
+    background: #FFFBF2;
+    border: 1px solid #EAD295;
+    border-radius: 14px;
+    padding: 14px;
+    margin: 12px 0;
+    align-items: flex-start;
+    box-shadow: 0 2px 10px rgba(212, 168, 67, 0.05);
+    break-inside: avoid;
+  }
+  .chat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: left;
+  }
+  .chat-header {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--teal);
+  }
+  .chat-text {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #614B15;
+  }
+  .family-reading-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+    break-inside: avoid;
+  }
+  .family-member-card {
+    display: flex;
+    gap: 14px;
+    background: #FDFDFD;
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 14px;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: left;
+  }
+  .family-member-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  }
+  .polaroid-card {
+    background: var(--white);
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 16px 16px 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    text-align: center;
+    max-width: 340px;
+    margin: 20px auto;
+    transform: rotate(-1.5deg);
+    transition: transform 0.3s ease;
+    display: block !important;
+  }
+  .polaroid-card:hover {
+    transform: rotate(0deg) scale(1.03);
+  }
+  .polaroid-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #EAEAEA;
+  }
+  .polaroid-caption {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 700;
+    margin-top: 14px;
+    color: var(--navy);
+  }
+  @media screen and (max-width: 1200px) {
+    .family-reading-grid { grid-template-columns: 1fr !important; }
+    .family-member-card[style*="grid-column: span 2"] { grid-column: span 1 !important; }
+  }
+  @media print {
+    .ts-avatar-circle, 
+    .teacher-chat-bubble, 
+    .polaroid-card { 
+      display: none !important; 
+    }
+  }
 </style>
 </head>
 <body class="student-mode">
-
 <!-- VIEW TOGGLE -->
 <div class="view-toggle">
-  <button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
-  <button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
+<button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
+<button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
 </div>
 <button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
-
 <!-- ==================== PAGE 1 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-  <div class="logo">Talksmiths — Lesson Engine™</div>
-  <h1>Adverbs</h1>
-  <div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 8</div>
-  <div class="badges">
-    <span class="badge badge-teal">A1 — Beginner</span>
-    <span class="badge badge-gold">60 min</span>
-    <span class="badge badge-gray">Grammar Foundations</span>
-    <span class="badge badge-gray">Lesson 8</span>
-  </div>
-  <div class="divider"></div>
-
-  <!-- Step 1 + Notebook row -->
-  <div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
-
-      <!-- STEP 1: WARM-UP -->
-      <div class="step">
-        <div class="step-header">
-          <div class="step-num">1</div>
-          <div>
-            <div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
-            <div class="step-title">How Do You Live?</div>
-          </div>
-          <div class="step-time">8 min</div>
-        </div>
-        <div class="objective">Objective: Learn how to describe *how often* and *how* you do activities.</div>
-
-        <div class="student-note">
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<div class="logo">Talksmiths — Lesson Engine™</div>
+<h1>Adverbs</h1>
+<div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 8</div>
+<div class="badges">
+<span class="badge badge-teal">A1 — Beginner</span>
+<span class="badge badge-gold">60 min</span>
+<span class="badge badge-gray">Grammar Foundations</span>
+<span class="badge badge-gray">Lesson 8</span>
+</div>
+<div class="divider"></div>
+<!-- Step 1 + Notebook row -->
+<div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
+<!-- STEP 1: WARM-UP -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">1</div>
+<div>
+<div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
+<div class="step-title">How Do You Live?</div>
+</div>
+<div class="step-time">8 min</div>
+</div>
+<div class="objective">Objective: Learn how to describe *how often* and *how* you do activities.</div>
+<div class="student-note">
           🎓 <strong>Student Strategy:</strong> Adverbs tell us more about actions. "I paint **carefully**." "I **always** drink tea." They add flavor to your sentences!
         </div>
-
-        <div class="teacher-note">
-          📋 <strong>Teacher Note:</strong> Differentiate between adverbs of frequency (always, often) and adverbs of manner (carefully, slowly). Focus on their positions in a sentence.
-        </div>
-
-        <div class="exercise">
-          <div class="ex-label">🗣️ Speaking Warm-Up — How often do you...?</div>
-          <p class="ex-item">Answer these simple questions using **Always, Often, Sometimes, or Never**:</p>
-          <ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
-            <li>🎨 How often do you paint?</li>
-            <li>🌊 How often do you walk by the sea in Mehdya?</li>
-            <li>☕ How often do you drink sweet Moroccan tea?</li>
-          </ul>
-          <div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Differentiate between adverbs of frequency (always, often) and adverbs of manner (carefully, slowly). Focus on their positions in a sentence.
+        </div></div></div>
+<div class="exercise">
+<div class="ex-label">🗣️ Speaking Warm-Up — How often do you...?</div>
+<p class="ex-item">Answer these simple questions using **Always, Often, Sometimes, or Never**:</p>
+<ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
+<li>🎨 How often do you paint?</li>
+<li>🌊 How often do you walk by the sea in Mehdya?</li>
+<li>☕ How often do you drink sweet Moroccan tea?</li>
+</ul>
+<div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
             Example: "I always drink tea in the afternoon, and I sometimes paint in the evening."
           </div>
+</div>
+<div class="darija-box">
+<span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> In Darija we say "Dima" (Always), "B3d lmerrat" (Sometimes), or "Bshwia" (Slowly). Today we learn their English matches!
         </div>
-
-        <div class="darija-box">
-          <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> In Darija we say "Dima" (Always), "B3d lmerrat" (Sometimes), or "Bshwia" (Slowly). Today we learn their English matches!
-        </div>
-      </div>
-    </div>
-
-    <!-- BABA'S NOTEBOOK -->
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
-      <div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
-        <div class="step-header" style="margin-bottom:6px;">
-          <div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
-        </div>
-        <div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
-          <p style="font-size:12px; line-height:1.4; color:var(--gray);">
+</div>
+</div>
+<!-- BABA'S NOTEBOOK -->
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
+<div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
+<div class="step-header" style="margin-bottom:6px;">
+<div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
+</div>
+<div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
+<p style="font-size:12px; line-height:1.4; color:var(--gray);">
             Write down your adverbs. List 3 things you **always** do and 1 thing you **never** do.
           </p>
-          <ul style="font-size:11px; margin-left:16px; line-height:1.4; color:var(--navy); list-style-type:square;">
-            <li>I always __________ in the morning.</li>
-            <li>I never __________ during my lectures.</li>
-          </ul>
-          <textarea class="answer-area" data-id="baba-notebook-p1" style="flex:1; min-height:180px; font-size:12px;" placeholder="My daily habits / العادات اليومية ديالي..."></textarea>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- VOCABULARY SECTION -->
-  <div style="column-span:all !important; margin-top:8px;">
-    <div class="step">
-      <div class="step-header">
-        <div class="step-name">📖 Key Adverbs & Word Order Rules</div>
-      </div>
-
-      <div class="vocab-grid">
-        <div class="vocab-card">
-          <div class="vocab-term">Always → ديما → Toujours</div>
-          <div class="vocab-def">100% of the time. Goes BEFORE the main verb.</div>
-          <div class="vocab-ex">"I <strong>always</strong> wake up at 7:00 AM."</div>
-          <div class="vocab-bridge">🇲🇦 Dima / 🇫🇷 Toujours</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Often / Sometimes</div>
-          <div class="vocab-def">70% / 50% of the time.</div>
-          <div class="vocab-ex">"I <strong>often</strong> walk on Mehdya beach."</div>
-          <div class="vocab-bridge">🇲🇦 Ghaleban / B3d lmerrat / 🇫🇷 Souvent / Parfois</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Never → عمرني → Jamais</div>
-          <div class="vocab-def">0% of the time. (Use with positive verbs!).</div>
-          <div class="vocab-ex">"I <strong>never</strong> drink black coffee."</div>
-          <div class="vocab-bridge">🇲🇦 3mmri / 🇫🇷 Jamais</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Carefully → بتركيز / بشويا → Attentivement</div>
-          <div class="vocab-def">Adverb of manner (tells HOW). Add -ly to adjectives.</div>
-          <div class="vocab-ex">"Fattah paints <strong>carefully</strong>."</div>
-          <div class="vocab-bridge">🇲🇦 B-tartib / 🇫🇷 Avec soin / Soigneusement</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Slowly / Quickly</div>
-          <div class="vocab-def">Describes speed of action.</div>
-          <div class="vocab-ex">"I walk <strong>slowly</strong>, but I think <strong>quickly</strong>."</div>
-          <div class="vocab-bridge">🇲🇦 B-shwia / Dghya / 🇫🇷 Lentement / Rapidement</div>
-        </div>
-        
-        <div class="vocab-card" style="border-left-color:var(--gold);">
-          <div class="vocab-term" style="color:var(--gold);">💡 Word Order Rule</div>
-          <div class="vocab-def">Frequency adverbs go BEFORE standard verbs, but AFTER "to be"!</div>
-          <div class="vocab-ex">"I <strong>always</strong> paint." vs "I am <strong>always</strong> happy."</div>
-          <div class="vocab-bridge">🇫🇷 Avant le verbe / Après le verbe "être"</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 8</span>
-    <span>Page 1 of 4</span>
-  </div>
+<ul style="font-size:11px; margin-left:16px; line-height:1.4; color:var(--navy); list-style-type:square;">
+<li>I always __________ in the morning.</li>
+<li>I never __________ during my lectures.</li>
+</ul>
+<textarea class="answer-area" data-id="baba-notebook-p1" placeholder="My daily habits / العادات اليومية ديالي..." style="flex:1; min-height:180px; font-size:12px;"></textarea>
 </div>
-
+</div>
+</div>
+</div>
+<!-- VOCABULARY SECTION -->
+<div style="column-span:all !important; margin-top:8px;">
+<div class="step">
+<div class="step-header">
+<div class="step-name">📖 Key Adverbs &amp; Word Order Rules</div>
+</div>
+<div class="vocab-grid">
+<div class="vocab-card">
+<div class="vocab-term">Always → ديما → Toujours</div>
+<div class="vocab-def">100% of the time. Goes BEFORE the main verb.</div>
+<div class="vocab-ex">"I <strong>always</strong> wake up at 7:00 AM."</div>
+<div class="vocab-bridge">🇲🇦 Dima / 🇫🇷 Toujours</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Often / Sometimes</div>
+<div class="vocab-def">70% / 50% of the time.</div>
+<div class="vocab-ex">"I <strong>often</strong> walk on Mehdya beach."</div>
+<div class="vocab-bridge">🇲🇦 Ghaleban / B3d lmerrat / 🇫🇷 Souvent / Parfois</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Never → عمرني → Jamais</div>
+<div class="vocab-def">0% of the time. (Use with positive verbs!).</div>
+<div class="vocab-ex">"I <strong>never</strong> drink black coffee."</div>
+<div class="vocab-bridge">🇲🇦 3mmri / 🇫🇷 Jamais</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Carefully → بتركيز / بشويا → Attentivement</div>
+<div class="vocab-def">Adverb of manner (tells HOW). Add -ly to adjectives.</div>
+<div class="vocab-ex">"Fattah paints <strong>carefully</strong>."</div>
+<div class="vocab-bridge">🇲🇦 B-tartib / 🇫🇷 Avec soin / Soigneusement</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Slowly / Quickly</div>
+<div class="vocab-def">Describes speed of action.</div>
+<div class="vocab-ex">"I walk <strong>slowly</strong>, but I think <strong>quickly</strong>."</div>
+<div class="vocab-bridge">🇲🇦 B-shwia / Dghya / 🇫🇷 Lentement / Rapidement</div>
+</div>
+<div class="vocab-card" style="border-left-color:var(--gold);">
+<div class="vocab-term" style="color:var(--gold);">💡 Word Order Rule</div>
+<div class="vocab-def">Frequency adverbs go BEFORE standard verbs, but AFTER "to be"!</div>
+<div class="vocab-ex">"I <strong>always</strong> paint." vs "I am <strong>always</strong> happy."</div>
+<div class="vocab-bridge">🇫🇷 Avant le verbe / Après le verbe "être"</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 8</span>
+<span>Page 1 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 2 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 2: MINI-STORY -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">2</div>
-      <div>
-        <div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
-        <div class="step-title">Fattah's Peaceful Day</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Read a short description of Baba's routine and find adverbs.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Have him read the text. Encourage him to notice that "peacefully", "carefully", and "slowly" end in "-ly" and describe the verb.
-    </div>
-
-    <div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
-      <p>I **always** start my day with a warm cup of mint tea. In the morning, I sit **peacefully** in my garden. I **usually** sketch a new idea for a painting.</p>
-      <p style="margin-top:6px;">In the afternoon, I walk **slowly** along Mehdya beach. The sea air is refreshing. I **sometimes** meet friends at a local cafe, and we talk **happily** about art and history.</p>
-      <p style="margin-top:6px;">In the evening, I **never** watch loud television. I prefer to read my anthropology books **quietly** before sleeping.</p>
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">📝 Comprehension & Adverb Search</div>
-      <p class="ex-item"><strong>1.</strong> How does Fattah start his day?</p>
-      <textarea class="answer-area" data-id="comp-1" placeholder="He always starts..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>2.</strong> How does he walk along the beach?</p>
-      <textarea class="answer-area" data-id="comp-2" placeholder="He walks..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What does he never do in the evening?</p>
-      <textarea class="answer-area" data-id="comp-3" placeholder="He never..."></textarea>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 3: GRAMMAR IN ACTION -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">3</div>
-      <div>
-        <div class="step-name">Step 3 — 🏗️ Grammar in Action</div>
-        <div class="step-title">Building Adverbs of Manner</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Practice changing adjectives to adverbs of manner.</div>
-
-    <div class="expressions-box">
-      <div class="exp-title">📐 Adjective vs Adverb:</div>
-      <div class="exp-item">Adjectives describe **things** (nouns): "A **quiet** room."</div>
-      <div class="exp-item">Adverbs describe **actions** (verbs): "He reads **quietly**."</div>
-      <div class="exp-item">To build: Adjective + **-ly** (careful → carefully)</div>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">✏️ Complete the sentences with the adverb form of the word in brackets:</div>
-      <p class="ex-item"><strong>1.</strong> (careful) I paint the details <input type="text" class="answer-inline" data-id="grammar-1" placeholder="...">.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> (quick) He runs <input type="text" class="answer-inline" data-id="grammar-2" placeholder="..."> to catch the bus.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>3.</strong> (happy) The father and son spoke <input type="text" class="answer-inline" data-id="grammar-3" placeholder="..."> about their plans.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>4.</strong> (slow) The old banker walked <input type="text" class="answer-inline" data-id="grammar-4" placeholder="..."> down the street.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>5.</strong> (quiet) We must study <input type="text" class="answer-inline" data-id="grammar-5" placeholder="..."> in the university library.</p>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 8</span>
-    <span>Page 2 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 2: MINI-STORY -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">2</div>
+<div>
+<div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
+<div class="step-title">Fattah's Peaceful Day</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Read a short description of Baba's routine and find adverbs.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Have him read the text. Encourage him to notice that "peacefully", "carefully", and "slowly" end in "-ly" and describe the verb.
+    </div></div></div>
+<div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
+<p>I **always** start my day with a warm cup of mint tea. In the morning, I sit **peacefully** in my garden. I **usually** sketch a new idea for a painting.</p>
+<p style="margin-top:6px;">In the afternoon, I walk **slowly** along Mehdya beach. The sea air is refreshing. I **sometimes** meet friends at a local cafe, and we talk **happily** about art and history.</p>
+<p style="margin-top:6px;">In the evening, I **never** watch loud television. I prefer to read my anthropology books **quietly** before sleeping.</p>
+</div>
+<div class="exercise">
+<div class="ex-label">📝 Comprehension &amp; Adverb Search</div>
+<p class="ex-item"><strong>1.</strong> How does Fattah start his day?</p>
+<textarea class="answer-area" data-id="comp-1" placeholder="He always starts..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>2.</strong> How does he walk along the beach?</p>
+<textarea class="answer-area" data-id="comp-2" placeholder="He walks..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What does he never do in the evening?</p>
+<textarea class="answer-area" data-id="comp-3" placeholder="He never..."></textarea>
+</div>
+</div>
+<div class="divider"></div>
+<!-- STEP 3: GRAMMAR IN ACTION -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">3</div>
+<div>
+<div class="step-name">Step 3 — 🏗️ Grammar in Action</div>
+<div class="step-title">Building Adverbs of Manner</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Practice changing adjectives to adverbs of manner.</div>
+<div class="expressions-box">
+<div class="exp-title">📐 Adjective vs Adverb:</div>
+<div class="exp-item">Adjectives describe **things** (nouns): "A **quiet** room."</div>
+<div class="exp-item">Adverbs describe **actions** (verbs): "He reads **quietly**."</div>
+<div class="exp-item">To build: Adjective + **-ly** (careful → carefully)</div>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">✏️ Complete the sentences with the adverb form of the word in brackets:</div>
+<p class="ex-item"><strong>1.</strong> (careful) I paint the details <input class="answer-inline" data-id="grammar-1" placeholder="..." type="text"/>.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>2.</strong> (quick) He runs <input class="answer-inline" data-id="grammar-2" placeholder="..." type="text"/> to catch the bus.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>3.</strong> (happy) The father and son spoke <input class="answer-inline" data-id="grammar-3" placeholder="..." type="text"/> about their plans.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>4.</strong> (slow) The old banker walked <input class="answer-inline" data-id="grammar-4" placeholder="..." type="text"/> down the street.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>5.</strong> (quiet) We must study <input class="answer-inline" data-id="grammar-5" placeholder="..." type="text"/> in the university library.</p>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 8</span>
+<span>Page 2 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 3 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 4: GAME ZONE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">4</div>
-      <div>
-        <div class="step-name">Step 4 — 🎮 Game Zone</div>
-        <div class="step-title">The Adverb Order Game!</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Choose the sentence with the correct word order!</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Many French and Darija speakers put frequency adverbs after the verb (e.g. "I paint always"). This game targets that habit.
-    </div>
-
-    <div class="game-container" id="adv-game">
-      <div class="game-title">🔄 THE ADVERB WORD ORDER</div>
-      <div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:14px; margin-bottom:10px;">
-        Adverb: <span id="adv-word" style="color:var(--teal); font-size:18px;">Adverb loading...</span>
-      </div>
-      
-      <div id="adv-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">Which sentence is correct?</div>
-      
-      <div id="adv-options" style="display:grid; gap:8px; margin-top:10px;"></div>
-      <div id="adv-feedback" class="game-feedback"></div>
-      <div id="adv-score" class="game-score"></div>
-      <div style="text-align:center; margin-top:12px;">
-        <button class="game-btn" id="adv-next" onclick="advNext()" style="display:none;">Next Question →</button>
-        <button class="game-btn" id="adv-restart" onclick="advStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
-      </div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px;">
-      <span class="flag">🇲🇦</span> <strong>Darija Wisdom:</strong> <em>"Shwia b shwia"</em> — Slowly by slowly! Accuracy is better than speed. Take your time!
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 5: SPEAKING CHALLENGE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">5</div>
-      <div>
-        <div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
-        <div class="step-title">My Daily Habits</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Speak for 1 minute about your week using frequency adverbs.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Encourage him to tell you about his actual week. Ask: "What do you do on Fridays?" or "What do you do when you paint?" Insist on hearing: always, sometimes, never, slowly.
-    </div>
-
-    <div class="gold-banner">
-      <p><strong>🎤 Habit Challenge</strong></p>
-      <p style="margin-top:6px; font-size:12px;">Talk about your routine. Try to include these:</p>
-      <ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
-        <li>✅ "I **always** study..."</li>
-        <li>✅ "I **sometimes** draw..."</li>
-        <li>✅ "I **never** go to..."</li>
-        <li>✅ "I paint **carefully**."</li>
-      </ul>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">📝 Write down your thoughts</div>
-      <textarea class="answer-area" data-id="speaking-notes" style="min-height:90px;" placeholder="On Fridays, I always visit... and we happily drink tea together..."></textarea>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 8</span>
-    <span>Page 3 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 4: GAME ZONE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">4</div>
+<div>
+<div class="step-name">Step 4 — 🎮 Game Zone</div>
+<div class="step-title">The Adverb Order Game!</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Choose the sentence with the correct word order!</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Many French and Darija speakers put frequency adverbs after the verb (e.g. "I paint always"). This game targets that habit.
+    </div></div></div>
+<div class="game-container" id="adv-game">
+<div class="game-title">🔄 THE ADVERB WORD ORDER</div>
+<div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:14px; margin-bottom:10px;">
+        Adverb: <span id="adv-word" style="color:var(--teal); font-size:18px;">Adverb loading...</span>
+</div>
+<div id="adv-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">Which sentence is correct?</div>
+<div id="adv-options" style="display:grid; gap:8px; margin-top:10px;"></div>
+<div class="game-feedback" id="adv-feedback"></div>
+<div class="game-score" id="adv-score"></div>
+<div style="text-align:center; margin-top:12px;">
+<button class="game-btn" id="adv-next" onclick="advNext()" style="display:none;">Next Question →</button>
+<button class="game-btn" id="adv-restart" onclick="advStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
+</div>
+</div>
+<div class="darija-box" style="margin-top:10px;">
+<span class="flag">🇲🇦</span> <strong>Darija Wisdom:</strong> <em>"Shwia b shwia"</em> — Slowly by slowly! Accuracy is better than speed. Take your time!
+    </div>
+</div>
+<div class="divider"></div>
+<!-- STEP 5: SPEAKING CHALLENGE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">5</div>
+<div>
+<div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
+<div class="step-title">My Daily Habits</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Speak for 1 minute about your week using frequency adverbs.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Encourage him to tell you about his actual week. Ask: "What do you do on Fridays?" or "What do you do when you paint?" Insist on hearing: always, sometimes, never, slowly.
+    </div></div></div>
+<div class="gold-banner">
+<p><strong>🎤 Habit Challenge</strong></p>
+<p style="margin-top:6px; font-size:12px;">Talk about your routine. Try to include these:</p>
+<ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
+<li>✅ "I **always** study..."</li>
+<li>✅ "I **sometimes** draw..."</li>
+<li>✅ "I **never** go to..."</li>
+<li>✅ "I paint **carefully**."</li>
+</ul>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">📝 Write down your thoughts</div>
+<textarea class="answer-area" data-id="speaking-notes" placeholder="On Fridays, I always visit... and we happily drink tea together..." style="min-height:90px;"></textarea>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 8</span>
+<span>Page 3 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 4 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 6: BOSS LEVEL -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">6</div>
-      <div>
-        <div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
-        <div class="step-title">A Sunday Match at the Cafe</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Place adverbs of frequency and manner correctly in a story.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This challenges his understanding of both types of adverbs.
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">⚽ Watching the Football Match</div>
-      <p class="ex-item">Complete the text using: <strong>always, quickly, loudly, sometimes, never</strong>.</p>
-      <div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
-        On Sundays, I <input type="text" class="answer-inline" data-id="boss-1" style="width:100px;" placeholder="..."> watch football at the local cafe. 
-        I <input type="text" class="answer-inline" data-id="boss-2" style="width:100px;" placeholder="..."> go alone; my friends are there. 
-        When Real Madrid scores, the fans cheer <input type="text" class="answer-inline" data-id="boss-3" style="width:100px;" placeholder="...">. 
-        The waiter serves the sweet tea <input type="text" class="answer-inline" data-id="boss-4" style="width:100px;" placeholder="..."> to the tables.
-        I am <input type="text" class="answer-inline" data-id="boss-5" style="width:100px;" placeholder="..."> bored at the cafe because the atmosphere is excellent!
-      </div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 7: HOMEWORK -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">7</div>
-      <div>
-        <div class="step-name">Step 7 — 📚 Homework & Fun Challenge</div>
-        <div class="step-title">Habit Tracker</div>
-      </div>
-    </div>
-
-    <div class="body">
-      <div class="hw-item">
-        <div class="hw-num">1</div>
-        <div>
-          <strong>Writing Task — My Habits</strong><br>
-          <span style="font-size:12px; color:var(--gray);">Write 3 sentences about your weekly habits. Use **usually, sometimes, and never**.</span>
-          <textarea class="answer-area" data-id="hw-1" style="min-height:80px; margin-top:6px;" placeholder="1. I usually...&#10;2. ...&#10;3. ..."></textarea>
-        </div>
-      </div>
-
-      <div class="hw-item">
-        <div class="hw-num">2</div>
-        <div>
-          <strong>Adjective to Adverb Matcher</strong><br>
-          <span style="font-size:12px; color:var(--gray);">Change these adjectives to adverbs:
-          <br>1. Quick → <input type="text" class="answer-inline" data-id="hw-adv-1" style="width:120px;" placeholder="Adverb...">
-          <br>2. Quiet → <input type="text" class="answer-inline" data-id="hw-adv-2" style="width:120px;" placeholder="Adverb...">
-          <br>3. Happy → <input type="text" class="answer-inline" data-id="hw-adv-3" style="width:120px;" placeholder="Adverb..."></span>
-        </div>
-      </div>
-    </div>
-
-    <div class="expressions-box" style="margin-top:10px;">
-      <div class="exp-title">📋 Lesson 8 Summary — What You Learned Today</div>
-      <div class="exp-item">✅ **Frequency Adverbs** → always, usually, often, sometimes, never</div>
-      <div class="exp-item">✅ **Rule** → Frequency adverbs go BEFORE standard verbs but AFTER "to be"</div>
-      <div class="exp-item">✅ **Manner Adverbs** → describe HOW we do things (quickly, carefully)</div>
-      <div class="exp-item">✅ **Manner Rule** → Add **-ly** to adjectives (quiet → quietly)</div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
-      <span class="flag">🌟</span> <strong>Message from Saad:</strong><br>
-      <em>Baba, you are doing great! Adverbs give you the ability to describe your character and routine. In the next lesson, we will learn "Will vs Going to" to talk about your future goals and plans. Keep making me proud! 💪🇲🇦</em>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 8</span>
-    <span>Page 4 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 6: BOSS LEVEL -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">6</div>
+<div>
+<div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
+<div class="step-title">A Sunday Match at the Cafe</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Place adverbs of frequency and manner correctly in a story.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This challenges his understanding of both types of adverbs.
+    </div></div></div>
+<div class="exercise">
+<div class="ex-label">⚽ Watching the Football Match</div>
+<p class="ex-item">Complete the text using: <strong>always, quickly, loudly, sometimes, never</strong>.</p>
+<div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
+        On Sundays, I <input class="answer-inline" data-id="boss-1" placeholder="..." style="width:100px;" type="text"/> watch football at the local cafe. 
+        I <input class="answer-inline" data-id="boss-2" placeholder="..." style="width:100px;" type="text"/> go alone; my friends are there. 
+        When Real Madrid scores, the fans cheer <input class="answer-inline" data-id="boss-3" placeholder="..." style="width:100px;" type="text"/>. 
+        The waiter serves the sweet tea <input class="answer-inline" data-id="boss-4" placeholder="..." style="width:100px;" type="text"/> to the tables.
+        I am <input class="answer-inline" data-id="boss-5" placeholder="..." style="width:100px;" type="text"/> bored at the cafe because the atmosphere is excellent!
+      </div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- STEP 7: HOMEWORK -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">7</div>
+<div>
+<div class="step-name">Step 7 — 📚 Homework &amp; Fun Challenge</div>
+<div class="step-title">Habit Tracker</div>
+</div>
+</div>
+<div class="body">
+<div class="hw-item">
+<div class="hw-num">1</div>
+<div>
+<strong>Writing Task — My Habits</strong><br/>
+<span style="font-size:12px; color:var(--gray);">Write 3 sentences about your weekly habits. Use **usually, sometimes, and never**.</span>
+<textarea class="answer-area" data-id="hw-1" placeholder="1. I usually...
+2. ...
+3. ..." style="min-height:80px; margin-top:6px;"></textarea>
+</div>
+</div>
+<div class="hw-item">
+<div class="hw-num">2</div>
+<div>
+<strong>Adjective to Adverb Matcher</strong><br/>
+<span style="font-size:12px; color:var(--gray);">Change these adjectives to adverbs:
+          <br/>1. Quick → <input class="answer-inline" data-id="hw-adv-1" placeholder="Adverb..." style="width:120px;" type="text"/>
+<br/>2. Quiet → <input class="answer-inline" data-id="hw-adv-2" placeholder="Adverb..." style="width:120px;" type="text"/>
+<br/>3. Happy → <input class="answer-inline" data-id="hw-adv-3" placeholder="Adverb..." style="width:120px;" type="text"/></span>
+</div>
+</div>
+</div>
+<div class="expressions-box" style="margin-top:10px;">
+<div class="exp-title">📋 Lesson 8 Summary — What You Learned Today</div>
+<div class="exp-item">✅ **Frequency Adverbs** → always, usually, often, sometimes, never</div>
+<div class="exp-item">✅ **Rule** → Frequency adverbs go BEFORE standard verbs but AFTER "to be"</div>
+<div class="exp-item">✅ **Manner Adverbs** → describe HOW we do things (quickly, carefully)</div>
+<div class="exp-item">✅ **Manner Rule** → Add **-ly** to adjectives (quiet → quietly)</div>
+</div>
+<div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
+<span class="flag">🌟</span> <strong>Message from Saad:</strong><br/>
+<em>Baba, you are doing great! Adverbs give you the ability to describe your character and routine. In the next lesson, we will learn "Will vs Going to" to talk about your future goals and plans. Keep making me proud! 💪🇲🇦</em>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 8</span>
+<span>Page 4 of 4</span>
+</div>
+</div>
 <!-- CONGRATULATIONS PAGE -->
-<div class="page congratulations-page">
-  <img src="../Congratulations.png" alt="Congratulations" class="congrats-img">
-</div>
-
+<div class="page congratulations-page"><div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%;"><img alt="Congratulations" class="congrats-img" src="../Congratulations.png" style="max-height: 180px; object-fit: contain;"/><div class="polaroid-card"><img class="polaroid-img" src="../Mama_Avatar/Family.jfif"/><div class="polaroid-caption">Bravo Baba! 🇲🇦🏆</div><div style="font-family:'Inter', sans-serif; font-size:11.5px; margin-top:8px; color:var(--gray); font-weight:600; line-height:1.4;">"Knowledge is light, Baba! We are all incredibly proud of you for completing Lesson 8! Keep going! 💪❤️"</div></div></div></div>
 <!-- SAVE STATUS -->
 <div class="save-status" id="save-status">✓ Progress saved</div>
-
 <script>
 const STORAGE_KEY = 'ts-lesson-fattah-adverbs';
 

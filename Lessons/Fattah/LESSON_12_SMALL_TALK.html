@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fattah — Everyday Expressions & Small Talk | Talksmiths</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fattah — Everyday Expressions &amp; Small Talk | Talksmiths</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Playfair+Display:ital,wght@0,800;1,700&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --teal: #007575; --gold: #D4A843; --navy: #1A2744;
@@ -122,402 +123,453 @@
   @media screen and (max-width: 768px) {
     .vocab-grid { grid-template-columns: 1fr !important; }
   }
+
+  /* --- Talksmiths Avatar Integration Styles --- */
+  .ts-avatar-circle {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 2px solid var(--teal);
+    object-fit: cover;
+    object-position: center 20%;
+    box-shadow: 0 4px 8px rgba(0, 117, 117, 0.15);
+    flex-shrink: 0;
+  }
+  .teacher-chat-bubble {
+    display: flex;
+    gap: 14px;
+    background: #FFFBF2;
+    border: 1px solid #EAD295;
+    border-radius: 14px;
+    padding: 14px;
+    margin: 12px 0;
+    align-items: flex-start;
+    box-shadow: 0 2px 10px rgba(212, 168, 67, 0.05);
+    break-inside: avoid;
+  }
+  .chat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: left;
+  }
+  .chat-header {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--teal);
+  }
+  .chat-text {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #614B15;
+  }
+  .family-reading-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+    break-inside: avoid;
+  }
+  .family-member-card {
+    display: flex;
+    gap: 14px;
+    background: #FDFDFD;
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 14px;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: left;
+  }
+  .family-member-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  }
+  .polaroid-card {
+    background: var(--white);
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 16px 16px 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    text-align: center;
+    max-width: 340px;
+    margin: 20px auto;
+    transform: rotate(-1.5deg);
+    transition: transform 0.3s ease;
+    display: block !important;
+  }
+  .polaroid-card:hover {
+    transform: rotate(0deg) scale(1.03);
+  }
+  .polaroid-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #EAEAEA;
+  }
+  .polaroid-caption {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 700;
+    margin-top: 14px;
+    color: var(--navy);
+  }
+  @media screen and (max-width: 1200px) {
+    .family-reading-grid { grid-template-columns: 1fr !important; }
+    .family-member-card[style*="grid-column: span 2"] { grid-column: span 1 !important; }
+  }
+  @media print {
+    .ts-avatar-circle, 
+    .teacher-chat-bubble, 
+    .polaroid-card { 
+      display: none !important; 
+    }
+  }
 </style>
 </head>
 <body class="student-mode">
-
 <!-- VIEW TOGGLE -->
 <div class="view-toggle">
-  <button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
-  <button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
+<button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
+<button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
 </div>
 <button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
-
 <!-- ==================== PAGE 1 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-  <div class="logo">Talksmiths — Lesson Engine™</div>
-  <h1>Everyday Expressions & Small Talk</h1>
-  <div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 12</div>
-  <div class="badges">
-    <span class="badge badge-teal">A1 — Beginner</span>
-    <span class="badge badge-gold">60 min</span>
-    <span class="badge badge-gray">Vocabulary Foundations</span>
-    <span class="badge badge-gray">Lesson 12</span>
-  </div>
-  <div class="divider"></div>
-
-  <!-- Step 1 + Notebook row -->
-  <div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
-
-      <!-- STEP 1: WARM-UP -->
-      <div class="step">
-        <div class="step-header">
-          <div class="step-num">1</div>
-          <div>
-            <div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
-            <div class="step-title">The Art of Chatting</div>
-          </div>
-          <div class="step-time">8 min</div>
-        </div>
-        <div class="objective">Objective: Practice simple, friendly small talk with friends and family.</div>
-
-        <div class="student-note">
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<div class="logo">Talksmiths — Lesson Engine™</div>
+<h1>Everyday Expressions &amp; Small Talk</h1>
+<div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 12</div>
+<div class="badges">
+<span class="badge badge-teal">A1 — Beginner</span>
+<span class="badge badge-gold">60 min</span>
+<span class="badge badge-gray">Vocabulary Foundations</span>
+<span class="badge badge-gray">Lesson 12</span>
+</div>
+<div class="divider"></div>
+<!-- Step 1 + Notebook row -->
+<div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
+<!-- STEP 1: WARM-UP -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">1</div>
+<div>
+<div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
+<div class="step-title">The Art of Chatting</div>
+</div>
+<div class="step-time">8 min</div>
+</div>
+<div class="objective">Objective: Practice simple, friendly small talk with friends and family.</div>
+<div class="student-note">
           🎓 <strong>Student Strategy:</strong> Small talk is how we show interest in others. Asking "How are you?" or sharing simple opinions makes conversations natural and warm.
         </div>
-
-        <div class="teacher-note">
-          📋 <strong>Teacher Note:</strong> Simulate a phone call between you and Baba. "Hi Baba, how are you doing today?" Keep his responses natural and encourage him to ask back.
-        </div>
-
-        <div class="exercise">
-          <div class="ex-label">🗣️ Speaking Warm-Up — Phone Call with Saad</div>
-          <p class="ex-item">How would you reply to Saad on the phone?</p>
-          <ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
-            <li>📞 "Hi Baba! **How are you doing**?"</li>
-            <li>🍵 "What is the **weather** like in Kenitra today?"</li>
-            <li>🎨 "What are your **plans** for the afternoon?"</li>
-          </ul>
-          <div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Simulate a phone call between you and Baba. "Hi Baba, how are you doing today?" Keep his responses natural and encourage him to ask back.
+        </div></div></div>
+<div class="exercise">
+<div class="ex-label">🗣️ Speaking Warm-Up — Phone Call with Saad</div>
+<p class="ex-item">How would you reply to Saad on the phone?</p>
+<ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
+<li>📞 "Hi Baba! **How are you doing**?"</li>
+<li>🍵 "What is the **weather** like in Kenitra today?"</li>
+<li>🎨 "What are your **plans** for the afternoon?"</li>
+</ul>
+<div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
             Example: "I am fine, thank you! The weather is warm and I want to paint."
           </div>
+</div>
+<div class="darija-box">
+<span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> We say *Kidayr?* (How are you?), *Kidayr ljaw?* (How is the weather?), and *Labas alhamdulillah* (Fine, praise be to God). Today we practice English equivalents!
         </div>
-
-        <div class="darija-box">
-          <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> We say *Kidayr?* (How are you?), *Kidayr ljaw?* (How is the weather?), and *Labas alhamdulillah* (Fine, praise be to God). Today we practice English equivalents!
-        </div>
-      </div>
-    </div>
-
-    <!-- BABA'S NOTEBOOK -->
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
-      <div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
-        <div class="step-header" style="margin-bottom:6px;">
-          <div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
-        </div>
-        <div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
-          <p style="font-size:12px; line-height:1.4; color:var(--gray);">
+</div>
+</div>
+<!-- BABA'S NOTEBOOK -->
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
+<div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
+<div class="step-header" style="margin-bottom:6px;">
+<div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
+</div>
+<div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
+<p style="font-size:12px; line-height:1.4; color:var(--gray);">
             Write down 3 ways to say you are feeling happy/good, and 2 ways to express simple opinions.
           </p>
-          <ul style="font-size:11px; margin-left:16px; line-height:1.4; color:var(--navy); list-style-type:square;">
-            <li>Good: I am doing great, Not bad, __________</li>
-            <li>Opinion: In my opinion, I think, __________</li>
-          </ul>
-          <textarea class="answer-area" data-id="baba-notebook-p1" style="flex:1; min-height:180px; font-size:12px;" placeholder="My diary notes / اليوميات ديالي..."></textarea>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- VOCABULARY SECTION -->
-  <div style="column-span:all !important; margin-top:8px;">
-    <div class="step">
-      <div class="step-header">
-        <div class="step-name">📖 Everyday Expressions & Small Talk Phrases</div>
-      </div>
-
-      <div class="vocab-grid">
-        <div class="vocab-card">
-          <div class="vocab-term">How are you doing? / How is it going?</div>
-          <div class="vocab-def">Common ways to ask how someone is.</div>
-          <div class="vocab-ex">"Hi Baba! <strong>How is it going?</strong>"</div>
-          <div class="vocab-bridge">🇲🇦 Kidayr? / Labas? / 🇫🇷 Comment ça va?</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Not bad / I am doing great</div>
-          <div class="vocab-def">Positive and neutral responses.</div>
-          <div class="vocab-ex">"I am <strong>doing great</strong>, thank you."</div>
-          <div class="vocab-bridge">🇲🇦 Labas / Bikhir / 🇫🇷 Pas mal / Ça va super</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">In my opinion... / I think...</div>
-          <div class="vocab-def">Used to express personal views.</div>
-          <div class="vocab-ex">"<strong>In my opinion</strong>, Kenitra is a calm city."</div>
-          <div class="vocab-bridge">🇲🇦 Fi nadari / 🇫🇷 À mon avis / Je pense</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">I need... / I want...</div>
-          <div class="vocab-def">Expressing basic needs or desires.</div>
-          <div class="vocab-ex">"<strong>I need</strong> some water, please."</div>
-          <div class="vocab-bridge">🇲🇦 Bghit / Khassni / 🇫🇷 J'ai besoin / Je veux</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">How is the weather?</div>
-          <div class="vocab-def">Perfect conversational starter.</div>
-          <div class="vocab-ex">"<strong>How is the weather</strong> in Mehdya today?"</div>
-          <div class="vocab-bridge">🇲🇦 Kidayr ljaw? / 🇫🇷 Quel temps fait-il?</div>
-        </div>
-        
-        <div class="vocab-card" style="border-left-color:var(--gold);">
-          <div class="vocab-term" style="color:var(--gold);">💡 Simple Agreements</div>
-          <div class="vocab-def">Showing you agree or understand:</div>
-          <div class="vocab-ex">"<strong>I agree</strong>." (🇫🇷 Je suis d'accord)<br>"<strong>Exactly</strong>!" (🇫🇷 Tout à fait)</div>
-          <div class="vocab-bridge">🇲🇦 Nshan / Niyt / 🇫🇷 Tout à fait / D'accord</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 12</span>
-    <span>Page 1 of 4</span>
-  </div>
+<ul style="font-size:11px; margin-left:16px; line-height:1.4; color:var(--navy); list-style-type:square;">
+<li>Good: I am doing great, Not bad, __________</li>
+<li>Opinion: In my opinion, I think, __________</li>
+</ul>
+<textarea class="answer-area" data-id="baba-notebook-p1" placeholder="My diary notes / اليوميات ديالي..." style="flex:1; min-height:180px; font-size:12px;"></textarea>
 </div>
-
+</div>
+</div>
+</div>
+<!-- VOCABULARY SECTION -->
+<div style="column-span:all !important; margin-top:8px;">
+<div class="step">
+<div class="step-header">
+<div class="step-name">📖 Everyday Expressions &amp; Small Talk Phrases</div>
+</div>
+<div class="vocab-grid">
+<div class="vocab-card">
+<div class="vocab-term">How are you doing? / How is it going?</div>
+<div class="vocab-def">Common ways to ask how someone is.</div>
+<div class="vocab-ex">"Hi Baba! <strong>How is it going?</strong>"</div>
+<div class="vocab-bridge">🇲🇦 Kidayr? / Labas? / 🇫🇷 Comment ça va?</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Not bad / I am doing great</div>
+<div class="vocab-def">Positive and neutral responses.</div>
+<div class="vocab-ex">"I am <strong>doing great</strong>, thank you."</div>
+<div class="vocab-bridge">🇲🇦 Labas / Bikhir / 🇫🇷 Pas mal / Ça va super</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">In my opinion... / I think...</div>
+<div class="vocab-def">Used to express personal views.</div>
+<div class="vocab-ex">"<strong>In my opinion</strong>, Kenitra is a calm city."</div>
+<div class="vocab-bridge">🇲🇦 Fi nadari / 🇫🇷 À mon avis / Je pense</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">I need... / I want...</div>
+<div class="vocab-def">Expressing basic needs or desires.</div>
+<div class="vocab-ex">"<strong>I need</strong> some water, please."</div>
+<div class="vocab-bridge">🇲🇦 Bghit / Khassni / 🇫🇷 J'ai besoin / Je veux</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">How is the weather?</div>
+<div class="vocab-def">Perfect conversational starter.</div>
+<div class="vocab-ex">"<strong>How is the weather</strong> in Mehdya today?"</div>
+<div class="vocab-bridge">🇲🇦 Kidayr ljaw? / 🇫🇷 Quel temps fait-il?</div>
+</div>
+<div class="vocab-card" style="border-left-color:var(--gold);">
+<div class="vocab-term" style="color:var(--gold);">💡 Simple Agreements</div>
+<div class="vocab-def">Showing you agree or understand:</div>
+<div class="vocab-ex">"<strong>I agree</strong>." (🇫🇷 Je suis d'accord)<br/>"<strong>Exactly</strong>!" (🇫🇷 Tout à fait)</div>
+<div class="vocab-bridge">🇲🇦 Nshan / Niyt / 🇫🇷 Tout à fait / D'accord</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 12</span>
+<span>Page 1 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 2 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 2: MINI-STORY -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">2</div>
-      <div>
-        <div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
-        <div class="step-title">A Friendly Afternoon Call</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Read a natural dialogue using daily expressions and check comprehension.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Roleplay this dialogue. Pay special attention to the transition from greetings to small talk about hobbies and the weather.
-    </div>
-
-    <div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
-      <p><strong>Saad:</strong> Hello Baba! How is it going today?</p>
-      <p style="margin-top:6px;"><strong>Fattah:</strong> Hi Saad! I am doing great, thank you. How are you?</p>
-      <p style="margin-top:6px;"><strong>Saad:</strong> Not bad, a bit busy. How is the weather in Kenitra?</p>
-      <p style="margin-top:6px;"><strong>Fattah:</strong> It is beautiful and warm today. In my opinion, spring is the best season here. I want to walk to the beach this afternoon.</p>
-      <p style="margin-top:6px;"><strong>Saad:</strong> I agree! Have a wonderful walk, Baba. Speak to you soon!</p>
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">📝 Check Your Understanding</div>
-      <p class="ex-item"><strong>1.</strong> How is Baba Fattah doing today?</p>
-      <textarea class="answer-area" data-id="comp-1" placeholder="He is doing..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>2.</strong> What is the weather like in Kenitra today?</p>
-      <textarea class="answer-area" data-id="comp-2" placeholder="The weather is..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What does Fattah want to do this afternoon?</p>
-      <textarea class="answer-area" data-id="comp-3" placeholder="He wants to..."></textarea>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 3: GRAMMAR IN ACTION -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">3</div>
-      <div>
-        <div class="step-name">Step 3 — 🏗️ Expressions in Action</div>
-        <div class="step-title">Expressing Opinions and Needs</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Practice structuring opinions and expressing desires politely.</div>
-
-    <div class="expressions-box">
-      <div class="exp-title">📐 Key Structures:</div>
-      <div class="exp-item">Opinion: **In my opinion,** + [sentence] (e.g. "In my opinion, tea is better.")</div>
-      <div class="exp-item">Desire: **I want to** + [action verb] (e.g. "I want to paint.")</div>
-      <div class="exp-item">Need: **I need** + [noun] (e.g. "I need fresh brush.")</div>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">✏️ Write the correct conversational connector:</div>
-      <p class="ex-item"><strong>1.</strong> (In my opinion / I want) <input type="text" class="answer-inline" data-id="grammar-1" placeholder="...">, football is more exciting than tennis.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> (I want to / I need) I am thirsty, so I <input type="text" class="answer-inline" data-id="grammar-2" placeholder="..."> drink a glass of water.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>3.</strong> (I agree / How is) "I think Mehdya is beautiful." — "<input type="text" class="answer-inline" data-id="grammar-3" placeholder="...">, it is spectacular!"</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>4.</strong> (Excuse me / How are you) "<input type="text" class="answer-inline" data-id="grammar-4" placeholder="..."> doing?" — "I am fine, thanks."</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>5.</strong> (I need / I want to) I have an anthropology exam, so I <input type="text" class="answer-inline" data-id="grammar-5" placeholder="..."> study tonight.</p>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 12</span>
-    <span>Page 2 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 2: MINI-STORY -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">2</div>
+<div>
+<div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
+<div class="step-title">A Friendly Afternoon Call</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Read a natural dialogue using daily expressions and check comprehension.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Roleplay this dialogue. Pay special attention to the transition from greetings to small talk about hobbies and the weather.
+    </div></div></div>
+<div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
+<p><strong>Saad:</strong> Hello Baba! How is it going today?</p>
+<p style="margin-top:6px;"><strong>Fattah:</strong> Hi Saad! I am doing great, thank you. How are you?</p>
+<p style="margin-top:6px;"><strong>Saad:</strong> Not bad, a bit busy. How is the weather in Kenitra?</p>
+<p style="margin-top:6px;"><strong>Fattah:</strong> It is beautiful and warm today. In my opinion, spring is the best season here. I want to walk to the beach this afternoon.</p>
+<p style="margin-top:6px;"><strong>Saad:</strong> I agree! Have a wonderful walk, Baba. Speak to you soon!</p>
+</div>
+<div class="exercise">
+<div class="ex-label">📝 Check Your Understanding</div>
+<p class="ex-item"><strong>1.</strong> How is Baba Fattah doing today?</p>
+<textarea class="answer-area" data-id="comp-1" placeholder="He is doing..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>2.</strong> What is the weather like in Kenitra today?</p>
+<textarea class="answer-area" data-id="comp-2" placeholder="The weather is..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What does Fattah want to do this afternoon?</p>
+<textarea class="answer-area" data-id="comp-3" placeholder="He wants to..."></textarea>
+</div>
+</div>
+<div class="divider"></div>
+<!-- STEP 3: GRAMMAR IN ACTION -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">3</div>
+<div>
+<div class="step-name">Step 3 — 🏗️ Expressions in Action</div>
+<div class="step-title">Expressing Opinions and Needs</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Practice structuring opinions and expressing desires politely.</div>
+<div class="expressions-box">
+<div class="exp-title">📐 Key Structures:</div>
+<div class="exp-item">Opinion: **In my opinion,** + [sentence] (e.g. "In my opinion, tea is better.")</div>
+<div class="exp-item">Desire: **I want to** + [action verb] (e.g. "I want to paint.")</div>
+<div class="exp-item">Need: **I need** + [noun] (e.g. "I need fresh brush.")</div>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">✏️ Write the correct conversational connector:</div>
+<p class="ex-item"><strong>1.</strong> (In my opinion / I want) <input class="answer-inline" data-id="grammar-1" placeholder="..." type="text"/>, football is more exciting than tennis.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>2.</strong> (I want to / I need) I am thirsty, so I <input class="answer-inline" data-id="grammar-2" placeholder="..." type="text"/> drink a glass of water.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>3.</strong> (I agree / How is) "I think Mehdya is beautiful." — "<input class="answer-inline" data-id="grammar-3" placeholder="..." type="text"/>, it is spectacular!"</p>
+<p class="ex-item" style="margin-top:8px;"><strong>4.</strong> (Excuse me / How are you) "<input class="answer-inline" data-id="grammar-4" placeholder="..." type="text"/> doing?" — "I am fine, thanks."</p>
+<p class="ex-item" style="margin-top:8px;"><strong>5.</strong> (I need / I want to) I have an anthropology exam, so I <input class="answer-inline" data-id="grammar-5" placeholder="..." type="text"/> study tonight.</p>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 12</span>
+<span>Page 2 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 3 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 4: GAME ZONE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">4</div>
-      <div>
-        <div class="step-name">Step 4 — 🎮 Game Zone</div>
-        <div class="step-title">The Small Talk Simulator!</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Choose the best conversational reply to keep the small talk flowing!</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This game simulates actual social dialogue. Guide him on choosing replies that show interest.
-    </div>
-
-    <div class="game-container" id="talk-game">
-      <div class="game-title">💬 THE SMALL TALK SIMULATOR</div>
-      <div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:16px; margin-bottom:10px;">
-        Saad says: <span id="talk-phrase" style="color:var(--teal); font-size:18px;">Saad's phrase...</span>
-      </div>
-      
-      <div id="talk-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">What is the best reply?</div>
-      
-      <div id="talk-options" style="display:grid; gap:8px; margin-top:10px;"></div>
-      <div id="talk-feedback" class="game-feedback"></div>
-      <div id="talk-score" class="game-score"></div>
-      <div style="text-align:center; margin-top:12px;">
-        <button class="game-btn" id="talk-next" onclick="talkNext()" style="display:none;">Next Dialogue →</button>
-        <button class="game-btn" id="talk-restart" onclick="talkStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
-      </div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px;">
-      <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> Keep the conversation friendly! A smile and simple expressions make any talk successful.
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 5: SPEAKING CHALLENGE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">5</div>
-      <div>
-        <div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
-        <div class="step-title">Sharing My Opinions</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: State simple opinions about your favorite topics in English.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Ask Baba for his opinion on: 1. Green tea vs mint tea. 2. Casablanca vs Kenitra. 3. Studying at university vs painting. Ensure he starts with: "In my opinion..." or "I think...".
-    </div>
-
-    <div class="gold-banner">
-      <p><strong>🎤 The Opinion Board</strong></p>
-      <p style="margin-top:6px; font-size:12px;">Express your views about daily life. Try to say:</p>
-      <ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
-        <li>✅ "In my opinion, mint tea is..."</li>
-        <li>✅ "I think painting is..."</li>
-        <li>✅ "I agree with..."</li>
-      </ul>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">📝 Write down your simple opinions</div>
-      <textarea class="answer-area" data-id="speaking-notes" style="min-height:90px;" placeholder="In my opinion, Kenitra is calmer than Rabat. I think studying anthropology is exciting..."></textarea>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 12</span>
-    <span>Page 3 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 4: GAME ZONE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">4</div>
+<div>
+<div class="step-name">Step 4 — 🎮 Game Zone</div>
+<div class="step-title">The Small Talk Simulator!</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Choose the best conversational reply to keep the small talk flowing!</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This game simulates actual social dialogue. Guide him on choosing replies that show interest.
+    </div></div></div>
+<div class="game-container" id="talk-game">
+<div class="game-title">💬 THE SMALL TALK SIMULATOR</div>
+<div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:16px; margin-bottom:10px;">
+        Saad says: <span id="talk-phrase" style="color:var(--teal); font-size:18px;">Saad's phrase...</span>
+</div>
+<div id="talk-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">What is the best reply?</div>
+<div id="talk-options" style="display:grid; gap:8px; margin-top:10px;"></div>
+<div class="game-feedback" id="talk-feedback"></div>
+<div class="game-score" id="talk-score"></div>
+<div style="text-align:center; margin-top:12px;">
+<button class="game-btn" id="talk-next" onclick="talkNext()" style="display:none;">Next Dialogue →</button>
+<button class="game-btn" id="talk-restart" onclick="talkStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
+</div>
+</div>
+<div class="darija-box" style="margin-top:10px;">
+<span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> Keep the conversation friendly! A smile and simple expressions make any talk successful.
+    </div>
+</div>
+<div class="divider"></div>
+<!-- STEP 5: SPEAKING CHALLENGE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">5</div>
+<div>
+<div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
+<div class="step-title">Sharing My Opinions</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: State simple opinions about your favorite topics in English.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Ask Baba for his opinion on: 1. Green tea vs mint tea. 2. Casablanca vs Kenitra. 3. Studying at university vs painting. Ensure he starts with: "In my opinion..." or "I think...".
+    </div></div></div>
+<div class="gold-banner">
+<p><strong>🎤 The Opinion Board</strong></p>
+<p style="margin-top:6px; font-size:12px;">Express your views about daily life. Try to say:</p>
+<ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
+<li>✅ "In my opinion, mint tea is..."</li>
+<li>✅ "I think painting is..."</li>
+<li>✅ "I agree with..."</li>
+</ul>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">📝 Write down your simple opinions</div>
+<textarea class="answer-area" data-id="speaking-notes" placeholder="In my opinion, Kenitra is calmer than Rabat. I think studying anthropology is exciting..." style="min-height:90px;"></textarea>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 12</span>
+<span>Page 3 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 4 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 6: BOSS LEVEL -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">6</div>
-      <div>
-        <div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
-        <div class="step-title">The Cafe Small Talk</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Fill in the missing conversational expressions in this cafe scene.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This challenges his ability to choose correct replies in context.
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">☕ Chatting with a Friend</div>
-      <p class="ex-item">Complete the text using: <strong>How is it going, In my opinion, Not bad, I agree, I want</strong>.</p>
-      <div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
-        <strong>Friend:</strong> Hello Fattah! <input type="text" class="answer-inline" data-id="boss-1" style="width:120px;" placeholder="..."> today?
-        <br><strong>Fattah:</strong> Hi my friend! <input type="text" class="answer-inline" data-id="boss-2" style="width:120px;" placeholder="...">, thank you. I am a bit tired.
-        <br><strong>Friend:</strong> I think the weather is too hot today.
-        <br><strong>Fattah:</strong> <input type="text" class="answer-inline" data-id="boss-3" style="width:120px;" placeholder="...">. It is warmer than yesterday.
-        <br><strong>Friend:</strong> Do you want tea or coffee?
-        <br><strong>Fattah:</strong> <input type="text" class="answer-inline" data-id="boss-4" style="width:120px;" placeholder="..."> to drink green tea. <input type="text" class="answer-inline" data-id="boss-5" style="width:120px;" placeholder="...">, it is healthier!
-      </div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 7: HOMEWORK -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">7</div>
-      <div>
-        <div class="step-name">Step 7 — 📚 Homework & Fun Challenge</div>
-        <div class="step-title">The Conversation Partner</div>
-      </div>
-    </div>
-
-    <div class="body">
-      <div class="hw-item">
-        <div class="hw-num">1</div>
-        <div>
-          <strong>Writing Task — Expressing Opinions</strong><br>
-          <span style="font-size:12px; color:var(--gray);">Write 3 sentences expressing your opinions about: 1. Football. 2. Nature. 3. Tea. (Use "In my opinion..." or "I think...")</span>
-          <textarea class="answer-area" data-id="hw-1" style="min-height:80px; margin-top:6px;" placeholder="1. In my opinion, football is...&#10;2. ...&#10;3. ..."></textarea>
-        </div>
-      </div>
-
-      <div class="hw-item">
-        <div class="hw-num">2</div>
-        <div>
-          <strong>Conversation Matches</strong><br>
-          <span style="font-size:12px; color:var(--gray);">Write the response:
-          <br>1. "How are you doing?" → <input type="text" class="answer-inline" data-id="hw-talk-1" style="width:180px;" placeholder="Response...">
-          <br>2. "I think winter is beautiful." → <input type="text" class="answer-inline" data-id="hw-talk-2" style="width:180px;" placeholder="Response..."></span>
-        </div>
-      </div>
-    </div>
-
-    <div class="expressions-box" style="margin-top:10px;">
-      <div class="exp-title">📋 Lesson 12 Summary — What You Learned Today</div>
-      <div class="exp-item">✅ **How are you doing?** → standard way to inquire about feelings</div>
-      <div class="exp-item">✅ **Doing great / Not bad** → standard friendly responses</div>
-      <div class="exp-item">✅ **In my opinion / I think** → structures to start opinions</div>
-      <div class="exp-item">✅ **I agree** → easy way to show positive alignment</div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
-      <span class="flag">🌟</span> <strong>Message from Saad:</strong><br>
-      <em>Baba, your small talk is very natural and elegant! You can chat with anyone at university now. In the next lesson, we will study the Seasons and Weather in depth (Spring, Summer, Rain, Wind) so you can describe Mehdya's seaside weather perfectly. Let's keep it up! 💪🇲🇦</em>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 12</span>
-    <span>Page 4 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 6: BOSS LEVEL -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">6</div>
+<div>
+<div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
+<div class="step-title">The Cafe Small Talk</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Fill in the missing conversational expressions in this cafe scene.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This challenges his ability to choose correct replies in context.
+    </div></div></div>
+<div class="exercise">
+<div class="ex-label">☕ Chatting with a Friend</div>
+<p class="ex-item">Complete the text using: <strong>How is it going, In my opinion, Not bad, I agree, I want</strong>.</p>
+<div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
+<strong>Friend:</strong> Hello Fattah! <input class="answer-inline" data-id="boss-1" placeholder="..." style="width:120px;" type="text"/> today?
+        <br/><strong>Fattah:</strong> Hi my friend! <input class="answer-inline" data-id="boss-2" placeholder="..." style="width:120px;" type="text"/>, thank you. I am a bit tired.
+        <br/><strong>Friend:</strong> I think the weather is too hot today.
+        <br/><strong>Fattah:</strong> <input class="answer-inline" data-id="boss-3" placeholder="..." style="width:120px;" type="text"/>. It is warmer than yesterday.
+        <br/><strong>Friend:</strong> Do you want tea or coffee?
+        <br/><strong>Fattah:</strong> <input class="answer-inline" data-id="boss-4" placeholder="..." style="width:120px;" type="text"/> to drink green tea. <input class="answer-inline" data-id="boss-5" placeholder="..." style="width:120px;" type="text"/>, it is healthier!
+      </div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- STEP 7: HOMEWORK -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">7</div>
+<div>
+<div class="step-name">Step 7 — 📚 Homework &amp; Fun Challenge</div>
+<div class="step-title">The Conversation Partner</div>
+</div>
+</div>
+<div class="body">
+<div class="hw-item">
+<div class="hw-num">1</div>
+<div>
+<strong>Writing Task — Expressing Opinions</strong><br/>
+<span style="font-size:12px; color:var(--gray);">Write 3 sentences expressing your opinions about: 1. Football. 2. Nature. 3. Tea. (Use "In my opinion..." or "I think...")</span>
+<textarea class="answer-area" data-id="hw-1" placeholder="1. In my opinion, football is...
+2. ...
+3. ..." style="min-height:80px; margin-top:6px;"></textarea>
+</div>
+</div>
+<div class="hw-item">
+<div class="hw-num">2</div>
+<div>
+<strong>Conversation Matches</strong><br/>
+<span style="font-size:12px; color:var(--gray);">Write the response:
+          <br/>1. "How are you doing?" → <input class="answer-inline" data-id="hw-talk-1" placeholder="Response..." style="width:180px;" type="text"/>
+<br/>2. "I think winter is beautiful." → <input class="answer-inline" data-id="hw-talk-2" placeholder="Response..." style="width:180px;" type="text"/></span>
+</div>
+</div>
+</div>
+<div class="expressions-box" style="margin-top:10px;">
+<div class="exp-title">📋 Lesson 12 Summary — What You Learned Today</div>
+<div class="exp-item">✅ **How are you doing?** → standard way to inquire about feelings</div>
+<div class="exp-item">✅ **Doing great / Not bad** → standard friendly responses</div>
+<div class="exp-item">✅ **In my opinion / I think** → structures to start opinions</div>
+<div class="exp-item">✅ **I agree** → easy way to show positive alignment</div>
+</div>
+<div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
+<span class="flag">🌟</span> <strong>Message from Saad:</strong><br/>
+<em>Baba, your small talk is very natural and elegant! You can chat with anyone at university now. In the next lesson, we will study the Seasons and Weather in depth (Spring, Summer, Rain, Wind) so you can describe Mehdya's seaside weather perfectly. Let's keep it up! 💪🇲🇦</em>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 12</span>
+<span>Page 4 of 4</span>
+</div>
+</div>
 <!-- CONGRATULATIONS PAGE -->
-<div class="page congratulations-page">
-  <img src="../Congratulations.png" alt="Congratulations" class="congrats-img">
-</div>
-
+<div class="page congratulations-page"><div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%;"><img alt="Congratulations" class="congrats-img" src="../Congratulations.png" style="max-height: 180px; object-fit: contain;"/><div class="polaroid-card"><img class="polaroid-img" src="../Mama_Avatar/Family.jfif"/><div class="polaroid-caption">Bravo Baba! 🇲🇦🏆</div><div style="font-family:'Inter', sans-serif; font-size:11.5px; margin-top:8px; color:var(--gray); font-weight:600; line-height:1.4;">"Knowledge is light, Baba! We are all incredibly proud of you for completing Lesson 12! Keep going! 💪❤️"</div></div></div></div>
 <!-- SAVE STATUS -->
 <div class="save-status" id="save-status">✓ Progress saved</div>
-
 <script>
 const STORAGE_KEY = 'ts-lesson-fattah-small-talk';
 

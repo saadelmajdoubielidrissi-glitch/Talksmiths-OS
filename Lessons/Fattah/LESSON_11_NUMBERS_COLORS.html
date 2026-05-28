@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fattah — Numbers, Colors, Days & Years | Talksmiths</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fattah — Numbers, Colors, Days &amp; Years | Talksmiths</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Playfair+Display:ital,wght@0,800;1,700&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --teal: #007575; --gold: #D4A843; --navy: #1A2744;
@@ -122,394 +123,445 @@
   @media screen and (max-width: 768px) {
     .vocab-grid { grid-template-columns: 1fr !important; }
   }
+
+  /* --- Talksmiths Avatar Integration Styles --- */
+  .ts-avatar-circle {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 2px solid var(--teal);
+    object-fit: cover;
+    object-position: center 20%;
+    box-shadow: 0 4px 8px rgba(0, 117, 117, 0.15);
+    flex-shrink: 0;
+  }
+  .teacher-chat-bubble {
+    display: flex;
+    gap: 14px;
+    background: #FFFBF2;
+    border: 1px solid #EAD295;
+    border-radius: 14px;
+    padding: 14px;
+    margin: 12px 0;
+    align-items: flex-start;
+    box-shadow: 0 2px 10px rgba(212, 168, 67, 0.05);
+    break-inside: avoid;
+  }
+  .chat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: left;
+  }
+  .chat-header {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--teal);
+  }
+  .chat-text {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #614B15;
+  }
+  .family-reading-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+    break-inside: avoid;
+  }
+  .family-member-card {
+    display: flex;
+    gap: 14px;
+    background: #FDFDFD;
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 14px;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: left;
+  }
+  .family-member-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  }
+  .polaroid-card {
+    background: var(--white);
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 16px 16px 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    text-align: center;
+    max-width: 340px;
+    margin: 20px auto;
+    transform: rotate(-1.5deg);
+    transition: transform 0.3s ease;
+    display: block !important;
+  }
+  .polaroid-card:hover {
+    transform: rotate(0deg) scale(1.03);
+  }
+  .polaroid-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #EAEAEA;
+  }
+  .polaroid-caption {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 700;
+    margin-top: 14px;
+    color: var(--navy);
+  }
+  @media screen and (max-width: 1200px) {
+    .family-reading-grid { grid-template-columns: 1fr !important; }
+    .family-member-card[style*="grid-column: span 2"] { grid-column: span 1 !important; }
+  }
+  @media print {
+    .ts-avatar-circle, 
+    .teacher-chat-bubble, 
+    .polaroid-card { 
+      display: none !important; 
+    }
+  }
 </style>
 </head>
 <body class="student-mode">
-
 <!-- VIEW TOGGLE -->
 <div class="view-toggle">
-  <button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
-  <button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
+<button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
+<button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
 </div>
 <button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
-
 <!-- ==================== PAGE 1 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-  <div class="logo">Talksmiths — Lesson Engine™</div>
-  <h1>Numbers, Colors, Days & Years</h1>
-  <div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 11</div>
-  <div class="badges">
-    <span class="badge badge-teal">A1 — Beginner</span>
-    <span class="badge badge-gold">60 min</span>
-    <span class="badge badge-gray">Vocabulary Foundations</span>
-    <span class="badge badge-gray">Lesson 11</span>
-  </div>
-  <div class="divider"></div>
-
-  <!-- Step 1 + Notebook row -->
-  <div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
-
-      <!-- STEP 1: WARM-UP -->
-      <div class="step">
-        <div class="step-header">
-          <div class="step-num">1</div>
-          <div>
-            <div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
-            <div class="step-title">The Palette & The Calendar</div>
-          </div>
-          <div class="step-time">8 min</div>
-        </div>
-        <div class="objective">Objective: Learn how to name colors on your palette and read dates on a calendar.</div>
-
-        <div class="student-note">
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<div class="logo">Talksmiths — Lesson Engine™</div>
+<h1>Numbers, Colors, Days &amp; Years</h1>
+<div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 11</div>
+<div class="badges">
+<span class="badge badge-teal">A1 — Beginner</span>
+<span class="badge badge-gold">60 min</span>
+<span class="badge badge-gray">Vocabulary Foundations</span>
+<span class="badge badge-gray">Lesson 11</span>
+</div>
+<div class="divider"></div>
+<!-- Step 1 + Notebook row -->
+<div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
+<!-- STEP 1: WARM-UP -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">1</div>
+<div>
+<div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
+<div class="step-title">The Palette &amp; The Calendar</div>
+</div>
+<div class="step-time">8 min</div>
+</div>
+<div class="objective">Objective: Learn how to name colors on your palette and read dates on a calendar.</div>
+<div class="student-note">
           🎓 <strong>Student Strategy:</strong> Numbers and colors are the building blocks of descriptions. You use them when discussing prices, your age, history lectures, and your oil paintings!
         </div>
-
-        <div class="teacher-note">
-          📋 <strong>Teacher Note:</strong> Connect colors to his painting palette (e.g. ultramarine blue, cadmium red) and numbers to historical years (like 1960 or 2026).
-        </div>
-
-        <div class="exercise">
-          <div class="ex-label">🗣️ Speaking Warm-Up — Look and Describe</div>
-          <p class="ex-item">Describe these details using English:</p>
-          <ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
-            <li>🎨 What is your favorite **color** to paint with?</li>
-            <li>📅 What **day of the week** is today?</li>
-            <li>🔢 What **year** were you born? (e.g. nineteen sixty)</li>
-          </ul>
-          <div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Connect colors to his painting palette (e.g. ultramarine blue, cadmium red) and numbers to historical years (like 1960 or 2026).
+        </div></div></div>
+<div class="exercise">
+<div class="ex-label">🗣️ Speaking Warm-Up — Look and Describe</div>
+<p class="ex-item">Describe these details using English:</p>
+<ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
+<li>🎨 What is your favorite **color** to paint with?</li>
+<li>📅 What **day of the week** is today?</li>
+<li>🔢 What **year** were you born? (e.g. nineteen sixty)</li>
+</ul>
+<div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
             Example: "My favorite color is blue, today is Thursday, and my birth year is nineteen sixty-five."
           </div>
+</div>
+<div class="darija-box">
+<span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> In Darija we say *Zreg* (Blue), *Khmes* (Thursday), and *Tlatin* (Thirty). Let's learn them in English!
         </div>
-
-        <div class="darija-box">
-          <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> In Darija we say *Zreg* (Blue), *Khmes* (Thursday), and *Tlatin* (Thirty). Let's learn them in English!
-        </div>
-      </div>
-    </div>
-
-    <!-- BABA'S NOTEBOOK -->
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
-      <div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
-        <div class="step-header" style="margin-bottom:6px;">
-          <div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
-        </div>
-        <div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
-          <p style="font-size:12px; line-height:1.4; color:var(--gray);">
+</div>
+</div>
+<!-- BABA'S NOTEBOOK -->
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
+<div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
+<div class="step-header" style="margin-bottom:6px;">
+<div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
+</div>
+<div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
+<p style="font-size:12px; line-height:1.4; color:var(--gray);">
             Write down the colors you see in Mehdya's sunset, the number of paintings you made, and the days you go to university.
           </p>
-          <textarea class="answer-area" data-id="baba-notebook-p1" style="flex:1; min-height:180px; font-size:12px;" placeholder="My palette details / تفاصيل الألوان ديالي..."></textarea>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- VOCABULARY SECTION -->
-  <div style="column-span:all !important; margin-top:8px;">
-    <div class="step">
-      <div class="step-header">
-        <div class="step-name">📖 Core Vocabulary: Colors, Days & Years</div>
-      </div>
-
-      <div class="vocab-grid">
-        <div class="vocab-card">
-          <div class="vocab-term">Red, Blue, Green, Yellow</div>
-          <div class="vocab-def">Primary and natural colors.</div>
-          <div class="vocab-ex">"The Mehdya sea is **blue** and the trees are **green**."</div>
-          <div class="vocab-bridge">🇲🇦 Ahmer, Zreg, Khder, Sfer / 🇫🇷 Rouge, Bleu, Vert, Jaune</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">White, Black, Brown</div>
-          <div class="vocab-def">Neutral and earthy colors.</div>
-          <div class="vocab-ex">"I mix **white** and **black** to make gray paint."</div>
-          <div class="vocab-bridge">🇲🇦 Bied, Khel, Qehwi / 🇫🇷 Blanc, Noir, Marron</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Monday, Wednesday, Friday</div>
-          <div class="vocab-def">Days of the week. Capitalize the first letter!</div>
-          <div class="vocab-ex">"I attend anthropology lectures on **Monday**."</div>
-          <div class="vocab-bridge">🇲🇦 Tnin, Larba, Jm3a / 🇫🇷 Lundi, Mercredi, Vendredi</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Saturday, Sunday</div>
-          <div class="vocab-def">The weekend. Time to rest and paint!</div>
-          <div class="vocab-ex">"On **Sunday**, I watch football."</div>
-          <div class="vocab-bridge">🇲🇦 Sebt, L7ad / 🇫🇷 Samedi, Dimanche</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Years: 1985 / 2026</div>
-          <div class="vocab-def">Read as two parts: nineteen eighty-five / twenty twenty-six.</div>
-          <div class="vocab-ex">"I retired in 2021 (twenty twenty-one)."</div>
-          <div class="vocab-bridge">🇫🇷 Dix-neuf cent quatre-vingt-cinq</div>
-        </div>
-        
-        <div class="vocab-card" style="border-left-color:var(--gold);">
-          <div class="vocab-term" style="color:var(--gold);">💡 Number Tip: Tens (-ty) vs Teens (-teen)</div>
-          <div class="vocab-def">Listen carefully to the endings!</div>
-          <div class="vocab-ex">13 = thir**teen** (🇫🇷 treize)<br>30 = thir**ty** (🇫🇷 trente)</div>
-          <div class="vocab-bridge">🇲🇦 Tletash vs Tlatin / 🇫🇷 Treize vs Trente</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 11</span>
-    <span>Page 1 of 4</span>
-  </div>
+<textarea class="answer-area" data-id="baba-notebook-p1" placeholder="My palette details / تفاصيل الألوان ديالي..." style="flex:1; min-height:180px; font-size:12px;"></textarea>
 </div>
-
+</div>
+</div>
+</div>
+<!-- VOCABULARY SECTION -->
+<div style="column-span:all !important; margin-top:8px;">
+<div class="step">
+<div class="step-header">
+<div class="step-name">📖 Core Vocabulary: Colors, Days &amp; Years</div>
+</div>
+<div class="vocab-grid">
+<div class="vocab-card">
+<div class="vocab-term">Red, Blue, Green, Yellow</div>
+<div class="vocab-def">Primary and natural colors.</div>
+<div class="vocab-ex">"The Mehdya sea is **blue** and the trees are **green**."</div>
+<div class="vocab-bridge">🇲🇦 Ahmer, Zreg, Khder, Sfer / 🇫🇷 Rouge, Bleu, Vert, Jaune</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">White, Black, Brown</div>
+<div class="vocab-def">Neutral and earthy colors.</div>
+<div class="vocab-ex">"I mix **white** and **black** to make gray paint."</div>
+<div class="vocab-bridge">🇲🇦 Bied, Khel, Qehwi / 🇫🇷 Blanc, Noir, Marron</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Monday, Wednesday, Friday</div>
+<div class="vocab-def">Days of the week. Capitalize the first letter!</div>
+<div class="vocab-ex">"I attend anthropology lectures on **Monday**."</div>
+<div class="vocab-bridge">🇲🇦 Tnin, Larba, Jm3a / 🇫🇷 Lundi, Mercredi, Vendredi</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Saturday, Sunday</div>
+<div class="vocab-def">The weekend. Time to rest and paint!</div>
+<div class="vocab-ex">"On **Sunday**, I watch football."</div>
+<div class="vocab-bridge">🇲🇦 Sebt, L7ad / 🇫🇷 Samedi, Dimanche</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Years: 1985 / 2026</div>
+<div class="vocab-def">Read as two parts: nineteen eighty-five / twenty twenty-six.</div>
+<div class="vocab-ex">"I retired in 2021 (twenty twenty-one)."</div>
+<div class="vocab-bridge">🇫🇷 Dix-neuf cent quatre-vingt-cinq</div>
+</div>
+<div class="vocab-card" style="border-left-color:var(--gold);">
+<div class="vocab-term" style="color:var(--gold);">💡 Number Tip: Tens (-ty) vs Teens (-teen)</div>
+<div class="vocab-def">Listen carefully to the endings!</div>
+<div class="vocab-ex">13 = thir**teen** (🇫🇷 treize)<br/>30 = thir**ty** (🇫🇷 trente)</div>
+<div class="vocab-bridge">🇲🇦 Tletash vs Tlatin / 🇫🇷 Treize vs Trente</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 11</span>
+<span>Page 1 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 2 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 2: MINI-STORY -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">2</div>
-      <div>
-        <div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
-        <div class="step-title">The Master's Agenda</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Read about a typical week in Baba Fattah's life and find details.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Read this out loud. Point out the pronunciation of dates and years like "nineteen eighty-two".
-    </div>
-
-    <div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
-      <p>I started working at Barid Bank in **1982** (nineteen eighty-two). I dedicated **39** (thirty-nine) years of my life to the bank before retiring in **2021** (twenty twenty-one).</p>
-      <p style="margin-top:6px;">Now, my week has a peaceful rhythm. On **Monday** and **Wednesday**, I study at Ibn Tofail University. On **Friday** morning, I visit the market to buy fresh vegetables.</p>
-      <p style="margin-top:6px;">On the weekend, I enter my art room. I paint Mehdya's sunset using bright **red**, warm **yellow**, and deep **blue** colors. I am very happy with my retired life.</p>
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">📝 Check Your Understanding</div>
-      <p class="ex-item"><strong>1.</strong> In what year did Fattah start working at the bank?</p>
-      <textarea class="answer-area" data-id="comp-1" placeholder="He started in..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>2.</strong> On which days does he study at the university?</p>
-      <textarea class="answer-area" data-id="comp-2" placeholder="He studies on..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What colors does he use to paint Mehdya's sunset?</p>
-      <textarea class="answer-area" data-id="comp-3" placeholder="He uses..."></textarea>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 3: GRAMMAR IN ACTION -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">3</div>
-      <div>
-        <div class="step-name">Step 3 — 🏗️ Vocabulary in Action</div>
-        <div class="step-title">Writing Years & Dates</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Practice writing numbers and years out in English words.</div>
-
-    <div class="expressions-box">
-      <div class="exp-title">📐 Year Rules:</div>
-      <div class="exp-item">Years before 2000 → Split in half: 1994 = **nineteen** (19) **ninety-four** (94)</div>
-      <div class="exp-item">Years after 2000 → Say "two thousand and..." or split: 2026 = **twenty twenty-six**</div>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">✏️ Write the following numbers and years in words:</div>
-      <p class="ex-item"><strong>1.</strong> (55) My friend is <input type="text" class="answer-inline" data-id="grammar-1" placeholder="..."> years old.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> (1990) Saad was born in <input type="text" class="answer-inline" data-id="grammar-2" placeholder="...">.</p>
-      <p class="ex-item" style="margin-top:8px;">"><strong>3.</strong> (72) Ibn Tofail University has <input type="text" class="answer-inline" data-id="grammar-3" placeholder="..."> classrooms.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>4.</strong> (2015) I held an exhibition in Tangier in the year <input type="text" class="answer-inline" data-id="grammar-4" placeholder="...">.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>5.</strong> (12) There are <input type="text" class="answer-inline" data-id="grammar-5" placeholder="..."> months in a year.</p>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 11</span>
-    <span>Page 2 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 2: MINI-STORY -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">2</div>
+<div>
+<div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
+<div class="step-title">The Master's Agenda</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Read about a typical week in Baba Fattah's life and find details.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Read this out loud. Point out the pronunciation of dates and years like "nineteen eighty-two".
+    </div></div></div>
+<div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
+<p>I started working at Barid Bank in **1982** (nineteen eighty-two). I dedicated **39** (thirty-nine) years of my life to the bank before retiring in **2021** (twenty twenty-one).</p>
+<p style="margin-top:6px;">Now, my week has a peaceful rhythm. On **Monday** and **Wednesday**, I study at Ibn Tofail University. On **Friday** morning, I visit the market to buy fresh vegetables.</p>
+<p style="margin-top:6px;">On the weekend, I enter my art room. I paint Mehdya's sunset using bright **red**, warm **yellow**, and deep **blue** colors. I am very happy with my retired life.</p>
+</div>
+<div class="exercise">
+<div class="ex-label">📝 Check Your Understanding</div>
+<p class="ex-item"><strong>1.</strong> In what year did Fattah start working at the bank?</p>
+<textarea class="answer-area" data-id="comp-1" placeholder="He started in..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>2.</strong> On which days does he study at the university?</p>
+<textarea class="answer-area" data-id="comp-2" placeholder="He studies on..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What colors does he use to paint Mehdya's sunset?</p>
+<textarea class="answer-area" data-id="comp-3" placeholder="He uses..."></textarea>
+</div>
+</div>
+<div class="divider"></div>
+<!-- STEP 3: GRAMMAR IN ACTION -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">3</div>
+<div>
+<div class="step-name">Step 3 — 🏗️ Vocabulary in Action</div>
+<div class="step-title">Writing Years &amp; Dates</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Practice writing numbers and years out in English words.</div>
+<div class="expressions-box">
+<div class="exp-title">📐 Year Rules:</div>
+<div class="exp-item">Years before 2000 → Split in half: 1994 = **nineteen** (19) **ninety-four** (94)</div>
+<div class="exp-item">Years after 2000 → Say "two thousand and..." or split: 2026 = **twenty twenty-six**</div>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">✏️ Write the following numbers and years in words:</div>
+<p class="ex-item"><strong>1.</strong> (55) My friend is <input class="answer-inline" data-id="grammar-1" placeholder="..." type="text"/> years old.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>2.</strong> (1990) Saad was born in <input class="answer-inline" data-id="grammar-2" placeholder="..." type="text"/>.</p>
+<p class="ex-item" style="margin-top:8px;">"&gt;<strong>3.</strong> (72) Ibn Tofail University has <input class="answer-inline" data-id="grammar-3" placeholder="..." type="text"/> classrooms.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>4.</strong> (2015) I held an exhibition in Tangier in the year <input class="answer-inline" data-id="grammar-4" placeholder="..." type="text"/>.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>5.</strong> (12) There are <input class="answer-inline" data-id="grammar-5" placeholder="..." type="text"/> months in a year.</p>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 11</span>
+<span>Page 2 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 3 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 4: GAME ZONE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">4</div>
-      <div>
-        <div class="step-name">Step 4 — 🎮 Game Zone</div>
-        <div class="step-title">The Date & Color Mixer!</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Choose the correct name for the number, date, or color block!</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This is a rapid-fire game focusing on correct spellings of numbers and days (e.g. Wednesday, Saturday).
-    </div>
-
-    <div class="game-container" id="num-game">
-      <div class="game-title">📅 THE CALENDAR & PALETTE MIXER</div>
-      <div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:16px; margin-bottom:10px;">
-        Item: <span id="num-item" style="color:var(--teal); font-size:18px;">Item loading...</span>
-      </div>
-      
-      <div id="num-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">Which choice is spelled correctly?</div>
-      
-      <div id="num-options" style="display:grid; gap:8px; margin-top:10px; grid-template-columns: 1fr 1fr;"></div>
-      <div id="num-feedback" class="game-feedback"></div>
-      <div id="num-score" class="game-score"></div>
-      <div style="text-align:center; margin-top:12px;">
-        <button class="game-btn" id="num-next" onclick="numNext()" style="display:none;">Next Question →</button>
-        <button class="game-btn" id="num-restart" onclick="numStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
-      </div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px;">
-      <span class="flag">🇲🇦</span> <strong>Darija encouragement:</strong> <em>"Zwin bezaf!"</em> — Very beautiful! Let's get a perfect score on this!
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 5: SPEAKING CHALLENGE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">5</div>
-      <div>
-        <div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
-        <div class="step-title">Describing My Canvas</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Describe one of your paintings using colors, sizes, and numbers.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Ask him to look at one of his paintings in his room. Have him explain: "I used yellow for the sun and blue for the ocean. The canvas is 50 centimeters wide. I painted it in 2024."
-    </div>
-
-    <div class="gold-banner">
-      <p><strong>🎤 Painting Description Challenge</strong></p>
-      <p style="margin-top:6px; font-size:12px;">Present one of your favorite paintings. Try to say:</p>
-      <ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
-        <li>✅ "The painting has **red**, **blue**, and **white**..."</li>
-        <li>✅ "I worked on it for **four** days."</li>
-        <li>✅ "I completed it in **twenty twenty-five** (2025)."</li>
-      </ul>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">📝 Notes for your presentation</div>
-      <textarea class="answer-area" data-id="speaking-notes" style="min-height:90px;" placeholder="This painting is about Mehdya beach. It has beautiful yellow and blue colors. I finished it last Saturday..."></textarea>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 11</span>
-    <span>Page 3 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 4: GAME ZONE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">4</div>
+<div>
+<div class="step-name">Step 4 — 🎮 Game Zone</div>
+<div class="step-title">The Date &amp; Color Mixer!</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Choose the correct name for the number, date, or color block!</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This is a rapid-fire game focusing on correct spellings of numbers and days (e.g. Wednesday, Saturday).
+    </div></div></div>
+<div class="game-container" id="num-game">
+<div class="game-title">📅 THE CALENDAR &amp; PALETTE MIXER</div>
+<div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:16px; margin-bottom:10px;">
+        Item: <span id="num-item" style="color:var(--teal); font-size:18px;">Item loading...</span>
+</div>
+<div id="num-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">Which choice is spelled correctly?</div>
+<div id="num-options" style="display:grid; gap:8px; margin-top:10px; grid-template-columns: 1fr 1fr;"></div>
+<div class="game-feedback" id="num-feedback"></div>
+<div class="game-score" id="num-score"></div>
+<div style="text-align:center; margin-top:12px;">
+<button class="game-btn" id="num-next" onclick="numNext()" style="display:none;">Next Question →</button>
+<button class="game-btn" id="num-restart" onclick="numStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
+</div>
+</div>
+<div class="darija-box" style="margin-top:10px;">
+<span class="flag">🇲🇦</span> <strong>Darija encouragement:</strong> <em>"Zwin bezaf!"</em> — Very beautiful! Let's get a perfect score on this!
+    </div>
+</div>
+<div class="divider"></div>
+<!-- STEP 5: SPEAKING CHALLENGE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">5</div>
+<div>
+<div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
+<div class="step-title">Describing My Canvas</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Describe one of your paintings using colors, sizes, and numbers.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Ask him to look at one of his paintings in his room. Have him explain: "I used yellow for the sun and blue for the ocean. The canvas is 50 centimeters wide. I painted it in 2024."
+    </div></div></div>
+<div class="gold-banner">
+<p><strong>🎤 Painting Description Challenge</strong></p>
+<p style="margin-top:6px; font-size:12px;">Present one of your favorite paintings. Try to say:</p>
+<ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
+<li>✅ "The painting has **red**, **blue**, and **white**..."</li>
+<li>✅ "I worked on it for **four** days."</li>
+<li>✅ "I completed it in **twenty twenty-five** (2025)."</li>
+</ul>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">📝 Notes for your presentation</div>
+<textarea class="answer-area" data-id="speaking-notes" placeholder="This painting is about Mehdya beach. It has beautiful yellow and blue colors. I finished it last Saturday..." style="min-height:90px;"></textarea>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 11</span>
+<span>Page 3 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 4 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 6: BOSS LEVEL -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">6</div>
-      <div>
-        <div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
-        <div class="step-title">The Art Studio Inventory</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Fill in the correct spellings of numbers and colors.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This challenges his writing skills for common numbers and colors.
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">🎨 Studio Inventory Report</div>
-      <p class="ex-item">Complete the text using: <strong>seventy, brown, Wednesday, blue, fifteen</strong>.</p>
-      <div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
-        Every <input type="text" class="answer-inline" data-id="boss-1" style="width:100px;" placeholder="..."> afternoon, I organize my studio. 
-        Today, I counted my paint tubes. I have <input type="text" class="answer-inline" data-id="boss-2" style="width:100px;" placeholder="..."> tubes of oil paint. 
-        Most tubes are dark <input type="text" class="answer-inline" data-id="boss-3" style="width:100px;" placeholder="...">, but I also have a few bright yellow ones.
-        My favorite easel is made of light <input type="text" class="answer-inline" data-id="boss-4" style="width:100px;" placeholder="..."> wood.
-        In total, I have painted <input type="text" class="answer-inline" data-id="boss-5" style="width:100px;" placeholder="..."> landscapes during my retirement years!
-      </div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 7: HOMEWORK -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">7</div>
-      <div>
-        <div class="step-name">Step 7 — 📚 Homework & Fun Challenge</div>
-        <div class="step-title">The Date Master</div>
-      </div>
-    </div>
-
-    <div class="body">
-      <div class="hw-item">
-        <div class="hw-num">1</div>
-        <div>
-          <strong>Writing Task — My Agenda</strong><br>
-          <span style="font-size:12px; color:var(--gray);">Write 3 sentences about your schedule. Mention the day of the week, a color, and a number. (E.g. "On Monday, I buy three black pens.")</span>
-          <textarea class="answer-area" data-id="hw-1" style="min-height:80px; margin-top:6px;" placeholder="1. On Tuesday...&#10;2. ...&#10;3. ..."></textarea>
-        </div>
-      </div>
-
-      <div class="hw-item">
-        <div class="hw-num">2</div>
-        <div>
-          <strong>Calendar Check</strong><br>
-          <span style="font-size:12px; color:var(--gray);">Write out the name of the day:
-          <br>1. Le jour après Lundi → <input type="text" class="answer-inline" data-id="hw-day-1" style="width:180px;" placeholder="Day name...">
-          <br>2. Le premier jour du week-end au Maroc → <input type="text" class="answer-inline" data-id="hw-day-2" style="width:180px;" placeholder="Day name..."></span>
-        </div>
-      </div>
-    </div>
-
-    <div class="expressions-box" style="margin-top:10px;">
-      <div class="exp-title">📋 Lesson 11 Summary — What You Learned Today</div>
-      <div class="exp-item">✅ **Colors** → Red, blue, yellow, green, white, black, brown</div>
-      <div class="exp-item">✅ **Days of the week** → always capitalized (Monday, Wednesday)</div>
-      <div class="exp-item">✅ **Years** → read in two parts (e.g. 1985 = nineteen eighty-five)</div>
-      <div class="exp-item">✅ **Numbers** → watch out for spelling changes like forty (not fourty)</div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
-      <span class="flag">🌟</span> <strong>Message from Saad:</strong><br>
-      <em>Baba, you are mastering the details! Now you can talk about the years of your bank career and the colors of your paintings with perfect ease. In the next lesson, we will study Everyday Expressions and Small Talk to help you hold simple conversations about the weather or your feelings. Keep up the amazing work! 💪🇲🇦</em>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 11</span>
-    <span>Page 4 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 6: BOSS LEVEL -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">6</div>
+<div>
+<div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
+<div class="step-title">The Art Studio Inventory</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Fill in the correct spellings of numbers and colors.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This challenges his writing skills for common numbers and colors.
+    </div></div></div>
+<div class="exercise">
+<div class="ex-label">🎨 Studio Inventory Report</div>
+<p class="ex-item">Complete the text using: <strong>seventy, brown, Wednesday, blue, fifteen</strong>.</p>
+<div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
+        Every <input class="answer-inline" data-id="boss-1" placeholder="..." style="width:100px;" type="text"/> afternoon, I organize my studio. 
+        Today, I counted my paint tubes. I have <input class="answer-inline" data-id="boss-2" placeholder="..." style="width:100px;" type="text"/> tubes of oil paint. 
+        Most tubes are dark <input class="answer-inline" data-id="boss-3" placeholder="..." style="width:100px;" type="text"/>, but I also have a few bright yellow ones.
+        My favorite easel is made of light <input class="answer-inline" data-id="boss-4" placeholder="..." style="width:100px;" type="text"/> wood.
+        In total, I have painted <input class="answer-inline" data-id="boss-5" placeholder="..." style="width:100px;" type="text"/> landscapes during my retirement years!
+      </div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- STEP 7: HOMEWORK -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">7</div>
+<div>
+<div class="step-name">Step 7 — 📚 Homework &amp; Fun Challenge</div>
+<div class="step-title">The Date Master</div>
+</div>
+</div>
+<div class="body">
+<div class="hw-item">
+<div class="hw-num">1</div>
+<div>
+<strong>Writing Task — My Agenda</strong><br/>
+<span style="font-size:12px; color:var(--gray);">Write 3 sentences about your schedule. Mention the day of the week, a color, and a number. (E.g. "On Monday, I buy three black pens.")</span>
+<textarea class="answer-area" data-id="hw-1" placeholder="1. On Tuesday...
+2. ...
+3. ..." style="min-height:80px; margin-top:6px;"></textarea>
+</div>
+</div>
+<div class="hw-item">
+<div class="hw-num">2</div>
+<div>
+<strong>Calendar Check</strong><br/>
+<span style="font-size:12px; color:var(--gray);">Write out the name of the day:
+          <br/>1. Le jour après Lundi → <input class="answer-inline" data-id="hw-day-1" placeholder="Day name..." style="width:180px;" type="text"/>
+<br/>2. Le premier jour du week-end au Maroc → <input class="answer-inline" data-id="hw-day-2" placeholder="Day name..." style="width:180px;" type="text"/></span>
+</div>
+</div>
+</div>
+<div class="expressions-box" style="margin-top:10px;">
+<div class="exp-title">📋 Lesson 11 Summary — What You Learned Today</div>
+<div class="exp-item">✅ **Colors** → Red, blue, yellow, green, white, black, brown</div>
+<div class="exp-item">✅ **Days of the week** → always capitalized (Monday, Wednesday)</div>
+<div class="exp-item">✅ **Years** → read in two parts (e.g. 1985 = nineteen eighty-five)</div>
+<div class="exp-item">✅ **Numbers** → watch out for spelling changes like forty (not fourty)</div>
+</div>
+<div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
+<span class="flag">🌟</span> <strong>Message from Saad:</strong><br/>
+<em>Baba, you are mastering the details! Now you can talk about the years of your bank career and the colors of your paintings with perfect ease. In the next lesson, we will study Everyday Expressions and Small Talk to help you hold simple conversations about the weather or your feelings. Keep up the amazing work! 💪🇲🇦</em>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 11</span>
+<span>Page 4 of 4</span>
+</div>
+</div>
 <!-- CONGRATULATIONS PAGE -->
-<div class="page congratulations-page">
-  <img src="../Congratulations.png" alt="Congratulations" class="congrats-img">
-</div>
-
+<div class="page congratulations-page"><div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%;"><img alt="Congratulations" class="congrats-img" src="../Congratulations.png" style="max-height: 180px; object-fit: contain;"/><div class="polaroid-card"><img class="polaroid-img" src="../Mama_Avatar/Family.jfif"/><div class="polaroid-caption">Bravo Baba! 🇲🇦🏆</div><div style="font-family:'Inter', sans-serif; font-size:11.5px; margin-top:8px; color:var(--gray); font-weight:600; line-height:1.4;">"Knowledge is light, Baba! We are all incredibly proud of you for completing Lesson 11! Keep going! 💪❤️"</div></div></div></div>
 <!-- SAVE STATUS -->
 <div class="save-status" id="save-status">✓ Progress saved</div>
-
 <script>
 const STORAGE_KEY = 'ts-lesson-fattah-numbers-colors';
 

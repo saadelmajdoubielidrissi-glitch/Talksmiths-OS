@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Fattah — Everyday Life Idioms | Talksmiths</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Playfair+Display:ital,wght@0,800;1,700&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --teal: #007575; --gold: #D4A843; --navy: #1A2744;
@@ -122,398 +123,447 @@
   @media screen and (max-width: 768px) {
     .vocab-grid { grid-template-columns: 1fr !important; }
   }
+
+  /* --- Talksmiths Avatar Integration Styles --- */
+  .ts-avatar-circle {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 2px solid var(--teal);
+    object-fit: cover;
+    object-position: center 20%;
+    box-shadow: 0 4px 8px rgba(0, 117, 117, 0.15);
+    flex-shrink: 0;
+  }
+  .teacher-chat-bubble {
+    display: flex;
+    gap: 14px;
+    background: #FFFBF2;
+    border: 1px solid #EAD295;
+    border-radius: 14px;
+    padding: 14px;
+    margin: 12px 0;
+    align-items: flex-start;
+    box-shadow: 0 2px 10px rgba(212, 168, 67, 0.05);
+    break-inside: avoid;
+  }
+  .chat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: left;
+  }
+  .chat-header {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--teal);
+  }
+  .chat-text {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #614B15;
+  }
+  .family-reading-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+    break-inside: avoid;
+  }
+  .family-member-card {
+    display: flex;
+    gap: 14px;
+    background: #FDFDFD;
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 14px;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: left;
+  }
+  .family-member-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  }
+  .polaroid-card {
+    background: var(--white);
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 16px 16px 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    text-align: center;
+    max-width: 340px;
+    margin: 20px auto;
+    transform: rotate(-1.5deg);
+    transition: transform 0.3s ease;
+    display: block !important;
+  }
+  .polaroid-card:hover {
+    transform: rotate(0deg) scale(1.03);
+  }
+  .polaroid-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #EAEAEA;
+  }
+  .polaroid-caption {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 700;
+    margin-top: 14px;
+    color: var(--navy);
+  }
+  @media screen and (max-width: 1200px) {
+    .family-reading-grid { grid-template-columns: 1fr !important; }
+    .family-member-card[style*="grid-column: span 2"] { grid-column: span 1 !important; }
+  }
+  @media print {
+    .ts-avatar-circle, 
+    .teacher-chat-bubble, 
+    .polaroid-card { 
+      display: none !important; 
+    }
+  }
 </style>
 </head>
 <body class="student-mode">
-
 <!-- VIEW TOGGLE -->
 <div class="view-toggle">
-  <button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
-  <button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
+<button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
+<button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
 </div>
 <button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
-
 <!-- ==================== PAGE 1 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-  <div class="logo">Talksmiths — Lesson Engine™</div>
-  <h1>Everyday Life Idioms</h1>
-  <div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 15</div>
-  <div class="badges">
-    <span class="badge badge-teal">A1 — Beginner</span>
-    <span class="badge badge-gold">60 min</span>
-    <span class="badge badge-gray">Vocabulary Foundations</span>
-    <span class="badge badge-gray">Lesson 15</span>
-  </div>
-  <div class="divider"></div>
-
-  <!-- Step 1 + Notebook row -->
-  <div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
-
-      <!-- STEP 1: WARM-UP -->
-      <div class="step">
-        <div class="step-header">
-          <div class="step-num">1</div>
-          <div>
-            <div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
-            <div class="step-title">Colorful Language</div>
-          </div>
-          <div class="step-time">8 min</div>
-        </div>
-        <div class="objective">Objective: Understand that idioms are expressions that cannot be translated literally.</div>
-
-        <div class="student-note">
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<div class="logo">Talksmiths — Lesson Engine™</div>
+<h1>Everyday Life Idioms</h1>
+<div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 15</div>
+<div class="badges">
+<span class="badge badge-teal">A1 — Beginner</span>
+<span class="badge badge-gold">60 min</span>
+<span class="badge badge-gray">Vocabulary Foundations</span>
+<span class="badge badge-gray">Lesson 15</span>
+</div>
+<div class="divider"></div>
+<!-- Step 1 + Notebook row -->
+<div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
+<!-- STEP 1: WARM-UP -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">1</div>
+<div>
+<div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
+<div class="step-title">Colorful Language</div>
+</div>
+<div class="step-time">8 min</div>
+</div>
+<div class="objective">Objective: Understand that idioms are expressions that cannot be translated literally.</div>
+<div class="student-note">
           🎓 <strong>Student Strategy:</strong> Idioms are like local proverbs. If you translate them word-for-word, they sound crazy! But if you learn their real meaning, they make your English sound natural.
         </div>
-
-        <div class="teacher-note">
-          📋 <strong>Teacher Note:</strong> Introduce the concept of idioms. Explain that just like in Darija we say "Sahl mahel" or "L-khba f-jib", English speakers have funny visual phrases.
-        </div>
-
-        <div class="exercise">
-          <div class="ex-label">🗣️ Speaking Warm-Up — Guess the Meaning</div>
-          <p class="ex-item">What do you think these funny English phrases actually mean?</p>
-          <ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
-            <li>🍰 "A piece of cake" (Literal: Un morceau de gâteau)</li>
-            <li>🐴 "Hold your horses" (Literal: Tiens tes chevaux)</li>
-            <li>🩺 "Under the weather" (Literal: Sous le temps)</li>
-          </ul>
-          <div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Introduce the concept of idioms. Explain that just like in Darija we say "Sahl mahel" or "L-khba f-jib", English speakers have funny visual phrases.
+        </div></div></div>
+<div class="exercise">
+<div class="ex-label">🗣️ Speaking Warm-Up — Guess the Meaning</div>
+<p class="ex-item">What do you think these funny English phrases actually mean?</p>
+<ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
+<li>🍰 "A piece of cake" (Literal: Un morceau de gâteau)</li>
+<li>🐴 "Hold your horses" (Literal: Tiens tes chevaux)</li>
+<li>🩺 "Under the weather" (Literal: Sous le temps)</li>
+</ul>
+<div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
             Example: "I think 'a piece of cake' means something is very easy and sweet!"
           </div>
+</div>
+<div class="darija-box">
+<span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> In Darija we say *Khwi l-kar* (Leave the bus/Reveal secret). Today we learn the English twin: "Spill the beans"!
         </div>
-
-        <div class="darija-box">
-          <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> In Darija we say *Khwi l-kar* (Leave the bus/Reveal secret). Today we learn the English twin: "Spill the beans"!
-        </div>
-      </div>
-    </div>
-
-    <!-- BABA'S NOTEBOOK -->
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
-      <div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
-        <div class="step-header" style="margin-bottom:6px;">
-          <div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
-        </div>
-        <div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
-          <p style="font-size:12px; line-height:1.4; color:var(--gray);">
+</div>
+</div>
+<!-- BABA'S NOTEBOOK -->
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
+<div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
+<div class="step-header" style="margin-bottom:6px;">
+<div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
+</div>
+<div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
+<p style="font-size:12px; line-height:1.4; color:var(--gray);">
             Write down your favorite English idioms and try to think of a Moroccan proverb that matches.
           </p>
-          <textarea class="answer-area" data-id="baba-notebook-p1" style="flex:1; min-height:180px; font-size:12px;" placeholder="My idioms notes / ملاحظات الأمثال ديالي..."></textarea>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- VOCABULARY SECTION -->
-  <div style="column-span:all !important; margin-top:8px;">
-    <div class="step">
-      <div class="step-header">
-        <div class="step-name">📖 6 Essential Daily Life Idioms</div>
-      </div>
-
-      <div class="vocab-grid">
-        <div class="vocab-card">
-          <div class="vocab-term">A piece of cake</div>
-          <div class="vocab-def">Something that is extremely easy to do.</div>
-          <div class="vocab-ex">"Don't worry about the exam, Baba. It's <strong>a piece of cake</strong>!"</div>
-          <div class="vocab-bridge">🇲🇦 Sahl mahel / 🇫🇷 C'est du gâteau</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Under the weather</div>
-          <div class="vocab-def">Feeling slightly sick, tired, or unwell.</div>
-          <div class="vocab-ex">"I cannot walk by the sea today because I am <strong>under the weather</strong>."</div>
-          <div class="vocab-bridge">🇲🇦 3yan shwia / 🇫🇷 Être un peu patraque / malade</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Cost an arm and a leg</div>
-          <div class="vocab-def">Extremely expensive.</div>
-          <div class="vocab-ex">"This imported oil paint <strong>costs an arm and a leg</strong>!"</div>
-          <div class="vocab-bridge">🇲🇦 Ghali bezaf / Tayyeb l-jib / 🇫🇷 Coûter les yeux de la tête</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Hold your horses</div>
-          <div class="vocab-def">Slow down, be patient, wait a moment.</div>
-          <div class="vocab-ex">"<strong>Hold your horses</strong>, Baba! Let's drink our tea first before studying."</div>
-          <div class="vocab-bridge">🇲🇦 Sbbar shwia / T9el / 🇫🇷 Minute papillon / Attends un peu</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Spill the beans</div>
-          <div class="vocab-def">To reveal a secret or show the surprise early.</div>
-          <div class="vocab-ex">"Come on, Saad! <strong>Spill the beans</strong>. What is my birthday surprise?"</div>
-          <div class="vocab-bridge">🇲🇦 Khwi l-kar / Tle9 s-sarout / 🇫🇷 Vendre la mèche</div>
-        </div>
-        
-        <div class="vocab-card" style="border-left-color:var(--gold);">
-          <div class="vocab-term" style="color:var(--gold);">💡 Once in a blue moon</div>
-          <div class="vocab-def">Happening very rarely.</div>
-          <div class="vocab-ex">"I eat fast food only <strong>once in a blue moon</strong>."</div>
-          <div class="vocab-bridge">🇲🇦 Mra fi zman / 🇫🇷 Tous les trente-six du mois</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 15</span>
-    <span>Page 1 of 4</span>
-  </div>
+<textarea class="answer-area" data-id="baba-notebook-p1" placeholder="My idioms notes / ملاحظات الأمثال ديالي..." style="flex:1; min-height:180px; font-size:12px;"></textarea>
 </div>
-
+</div>
+</div>
+</div>
+<!-- VOCABULARY SECTION -->
+<div style="column-span:all !important; margin-top:8px;">
+<div class="step">
+<div class="step-header">
+<div class="step-name">📖 6 Essential Daily Life Idioms</div>
+</div>
+<div class="vocab-grid">
+<div class="vocab-card">
+<div class="vocab-term">A piece of cake</div>
+<div class="vocab-def">Something that is extremely easy to do.</div>
+<div class="vocab-ex">"Don't worry about the exam, Baba. It's <strong>a piece of cake</strong>!"</div>
+<div class="vocab-bridge">🇲🇦 Sahl mahel / 🇫🇷 C'est du gâteau</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Under the weather</div>
+<div class="vocab-def">Feeling slightly sick, tired, or unwell.</div>
+<div class="vocab-ex">"I cannot walk by the sea today because I am <strong>under the weather</strong>."</div>
+<div class="vocab-bridge">🇲🇦 3yan shwia / 🇫🇷 Être un peu patraque / malade</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Cost an arm and a leg</div>
+<div class="vocab-def">Extremely expensive.</div>
+<div class="vocab-ex">"This imported oil paint <strong>costs an arm and a leg</strong>!"</div>
+<div class="vocab-bridge">🇲🇦 Ghali bezaf / Tayyeb l-jib / 🇫🇷 Coûter les yeux de la tête</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Hold your horses</div>
+<div class="vocab-def">Slow down, be patient, wait a moment.</div>
+<div class="vocab-ex">"<strong>Hold your horses</strong>, Baba! Let's drink our tea first before studying."</div>
+<div class="vocab-bridge">🇲🇦 Sbbar shwia / T9el / 🇫🇷 Minute papillon / Attends un peu</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Spill the beans</div>
+<div class="vocab-def">To reveal a secret or show the surprise early.</div>
+<div class="vocab-ex">"Come on, Saad! <strong>Spill the beans</strong>. What is my birthday surprise?"</div>
+<div class="vocab-bridge">🇲🇦 Khwi l-kar / Tle9 s-sarout / 🇫🇷 Vendre la mèche</div>
+</div>
+<div class="vocab-card" style="border-left-color:var(--gold);">
+<div class="vocab-term" style="color:var(--gold);">💡 Once in a blue moon</div>
+<div class="vocab-def">Happening very rarely.</div>
+<div class="vocab-ex">"I eat fast food only <strong>once in a blue moon</strong>."</div>
+<div class="vocab-bridge">🇲🇦 Mra fi zman / 🇫🇷 Tous les trente-six du mois</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 15</span>
+<span>Page 1 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 2 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 2: MINI-STORY -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">2</div>
-      <div>
-        <div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
-        <div class="step-title">The Art Supplies Shock</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Read a natural dialogue using daily idioms and check comprehension.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Encourage Baba to read the dialogue. Help him identify the idioms "cost an arm and a leg", "under the weather", and "a piece of cake" in context.
-    </div>
-
-    <div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
-      <p><strong>Fattah:</strong> Hello Saad. Yesterday, I went to the art shop in Rabat to buy new brushes. They **cost an arm and a leg**!</p>
-      <p style="margin-top:6px;"><strong>Saad:</strong> Oh no! Why are they so expensive? Did you buy them?</p>
-      <p style="margin-top:6px;"><strong>Fattah:</strong> Yes, I had to. But I felt a bit **under the weather** afterwards because my wallet was empty!</p>
-      <p style="margin-top:6px;"><strong>Saad:</strong> Haha, don't worry, Baba. Tomorrow you will paint a masterpiece. Learning to paint is difficult, but learning to spend money is **a piece of cake**!</p>
-      <p style="margin-top:6px;"><strong>Fattah:</strong> That is very true. I will start painting tomorrow morning, Insha'Allah.</p>
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">📝 Check Your Understanding</div>
-      <p class="ex-item"><strong>1.</strong> What did the new paint brushes cost?</p>
-      <textarea class="answer-area" data-id="comp-1" placeholder="They cost..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>2.</strong> How did Fattah feel after visiting the art shop?</p>
-      <textarea class="answer-area" data-id="comp-2" placeholder="He felt..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What does Saad say is "a piece of cake"?</p>
-      <textarea class="answer-area" data-id="comp-3" placeholder="He says... is a piece of cake."></textarea>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 3: GRAMMAR IN ACTION -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">3</div>
-      <div>
-        <div class="step-name">Step 3 — 🏗️ Idioms in Action</div>
-        <div class="step-title">Decoding the Idiom Context</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Practice choosing the correct idiom for each daily situation.</div>
-
-    <div class="expressions-box">
-      <div class="exp-title">📐 The Translation Keys:</div>
-      <div class="exp-item">If an activity is extremely easy → Use **"a piece of cake"**</div>
-      <div class="exp-item">If you need someone to wait or be patient → Say **"hold your horses"**</div>
-      <div class="exp-item">If someone is feeling slightly sick or tired → Use **"under the weather"**</div>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">✏️ Fill in the blanks with the correct idiom:</div>
-      <p class="ex-item"><strong>1.</strong> I studied all week, so the anthropology exam was <input type="text" class="answer-inline" data-id="grammar-1" placeholder="...">.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> A luxury apartment in Casablanca will <input type="text" class="answer-inline" data-id="grammar-2" placeholder="...">.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>3.</strong> My sister has a cold. She is feeling a bit <input type="text" class="answer-inline" data-id="grammar-3" placeholder="..."> today.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>4.</strong> Hey, <input type="text" class="answer-inline" data-id="grammar-4" placeholder="...">! Don't drive so fast, the road is wet.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>5.</strong> I rarely watch TV, only <input type="text" class="answer-inline" data-id="grammar-5" placeholder="..."> when there is a big match.</p>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 15</span>
-    <span>Page 2 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 2: MINI-STORY -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">2</div>
+<div>
+<div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
+<div class="step-title">The Art Supplies Shock</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Read a natural dialogue using daily idioms and check comprehension.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Encourage Baba to read the dialogue. Help him identify the idioms "cost an arm and a leg", "under the weather", and "a piece of cake" in context.
+    </div></div></div>
+<div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
+<p><strong>Fattah:</strong> Hello Saad. Yesterday, I went to the art shop in Rabat to buy new brushes. They **cost an arm and a leg**!</p>
+<p style="margin-top:6px;"><strong>Saad:</strong> Oh no! Why are they so expensive? Did you buy them?</p>
+<p style="margin-top:6px;"><strong>Fattah:</strong> Yes, I had to. But I felt a bit **under the weather** afterwards because my wallet was empty!</p>
+<p style="margin-top:6px;"><strong>Saad:</strong> Haha, don't worry, Baba. Tomorrow you will paint a masterpiece. Learning to paint is difficult, but learning to spend money is **a piece of cake**!</p>
+<p style="margin-top:6px;"><strong>Fattah:</strong> That is very true. I will start painting tomorrow morning, Insha'Allah.</p>
+</div>
+<div class="exercise">
+<div class="ex-label">📝 Check Your Understanding</div>
+<p class="ex-item"><strong>1.</strong> What did the new paint brushes cost?</p>
+<textarea class="answer-area" data-id="comp-1" placeholder="They cost..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>2.</strong> How did Fattah feel after visiting the art shop?</p>
+<textarea class="answer-area" data-id="comp-2" placeholder="He felt..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What does Saad say is "a piece of cake"?</p>
+<textarea class="answer-area" data-id="comp-3" placeholder="He says... is a piece of cake."></textarea>
+</div>
+</div>
+<div class="divider"></div>
+<!-- STEP 3: GRAMMAR IN ACTION -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">3</div>
+<div>
+<div class="step-name">Step 3 — 🏗️ Idioms in Action</div>
+<div class="step-title">Decoding the Idiom Context</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Practice choosing the correct idiom for each daily situation.</div>
+<div class="expressions-box">
+<div class="exp-title">📐 The Translation Keys:</div>
+<div class="exp-item">If an activity is extremely easy → Use **"a piece of cake"**</div>
+<div class="exp-item">If you need someone to wait or be patient → Say **"hold your horses"**</div>
+<div class="exp-item">If someone is feeling slightly sick or tired → Use **"under the weather"**</div>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">✏️ Fill in the blanks with the correct idiom:</div>
+<p class="ex-item"><strong>1.</strong> I studied all week, so the anthropology exam was <input class="answer-inline" data-id="grammar-1" placeholder="..." type="text"/>.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>2.</strong> A luxury apartment in Casablanca will <input class="answer-inline" data-id="grammar-2" placeholder="..." type="text"/>.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>3.</strong> My sister has a cold. She is feeling a bit <input class="answer-inline" data-id="grammar-3" placeholder="..." type="text"/> today.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>4.</strong> Hey, <input class="answer-inline" data-id="grammar-4" placeholder="..." type="text"/>! Don't drive so fast, the road is wet.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>5.</strong> I rarely watch TV, only <input class="answer-inline" data-id="grammar-5" placeholder="..." type="text"/> when there is a big match.</p>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 15</span>
+<span>Page 2 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 3 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 4: GAME ZONE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">4</div>
-      <div>
-        <div class="step-name">Step 4 — 🎮 Game Zone</div>
-        <div class="step-title">The Idiom Decoder!</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Match the visual idiom to its real conversational meaning!</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This is a fun game to review the literal vs figurative split. Encourage him to remember the Moroccan equivalents.
-    </div>
-
-    <div class="game-container" id="idiom-game">
-      <div class="game-title">🧩 THE IDIOM DECODER</div>
-      <div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:16px; margin-bottom:10px;">
-        Idiom: <span id="idiom-text" style="color:var(--teal); font-size:18px;">Idiom loading...</span>
-      </div>
-      
-      <div id="idiom-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">What is the real meaning of this phrase?</div>
-      
-      <div id="idiom-options" style="display:grid; gap:8px; margin-top:10px;"></div>
-      <div id="idiom-feedback" class="game-feedback"></div>
-      <div id="idiom-score" class="game-score"></div>
-      <div style="text-align:center; margin-top:12px;">
-        <button class="game-btn" id="idiom-next" onclick="idiomNext()" style="display:none;">Next Idiom →</button>
-        <button class="game-btn" id="idiom-restart" onclick="idiomStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
-      </div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px;">
-      <span class="flag">🇲🇦</span> <strong>Darija Wisdom:</strong> <em>"L-fhama nour"</em> — Understanding is light! You are now decoding native English like a pro!
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 5: SPEAKING CHALLENGE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">5</div>
-      <div>
-        <div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
-        <div class="step-title">Using Idioms at Home</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Speak for 1 minute using at least three idioms we learned today.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This is the final speaking challenge! Ask him to tell you about his week and intentionally insert "a piece of cake", "under the weather", or "once in a blue moon".
-    </div>
-
-    <div class="gold-banner">
-      <p><strong>🎤 Idioms Presentation Challenge</strong></p>
-      <p style="margin-top:6px; font-size:12px;">Talk about your studies or paintings. Try to say:</p>
-      <ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
-        <li>✅ "Studying English is **a piece of cake** because..."</li>
-        <li>✅ "Buying imported paint **costs an arm and a leg**."</li>
-        <li>✅ "Sometimes I feel **under the weather**, so I..."</li>
-      </ul>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">📝 Write down your thoughts</div>
-      <textarea class="answer-area" data-id="speaking-notes" style="min-height:90px;" placeholder="I think studying anthropology is not a piece of cake. Sometimes I feel under the weather..."></textarea>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 15</span>
-    <span>Page 3 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 4: GAME ZONE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">4</div>
+<div>
+<div class="step-name">Step 4 — 🎮 Game Zone</div>
+<div class="step-title">The Idiom Decoder!</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Match the visual idiom to its real conversational meaning!</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This is a fun game to review the literal vs figurative split. Encourage him to remember the Moroccan equivalents.
+    </div></div></div>
+<div class="game-container" id="idiom-game">
+<div class="game-title">🧩 THE IDIOM DECODER</div>
+<div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:16px; margin-bottom:10px;">
+        Idiom: <span id="idiom-text" style="color:var(--teal); font-size:18px;">Idiom loading...</span>
+</div>
+<div id="idiom-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">What is the real meaning of this phrase?</div>
+<div id="idiom-options" style="display:grid; gap:8px; margin-top:10px;"></div>
+<div class="game-feedback" id="idiom-feedback"></div>
+<div class="game-score" id="idiom-score"></div>
+<div style="text-align:center; margin-top:12px;">
+<button class="game-btn" id="idiom-next" onclick="idiomNext()" style="display:none;">Next Idiom →</button>
+<button class="game-btn" id="idiom-restart" onclick="idiomStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
+</div>
+</div>
+<div class="darija-box" style="margin-top:10px;">
+<span class="flag">🇲🇦</span> <strong>Darija Wisdom:</strong> <em>"L-fhama nour"</em> — Understanding is light! You are now decoding native English like a pro!
+    </div>
+</div>
+<div class="divider"></div>
+<!-- STEP 5: SPEAKING CHALLENGE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">5</div>
+<div>
+<div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
+<div class="step-title">Using Idioms at Home</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Speak for 1 minute using at least three idioms we learned today.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This is the final speaking challenge! Ask him to tell you about his week and intentionally insert "a piece of cake", "under the weather", or "once in a blue moon".
+    </div></div></div>
+<div class="gold-banner">
+<p><strong>🎤 Idioms Presentation Challenge</strong></p>
+<p style="margin-top:6px; font-size:12px;">Talk about your studies or paintings. Try to say:</p>
+<ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
+<li>✅ "Studying English is **a piece of cake** because..."</li>
+<li>✅ "Buying imported paint **costs an arm and a leg**."</li>
+<li>✅ "Sometimes I feel **under the weather**, so I..."</li>
+</ul>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">📝 Write down your thoughts</div>
+<textarea class="answer-area" data-id="speaking-notes" placeholder="I think studying anthropology is not a piece of cake. Sometimes I feel under the weather..." style="min-height:90px;"></textarea>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 15</span>
+<span>Page 3 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 4 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 6: BOSS LEVEL -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">6</div>
-      <div>
-        <div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
-        <div class="step-title">The Dialogue Master</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Fill in the correct idioms in this conversational dialogue.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This is a challenging synthesis of the lesson. Have him check the meanings carefully.
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">🎨 Reviewing the Exhibition Plans</div>
-      <p class="ex-item">Complete the text using: <strong>once in a blue moon, cost an arm and a leg, a piece of cake, under the weather, hold your horses</strong>.</p>
-      <div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
-        <strong>Saad:</strong> Baba! Let's rent the largest gallery in Casablanca for your next exhibition!
-        <br><strong>Fattah:</strong> Wait, <input type="text" class="answer-inline" data-id="boss-1" style="width:180px;" placeholder="...">! Casablanca galleries <input type="text" class="answer-inline" data-id="boss-2" style="width:180px;" placeholder="...">.
-        <br><strong>Saad:</strong> But many art buyers visit them.
-        <br><strong>Fattah:</strong> True, but I only visit Casablanca <input type="text" class="answer-inline" data-id="boss-3" style="width:180px;" placeholder="...">. Besides, today I am feeling a bit <input type="text" class="answer-inline" data-id="boss-4" style="width:180px;" placeholder="...">.
-        <br><strong>Saad:</strong> Don't worry. Organising an exhibition in Kenitra is <input type="text" class="answer-inline" data-id="boss-5" style="width:180px;" placeholder="..."> compared to Casablanca!
-      </div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 7: HOMEWORK -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">7</div>
-      <div>
-        <div class="step-name">Step 7 — 📚 Homework & Graduation</div>
-        <div class="step-title">The Idioms Champion</div>
-      </div>
-    </div>
-
-    <div class="body">
-      <div class="hw-item">
-        <div class="hw-num">1</div>
-        <div>
-          <strong>Writing Task — A Day in the Life</strong><br>
-          <span style="font-size:12px; color:var(--gray);">Write a short story (3 sentences) about your routine using at least two idioms we studied today.</span>
-          <textarea class="answer-area" data-id="hw-1" style="min-height:80px; margin-top:6px;" placeholder="Yesterday, I woke up feeling under the weather. But drinking tea was a piece of cake..."></textarea>
-        </div>
-      </div>
-
-      <div class="hw-item">
-        <div class="hw-num">2</div>
-        <div>
-          <strong>Idiom Fixer</strong><br>
-          <span style="font-size:12px; color:var(--gray);">Write the correct meaning:
-          <br>1. "A piece of cake" means: <input type="text" class="answer-inline" data-id="hw-idiom-1" style="width:180px;" placeholder="Meaning...">
-          <br>2. "Cost an arm and a leg" means: <input type="text" class="answer-inline" data-id="hw-idiom-2" style="width:180px;" placeholder="Meaning..."></span>
-        </div>
-      </div>
-    </div>
-
-    <div class="expressions-box" style="margin-top:10px;">
-      <div class="exp-title">📋 Lesson 15 Summary — What You Learned Today</div>
-      <div class="exp-item">✅ **A piece of cake** → Very easy to do</div>
-      <div class="exp-item">✅ **Under the weather** → Feeling slightly sick or tired</div>
-      <div class="exp-item">✅ **Cost an arm and a leg** → Extremely expensive</div>
-      <div class="exp-item">✅ **Once in a blue moon** → Very rarely</div>
-      <div class="exp-item">✅ **Hold your horses** → Be patient / Slow down</div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
-      <span class="flag">🎓</span> <strong>CONGRATULATIONS BABA FATTAH!</strong><br>
-      <em>You have officially completed your 15-lesson A1 English Review program! You have worked exceptionally hard. You are now fully prepared to start your A2 journey with confidence! I am incredibly proud of you! Kul youm ou t3alem, Baba! 🎓💪🇲🇦</em>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 15</span>
-    <span>Page 4 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 6: BOSS LEVEL -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">6</div>
+<div>
+<div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
+<div class="step-title">The Dialogue Master</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Fill in the correct idioms in this conversational dialogue.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This is a challenging synthesis of the lesson. Have him check the meanings carefully.
+    </div></div></div>
+<div class="exercise">
+<div class="ex-label">🎨 Reviewing the Exhibition Plans</div>
+<p class="ex-item">Complete the text using: <strong>once in a blue moon, cost an arm and a leg, a piece of cake, under the weather, hold your horses</strong>.</p>
+<div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
+<strong>Saad:</strong> Baba! Let's rent the largest gallery in Casablanca for your next exhibition!
+        <br/><strong>Fattah:</strong> Wait, <input class="answer-inline" data-id="boss-1" placeholder="..." style="width:180px;" type="text"/>! Casablanca galleries <input class="answer-inline" data-id="boss-2" placeholder="..." style="width:180px;" type="text"/>.
+        <br/><strong>Saad:</strong> But many art buyers visit them.
+        <br/><strong>Fattah:</strong> True, but I only visit Casablanca <input class="answer-inline" data-id="boss-3" placeholder="..." style="width:180px;" type="text"/>. Besides, today I am feeling a bit <input class="answer-inline" data-id="boss-4" placeholder="..." style="width:180px;" type="text"/>.
+        <br/><strong>Saad:</strong> Don't worry. Organising an exhibition in Kenitra is <input class="answer-inline" data-id="boss-5" placeholder="..." style="width:180px;" type="text"/> compared to Casablanca!
+      </div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- STEP 7: HOMEWORK -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">7</div>
+<div>
+<div class="step-name">Step 7 — 📚 Homework &amp; Graduation</div>
+<div class="step-title">The Idioms Champion</div>
+</div>
+</div>
+<div class="body">
+<div class="hw-item">
+<div class="hw-num">1</div>
+<div>
+<strong>Writing Task — A Day in the Life</strong><br/>
+<span style="font-size:12px; color:var(--gray);">Write a short story (3 sentences) about your routine using at least two idioms we studied today.</span>
+<textarea class="answer-area" data-id="hw-1" placeholder="Yesterday, I woke up feeling under the weather. But drinking tea was a piece of cake..." style="min-height:80px; margin-top:6px;"></textarea>
+</div>
+</div>
+<div class="hw-item">
+<div class="hw-num">2</div>
+<div>
+<strong>Idiom Fixer</strong><br/>
+<span style="font-size:12px; color:var(--gray);">Write the correct meaning:
+          <br/>1. "A piece of cake" means: <input class="answer-inline" data-id="hw-idiom-1" placeholder="Meaning..." style="width:180px;" type="text"/>
+<br/>2. "Cost an arm and a leg" means: <input class="answer-inline" data-id="hw-idiom-2" placeholder="Meaning..." style="width:180px;" type="text"/></span>
+</div>
+</div>
+</div>
+<div class="expressions-box" style="margin-top:10px;">
+<div class="exp-title">📋 Lesson 15 Summary — What You Learned Today</div>
+<div class="exp-item">✅ **A piece of cake** → Very easy to do</div>
+<div class="exp-item">✅ **Under the weather** → Feeling slightly sick or tired</div>
+<div class="exp-item">✅ **Cost an arm and a leg** → Extremely expensive</div>
+<div class="exp-item">✅ **Once in a blue moon** → Very rarely</div>
+<div class="exp-item">✅ **Hold your horses** → Be patient / Slow down</div>
+</div>
+<div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
+<span class="flag">🎓</span> <strong>CONGRATULATIONS BABA FATTAH!</strong><br/>
+<em>You have officially completed your 15-lesson A1 English Review program! You have worked exceptionally hard. You are now fully prepared to start your A2 journey with confidence! I am incredibly proud of you! Kul youm ou t3alem, Baba! 🎓💪🇲🇦</em>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 15</span>
+<span>Page 4 of 4</span>
+</div>
+</div>
 <!-- CONGRATULATIONS PAGE -->
-<div class="page congratulations-page">
-  <img src="../Congratulations.png" alt="Congratulations" class="congrats-img">
-</div>
-
+<div class="page congratulations-page"><div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%;"><img alt="Congratulations" class="congrats-img" src="../Congratulations.png" style="max-height: 180px; object-fit: contain;"/><div class="polaroid-card"><img class="polaroid-img" src="../Mama_Avatar/Family.jfif"/><div class="polaroid-caption">Bravo Baba! 🇲🇦🏆</div><div style="font-family:'Inter', sans-serif; font-size:11.5px; margin-top:8px; color:var(--gray); font-weight:600; line-height:1.4;">"Knowledge is light, Baba! We are all incredibly proud of you for completing Lesson 15! Keep going! 💪❤️"</div></div></div></div>
 <!-- SAVE STATUS -->
 <div class="save-status" id="save-status">✓ Progress saved</div>
-
 <script>
 const STORAGE_KEY = 'ts-lesson-fattah-idioms';
 

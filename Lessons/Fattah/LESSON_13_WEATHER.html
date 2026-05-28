@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fattah — The Seasons & Weather | Talksmiths</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fattah — The Seasons &amp; Weather | Talksmiths</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Playfair+Display:ital,wght@0,800;1,700&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --teal: #007575; --gold: #D4A843; --navy: #1A2744;
@@ -122,394 +123,445 @@
   @media screen and (max-width: 768px) {
     .vocab-grid { grid-template-columns: 1fr !important; }
   }
+
+  /* --- Talksmiths Avatar Integration Styles --- */
+  .ts-avatar-circle {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 2px solid var(--teal);
+    object-fit: cover;
+    object-position: center 20%;
+    box-shadow: 0 4px 8px rgba(0, 117, 117, 0.15);
+    flex-shrink: 0;
+  }
+  .teacher-chat-bubble {
+    display: flex;
+    gap: 14px;
+    background: #FFFBF2;
+    border: 1px solid #EAD295;
+    border-radius: 14px;
+    padding: 14px;
+    margin: 12px 0;
+    align-items: flex-start;
+    box-shadow: 0 2px 10px rgba(212, 168, 67, 0.05);
+    break-inside: avoid;
+  }
+  .chat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: left;
+  }
+  .chat-header {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--teal);
+  }
+  .chat-text {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #614B15;
+  }
+  .family-reading-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+    break-inside: avoid;
+  }
+  .family-member-card {
+    display: flex;
+    gap: 14px;
+    background: #FDFDFD;
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 14px;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: left;
+  }
+  .family-member-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  }
+  .polaroid-card {
+    background: var(--white);
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 16px 16px 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    text-align: center;
+    max-width: 340px;
+    margin: 20px auto;
+    transform: rotate(-1.5deg);
+    transition: transform 0.3s ease;
+    display: block !important;
+  }
+  .polaroid-card:hover {
+    transform: rotate(0deg) scale(1.03);
+  }
+  .polaroid-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #EAEAEA;
+  }
+  .polaroid-caption {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 700;
+    margin-top: 14px;
+    color: var(--navy);
+  }
+  @media screen and (max-width: 1200px) {
+    .family-reading-grid { grid-template-columns: 1fr !important; }
+    .family-member-card[style*="grid-column: span 2"] { grid-column: span 1 !important; }
+  }
+  @media print {
+    .ts-avatar-circle, 
+    .teacher-chat-bubble, 
+    .polaroid-card { 
+      display: none !important; 
+    }
+  }
 </style>
 </head>
 <body class="student-mode">
-
 <!-- VIEW TOGGLE -->
 <div class="view-toggle">
-  <button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
-  <button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
+<button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
+<button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
 </div>
 <button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
-
 <!-- ==================== PAGE 1 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-  <div class="logo">Talksmiths — Lesson Engine™</div>
-  <h1>The Seasons & Weather</h1>
-  <div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 13</div>
-  <div class="badges">
-    <span class="badge badge-teal">A1 — Beginner</span>
-    <span class="badge badge-gold">60 min</span>
-    <span class="badge badge-gray">Vocabulary Foundations</span>
-    <span class="badge badge-gray">Lesson 13</span>
-  </div>
-  <div class="divider"></div>
-
-  <!-- Step 1 + Notebook row -->
-  <div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
-
-      <!-- STEP 1: WARM-UP -->
-      <div class="step">
-        <div class="step-header">
-          <div class="step-num">1</div>
-          <div>
-            <div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
-            <div class="step-title">The Seaside Climate</div>
-          </div>
-          <div class="step-time">8 min</div>
-        </div>
-        <div class="objective">Objective: Learn to describe Mehdya's weather across the four seasons.</div>
-
-        <div class="student-note">
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<div class="logo">Talksmiths — Lesson Engine™</div>
+<h1>The Seasons &amp; Weather</h1>
+<div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 13</div>
+<div class="badges">
+<span class="badge badge-teal">A1 — Beginner</span>
+<span class="badge badge-gold">60 min</span>
+<span class="badge badge-gray">Vocabulary Foundations</span>
+<span class="badge badge-gray">Lesson 13</span>
+</div>
+<div class="divider"></div>
+<!-- Step 1 + Notebook row -->
+<div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
+<!-- STEP 1: WARM-UP -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">1</div>
+<div>
+<div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
+<div class="step-title">The Seaside Climate</div>
+</div>
+<div class="step-time">8 min</div>
+</div>
+<div class="objective">Objective: Learn to describe Mehdya's weather across the four seasons.</div>
+<div class="student-note">
           🎓 <strong>Student Strategy:</strong> The weather is a universal topic. We use structures like **"It is sunny"** or **"It is raining"** to describe daily conditions.
         </div>
-
-        <div class="teacher-note">
-          📋 <strong>Teacher Note:</strong> Use Mehdya's seaside weather to prompt comparisons. Winter (rainy, cold, windy) vs. Summer (hot, sunny, perfect for swimming).
-        </div>
-
-        <div class="exercise">
-          <div class="ex-label">🗣️ Speaking Warm-Up — Look Out the Window</div>
-          <p class="ex-item">Describe Mehdya's weather today:</p>
-          <ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
-            <li>☀️ Is the sun shining? (**It is sunny**)</li>
-            <li>💨 Is there wind from the ocean? (**It is windy**)</li>
-            <li>🌊 Which season is your favorite for walking by the sea?</li>
-          </ul>
-          <div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Use Mehdya's seaside weather to prompt comparisons. Winter (rainy, cold, windy) vs. Summer (hot, sunny, perfect for swimming).
+        </div></div></div>
+<div class="exercise">
+<div class="ex-label">🗣️ Speaking Warm-Up — Look Out the Window</div>
+<p class="ex-item">Describe Mehdya's weather today:</p>
+<ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
+<li>☀️ Is the sun shining? (**It is sunny**)</li>
+<li>💨 Is there wind from the ocean? (**It is windy**)</li>
+<li>🌊 Which season is your favorite for walking by the sea?</li>
+</ul>
+<div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
             Example: "Today it is sunny and warm. My favorite season is spring."
           </div>
+</div>
+<div class="darija-box">
+<span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> We say *Rbi3* (Spring), *Chta* (Rain), and *Skhoun* (Hot). Today we learn how to say them in English!
         </div>
-
-        <div class="darija-box">
-          <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> We say *Rbi3* (Spring), *Chta* (Rain), and *Skhoun* (Hot). Today we learn how to say them in English!
-        </div>
-      </div>
-    </div>
-
-    <!-- BABA'S NOTEBOOK -->
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
-      <div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
-        <div class="step-header" style="margin-bottom:6px;">
-          <div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
-        </div>
-        <div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
-          <p style="font-size:12px; line-height:1.4; color:var(--gray);">
+</div>
+</div>
+<!-- BABA'S NOTEBOOK -->
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
+<div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
+<div class="step-header" style="margin-bottom:6px;">
+<div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
+</div>
+<div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
+<p style="font-size:12px; line-height:1.4; color:var(--gray);">
             Write down the four seasons in English and describe the weather of Kenitra in January and July.
           </p>
-          <textarea class="answer-area" data-id="baba-notebook-p1" style="flex:1; min-height:180px; font-size:12px;" placeholder="My weather notes / ملاحظات الطقس ديالي..."></textarea>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- VOCABULARY SECTION -->
-  <div style="column-span:all !important; margin-top:8px;">
-    <div class="step">
-      <div class="step-header">
-        <div class="step-name">📖 Core Vocabulary: Seasons & Weather</div>
-      </div>
-
-      <div class="vocab-grid">
-        <div class="vocab-card">
-          <div class="vocab-term">Spring / Summer</div>
-          <div class="vocab-def">Warm, sunny seasons. Perfect for painting outdoors.</div>
-          <div class="vocab-ex">"Mehdya beach is full of visitors in **summer**."</div>
-          <div class="vocab-bridge">🇲🇦 Rbi3, Sif / 🇫🇷 Printemps, Été</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Autumn / Winter</div>
-          <div class="vocab-def">Cooler, rainy seasons.</div>
-          <div class="vocab-ex">"In **winter**, the ocean wind is very cold."</div>
-          <div class="vocab-bridge">🇲🇦 Khrif, Chta / 🇫🇷 Automne, Hiver</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Sunny / Rainy</div>
-          <div class="vocab-def">Describing the sky (sun vs rain).</div>
-          <div class="vocab-ex">"It is **sunny** today, but yesterday it was **rainy**."</div>
-          <div class="vocab-bridge">🇲🇦 Mshemesh / Kati7 chta / 🇫🇷 Ensoleillé / Pluvieux</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Windy / Cloudy</div>
-          <div class="vocab-def">Wind or clouds present.</div>
-          <div class="vocab-ex">"The coastal air is **windy** in the evening."</div>
-          <div class="vocab-bridge">🇲🇦 Fiha lberd / Mghiem / 🇫🇷 Venteux / Nuageux</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Hot / Cold</div>
-          <div class="vocab-def">Describing temperature.</div>
-          <div class="vocab-ex">"Marrakech is **hot**, but Mehdya is fresher."</div>
-          <div class="vocab-bridge">🇲🇦 Skhoun / Bared / 🇫🇷 Chaud / Froid</div>
-        </div>
-        
-        <div class="vocab-card" style="border-left-color:var(--gold);">
-          <div class="vocab-term" style="color:var(--gold);">💡 Grammar Rule: "IT IS..."</div>
-          <div class="vocab-def">Always start weather descriptions with **It is**:</div>
-          <div class="vocab-ex">"<strong>It is</strong> warm." (Not "Is warm" or "The weather are warm")</div>
-          <div class="vocab-bridge">🇫🇷 Il fait... (Il fait chaud)</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 13</span>
-    <span>Page 1 of 4</span>
-  </div>
+<textarea class="answer-area" data-id="baba-notebook-p1" placeholder="My weather notes / ملاحظات الطقس ديالي..." style="flex:1; min-height:180px; font-size:12px;"></textarea>
 </div>
-
+</div>
+</div>
+</div>
+<!-- VOCABULARY SECTION -->
+<div style="column-span:all !important; margin-top:8px;">
+<div class="step">
+<div class="step-header">
+<div class="step-name">📖 Core Vocabulary: Seasons &amp; Weather</div>
+</div>
+<div class="vocab-grid">
+<div class="vocab-card">
+<div class="vocab-term">Spring / Summer</div>
+<div class="vocab-def">Warm, sunny seasons. Perfect for painting outdoors.</div>
+<div class="vocab-ex">"Mehdya beach is full of visitors in **summer**."</div>
+<div class="vocab-bridge">🇲🇦 Rbi3, Sif / 🇫🇷 Printemps, Été</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Autumn / Winter</div>
+<div class="vocab-def">Cooler, rainy seasons.</div>
+<div class="vocab-ex">"In **winter**, the ocean wind is very cold."</div>
+<div class="vocab-bridge">🇲🇦 Khrif, Chta / 🇫🇷 Automne, Hiver</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Sunny / Rainy</div>
+<div class="vocab-def">Describing the sky (sun vs rain).</div>
+<div class="vocab-ex">"It is **sunny** today, but yesterday it was **rainy**."</div>
+<div class="vocab-bridge">🇲🇦 Mshemesh / Kati7 chta / 🇫🇷 Ensoleillé / Pluvieux</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Windy / Cloudy</div>
+<div class="vocab-def">Wind or clouds present.</div>
+<div class="vocab-ex">"The coastal air is **windy** in the evening."</div>
+<div class="vocab-bridge">🇲🇦 Fiha lberd / Mghiem / 🇫🇷 Venteux / Nuageux</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Hot / Cold</div>
+<div class="vocab-def">Describing temperature.</div>
+<div class="vocab-ex">"Marrakech is **hot**, but Mehdya is fresher."</div>
+<div class="vocab-bridge">🇲🇦 Skhoun / Bared / 🇫🇷 Chaud / Froid</div>
+</div>
+<div class="vocab-card" style="border-left-color:var(--gold);">
+<div class="vocab-term" style="color:var(--gold);">💡 Grammar Rule: "IT IS..."</div>
+<div class="vocab-def">Always start weather descriptions with **It is**:</div>
+<div class="vocab-ex">"<strong>It is</strong> warm." (Not "Is warm" or "The weather are warm")</div>
+<div class="vocab-bridge">🇫🇷 Il fait... (Il fait chaud)</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 13</span>
+<span>Page 1 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 2 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 2: MINI-STORY -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">2</div>
-      <div>
-        <div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
-        <div class="step-title">The Four Lights of Mehdya</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Read about how seasons affect a painter's light and find weather terms.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Have him read the text. Point out how the seasons change his painting light. Contrast "sunny" and "cloudy".
-    </div>
-
-    <div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
-      <p>As a painter, I love all the seasons. In **spring**, the sky is clear and the weather is warm. The light is perfect for mixing watercolors in my garden.</p>
-      <p style="margin-top:6px;">In **summer**, Mehdya is very hot and **sunny**. I sit under my umbrella on the beach and paint the bright blue sea.</p>
-      <p style="margin-top:6px;">In **autumn**, the air becomes **windy** and cool. The leaves fall **slowly** from the trees. In **winter**, the weather is **cold** and **rainy**. I stay inside my cozy home, drink hot green tea, and read my university books.</p>
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">📝 Check Your Understanding</div>
-      <p class="ex-item"><strong>1.</strong> Why does Fattah love spring for painting?</p>
-      <textarea class="answer-area" data-id="comp-1" placeholder="The sky is... and the weather is..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>2.</strong> What is the weather like on the beach in summer?</p>
-      <textarea class="answer-area" data-id="comp-2" placeholder="It is... and..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What does he do when the weather is rainy and cold in winter?</p>
-      <textarea class="answer-area" data-id="comp-3" placeholder="He stays... and drinks..."></textarea>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 3: GRAMMAR IN ACTION -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">3</div>
-      <div>
-        <div class="step-name">Step 3 — 🏗️ Vocabulary in Action</div>
-        <div class="step-title">Describing Current Weather</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Practice using "It is" + weather adjectives.</div>
-
-    <div class="expressions-box">
-      <div class="exp-title">📐 Adjective structure:</div>
-      <div class="exp-item">Structure: **It is** + [weather adjective] (e.g. "It is rainy today.")</div>
-      <div class="exp-item">Action: **It is** + [verb-ing] (e.g. "It is raining now.")</div>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">✏️ Fill in the blanks with the correct weather adjective:</div>
-      <p class="ex-item"><strong>1.</strong> Put on your jacket! It is very <input type="text" class="answer-inline" data-id="grammar-1" placeholder="..."> outside.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> You need an umbrella today because it is <input type="text" class="answer-inline" data-id="grammar-2" placeholder="...">.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>3.</strong> The sun is shining brightly. It is <input type="text" class="answer-inline" data-id="grammar-3" placeholder="..."> and warm.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>4.</strong> The wind is blowing the sea sand. It is very <input type="text" class="answer-inline" data-id="grammar-4" placeholder="..."> today.</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>5.</strong> I cannot see the horizon because the sky is <input type="text" class="answer-inline" data-id="grammar-5" placeholder="..."> and dark.</p>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 13</span>
-    <span>Page 2 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 2: MINI-STORY -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">2</div>
+<div>
+<div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
+<div class="step-title">The Four Lights of Mehdya</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Read about how seasons affect a painter's light and find weather terms.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Have him read the text. Point out how the seasons change his painting light. Contrast "sunny" and "cloudy".
+    </div></div></div>
+<div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
+<p>As a painter, I love all the seasons. In **spring**, the sky is clear and the weather is warm. The light is perfect for mixing watercolors in my garden.</p>
+<p style="margin-top:6px;">In **summer**, Mehdya is very hot and **sunny**. I sit under my umbrella on the beach and paint the bright blue sea.</p>
+<p style="margin-top:6px;">In **autumn**, the air becomes **windy** and cool. The leaves fall **slowly** from the trees. In **winter**, the weather is **cold** and **rainy**. I stay inside my cozy home, drink hot green tea, and read my university books.</p>
+</div>
+<div class="exercise">
+<div class="ex-label">📝 Check Your Understanding</div>
+<p class="ex-item"><strong>1.</strong> Why does Fattah love spring for painting?</p>
+<textarea class="answer-area" data-id="comp-1" placeholder="The sky is... and the weather is..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>2.</strong> What is the weather like on the beach in summer?</p>
+<textarea class="answer-area" data-id="comp-2" placeholder="It is... and..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What does he do when the weather is rainy and cold in winter?</p>
+<textarea class="answer-area" data-id="comp-3" placeholder="He stays... and drinks..."></textarea>
+</div>
+</div>
+<div class="divider"></div>
+<!-- STEP 3: GRAMMAR IN ACTION -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">3</div>
+<div>
+<div class="step-name">Step 3 — 🏗️ Vocabulary in Action</div>
+<div class="step-title">Describing Current Weather</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Practice using "It is" + weather adjectives.</div>
+<div class="expressions-box">
+<div class="exp-title">📐 Adjective structure:</div>
+<div class="exp-item">Structure: **It is** + [weather adjective] (e.g. "It is rainy today.")</div>
+<div class="exp-item">Action: **It is** + [verb-ing] (e.g. "It is raining now.")</div>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">✏️ Fill in the blanks with the correct weather adjective:</div>
+<p class="ex-item"><strong>1.</strong> Put on your jacket! It is very <input class="answer-inline" data-id="grammar-1" placeholder="..." type="text"/> outside.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>2.</strong> You need an umbrella today because it is <input class="answer-inline" data-id="grammar-2" placeholder="..." type="text"/>.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>3.</strong> The sun is shining brightly. It is <input class="answer-inline" data-id="grammar-3" placeholder="..." type="text"/> and warm.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>4.</strong> The wind is blowing the sea sand. It is very <input class="answer-inline" data-id="grammar-4" placeholder="..." type="text"/> today.</p>
+<p class="ex-item" style="margin-top:8px;"><strong>5.</strong> I cannot see the horizon because the sky is <input class="answer-inline" data-id="grammar-5" placeholder="..." type="text"/> and dark.</p>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 13</span>
+<span>Page 2 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 3 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 4: GAME ZONE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">4</div>
-      <div>
-        <div class="step-name">Step 4 — 🎮 Game Zone</div>
-        <div class="step-title">The Weather Station!</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Choose the correct weather term or season to match the description!</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Read the descriptions aloud and help him identify key triggers like "umbrella", "sun", or "leaves falling".
-    </div>
-
-    <div class="game-container" id="weath-game">
-      <div class="game-title">🌤️ THE WEATHER STATION</div>
-      <div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:15px; margin-bottom:10px;">
-        Condition: <span id="weath-desc" style="color:var(--teal); font-size:16px;">Condition loading...</span>
-      </div>
-      
-      <div id="weath-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">What is the correct weather/season?</div>
-      
-      <div id="weath-options" style="display:grid; gap:8px; margin-top:10px; grid-template-columns: 1fr 1fr;"></div>
-      <div id="weath-feedback" class="game-feedback"></div>
-      <div id="weath-score" class="game-score"></div>
-      <div style="text-align:center; margin-top:12px;">
-        <button class="game-btn" id="weath-next" onclick="weathNext()" style="display:none;">Next Question →</button>
-        <button class="game-btn" id="weath-restart" onclick="weathStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
-      </div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px;">
-      <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> Sunny or rainy, "Alhamdulillah" is always our answer! Let's complete the weather check!
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 5: SPEAKING CHALLENGE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">5</div>
-      <div>
-        <div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
-        <div class="step-title">My Perfect Painting Season</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Talk for 1 minute about your favorite season and why it is perfect for you.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Have him explain why he loves spring or summer. Prompt him to use: warm, sunny, clear sky, paint outdoors.
-    </div>
-
-    <div class="gold-banner">
-      <p><strong>🎤 Season Presentation Challenge</strong></p>
-      <p style="margin-top:6px; font-size:12px;">State your favorite time of year. Try to include:</p>
-      <ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
-        <li>✅ "My favorite season is..."</li>
-        <li>✅ "The weather is usually **sunny** and..."</li>
-        <li>✅ "I love it because I can..."</li>
-      </ul>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">📝 Notes for your presentation</div>
-      <textarea class="answer-area" data-id="speaking-notes" style="min-height:90px;" placeholder="My favorite season is spring because the weather is not too hot. It is sunny and pleasant..."></textarea>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 13</span>
-    <span>Page 3 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 4: GAME ZONE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">4</div>
+<div>
+<div class="step-name">Step 4 — 🎮 Game Zone</div>
+<div class="step-title">The Weather Station!</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Choose the correct weather term or season to match the description!</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Read the descriptions aloud and help him identify key triggers like "umbrella", "sun", or "leaves falling".
+    </div></div></div>
+<div class="game-container" id="weath-game">
+<div class="game-title">🌤️ THE WEATHER STATION</div>
+<div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:15px; margin-bottom:10px;">
+        Condition: <span id="weath-desc" style="color:var(--teal); font-size:16px;">Condition loading...</span>
+</div>
+<div id="weath-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">What is the correct weather/season?</div>
+<div id="weath-options" style="display:grid; gap:8px; margin-top:10px; grid-template-columns: 1fr 1fr;"></div>
+<div class="game-feedback" id="weath-feedback"></div>
+<div class="game-score" id="weath-score"></div>
+<div style="text-align:center; margin-top:12px;">
+<button class="game-btn" id="weath-next" onclick="weathNext()" style="display:none;">Next Question →</button>
+<button class="game-btn" id="weath-restart" onclick="weathStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
+</div>
+</div>
+<div class="darija-box" style="margin-top:10px;">
+<span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> Sunny or rainy, "Alhamdulillah" is always our answer! Let's complete the weather check!
+    </div>
+</div>
+<div class="divider"></div>
+<!-- STEP 5: SPEAKING CHALLENGE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">5</div>
+<div>
+<div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
+<div class="step-title">My Perfect Painting Season</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Talk for 1 minute about your favorite season and why it is perfect for you.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Have him explain why he loves spring or summer. Prompt him to use: warm, sunny, clear sky, paint outdoors.
+    </div></div></div>
+<div class="gold-banner">
+<p><strong>🎤 Season Presentation Challenge</strong></p>
+<p style="margin-top:6px; font-size:12px;">State your favorite time of year. Try to include:</p>
+<ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
+<li>✅ "My favorite season is..."</li>
+<li>✅ "The weather is usually **sunny** and..."</li>
+<li>✅ "I love it because I can..."</li>
+</ul>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">📝 Notes for your presentation</div>
+<textarea class="answer-area" data-id="speaking-notes" placeholder="My favorite season is spring because the weather is not too hot. It is sunny and pleasant..." style="min-height:90px;"></textarea>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 13</span>
+<span>Page 3 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 4 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 6: BOSS LEVEL -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">6</div>
-      <div>
-        <div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
-        <div class="step-title">The Coastal Report</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Fill in the correct weather and season terms to complete this forecast.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This challenges his contextual understanding of Morocco's regional climates.
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">🌤️ Weather Broadcast for Morocco</div>
-      <p class="ex-item">Complete the text using: <strong>winter, hot, sunny, windy, rainy</strong>.</p>
-      <div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
-        Welcome to the Moroccan climate update. Today in Kenitra, the weather is clear and <input type="text" class="answer-inline" data-id="boss-1" style="width:100px;" placeholder="...">. 
-        However, near the sea in Mehdya, it is quite <input type="text" class="answer-inline" data-id="boss-2" style="width:100px;" placeholder="...">, so expect some waves.
-        In Marrakech, the temperature is very <input type="text" class="answer-inline" data-id="boss-3" style="width:100px;" placeholder="..."> today, reaching 38 degrees.
-        If you travel north to Tangier, you might need your coat because it is cloudy and <input type="text" class="answer-inline" data-id="boss-4" style="width:100px;" placeholder="...">.
-        This weather is typical for our mild Moroccan <input type="text" class="answer-inline" data-id="boss-5" style="width:100px;" placeholder="..."> season!
-      </div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 7: HOMEWORK -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">7</div>
-      <div>
-        <div class="step-name">Step 7 — 📚 Homework & Fun Challenge</div>
-        <div class="step-title">The Weather Diary</div>
-      </div>
-    </div>
-
-    <div class="body">
-      <div class="hw-item">
-        <div class="hw-num">1</div>
-        <div>
-          <strong>Writing Task — Mehdya Weather</strong><br>
-          <span style="font-size:12px; color:var(--gray);">Write 3 sentences about your local weather in the current season. Mention one temperature word and one sky word.</span>
-          <textarea class="answer-area" data-id="hw-1" style="min-height:80px; margin-top:6px;" placeholder="1. In spring, Mehdya is...&#10;2. ...&#10;3. ..."></textarea>
-        </div>
-      </div>
-
-      <div class="hw-item">
-        <div class="hw-num">2</div>
-        <div>
-          <strong>Season Matcher</strong><br>
-          <span style="font-size:12px; color:var(--gray);">Write the name of the season:
-          <br>1. Le printemps → <input type="text" class="answer-inline" data-id="hw-weath-1" style="width:180px;" placeholder="Season name...">
-          <br>2. L'été → <input type="text" class="answer-inline" data-id="hw-weath-2" style="width:180px;" placeholder="Season name..."></span>
-        </div>
-      </div>
-    </div>
-
-    <div class="expressions-box" style="margin-top:10px;">
-      <div class="exp-title">📋 Lesson 13 Summary — What You Learned Today</div>
-      <div class="exp-item">✅ **Seasons** → Spring, Summer, Autumn, Winter</div>
-      <div class="exp-item">✅ **Sky weather** → sunny, rainy, cloudy, windy</div>
-      <div class="exp-item">✅ **Temperature** → hot, warm, cool, cold</div>
-      <div class="exp-item">✅ **It is...** → the correct standard structure to describe conditions</div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
-      <span class="flag">🌟</span> <strong>Message from Saad:</strong><br>
-      <em>Baba, you have just mastered talking about the seasons! Your descriptions of the bright Mehdya sunlight are beautiful. In the next lesson, we will study "Describing Appearance & Personality" (tall, kind, funny) to help you describe family members and friends. Keep making me proud! 💪🇲🇦</em>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 13</span>
-    <span>Page 4 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 6: BOSS LEVEL -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">6</div>
+<div>
+<div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
+<div class="step-title">The Coastal Report</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Fill in the correct weather and season terms to complete this forecast.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This challenges his contextual understanding of Morocco's regional climates.
+    </div></div></div>
+<div class="exercise">
+<div class="ex-label">🌤️ Weather Broadcast for Morocco</div>
+<p class="ex-item">Complete the text using: <strong>winter, hot, sunny, windy, rainy</strong>.</p>
+<div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
+        Welcome to the Moroccan climate update. Today in Kenitra, the weather is clear and <input class="answer-inline" data-id="boss-1" placeholder="..." style="width:100px;" type="text"/>. 
+        However, near the sea in Mehdya, it is quite <input class="answer-inline" data-id="boss-2" placeholder="..." style="width:100px;" type="text"/>, so expect some waves.
+        In Marrakech, the temperature is very <input class="answer-inline" data-id="boss-3" placeholder="..." style="width:100px;" type="text"/> today, reaching 38 degrees.
+        If you travel north to Tangier, you might need your coat because it is cloudy and <input class="answer-inline" data-id="boss-4" placeholder="..." style="width:100px;" type="text"/>.
+        This weather is typical for our mild Moroccan <input class="answer-inline" data-id="boss-5" placeholder="..." style="width:100px;" type="text"/> season!
+      </div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- STEP 7: HOMEWORK -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">7</div>
+<div>
+<div class="step-name">Step 7 — 📚 Homework &amp; Fun Challenge</div>
+<div class="step-title">The Weather Diary</div>
+</div>
+</div>
+<div class="body">
+<div class="hw-item">
+<div class="hw-num">1</div>
+<div>
+<strong>Writing Task — Mehdya Weather</strong><br/>
+<span style="font-size:12px; color:var(--gray);">Write 3 sentences about your local weather in the current season. Mention one temperature word and one sky word.</span>
+<textarea class="answer-area" data-id="hw-1" placeholder="1. In spring, Mehdya is...
+2. ...
+3. ..." style="min-height:80px; margin-top:6px;"></textarea>
+</div>
+</div>
+<div class="hw-item">
+<div class="hw-num">2</div>
+<div>
+<strong>Season Matcher</strong><br/>
+<span style="font-size:12px; color:var(--gray);">Write the name of the season:
+          <br/>1. Le printemps → <input class="answer-inline" data-id="hw-weath-1" placeholder="Season name..." style="width:180px;" type="text"/>
+<br/>2. L'été → <input class="answer-inline" data-id="hw-weath-2" placeholder="Season name..." style="width:180px;" type="text"/></span>
+</div>
+</div>
+</div>
+<div class="expressions-box" style="margin-top:10px;">
+<div class="exp-title">📋 Lesson 13 Summary — What You Learned Today</div>
+<div class="exp-item">✅ **Seasons** → Spring, Summer, Autumn, Winter</div>
+<div class="exp-item">✅ **Sky weather** → sunny, rainy, cloudy, windy</div>
+<div class="exp-item">✅ **Temperature** → hot, warm, cool, cold</div>
+<div class="exp-item">✅ **It is...** → the correct standard structure to describe conditions</div>
+</div>
+<div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
+<span class="flag">🌟</span> <strong>Message from Saad:</strong><br/>
+<em>Baba, you have just mastered talking about the seasons! Your descriptions of the bright Mehdya sunlight are beautiful. In the next lesson, we will study "Describing Appearance &amp; Personality" (tall, kind, funny) to help you describe family members and friends. Keep making me proud! 💪🇲🇦</em>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 13</span>
+<span>Page 4 of 4</span>
+</div>
+</div>
 <!-- CONGRATULATIONS PAGE -->
-<div class="page congratulations-page">
-  <img src="../Congratulations.png" alt="Congratulations" class="congrats-img">
-</div>
-
+<div class="page congratulations-page"><div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%;"><img alt="Congratulations" class="congrats-img" src="../Congratulations.png" style="max-height: 180px; object-fit: contain;"/><div class="polaroid-card"><img class="polaroid-img" src="../Mama_Avatar/Family.jfif"/><div class="polaroid-caption">Bravo Baba! 🇲🇦🏆</div><div style="font-family:'Inter', sans-serif; font-size:11.5px; margin-top:8px; color:var(--gray); font-weight:600; line-height:1.4;">"Knowledge is light, Baba! We are all incredibly proud of you for completing Lesson 13! Keep going! 💪❤️"</div></div></div></div>
 <!-- SAVE STATUS -->
 <div class="save-status" id="save-status">✓ Progress saved</div>
-
 <script>
 const STORAGE_KEY = 'ts-lesson-fattah-weather';
 

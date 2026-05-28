@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fattah — Greetings & Expressions | Talksmiths</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fattah — Greetings &amp; Expressions | Talksmiths</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Playfair+Display:ital,wght@0,800;1,700&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
     --teal: #007575; --gold: #D4A843; --navy: #1A2744;
@@ -122,403 +123,453 @@
   @media screen and (max-width: 768px) {
     .vocab-grid { grid-template-columns: 1fr !important; }
   }
+
+  /* --- Talksmiths Avatar Integration Styles --- */
+  .ts-avatar-circle {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 2px solid var(--teal);
+    object-fit: cover;
+    object-position: center 20%;
+    box-shadow: 0 4px 8px rgba(0, 117, 117, 0.15);
+    flex-shrink: 0;
+  }
+  .teacher-chat-bubble {
+    display: flex;
+    gap: 14px;
+    background: #FFFBF2;
+    border: 1px solid #EAD295;
+    border-radius: 14px;
+    padding: 14px;
+    margin: 12px 0;
+    align-items: flex-start;
+    box-shadow: 0 2px 10px rgba(212, 168, 67, 0.05);
+    break-inside: avoid;
+  }
+  .chat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: left;
+  }
+  .chat-header {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--teal);
+  }
+  .chat-text {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #614B15;
+  }
+  .family-reading-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+    break-inside: avoid;
+  }
+  .family-member-card {
+    display: flex;
+    gap: 14px;
+    background: #FDFDFD;
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 14px;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: left;
+  }
+  .family-member-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  }
+  .polaroid-card {
+    background: var(--white);
+    border: 1px solid var(--light);
+    border-radius: 12px;
+    padding: 16px 16px 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    text-align: center;
+    max-width: 340px;
+    margin: 20px auto;
+    transform: rotate(-1.5deg);
+    transition: transform 0.3s ease;
+    display: block !important;
+  }
+  .polaroid-card:hover {
+    transform: rotate(0deg) scale(1.03);
+  }
+  .polaroid-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #EAEAEA;
+  }
+  .polaroid-caption {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 700;
+    margin-top: 14px;
+    color: var(--navy);
+  }
+  @media screen and (max-width: 1200px) {
+    .family-reading-grid { grid-template-columns: 1fr !important; }
+    .family-member-card[style*="grid-column: span 2"] { grid-column: span 1 !important; }
+  }
+  @media print {
+    .ts-avatar-circle, 
+    .teacher-chat-bubble, 
+    .polaroid-card { 
+      display: none !important; 
+    }
+  }
 </style>
 </head>
 <body class="student-mode">
-
 <!-- VIEW TOGGLE -->
 <div class="view-toggle">
-  <button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
-  <button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
+<button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
+<button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
 </div>
 <button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
-
 <!-- ==================== PAGE 1 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-  <div class="logo">Talksmiths — Lesson Engine™</div>
-  <h1>Greetings & Expressions</h1>
-  <div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 10</div>
-  <div class="badges">
-    <span class="badge badge-teal">A1 — Beginner</span>
-    <span class="badge badge-gold">60 min</span>
-    <span class="badge badge-gray">Vocabulary Foundations</span>
-    <span class="badge badge-gray">Lesson 10</span>
-  </div>
-  <div class="divider"></div>
-
-  <!-- Step 1 + Notebook row -->
-  <div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
-
-      <!-- STEP 1: WARM-UP -->
-      <div class="step">
-        <div class="step-header">
-          <div class="step-num">1</div>
-          <div>
-            <div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
-            <div class="step-title">The Art of Welcoming</div>
-          </div>
-          <div class="step-time">8 min</div>
-        </div>
-        <div class="objective">Objective: Learn polite greetings to welcome guests or speak to colleagues.</div>
-
-        <div class="student-note">
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<div class="logo">Talksmiths — Lesson Engine™</div>
+<h1>Greetings &amp; Expressions</h1>
+<div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 10</div>
+<div class="badges">
+<span class="badge badge-teal">A1 — Beginner</span>
+<span class="badge badge-gold">60 min</span>
+<span class="badge badge-gray">Vocabulary Foundations</span>
+<span class="badge badge-gray">Lesson 10</span>
+</div>
+<div class="divider"></div>
+<!-- Step 1 + Notebook row -->
+<div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
+<!-- STEP 1: WARM-UP -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">1</div>
+<div>
+<div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
+<div class="step-title">The Art of Welcoming</div>
+</div>
+<div class="step-time">8 min</div>
+</div>
+<div class="objective">Objective: Learn polite greetings to welcome guests or speak to colleagues.</div>
+<div class="student-note">
           🎓 <strong>Student Strategy:</strong> Polite words open doors! Learning standard English greetings makes you feel confident when meeting foreign university professors, painters, or tourists.
         </div>
-
-        <div class="teacher-note">
-          📋 <strong>Teacher Note:</strong> Practice polite small talk. Have him say these out loud with natural intonation.
-        </div>
-
-        <div class="exercise">
-          <div class="ex-label">🗣️ Speaking Warm-Up — First Impressions</div>
-          <p class="ex-item">How do you greet a visitor who arrives at your home in Kenitra?</p>
-          <ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
-            <li>👋 Do you say **Hello** or **Good morning**?</li>
-            <li>🍵 Do you offer them tea immediately?</li>
-            <li>🤝 What is the English translation of "Marhaban bikum"?</li>
-          </ul>
-          <div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Practice polite small talk. Have him say these out loud with natural intonation.
+        </div></div></div>
+<div class="exercise">
+<div class="ex-label">🗣️ Speaking Warm-Up — First Impressions</div>
+<p class="ex-item">How do you greet a visitor who arrives at your home in Kenitra?</p>
+<ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
+<li>👋 Do you say **Hello** or **Good morning**?</li>
+<li>🍵 Do you offer them tea immediately?</li>
+<li>🤝 What is the English translation of "Marhaban bikum"?</li>
+</ul>
+<div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
             Example: "I say 'Welcome to my home' and happily offer them mint tea."
           </div>
+</div>
+<div class="darija-box">
+<span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> In Morocco, hospitality is key. We say *Marhba* (Welcome) and *Shukran* (Thank you). Let's learn their English brothers!
         </div>
-
-        <div class="darija-box">
-          <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> In Morocco, hospitality is key. We say *Marhba* (Welcome) and *Shukran* (Thank you). Let's learn their English brothers!
-        </div>
-      </div>
-    </div>
-
-    <!-- BABA'S NOTEBOOK -->
-    <div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
-      <div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
-        <div class="step-header" style="margin-bottom:6px;">
-          <div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
-        </div>
-        <div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
-          <p style="font-size:12px; line-height:1.4; color:var(--gray);">
+</div>
+</div>
+<!-- BABA'S NOTEBOOK -->
+<div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
+<div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
+<div class="step-header" style="margin-bottom:6px;">
+<div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
+</div>
+<div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
+<p style="font-size:12px; line-height:1.4; color:var(--gray);">
             Write down 3 greetings you can use in the morning and 3 polite phrases to say goodbye.
           </p>
-          <ul style="font-size:11px; margin-left:16px; line-height:1.4; color:var(--navy); list-style-type:square;">
-            <li>Morning: Good morning, Hello, __________</li>
-            <li>Goodbye: Goodbye, See you later, __________</li>
-          </ul>
-          <textarea class="answer-area" data-id="baba-notebook-p1" style="flex:1; min-height:180px; font-size:12px;" placeholder="My polite expressions / الكلمات المحترمة ديالي..."></textarea>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- VOCABULARY SECTION -->
-  <div style="column-span:all !important; margin-top:8px;">
-    <div class="step">
-      <div class="step-header">
-        <div class="step-name">📖 Core Greetings & Expressions</div>
-      </div>
-
-      <div class="vocab-grid">
-        <div class="vocab-card">
-          <div class="vocab-term">Nice to meet you → متشرفين → Enchanté</div>
-          <div class="vocab-def">Said when meeting someone for the first time.</div>
-          <div class="vocab-ex">"Hello! I am Fattah. <strong>Nice to meet you</strong>."</div>
-          <div class="vocab-bridge">🇲🇦 Mtsherfin / 🇫🇷 Enchanté de vous rencontrer</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">You're welcome → بلا جميل → De rien</div>
-          <div class="vocab-def">The response to "Thank you".</div>
-          <div class="vocab-ex">"Thank you for the tea!" — "<strong>You're welcome</strong>, Baba."</div>
-          <div class="vocab-bridge">🇲🇦 Bla jamil / La shukra 3la wajib / 🇫🇷 De rien</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Excuse me → سمح لي → Excusez-moi</div>
-          <div class="vocab-def">Polite way to catch someone's attention or pass.</div>
-          <div class="vocab-ex">"<strong>Excuse me</strong>, where is the library?"</div>
-          <div class="vocab-bridge">🇲🇦 Sme7 lia / 🇫🇷 Excusez-moi / Pardon</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Welcome → مرحبا → Bienvenue</div>
-          <div class="vocab-def">To greet a guest arriving at a place.</div>
-          <div class="vocab-ex">"<strong>Welcome</strong> to Mehdya, my friend!"</div>
-          <div class="vocab-bridge">🇲🇦 Merhba / 🇫🇷 Bienvenue</div>
-        </div>
-        <div class="vocab-card">
-          <div class="vocab-term">Have a nice day → يوم سعيد → Bonne journée</div>
-          <div class="vocab-def">A friendly goodbye expression.</div>
-          <div class="vocab-ex">"Goodbye, Saad! <strong>Have a nice day</strong>!"</div>
-          <div class="vocab-bridge">🇲🇦 Nharek mbarek / 🇫🇷 Bonne journée</div>
-        </div>
-        
-        <div class="vocab-card" style="border-left-color:var(--gold);">
-          <div class="vocab-term" style="color:var(--gold);">💡 Please vs Thank you</div>
-          <div class="vocab-def">The golden keys of English:</div>
-          <div class="vocab-ex">"Mint tea, <strong>please</strong>."<br>"<strong>Thank you very much</strong>!"</div>
-          <div class="vocab-bridge">🇲🇦 3afak / Shukran bezaf / 🇫🇷 S'il vous plaît / Merci beaucoup</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 10</span>
-    <span>Page 1 of 4</span>
-  </div>
+<ul style="font-size:11px; margin-left:16px; line-height:1.4; color:var(--navy); list-style-type:square;">
+<li>Morning: Good morning, Hello, __________</li>
+<li>Goodbye: Goodbye, See you later, __________</li>
+</ul>
+<textarea class="answer-area" data-id="baba-notebook-p1" placeholder="My polite expressions / الكلمات المحترمة ديالي..." style="flex:1; min-height:180px; font-size:12px;"></textarea>
 </div>
-
+</div>
+</div>
+</div>
+<!-- VOCABULARY SECTION -->
+<div style="column-span:all !important; margin-top:8px;">
+<div class="step">
+<div class="step-header">
+<div class="step-name">📖 Core Greetings &amp; Expressions</div>
+</div>
+<div class="vocab-grid">
+<div class="vocab-card">
+<div class="vocab-term">Nice to meet you → متشرفين → Enchanté</div>
+<div class="vocab-def">Said when meeting someone for the first time.</div>
+<div class="vocab-ex">"Hello! I am Fattah. <strong>Nice to meet you</strong>."</div>
+<div class="vocab-bridge">🇲🇦 Mtsherfin / 🇫🇷 Enchanté de vous rencontrer</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">You're welcome → بلا جميل → De rien</div>
+<div class="vocab-def">The response to "Thank you".</div>
+<div class="vocab-ex">"Thank you for the tea!" — "<strong>You're welcome</strong>, Baba."</div>
+<div class="vocab-bridge">🇲🇦 Bla jamil / La shukra 3la wajib / 🇫🇷 De rien</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Excuse me → سمح لي → Excusez-moi</div>
+<div class="vocab-def">Polite way to catch someone's attention or pass.</div>
+<div class="vocab-ex">"<strong>Excuse me</strong>, where is the library?"</div>
+<div class="vocab-bridge">🇲🇦 Sme7 lia / 🇫🇷 Excusez-moi / Pardon</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Welcome → مرحبا → Bienvenue</div>
+<div class="vocab-def">To greet a guest arriving at a place.</div>
+<div class="vocab-ex">"<strong>Welcome</strong> to Mehdya, my friend!"</div>
+<div class="vocab-bridge">🇲🇦 Merhba / 🇫🇷 Bienvenue</div>
+</div>
+<div class="vocab-card">
+<div class="vocab-term">Have a nice day → يوم سعيد → Bonne journée</div>
+<div class="vocab-def">A friendly goodbye expression.</div>
+<div class="vocab-ex">"Goodbye, Saad! <strong>Have a nice day</strong>!"</div>
+<div class="vocab-bridge">🇲🇦 Nharek mbarek / 🇫🇷 Bonne journée</div>
+</div>
+<div class="vocab-card" style="border-left-color:var(--gold);">
+<div class="vocab-term" style="color:var(--gold);">💡 Please vs Thank you</div>
+<div class="vocab-def">The golden keys of English:</div>
+<div class="vocab-ex">"Mint tea, <strong>please</strong>."<br/>"<strong>Thank you very much</strong>!"</div>
+<div class="vocab-bridge">🇲🇦 3afak / Shukran bezaf / 🇫🇷 S'il vous plaît / Merci beaucoup</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 10</span>
+<span>Page 1 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 2 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 2: MINI-STORY -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">2</div>
-      <div>
-        <div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
-        <div class="step-title">Welcoming a Foreign Professor</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Read a conversation between Baba and a university speaker.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Read this dialogue together. Focus on tone: friendly, warm, and polite. Highlight the usage of "Excuse me" and "You're welcome".
-    </div>
-
-    <div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
-      <p><strong>Fattah:</strong> Excuse me, Professor. Welcome to Ibn Tofail University in Kenitra!</p>
-      <p style="margin-top:6px;"><strong>Professor:</strong> Good morning! Thank you very much. Nice to meet you!</p>
-      <p style="margin-top:6px;"><strong>Fattah:</strong> Nice to meet you too. I am Fattah, a student of anthropology here. Please, sit down.</p>
-      <p style="margin-top:6px;"><strong>Professor:</strong> That is very kind of you, Fattah. Thank you for the warm welcome.</p>
-      <p style="margin-top:6px;"><strong>Fattah:</strong> You're welcome. Have a wonderful day at our university!</p>
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">📝 Check Your Understanding</div>
-      <p class="ex-item"><strong>1.</strong> How does Fattah greet the Professor at the beginning?</p>
-      <textarea class="answer-area" data-id="comp-1" placeholder="He says... and..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>2.</strong> What subject does Baba Fattah study?</p>
-      <textarea class="answer-area" data-id="comp-2" placeholder="He studies..."></textarea>
-      <p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What does Fattah say when the Professor thanks him?</p>
-      <textarea class="answer-area" data-id="comp-3" placeholder="He says..."></textarea>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 3: GRAMMAR IN ACTION -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">3</div>
-      <div>
-        <div class="step-name">Step 3 — 🏗️ Expressions in Action</div>
-        <div class="step-title">Choosing the Right Phrase</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Match the polite phrase to the social context.</div>
-
-    <div class="expressions-box">
-      <div class="exp-title">📐 The Conversation Guide:</div>
-      <div class="exp-item">If someone says **"Thank you"** → Answer **"You're welcome"**</div>
-      <div class="exp-item">If you need to pass through a crowd → Say **"Excuse me"**</div>
-      <div class="exp-item">If someone arrives at your hotel or city → Say **"Welcome!"**</div>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">✏️ Write the correct polite phrase (choose from: Excuse me, Thank you, Nice to meet you, You're welcome, Have a nice day):</div>
-      <p class="ex-item"><strong>1.</strong> "Here is your cup of green tea, Baba." — "<input type="text" class="answer-inline" data-id="grammar-1" placeholder="...">!"</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> "Thank you for the delicious dinner!" — "<input type="text" class="answer-inline" data-id="grammar-2" placeholder="...">."</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>3.</strong> (Before asking a stranger for directions): "<input type="text" class="answer-inline" data-id="grammar-3" placeholder="...">, where is the beach?"</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>4.</strong> "This is my friend John." — "Hello John! <input type="text" class="answer-inline" data-id="grammar-4" placeholder="...">."</p>
-      <p class="ex-item" style="margin-top:8px;"><strong>5.</strong> (When leaving a shop): "Goodbye! <input type="text" class="answer-inline" data-id="grammar-5" placeholder="...">!"</p>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 10</span>
-    <span>Page 2 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 2: MINI-STORY -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">2</div>
+<div>
+<div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
+<div class="step-title">Welcoming a Foreign Professor</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Read a conversation between Baba and a university speaker.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Read this dialogue together. Focus on tone: friendly, warm, and polite. Highlight the usage of "Excuse me" and "You're welcome".
+    </div></div></div>
+<div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
+<p><strong>Fattah:</strong> Excuse me, Professor. Welcome to Ibn Tofail University in Kenitra!</p>
+<p style="margin-top:6px;"><strong>Professor:</strong> Good morning! Thank you very much. Nice to meet you!</p>
+<p style="margin-top:6px;"><strong>Fattah:</strong> Nice to meet you too. I am Fattah, a student of anthropology here. Please, sit down.</p>
+<p style="margin-top:6px;"><strong>Professor:</strong> That is very kind of you, Fattah. Thank you for the warm welcome.</p>
+<p style="margin-top:6px;"><strong>Fattah:</strong> You're welcome. Have a wonderful day at our university!</p>
+</div>
+<div class="exercise">
+<div class="ex-label">📝 Check Your Understanding</div>
+<p class="ex-item"><strong>1.</strong> How does Fattah greet the Professor at the beginning?</p>
+<textarea class="answer-area" data-id="comp-1" placeholder="He says... and..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>2.</strong> What subject does Baba Fattah study?</p>
+<textarea class="answer-area" data-id="comp-2" placeholder="He studies..."></textarea>
+<p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What does Fattah say when the Professor thanks him?</p>
+<textarea class="answer-area" data-id="comp-3" placeholder="He says..."></textarea>
+</div>
+</div>
+<div class="divider"></div>
+<!-- STEP 3: GRAMMAR IN ACTION -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">3</div>
+<div>
+<div class="step-name">Step 3 — 🏗️ Expressions in Action</div>
+<div class="step-title">Choosing the Right Phrase</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Match the polite phrase to the social context.</div>
+<div class="expressions-box">
+<div class="exp-title">📐 The Conversation Guide:</div>
+<div class="exp-item">If someone says **"Thank you"** → Answer **"You're welcome"**</div>
+<div class="exp-item">If you need to pass through a crowd → Say **"Excuse me"**</div>
+<div class="exp-item">If someone arrives at your hotel or city → Say **"Welcome!"**</div>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">✏️ Write the correct polite phrase (choose from: Excuse me, Thank you, Nice to meet you, You're welcome, Have a nice day):</div>
+<p class="ex-item"><strong>1.</strong> "Here is your cup of green tea, Baba." — "<input class="answer-inline" data-id="grammar-1" placeholder="..." type="text"/>!"</p>
+<p class="ex-item" style="margin-top:8px;"><strong>2.</strong> "Thank you for the delicious dinner!" — "<input class="answer-inline" data-id="grammar-2" placeholder="..." type="text"/>."</p>
+<p class="ex-item" style="margin-top:8px;"><strong>3.</strong> (Before asking a stranger for directions): "<input class="answer-inline" data-id="grammar-3" placeholder="..." type="text"/>, where is the beach?"</p>
+<p class="ex-item" style="margin-top:8px;"><strong>4.</strong> "This is my friend John." — "Hello John! <input class="answer-inline" data-id="grammar-4" placeholder="..." type="text"/>."</p>
+<p class="ex-item" style="margin-top:8px;"><strong>5.</strong> (When leaving a shop): "Goodbye! <input class="answer-inline" data-id="grammar-5" placeholder="..." type="text"/>!"</p>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 10</span>
+<span>Page 2 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 3 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 4: GAME ZONE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">4</div>
-      <div>
-        <div class="step-name">Step 4 — 🎮 Game Zone</div>
-        <div class="step-title">The Polite Talker!</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Choose the correct English translation for the Moroccan or French greetings!</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This game solidifies vocabulary connections with instant visual rewards!
-    </div>
-
-    <div class="game-container" id="greet-game">
-      <div class="game-title">🤝 THE POLITE TALKER</div>
-      <div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:16px; margin-bottom:10px;">
-        Phrase: <span id="greet-phrase" style="color:var(--teal); font-size:18px;">Phrase loading...</span>
-      </div>
-      
-      <div id="greet-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">What is the English translation?</div>
-      
-      <div id="greet-options" style="display:grid; gap:8px; margin-top:10px;"></div>
-      <div id="greet-feedback" class="game-feedback"></div>
-      <div id="greet-score" class="game-score"></div>
-      <div style="text-align:center; margin-top:12px;">
-        <button class="game-btn" id="greet-next" onclick="greetNext()" style="display:none;">Next Phrase →</button>
-        <button class="game-btn" id="greet-restart" onclick="greetStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
-      </div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px;">
-      <span class="flag">🇲🇦</span> <strong>Darija Wisdom:</strong> <em>"L-kelma t-tayba tshed l-9elb"</em> — The kind word holds the heart. Polite English will connect you with everyone!
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 5: SPEAKING CHALLENGE -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">5</div>
-      <div>
-        <div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
-        <div class="step-title">Welcoming a Tourist in Kenitra</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Roleplay welcoming a foreign visitor to your city.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> Pretend to be a British tourist visiting Kenitra for the first time. Have Baba greet you, ask how you are, welcome you, and guide you politely.
-    </div>
-
-    <div class="gold-banner">
-      <p><strong>🎤 Tourist Welcome Challenge</strong></p>
-      <p style="margin-top:6px; font-size:12px;">Greet a visitor to Mehdya. You must use:</p>
-      <ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
-        <li>✅ "Welcome to..."</li>
-        <li>✅ "Nice to meet you!"</li>
-        <li>✅ "Excuse me, do you want tea?"</li>
-        <li>✅ "Have a nice day!"</li>
-      </ul>
-    </div>
-
-    <div class="exercise" style="margin-top:10px;">
-      <div class="ex-label">📝 Write down your welcome message</div>
-      <textarea class="answer-area" data-id="speaking-notes" style="min-height:90px;" placeholder="Hello! Welcome to Kenitra. Nice to meet you. Please taste our Moroccan tagine..."></textarea>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 10</span>
-    <span>Page 3 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 4: GAME ZONE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">4</div>
+<div>
+<div class="step-name">Step 4 — 🎮 Game Zone</div>
+<div class="step-title">The Polite Talker!</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Choose the correct English translation for the Moroccan or French greetings!</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This game solidifies vocabulary connections with instant visual rewards!
+    </div></div></div>
+<div class="game-container" id="greet-game">
+<div class="game-title">🤝 THE POLITE TALKER</div>
+<div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:16px; margin-bottom:10px;">
+        Phrase: <span id="greet-phrase" style="color:var(--teal); font-size:18px;">Phrase loading...</span>
+</div>
+<div id="greet-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">What is the English translation?</div>
+<div id="greet-options" style="display:grid; gap:8px; margin-top:10px;"></div>
+<div class="game-feedback" id="greet-feedback"></div>
+<div class="game-score" id="greet-score"></div>
+<div style="text-align:center; margin-top:12px;">
+<button class="game-btn" id="greet-next" onclick="greetNext()" style="display:none;">Next Phrase →</button>
+<button class="game-btn" id="greet-restart" onclick="greetStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
+</div>
+</div>
+<div class="darija-box" style="margin-top:10px;">
+<span class="flag">🇲🇦</span> <strong>Darija Wisdom:</strong> <em>"L-kelma t-tayba tshed l-9elb"</em> — The kind word holds the heart. Polite English will connect you with everyone!
+    </div>
+</div>
+<div class="divider"></div>
+<!-- STEP 5: SPEAKING CHALLENGE -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">5</div>
+<div>
+<div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
+<div class="step-title">Welcoming a Tourist in Kenitra</div>
+</div>
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Roleplay welcoming a foreign visitor to your city.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">Pretend to be a British tourist visiting Kenitra for the first time. Have Baba greet you, ask how you are, welcome you, and guide you politely.
+    </div></div></div>
+<div class="gold-banner">
+<p><strong>🎤 Tourist Welcome Challenge</strong></p>
+<p style="margin-top:6px; font-size:12px;">Greet a visitor to Mehdya. You must use:</p>
+<ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
+<li>✅ "Welcome to..."</li>
+<li>✅ "Nice to meet you!"</li>
+<li>✅ "Excuse me, do you want tea?"</li>
+<li>✅ "Have a nice day!"</li>
+</ul>
+</div>
+<div class="exercise" style="margin-top:10px;">
+<div class="ex-label">📝 Write down your welcome message</div>
+<textarea class="answer-area" data-id="speaking-notes" placeholder="Hello! Welcome to Kenitra. Nice to meet you. Please taste our Moroccan tagine..." style="min-height:90px;"></textarea>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 10</span>
+<span>Page 3 of 4</span>
+</div>
+</div>
 <!-- ==================== PAGE 4 ==================== -->
 <div class="page">
-  <img src="../Logo_transparent.png" alt="Talksmiths" class="ts-logo-img">
-
-  <!-- STEP 6: BOSS LEVEL -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">6</div>
-      <div>
-        <div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
-        <div class="step-title">The Polite Banker's Guide</div>
-      </div>
-      <div class="step-time">10 min</div>
-    </div>
-    <div class="objective">Objective: Fill in the missing polite expressions in this professional bank dialogue.</div>
-
-    <div class="teacher-note">
-      📋 <strong>Teacher Note:</strong> This dialogue recreates Baba's professional environment at Barid Bank but in English!
-    </div>
-
-    <div class="exercise">
-      <div class="ex-label">🏦 At the Bank Counter</div>
-      <p class="ex-item">Complete the text using: <strong>Good morning, Excuse me, Welcome, Please, You're welcome</strong>.</p>
-      <div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
-        <strong>Customer:</strong> <input type="text" class="answer-inline" data-id="boss-1" style="width:100px;" placeholder="...">, sir. Can you help me?
-        <br><strong>Fattah:</strong> <input type="text" class="answer-inline" data-id="boss-2" style="width:100px;" placeholder="...">! <input type="text" class="answer-inline" data-id="boss-3" style="width:100px;" placeholder="..."> to Barid Bank. How can I help you?
-        <br><strong>Customer:</strong> I want to open an account, <input type="text" class="answer-inline" data-id="boss-4" style="width:100px;" placeholder="...">.
-        <br><strong>Fattah:</strong> Certainly. Sign this paper. Here is your book.
-        <br><strong>Customer:</strong> Thank you very much!
-        <br><strong>Fattah:</strong> <input type="text" class="answer-inline" data-id="boss-5" style="width:100px;" placeholder="...">. Have a nice day!
-      </div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- STEP 7: HOMEWORK -->
-  <div class="step">
-    <div class="step-header">
-      <div class="step-num">7</div>
-      <div>
-        <div class="step-name">Step 7 — 📚 Homework & Fun Challenge</div>
-        <div class="step-title">The Polite Host</div>
-      </div>
-    </div>
-
-    <div class="body">
-      <div class="hw-item">
-        <div class="hw-num">1</div>
-        <div>
-          <strong>Writing Task — Hosting an Art Exhibition</strong><br>
-          <span style="font-size:12px; color:var(--gray);">Write a short dialogue (4 lines) greeting a visitor at your art gallery. Use **Nice to meet you, Welcome, and Please**.</span>
-          <textarea class="answer-area" data-id="hw-1" style="min-height:80px; margin-top:6px;" placeholder="Fattah: Hello! Welcome to...&#10;Visitor: Thank you! ..."></textarea>
-        </div>
-      </div>
-
-      <div class="hw-item">
-        <div class="hw-num">2</div>
-        <div>
-          <strong>Greeting Fixer</strong><br>
-          <span style="font-size:12px; color:var(--gray);">What is the best response?
-          <br>1. "Thank you so much!" → <input type="text" class="answer-inline" data-id="hw-greet-1" style="width:180px;" placeholder="Response...">
-          <br>2. "This is my friend." → <input type="text" class="answer-inline" data-id="hw-greet-2" style="width:180px;" placeholder="Response..."></span>
-        </div>
-      </div>
-    </div>
-
-    <div class="expressions-box" style="margin-top:10px;">
-      <div class="exp-title">📋 Lesson 10 Summary — What You Learned Today</div>
-      <div class="exp-item">✅ **Nice to meet you** → Used when meeting for the first time</div>
-      <div class="exp-item">✅ **You're welcome** → The correct reply to "Thank you"</div>
-      <div class="exp-item">✅ **Excuse me** → Used politely to get attention</div>
-      <div class="exp-item">✅ **Welcome** → Used to welcome guests to a place</div>
-    </div>
-
-    <div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
-      <span class="flag">🌟</span> <strong>Message from Saad:</strong><br>
-      <em>Baba, you are an extremely polite and elegant host! Your bank dialogue matches the experience of a true professional. In the next lesson, we will study Numbers, Colors, and Dates to help you talk about sizes, prices, and years. You are doing fantastic! 💪🇲🇦</em>
-    </div>
-  </div>
-
-  <div class="footer">
-    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 10</span>
-    <span>Page 4 of 4</span>
-  </div>
+<img alt="Talksmiths" class="ts-logo-img" src="../Logo_transparent.png"/>
+<!-- STEP 6: BOSS LEVEL -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">6</div>
+<div>
+<div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
+<div class="step-title">The Polite Banker's Guide</div>
 </div>
-
+<div class="step-time">10 min</div>
+</div>
+<div class="objective">Objective: Fill in the missing polite expressions in this professional bank dialogue.</div>
+<div class="teacher-chat-bubble"><img class="ts-avatar-circle" src="../Saad_Avatar/Saad_Croquis.jfif"/><div class="chat-content"><div class="chat-header">Saad (Your Teacher)</div><div class="chat-text">This dialogue recreates Baba's professional environment at Barid Bank but in English!
+    </div></div></div>
+<div class="exercise">
+<div class="ex-label">🏦 At the Bank Counter</div>
+<p class="ex-item">Complete the text using: <strong>Good morning, Excuse me, Welcome, Please, You're welcome</strong>.</p>
+<div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
+<strong>Customer:</strong> <input class="answer-inline" data-id="boss-1" placeholder="..." style="width:100px;" type="text"/>, sir. Can you help me?
+        <br/><strong>Fattah:</strong> <input class="answer-inline" data-id="boss-2" placeholder="..." style="width:100px;" type="text"/>! <input class="answer-inline" data-id="boss-3" placeholder="..." style="width:100px;" type="text"/> to Barid Bank. How can I help you?
+        <br/><strong>Customer:</strong> I want to open an account, <input class="answer-inline" data-id="boss-4" placeholder="..." style="width:100px;" type="text"/>.
+        <br/><strong>Fattah:</strong> Certainly. Sign this paper. Here is your book.
+        <br/><strong>Customer:</strong> Thank you very much!
+        <br/><strong>Fattah:</strong> <input class="answer-inline" data-id="boss-5" placeholder="..." style="width:100px;" type="text"/>. Have a nice day!
+      </div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- STEP 7: HOMEWORK -->
+<div class="step">
+<div class="step-header">
+<div class="step-num">7</div>
+<div>
+<div class="step-name">Step 7 — 📚 Homework &amp; Fun Challenge</div>
+<div class="step-title">The Polite Host</div>
+</div>
+</div>
+<div class="body">
+<div class="hw-item">
+<div class="hw-num">1</div>
+<div>
+<strong>Writing Task — Hosting an Art Exhibition</strong><br/>
+<span style="font-size:12px; color:var(--gray);">Write a short dialogue (4 lines) greeting a visitor at your art gallery. Use **Nice to meet you, Welcome, and Please**.</span>
+<textarea class="answer-area" data-id="hw-1" placeholder="Fattah: Hello! Welcome to...
+Visitor: Thank you! ..." style="min-height:80px; margin-top:6px;"></textarea>
+</div>
+</div>
+<div class="hw-item">
+<div class="hw-num">2</div>
+<div>
+<strong>Greeting Fixer</strong><br/>
+<span style="font-size:12px; color:var(--gray);">What is the best response?
+          <br/>1. "Thank you so much!" → <input class="answer-inline" data-id="hw-greet-1" placeholder="Response..." style="width:180px;" type="text"/>
+<br/>2. "This is my friend." → <input class="answer-inline" data-id="hw-greet-2" placeholder="Response..." style="width:180px;" type="text"/></span>
+</div>
+</div>
+</div>
+<div class="expressions-box" style="margin-top:10px;">
+<div class="exp-title">📋 Lesson 10 Summary — What You Learned Today</div>
+<div class="exp-item">✅ **Nice to meet you** → Used when meeting for the first time</div>
+<div class="exp-item">✅ **You're welcome** → The correct reply to "Thank you"</div>
+<div class="exp-item">✅ **Excuse me** → Used politely to get attention</div>
+<div class="exp-item">✅ **Welcome** → Used to welcome guests to a place</div>
+</div>
+<div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
+<span class="flag">🌟</span> <strong>Message from Saad:</strong><br/>
+<em>Baba, you are an extremely polite and elegant host! Your bank dialogue matches the experience of a true professional. In the next lesson, we will study Numbers, Colors, and Dates to help you talk about sizes, prices, and years. You are doing fantastic! 💪🇲🇦</em>
+</div>
+</div>
+<div class="footer">
+<span>Talksmiths Lesson Engine™ — Fattah · Lesson 10</span>
+<span>Page 4 of 4</span>
+</div>
+</div>
 <!-- CONGRATULATIONS PAGE -->
-<div class="page congratulations-page">
-  <img src="../Congratulations.png" alt="Congratulations" class="congrats-img">
-</div>
-
+<div class="page congratulations-page"><div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%;"><img alt="Congratulations" class="congrats-img" src="../Congratulations.png" style="max-height: 180px; object-fit: contain;"/><div class="polaroid-card"><img class="polaroid-img" src="../Mama_Avatar/Family.jfif"/><div class="polaroid-caption">Bravo Baba! 🇲🇦🏆</div><div style="font-family:'Inter', sans-serif; font-size:11.5px; margin-top:8px; color:var(--gray); font-weight:600; line-height:1.4;">"Knowledge is light, Baba! We are all incredibly proud of you for completing Lesson 10! Keep going! 💪❤️"</div></div></div></div>
 <!-- SAVE STATUS -->
 <div class="save-status" id="save-status">✓ Progress saved</div>
-
 <script>
 const STORAGE_KEY = 'ts-lesson-fattah-greetings';
 
