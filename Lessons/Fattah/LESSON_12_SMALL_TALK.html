@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fattah — Everyday Expressions & Small Talk | Talksmiths</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #007575; --gold: #D4A843; --navy: #1A2744;
+    --cream: #FAF5EF; --white: #fff; --gray: #5A6577;
+    --light: #F0EDEA;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; background:var(--cream); color:var(--navy); }
+  .page { position:relative; width:210mm; margin:20px auto; background:var(--white); border-radius:12px; padding:18mm; box-shadow:0 4px 30px rgba(0,0,0,0.08); page-break-after:always; }
+  .page:last-child { page-break-after:auto; }
+  .logo { font-size:11px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:4px; }
+  h1 { font-family:'Playfair Display',serif; font-size:28px; font-weight:800; color:var(--navy); line-height:1.2; padding-right:80px; }
+  .subtitle { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gray); margin:6px 0 18px; }
+  .badges { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
+  .badge { padding:4px 12px; border-radius:20px; font-size:11px; font-weight:700; }
+  .badge-teal { background:#E8F5F5; color:var(--teal); border:1px solid #b2dada; }
+  .badge-gold { background:#F5EDD6; color:#8a6a1a; border:1px solid #e0c97a; }
+  .badge-gray { background:var(--light); color:var(--gray); border:1px solid #ddd; }
+  .divider { height:2px; background:linear-gradient(90deg,var(--teal),var(--gold)); border-radius:2px; margin:16px 0; }
+  .step { background:var(--white); border:1px solid var(--light); border-radius:10px; padding:14px 16px; margin-bottom:12px; break-inside:avoid; }
+  .step-header { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+  .step-num { width:32px; height:32px; border-radius:50%; background:var(--teal); color:white; font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .step-name { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--teal); }
+  .step-title { font-family:'Playfair Display',serif; font-size:15px; font-weight:800; color:var(--navy); }
+  .step-time { margin-left:auto; font-size:11px; font-weight:700; color:var(--gray); }
+  .objective { font-size:11px; color:var(--gray); font-style:italic; margin-bottom:8px; padding-left:42px; }
+  .body { font-size:13px; line-height:1.6; color:var(--navy); }
+  .exercise { background:var(--cream); border-radius:8px; padding:10px 12px; margin-top:8px; }
+  .ex-label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--teal); margin-bottom:6px; }
+  .ex-item { font-size:13px; margin-bottom:5px; }
+  .vocab-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }
+  .vocab-card { background:var(--cream); border-radius:8px; padding:10px 12px; border-left:3px solid var(--teal); }
+  .vocab-term { font-weight:800; font-size:13px; color:var(--teal); }
+  .vocab-def { font-size:11px; color:var(--gray); margin:2px 0; }
+  .vocab-ex { font-size:11px; color:var(--navy); font-style:italic; }
+  .vocab-bridge { font-size:10px; color:var(--gold); font-weight:700; margin-top:3px; }
+  .expressions-box { background:#F5EDD6; border-left:4px solid var(--gold); border-radius:8px; padding:12px 16px; margin-top:12px; }
+  .exp-title { font-size:11px; font-weight:800; color:var(--navy); text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
+  .exp-item { font-size:13px; color:var(--navy); margin-bottom:4px; font-weight:600; }
+  .gold-banner { background:linear-gradient(135deg,var(--gold),#B8922E); border-radius:10px; padding:14px 16px; margin-top:8px; }
+  .gold-banner p { font-size:13px; color:var(--navy); line-height:1.6; }
+  .roleplay-box { background:#E8F5F5; border:1px solid #b2dada; border-radius:8px; padding:12px 14px; margin-top:8px; }
+  .speaker { font-size:11px; font-weight:700; color:var(--teal); margin-top:8px; }
+  .line { font-size:13px; color:var(--navy); font-style:italic; margin-top:2px; }
+  .hw-item { display:flex; gap:10px; align-items:flex-start; margin-bottom:8px; }
+  .hw-num { width:22px; height:22px; border-radius:50%; background:var(--gold); color:var(--navy); font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .darija-box { background:#FFF3E0; border-left:4px solid #FF9800; border-radius:8px; padding:10px 14px; margin-top:8px; font-size:12px; }
+  .darija-box .flag { font-size:14px; margin-right:4px; }
+  .game-container { background:var(--cream); border:2px solid var(--teal); border-radius:12px; padding:16px; margin-top:10px; }
+  .game-title { font-size:13px; font-weight:800; color:var(--teal); margin-bottom:10px; text-align:center; }
+  .game-btn { padding:10px 16px; border:2px solid var(--teal); border-radius:8px; background:var(--white); color:var(--navy); font-size:13px; font-weight:700; cursor:pointer; transition:all 0.2s; font-family:'Inter',sans-serif; display:inline-block; }
+  .game-btn:hover { background:var(--teal); color:white; transform:translateY(-1px); }
+  .game-btn.correct { background:#2E7D32; color:white; border-color:#2E7D32; }
+  .game-btn.wrong { background:#C62828; color:white; border-color:#C62828; }
+  .game-score { text-align:center; font-size:14px; font-weight:800; color:var(--teal); margin-top:10px; }
+  .game-feedback { text-align:center; font-size:13px; font-weight:700; margin-top:8px; padding:8px; border-radius:8px; display:none; }
+  
+  .view-toggle { position:fixed; top:16px; left:16px; background:var(--white); padding:6px; border-radius:30px; box-shadow:0 4px 16px rgba(0,0,0,0.1); display:flex; gap:4px; z-index:100; font-family:'Inter',sans-serif; }
+  .toggle-btn { border:none; background:transparent; padding:8px 16px; border-radius:24px; font-size:12px; font-weight:700; cursor:pointer; color:var(--gray); transition:all 0.2s; }
+  .toggle-btn.active { background:var(--teal); color:white; }
+  body.student-mode .teacher-note { display:none!important; }
+  body.student-mode .teacher-only { display:none!important; }
+  body:not(.student-mode) .student-note { display:none!important; }
+  .teacher-note { background:#FFF8E7; border:1px solid #f0d080; border-radius:8px; padding:10px 12px; margin-top:8px; font-size:11px; color:#7a5c00; }
+  .student-note { background:#E8F5F5; border:1px solid #b2dada; border-radius:8px; padding:10px 12px; margin-top:8px; font-size:11px; color:var(--teal); font-weight:600; }
+  .footer { display:flex; justify-content:space-between; font-size:10px; color:var(--gray); margin-top:16px; padding-top:10px; border-top:1px solid var(--light); }
+  .print-btn { position:fixed; top:16px; right:16px; background:var(--teal); color:white; border:none; padding:10px 22px; border-radius:25px; font-size:13px; font-weight:700; cursor:pointer; font-family:'Inter',sans-serif; box-shadow:0 4px 16px rgba(0,117,117,0.3); z-index:100; }
+  .answer-area { width:100%; min-height:40px; border:1.5px dashed #b2dada; border-radius:6px; padding:8px 10px; font-family:'Inter',sans-serif; font-size:12px; color:var(--navy); background:#f8fcfc; resize:vertical; margin-top:4px; line-height:1.5; transition:border-color 0.2s; }
+  .answer-area:focus { outline:none; border-color:var(--teal); background:var(--white); }
+  .answer-area::placeholder { color:#aab; font-style:italic; }
+  .answer-inline { border:none; border-bottom:1.5px solid var(--navy); background:transparent; font-family:'Inter',sans-serif; font-size:13px; color:var(--navy); padding:2px 4px; min-width:60px; width:100%; max-width:100%; }
+  .answer-inline:focus { outline:none; border-bottom-color:var(--teal); background:#f8fcfc; }
+  .answer-inline::placeholder { color:#aab; font-style:italic; }
+  .save-status { position:fixed; bottom:16px; right:16px; background:var(--teal); color:white; padding:6px 14px; border-radius:20px; font-size:11px; font-weight:700; opacity:0; transition:opacity 0.3s; z-index:100; font-family:'Inter',sans-serif; }
+  .ts-logo-img { position:absolute; top:18mm; right:18mm; height:60px; object-fit:contain; opacity:0.95; pointer-events:none; }
+
+  @media print {
+    .print-btn { display:none!important; }
+    .view-toggle { display:none!important; }
+    body { background:none; }
+    .page { box-shadow:none; margin:0; border-radius:0; }
+    .answer-area { border:1px solid #ddd; background:var(--white); }
+    .answer-inline { border-bottom:1px solid var(--navy); }
+    .save-status { display:none!important; }
+  }
+  @media screen {
+    body { display:block !important; background:#FAF5EF !important; }
+    .page {
+      width:95% !important; max-width:1400px !important;
+      margin:30px auto !important; height:auto !important;
+      column-count:2 !important; column-gap:40px !important;
+      display:block !important;
+    }
+    .page > * { break-inside:avoid !important; page-break-inside:avoid !important; }
+    h1, .logo, .subtitle, .badges, .divider, .footer { column-span:all !important; }
+    .page.congratulations-page {
+      column-count:1 !important; display:flex !important;
+      justify-content:center !important; align-items:center !important;
+      height:90vh !important; min-height:500px !important;
+    }
+  }
+  .congratulations-page {
+    display:flex !important; justify-content:center !important;
+    align-items:center !important; background:var(--cream) !important;
+    box-shadow:none !important; border:none !important;
+    min-height:297mm !important;
+  }
+  .congrats-img {
+    max-width:100% !important; max-height:100% !important;
+    object-fit:contain !important; mix-blend-mode:darken !important;
+  }
+</style>
+</head>
+<body class="student-mode">
+
+<!-- VIEW TOGGLE -->
+<div class="view-toggle">
+  <button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
+  <button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
+</div>
+<button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+
+<!-- ==================== PAGE 1 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+  <div class="logo">Talksmiths — Lesson Engine™</div>
+  <h1>Everyday Expressions & Small Talk</h1>
+  <div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 12</div>
+  <div class="badges">
+    <span class="badge badge-teal">A1 — Beginner</span>
+    <span class="badge badge-gold">60 min</span>
+    <span class="badge badge-gray">Vocabulary Foundations</span>
+    <span class="badge badge-gray">Lesson 12</span>
+  </div>
+  <div class="divider"></div>
+
+  <!-- Step 1 + Notebook row -->
+  <div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
+    <div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
+
+      <!-- STEP 1: WARM-UP -->
+      <div class="step">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
+            <div class="step-title">The Art of Chatting</div>
+          </div>
+          <div class="step-time">8 min</div>
+        </div>
+        <div class="objective">Objective: Practice simple, friendly small talk with friends and family.</div>
+
+        <div class="student-note">
+          🎓 <strong>Student Strategy:</strong> Small talk is how we show interest in others. Asking "How are you?" or sharing simple opinions makes conversations natural and warm.
+        </div>
+
+        <div class="teacher-note">
+          📋 <strong>Teacher Note:</strong> Simulate a phone call between you and Baba. "Hi Baba, how are you doing today?" Keep his responses natural and encourage him to ask back.
+        </div>
+
+        <div class="exercise">
+          <div class="ex-label">🗣️ Speaking Warm-Up — Phone Call with Saad</div>
+          <p class="ex-item">How would you reply to Saad on the phone?</p>
+          <ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
+            <li>📞 "Hi Baba! **How are you doing**?"</li>
+            <li>🍵 "What is the **weather** like in Kenitra today?"</li>
+            <li>🎨 "What are your **plans** for the afternoon?"</li>
+          </ul>
+          <div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
+            Example: "I am fine, thank you! The weather is warm and I want to paint."
+          </div>
+        </div>
+
+        <div class="darija-box">
+          <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> We say *Kidayr?* (How are you?), *Kidayr ljaw?* (How is the weather?), and *Labas alhamdulillah* (Fine, praise be to God). Today we practice English equivalents!
+        </div>
+      </div>
+    </div>
+
+    <!-- BABA'S NOTEBOOK -->
+    <div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
+      <div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
+        <div class="step-header" style="margin-bottom:6px;">
+          <div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
+        </div>
+        <div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-size:12px; line-height:1.4; color:var(--gray);">
+            Write down 3 ways to say you are feeling happy/good, and 2 ways to express simple opinions.
+          </p>
+          <ul style="font-size:11px; margin-left:16px; line-height:1.4; color:var(--navy); list-style-type:square;">
+            <li>Good: I am doing great, Not bad, __________</li>
+            <li>Opinion: In my opinion, I think, __________</li>
+          </ul>
+          <textarea class="answer-area" data-id="baba-notebook-p1" style="flex:1; min-height:180px; font-size:12px;" placeholder="My diary notes / اليوميات ديالي..."></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOCABULARY SECTION -->
+  <div style="column-span:all !important; margin-top:8px;">
+    <div class="step">
+      <div class="step-header">
+        <div class="step-name">📖 Everyday Expressions & Small Talk Phrases</div>
+      </div>
+
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-term">How are you doing? / How is it going?</div>
+          <div class="vocab-def">Common ways to ask how someone is.</div>
+          <div class="vocab-ex">"Hi Baba! <strong>How is it going?</strong>"</div>
+          <div class="vocab-bridge">🇲🇦 Kidayr? / Labas? / 🇫🇷 Comment ça va?</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Not bad / I am doing great</div>
+          <div class="vocab-def">Positive and neutral responses.</div>
+          <div class="vocab-ex">"I am <strong>doing great</strong>, thank you."</div>
+          <div class="vocab-bridge">🇲🇦 Labas / Bikhir / 🇫🇷 Pas mal / Ça va super</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">In my opinion... / I think...</div>
+          <div class="vocab-def">Used to express personal views.</div>
+          <div class="vocab-ex">"<strong>In my opinion</strong>, Kenitra is a calm city."</div>
+          <div class="vocab-bridge">🇲🇦 Fi nadari / 🇫🇷 À mon avis / Je pense</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">I need... / I want...</div>
+          <div class="vocab-def">Expressing basic needs or desires.</div>
+          <div class="vocab-ex">"<strong>I need</strong> some water, please."</div>
+          <div class="vocab-bridge">🇲🇦 Bghit / Khassni / 🇫🇷 J'ai besoin / Je veux</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">How is the weather?</div>
+          <div class="vocab-def">Perfect conversational starter.</div>
+          <div class="vocab-ex">"<strong>How is the weather</strong> in Mehdya today?"</div>
+          <div class="vocab-bridge">🇲🇦 Kidayr ljaw? / 🇫🇷 Quel temps fait-il?</div>
+        </div>
+        
+        <div class="vocab-card" style="border-left-color:var(--gold);">
+          <div class="vocab-term" style="color:var(--gold);">💡 Simple Agreements</div>
+          <div class="vocab-def">Showing you agree or understand:</div>
+          <div class="vocab-ex">"<strong>I agree</strong>." (🇫🇷 Je suis d'accord)<br>"<strong>Exactly</strong>!" (🇫🇷 Tout à fait)</div>
+          <div class="vocab-bridge">🇲🇦 Nshan / Niyt / 🇫🇷 Tout à fait / D'accord</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 12</span>
+    <span>Page 1 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 2 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 2: MINI-STORY -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
+        <div class="step-title">A Friendly Afternoon Call</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Read a natural dialogue using daily expressions and check comprehension.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> Roleplay this dialogue. Pay special attention to the transition from greetings to small talk about hobbies and the weather.
+    </div>
+
+    <div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
+      <p><strong>Saad:</strong> Hello Baba! How is it going today?</p>
+      <p style="margin-top:6px;"><strong>Fattah:</strong> Hi Saad! I am doing great, thank you. How are you?</p>
+      <p style="margin-top:6px;"><strong>Saad:</strong> Not bad, a bit busy. How is the weather in Kenitra?</p>
+      <p style="margin-top:6px;"><strong>Fattah:</strong> It is beautiful and warm today. In my opinion, spring is the best season here. I want to walk to the beach this afternoon.</p>
+      <p style="margin-top:6px;"><strong>Saad:</strong> I agree! Have a wonderful walk, Baba. Speak to you soon!</p>
+    </div>
+
+    <div class="exercise">
+      <div class="ex-label">📝 Check Your Understanding</div>
+      <p class="ex-item"><strong>1.</strong> How is Baba Fattah doing today?</p>
+      <textarea class="answer-area" data-id="comp-1" placeholder="He is doing..."></textarea>
+      <p class="ex-item" style="margin-top:6px;"><strong>2.</strong> What is the weather like in Kenitra today?</p>
+      <textarea class="answer-area" data-id="comp-2" placeholder="The weather is..."></textarea>
+      <p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What does Fattah want to do this afternoon?</p>
+      <textarea class="answer-area" data-id="comp-3" placeholder="He wants to..."></textarea>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 3: GRAMMAR IN ACTION -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-name">Step 3 — 🏗️ Expressions in Action</div>
+        <div class="step-title">Expressing Opinions and Needs</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Practice structuring opinions and expressing desires politely.</div>
+
+    <div class="expressions-box">
+      <div class="exp-title">📐 Key Structures:</div>
+      <div class="exp-item">Opinion: **In my opinion,** + [sentence] (e.g. "In my opinion, tea is better.")</div>
+      <div class="exp-item">Desire: **I want to** + [action verb] (e.g. "I want to paint.")</div>
+      <div class="exp-item">Need: **I need** + [noun] (e.g. "I need fresh brush.")</div>
+    </div>
+
+    <div class="exercise" style="margin-top:10px;">
+      <div class="ex-label">✏️ Write the correct conversational connector:</div>
+      <p class="ex-item"><strong>1.</strong> (In my opinion / I want) <input type="text" class="answer-inline" data-id="grammar-1" placeholder="...">, football is more exciting than tennis.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> (I want to / I need) I am thirsty, so I <input type="text" class="answer-inline" data-id="grammar-2" placeholder="..."> drink a glass of water.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>3.</strong> (I agree / How is) "I think Mehdya is beautiful." — "<input type="text" class="answer-inline" data-id="grammar-3" placeholder="...">, it is spectacular!"</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>4.</strong> (Excuse me / How are you) "<input type="text" class="answer-inline" data-id="grammar-4" placeholder="..."> doing?" — "I am fine, thanks."</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>5.</strong> (I need / I want to) I have an anthropology exam, so I <input type="text" class="answer-inline" data-id="grammar-5" placeholder="..."> study tonight.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 12</span>
+    <span>Page 2 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 3 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 4: GAME ZONE -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-name">Step 4 — 🎮 Game Zone</div>
+        <div class="step-title">The Small Talk Simulator!</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Choose the best conversational reply to keep the small talk flowing!</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> This game simulates actual social dialogue. Guide him on choosing replies that show interest.
+    </div>
+
+    <div class="game-container" id="talk-game">
+      <div class="game-title">💬 THE SMALL TALK SIMULATOR</div>
+      <div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:16px; margin-bottom:10px;">
+        Saad says: <span id="talk-phrase" style="color:var(--teal); font-size:18px;">Saad's phrase...</span>
+      </div>
+      
+      <div id="talk-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">What is the best reply?</div>
+      
+      <div id="talk-options" style="display:grid; gap:8px; margin-top:10px;"></div>
+      <div id="talk-feedback" class="game-feedback"></div>
+      <div id="talk-score" class="game-score"></div>
+      <div style="text-align:center; margin-top:12px;">
+        <button class="game-btn" id="talk-next" onclick="talkNext()" style="display:none;">Next Dialogue →</button>
+        <button class="game-btn" id="talk-restart" onclick="talkStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
+      </div>
+    </div>
+
+    <div class="darija-box" style="margin-top:10px;">
+      <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> Keep the conversation friendly! A smile and simple expressions make any talk successful.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 5: SPEAKING CHALLENGE -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">5</div>
+      <div>
+        <div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
+        <div class="step-title">Sharing My Opinions</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: State simple opinions about your favorite topics in English.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> Ask Baba for his opinion on: 1. Green tea vs mint tea. 2. Casablanca vs Kenitra. 3. Studying at university vs painting. Ensure he starts with: "In my opinion..." or "I think...".
+    </div>
+
+    <div class="gold-banner">
+      <p><strong>🎤 The Opinion Board</strong></p>
+      <p style="margin-top:6px; font-size:12px;">Express your views about daily life. Try to say:</p>
+      <ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
+        <li>✅ "In my opinion, mint tea is..."</li>
+        <li>✅ "I think painting is..."</li>
+        <li>✅ "I agree with..."</li>
+      </ul>
+    </div>
+
+    <div class="exercise" style="margin-top:10px;">
+      <div class="ex-label">📝 Write down your simple opinions</div>
+      <textarea class="answer-area" data-id="speaking-notes" style="min-height:90px;" placeholder="In my opinion, Kenitra is calmer than Rabat. I think studying anthropology is exciting..."></textarea>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 12</span>
+    <span>Page 3 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 4 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 6: BOSS LEVEL -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">6</div>
+      <div>
+        <div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
+        <div class="step-title">The Cafe Small Talk</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Fill in the missing conversational expressions in this cafe scene.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> This challenges his ability to choose correct replies in context.
+    </div>
+
+    <div class="exercise">
+      <div class="ex-label">☕ Chatting with a Friend</div>
+      <p class="ex-item">Complete the text using: <strong>How is it going, In my opinion, Not bad, I agree, I want</strong>.</p>
+      <div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
+        <strong>Friend:</strong> Hello Fattah! <input type="text" class="answer-inline" data-id="boss-1" style="width:120px;" placeholder="..."> today?
+        <br><strong>Fattah:</strong> Hi my friend! <input type="text" class="answer-inline" data-id="boss-2" style="width:120px;" placeholder="...">, thank you. I am a bit tired.
+        <br><strong>Friend:</strong> I think the weather is too hot today.
+        <br><strong>Fattah:</strong> <input type="text" class="answer-inline" data-id="boss-3" style="width:120px;" placeholder="...">. It is warmer than yesterday.
+        <br><strong>Friend:</strong> Do you want tea or coffee?
+        <br><strong>Fattah:</strong> <input type="text" class="answer-inline" data-id="boss-4" style="width:120px;" placeholder="..."> to drink green tea. <input type="text" class="answer-inline" data-id="boss-5" style="width:120px;" placeholder="...">, it is healthier!
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 7: HOMEWORK -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">7</div>
+      <div>
+        <div class="step-name">Step 7 — 📚 Homework & Fun Challenge</div>
+        <div class="step-title">The Conversation Partner</div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="hw-item">
+        <div class="hw-num">1</div>
+        <div>
+          <strong>Writing Task — Expressing Opinions</strong><br>
+          <span style="font-size:12px; color:var(--gray);">Write 3 sentences expressing your opinions about: 1. Football. 2. Nature. 3. Tea. (Use "In my opinion..." or "I think...")</span>
+          <textarea class="answer-area" data-id="hw-1" style="min-height:80px; margin-top:6px;" placeholder="1. In my opinion, football is...&#10;2. ...&#10;3. ..."></textarea>
+        </div>
+      </div>
+
+      <div class="hw-item">
+        <div class="hw-num">2</div>
+        <div>
+          <strong>Conversation Matches</strong><br>
+          <span style="font-size:12px; color:var(--gray);">Write the response:
+          <br>1. "How are you doing?" → <input type="text" class="answer-inline" data-id="hw-talk-1" style="width:180px;" placeholder="Response...">
+          <br>2. "I think winter is beautiful." → <input type="text" class="answer-inline" data-id="hw-talk-2" style="width:180px;" placeholder="Response..."></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="expressions-box" style="margin-top:10px;">
+      <div class="exp-title">📋 Lesson 12 Summary — What You Learned Today</div>
+      <div class="exp-item">✅ **How are you doing?** → standard way to inquire about feelings</div>
+      <div class="exp-item">✅ **Doing great / Not bad** → standard friendly responses</div>
+      <div class="exp-item">✅ **In my opinion / I think** → structures to start opinions</div>
+      <div class="exp-item">✅ **I agree** → easy way to show positive alignment</div>
+    </div>
+
+    <div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
+      <span class="flag">🌟</span> <strong>Message from Saad:</strong><br>
+      <em>Baba, your small talk is very natural and elegant! You can chat with anyone at university now. In the next lesson, we will study the Seasons and Weather in depth (Spring, Summer, Rain, Wind) so you can describe Mehdya's seaside weather perfectly. Let's keep it up! 💪🇲🇦</em>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 12</span>
+    <span>Page 4 of 4</span>
+  </div>
+</div>
+
+<!-- CONGRATULATIONS PAGE -->
+<div class="page congratulations-page">
+  <img src="../Congratulations.png" alt="Congratulations" class="congrats-img">
+</div>
+
+<!-- SAVE STATUS -->
+<div class="save-status" id="save-status">✓ Progress saved</div>
+
+<script>
+const STORAGE_KEY = 'ts-lesson-fattah-small-talk';
+
+function setView(mode){
+  if(mode==='student'){
+    document.body.classList.add('student-mode');
+    document.getElementById('btn-student').classList.add('active');
+    document.getElementById('btn-teacher').classList.remove('active');
+  }else{
+    document.body.classList.remove('student-mode');
+    document.getElementById('btn-teacher').classList.add('active');
+    document.getElementById('btn-student').classList.remove('active');
+  }
+}
+function saveAll(){
+  const data={};
+  document.querySelectorAll('[data-id]').forEach(el=>{
+    data[el.dataset.id]=el.value;
+  });
+  data['talk-high-score'] = talkHighScore;
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
+  const s=document.getElementById('save-status');
+  s.style.opacity='1';
+  setTimeout(()=>s.style.opacity='0',1500);
+}
+function loadAll(){
+  const raw=localStorage.getItem(STORAGE_KEY);
+  if(!raw)return;
+  const data=JSON.parse(raw);
+  Object.keys(data).forEach(id=>{
+    const el=document.querySelector('[data-id="'+id+'"]');
+    if(el)el.value=data[id];
+  });
+  if(data['talk-high-score']) talkHighScore = data['talk-high-score'];
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  loadAll();
+  let timer;
+  document.querySelectorAll('[data-id]').forEach(el=>{
+    el.addEventListener('input',()=>{
+      clearTimeout(timer);
+      timer=setTimeout(saveAll,800);
+    });
+  });
+  talkStart();
+  setView('student');
+});
+
+// ==================== SMALL TALK QUIZ GAME ====================
+const talkData = [
+  { phrase: "How is it going today?", opts: ["I am doing great, thanks!", "Excuse me, sir.", "Please sit down."], ans: 0 },
+  { phrase: "I think painting is very relaxing.", opts: ["In my opinion, yes.", "I agree with you!", "Not bad."], ans: 1 },
+  { phrase: "Excuse me, where is the office?", opts: ["You're welcome.", "It is down the street.", "I want to go."], ans: 1 },
+  { phrase: "Thank you for the warm welcome!", opts: ["You're welcome.", "Excuse me.", "Not bad."], ans: 0 },
+  { phrase: "How is the weather in Rabat today?", opts: ["It is warm and sunny.", "Not bad, thank you.", "I agree."], ans: 0 },
+  { phrase: "Do you want coffee or mint tea?", opts: ["I want to coffee.", "I would like tea, please.", "You're welcome."], ans: 1 },
+  { phrase: "I have a difficult exam tomorrow.", opts: ["Nice to meet you.", "Good luck! You will pass!", "You're welcome."], ans: 1 },
+  { phrase: "In my opinion, Mehdya is spectacular.", opts: ["I agree! It is beautiful.", "Thank you.", "Excuse me."], ans: 0 },
+  { phrase: "Have a nice day, Fattah!", opts: ["Nice to meet you.", "Thank you! You too!", "Not bad."], ans: 1 },
+  { phrase: "Can you sign this document, please?", opts: ["Yes, of course.", "You're welcome.", "Not bad."], ans: 0 }
+];
+
+let talkCurrent = 0;
+let talkScore = 0;
+let talkHighScore = 0;
+let talkAnswered = false;
+
+function talkStart() {
+  talkCurrent = 0;
+  talkScore = 0;
+  talkAnswered = false;
+  document.getElementById('talk-restart').style.display = 'none';
+  document.getElementById('talk-feedback').style.display = 'none';
+  talkShow();
+}
+
+function talkShow() {
+  if (talkCurrent >= talkData.length) { talkEnd(); return; }
+  talkAnswered = false;
+  const q = talkData[talkCurrent];
+  document.getElementById('talk-question').innerHTML = `Dialogue ${talkCurrent+1} of ${talkData.length}`;
+  document.getElementById('talk-phrase').textContent = q.phrase;
+  
+  const optDiv = document.getElementById('talk-options');
+  optDiv.innerHTML = '';
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'game-btn';
+    btn.textContent = opt;
+    btn.style.margin = '4px';
+    btn.style.width = '100%';
+    btn.style.textAlign = 'left';
+    btn.onclick = () => talkCheck(i, btn);
+    optDiv.appendChild(btn);
+  });
+  document.getElementById('talk-next').style.display = 'none';
+  document.getElementById('talk-feedback').style.display = 'none';
+  document.getElementById('talk-score').textContent = `Score: ${talkScore}/${talkData.length}`;
+}
+
+function talkCheck(selected, btn) {
+  if (talkAnswered) return;
+  talkAnswered = true;
+  const q = talkData[talkCurrent];
+  const allBtns = document.querySelectorAll('#talk-options .game-btn');
+  const fb = document.getElementById('talk-feedback');
+
+  if (selected === q.ans) {
+    talkScore++;
+    btn.classList.add('correct');
+    fb.textContent = '✅ Correct! The conversation flows perfectly!';
+    fb.style.background = '#E8F5E9';
+    fb.style.color = '#2E7D32';
+  } else {
+    btn.classList.add('wrong');
+    allBtns[q.ans].classList.add('correct');
+    fb.textContent = `❌ Oops! The best reply is "${q.opts[q.ans]}"`;
+    fb.style.background = '#FFEBEE';
+    fb.style.color = '#C62828';
+  }
+  fb.style.display = 'block';
+  document.getElementById('talk-score').textContent = `Score: ${talkScore}/${talkData.length}`;
+  document.getElementById('talk-next').style.display = 'inline-block';
+}
+
+function talkNext() {
+  talkCurrent++;
+  talkShow();
+}
+
+function talkEnd() {
+  document.getElementById('talk-phrase').textContent = '💬 Small Talk Mastered!';
+  document.getElementById('talk-question').innerHTML = '';
+  document.getElementById('talk-options').innerHTML = '';
+  document.getElementById('talk-next').style.display = 'none';
+  const fb = document.getElementById('talk-feedback');
+
+  if (talkScore > talkHighScore) talkHighScore = talkScore;
+
+  let msg = '';
+  if (talkScore >= 9) msg = '🏆 CONVERSATION MASTER! You can talk with any professor or tourist!';
+  else if (talkScore >= 7) msg = '🌟 EXCELLENT WORK! Your conversational replies are very natural!';
+  else if (talkScore >= 5) msg = '💪 GOOD EFFORT! Small talk nuances take practice!';
+  else msg = '📚 Practice makes perfect. Let\'s try again!';
+
+  fb.innerHTML = `<div style="font-size:16px; margin-bottom:6px;">${msg}</div>
+    <div style="font-size:20px; font-weight:900;">Final Score: ${talkScore}/${talkData.length}</div>
+    <div style="font-size:12px; margin-top:4px; color:var(--gray);">🏅 High Score: ${talkHighScore}/${talkData.length}</div>`;
+  fb.style.display = 'block';
+  fb.style.background = talkScore >= 7 ? '#E8F5E9' : '#FFF8E7';
+  fb.style.color = 'var(--navy)';
+  document.getElementById('talk-score').textContent = '';
+  document.getElementById('talk-restart').style.display = 'inline-block';
+  saveAll();
+}
+</script>
+</body>
+</html>

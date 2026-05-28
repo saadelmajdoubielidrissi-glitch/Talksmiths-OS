@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fattah — The Seasons & Weather | Talksmiths</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #007575; --gold: #D4A843; --navy: #1A2744;
+    --cream: #FAF5EF; --white: #fff; --gray: #5A6577;
+    --light: #F0EDEA;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; background:var(--cream); color:var(--navy); }
+  .page { position:relative; width:210mm; margin:20px auto; background:var(--white); border-radius:12px; padding:18mm; box-shadow:0 4px 30px rgba(0,0,0,0.08); page-break-after:always; }
+  .page:last-child { page-break-after:auto; }
+  .logo { font-size:11px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:4px; }
+  h1 { font-family:'Playfair Display',serif; font-size:28px; font-weight:800; color:var(--navy); line-height:1.2; padding-right:80px; }
+  .subtitle { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gray); margin:6px 0 18px; }
+  .badges { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
+  .badge { padding:4px 12px; border-radius:20px; font-size:11px; font-weight:700; }
+  .badge-teal { background:#E8F5F5; color:var(--teal); border:1px solid #b2dada; }
+  .badge-gold { background:#F5EDD6; color:#8a6a1a; border:1px solid #e0c97a; }
+  .badge-gray { background:var(--light); color:var(--gray); border:1px solid #ddd; }
+  .divider { height:2px; background:linear-gradient(90deg,var(--teal),var(--gold)); border-radius:2px; margin:16px 0; }
+  .step { background:var(--white); border:1px solid var(--light); border-radius:10px; padding:14px 16px; margin-bottom:12px; break-inside:avoid; }
+  .step-header { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+  .step-num { width:32px; height:32px; border-radius:50%; background:var(--teal); color:white; font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .step-name { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--teal); }
+  .step-title { font-family:'Playfair Display',serif; font-size:15px; font-weight:800; color:var(--navy); }
+  .step-time { margin-left:auto; font-size:11px; font-weight:700; color:var(--gray); }
+  .objective { font-size:11px; color:var(--gray); font-style:italic; margin-bottom:8px; padding-left:42px; }
+  .body { font-size:13px; line-height:1.6; color:var(--navy); }
+  .exercise { background:var(--cream); border-radius:8px; padding:10px 12px; margin-top:8px; }
+  .ex-label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--teal); margin-bottom:6px; }
+  .ex-item { font-size:13px; margin-bottom:5px; }
+  .vocab-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }
+  .vocab-card { background:var(--cream); border-radius:8px; padding:10px 12px; border-left:3px solid var(--teal); }
+  .vocab-term { font-weight:800; font-size:13px; color:var(--teal); }
+  .vocab-def { font-size:11px; color:var(--gray); margin:2px 0; }
+  .vocab-ex { font-size:11px; color:var(--navy); font-style:italic; }
+  .vocab-bridge { font-size:10px; color:var(--gold); font-weight:700; margin-top:3px; }
+  .expressions-box { background:#F5EDD6; border-left:4px solid var(--gold); border-radius:8px; padding:12px 16px; margin-top:12px; }
+  .exp-title { font-size:11px; font-weight:800; color:var(--navy); text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
+  .exp-item { font-size:13px; color:var(--navy); margin-bottom:4px; font-weight:600; }
+  .gold-banner { background:linear-gradient(135deg,var(--gold),#B8922E); border-radius:10px; padding:14px 16px; margin-top:8px; }
+  .gold-banner p { font-size:13px; color:var(--navy); line-height:1.6; }
+  .roleplay-box { background:#E8F5F5; border:1px solid #b2dada; border-radius:8px; padding:12px 14px; margin-top:8px; }
+  .speaker { font-size:11px; font-weight:700; color:var(--teal); margin-top:8px; }
+  .line { font-size:13px; color:var(--navy); font-style:italic; margin-top:2px; }
+  .hw-item { display:flex; gap:10px; align-items:flex-start; margin-bottom:8px; }
+  .hw-num { width:22px; height:22px; border-radius:50%; background:var(--gold); color:var(--navy); font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .darija-box { background:#FFF3E0; border-left:4px solid #FF9800; border-radius:8px; padding:10px 14px; margin-top:8px; font-size:12px; }
+  .darija-box .flag { font-size:14px; margin-right:4px; }
+  .game-container { background:var(--cream); border:2px solid var(--teal); border-radius:12px; padding:16px; margin-top:10px; }
+  .game-title { font-size:13px; font-weight:800; color:var(--teal); margin-bottom:10px; text-align:center; }
+  .game-btn { padding:10px 16px; border:2px solid var(--teal); border-radius:8px; background:var(--white); color:var(--navy); font-size:13px; font-weight:700; cursor:pointer; transition:all 0.2s; font-family:'Inter',sans-serif; display:inline-block; }
+  .game-btn:hover { background:var(--teal); color:white; transform:translateY(-1px); }
+  .game-btn.correct { background:#2E7D32; color:white; border-color:#2E7D32; }
+  .game-btn.wrong { background:#C62828; color:white; border-color:#C62828; }
+  .game-score { text-align:center; font-size:14px; font-weight:800; color:var(--teal); margin-top:10px; }
+  .game-feedback { text-align:center; font-size:13px; font-weight:700; margin-top:8px; padding:8px; border-radius:8px; display:none; }
+  
+  .view-toggle { position:fixed; top:16px; left:16px; background:var(--white); padding:6px; border-radius:30px; box-shadow:0 4px 16px rgba(0,0,0,0.1); display:flex; gap:4px; z-index:100; font-family:'Inter',sans-serif; }
+  .toggle-btn { border:none; background:transparent; padding:8px 16px; border-radius:24px; font-size:12px; font-weight:700; cursor:pointer; color:var(--gray); transition:all 0.2s; }
+  .toggle-btn.active { background:var(--teal); color:white; }
+  body.student-mode .teacher-note { display:none!important; }
+  body.student-mode .teacher-only { display:none!important; }
+  body:not(.student-mode) .student-note { display:none!important; }
+  .teacher-note { background:#FFF8E7; border:1px solid #f0d080; border-radius:8px; padding:10px 12px; margin-top:8px; font-size:11px; color:#7a5c00; }
+  .student-note { background:#E8F5F5; border:1px solid #b2dada; border-radius:8px; padding:10px 12px; margin-top:8px; font-size:11px; color:var(--teal); font-weight:600; }
+  .footer { display:flex; justify-content:space-between; font-size:10px; color:var(--gray); margin-top:16px; padding-top:10px; border-top:1px solid var(--light); }
+  .print-btn { position:fixed; top:16px; right:16px; background:var(--teal); color:white; border:none; padding:10px 22px; border-radius:25px; font-size:13px; font-weight:700; cursor:pointer; font-family:'Inter',sans-serif; box-shadow:0 4px 16px rgba(0,117,117,0.3); z-index:100; }
+  .answer-area { width:100%; min-height:40px; border:1.5px dashed #b2dada; border-radius:6px; padding:8px 10px; font-family:'Inter',sans-serif; font-size:12px; color:var(--navy); background:#f8fcfc; resize:vertical; margin-top:4px; line-height:1.5; transition:border-color 0.2s; }
+  .answer-area:focus { outline:none; border-color:var(--teal); background:var(--white); }
+  .answer-area::placeholder { color:#aab; font-style:italic; }
+  .answer-inline { border:none; border-bottom:1.5px solid var(--navy); background:transparent; font-family:'Inter',sans-serif; font-size:13px; color:var(--navy); padding:2px 4px; min-width:60px; width:100%; max-width:100%; }
+  .answer-inline:focus { outline:none; border-bottom-color:var(--teal); background:#f8fcfc; }
+  .answer-inline::placeholder { color:#aab; font-style:italic; }
+  .save-status { position:fixed; bottom:16px; right:16px; background:var(--teal); color:white; padding:6px 14px; border-radius:20px; font-size:11px; font-weight:700; opacity:0; transition:opacity 0.3s; z-index:100; font-family:'Inter',sans-serif; }
+  .ts-logo-img { position:absolute; top:18mm; right:18mm; height:60px; object-fit:contain; opacity:0.95; pointer-events:none; }
+
+  @media print {
+    .print-btn { display:none!important; }
+    .view-toggle { display:none!important; }
+    body { background:none; }
+    .page { box-shadow:none; margin:0; border-radius:0; }
+    .answer-area { border:1px solid #ddd; background:var(--white); }
+    .answer-inline { border-bottom:1px solid var(--navy); }
+    .save-status { display:none!important; }
+  }
+  @media screen {
+    body { display:block !important; background:#FAF5EF !important; }
+    .page {
+      width:95% !important; max-width:1400px !important;
+      margin:30px auto !important; height:auto !important;
+      column-count:2 !important; column-gap:40px !important;
+      display:block !important;
+    }
+    .page > * { break-inside:avoid !important; page-break-inside:avoid !important; }
+    h1, .logo, .subtitle, .badges, .divider, .footer { column-span:all !important; }
+    .page.congratulations-page {
+      column-count:1 !important; display:flex !important;
+      justify-content:center !important; align-items:center !important;
+      height:90vh !important; min-height:500px !important;
+    }
+  }
+  .congratulations-page {
+    display:flex !important; justify-content:center !important;
+    align-items:center !important; background:var(--cream) !important;
+    box-shadow:none !important; border:none !important;
+    min-height:297mm !important;
+  }
+  .congrats-img {
+    max-width:100% !important; max-height:100% !important;
+    object-fit:contain !important; mix-blend-mode:darken !important;
+  }
+</style>
+</head>
+<body class="student-mode">
+
+<!-- VIEW TOGGLE -->
+<div class="view-toggle">
+  <button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
+  <button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
+</div>
+<button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+
+<!-- ==================== PAGE 1 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+  <div class="logo">Talksmiths — Lesson Engine™</div>
+  <h1>The Seasons & Weather</h1>
+  <div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 13</div>
+  <div class="badges">
+    <span class="badge badge-teal">A1 — Beginner</span>
+    <span class="badge badge-gold">60 min</span>
+    <span class="badge badge-gray">Vocabulary Foundations</span>
+    <span class="badge badge-gray">Lesson 13</span>
+  </div>
+  <div class="divider"></div>
+
+  <!-- Step 1 + Notebook row -->
+  <div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
+    <div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
+
+      <!-- STEP 1: WARM-UP -->
+      <div class="step">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
+            <div class="step-title">The Seaside Climate</div>
+          </div>
+          <div class="step-time">8 min</div>
+        </div>
+        <div class="objective">Objective: Learn to describe Mehdya's weather across the four seasons.</div>
+
+        <div class="student-note">
+          🎓 <strong>Student Strategy:</strong> The weather is a universal topic. We use structures like **"It is sunny"** or **"It is raining"** to describe daily conditions.
+        </div>
+
+        <div class="teacher-note">
+          📋 <strong>Teacher Note:</strong> Use Mehdya's seaside weather to prompt comparisons. Winter (rainy, cold, windy) vs. Summer (hot, sunny, perfect for swimming).
+        </div>
+
+        <div class="exercise">
+          <div class="ex-label">🗣️ Speaking Warm-Up — Look Out the Window</div>
+          <p class="ex-item">Describe Mehdya's weather today:</p>
+          <ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
+            <li>☀️ Is the sun shining? (**It is sunny**)</li>
+            <li>💨 Is there wind from the ocean? (**It is windy**)</li>
+            <li>🌊 Which season is your favorite for walking by the sea?</li>
+          </ul>
+          <div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
+            Example: "Today it is sunny and warm. My favorite season is spring."
+          </div>
+        </div>
+
+        <div class="darija-box">
+          <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> We say *Rbi3* (Spring), *Chta* (Rain), and *Skhoun* (Hot). Today we learn how to say them in English!
+        </div>
+      </div>
+    </div>
+
+    <!-- BABA'S NOTEBOOK -->
+    <div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
+      <div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
+        <div class="step-header" style="margin-bottom:6px;">
+          <div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
+        </div>
+        <div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-size:12px; line-height:1.4; color:var(--gray);">
+            Write down the four seasons in English and describe the weather of Kenitra in January and July.
+          </p>
+          <textarea class="answer-area" data-id="baba-notebook-p1" style="flex:1; min-height:180px; font-size:12px;" placeholder="My weather notes / ملاحظات الطقس ديالي..."></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOCABULARY SECTION -->
+  <div style="column-span:all !important; margin-top:8px;">
+    <div class="step">
+      <div class="step-header">
+        <div class="step-name">📖 Core Vocabulary: Seasons & Weather</div>
+      </div>
+
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-term">Spring / Summer</div>
+          <div class="vocab-def">Warm, sunny seasons. Perfect for painting outdoors.</div>
+          <div class="vocab-ex">"Mehdya beach is full of visitors in **summer**."</div>
+          <div class="vocab-bridge">🇲🇦 Rbi3, Sif / 🇫🇷 Printemps, Été</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Autumn / Winter</div>
+          <div class="vocab-def">Cooler, rainy seasons.</div>
+          <div class="vocab-ex">"In **winter**, the ocean wind is very cold."</div>
+          <div class="vocab-bridge">🇲🇦 Khrif, Chta / 🇫🇷 Automne, Hiver</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Sunny / Rainy</div>
+          <div class="vocab-def">Describing the sky (sun vs rain).</div>
+          <div class="vocab-ex">"It is **sunny** today, but yesterday it was **rainy**."</div>
+          <div class="vocab-bridge">🇲🇦 Mshemesh / Kati7 chta / 🇫🇷 Ensoleillé / Pluvieux</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Windy / Cloudy</div>
+          <div class="vocab-def">Wind or clouds present.</div>
+          <div class="vocab-ex">"The coastal air is **windy** in the evening."</div>
+          <div class="vocab-bridge">🇲🇦 Fiha lberd / Mghiem / 🇫🇷 Venteux / Nuageux</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Hot / Cold</div>
+          <div class="vocab-def">Describing temperature.</div>
+          <div class="vocab-ex">"Marrakech is **hot**, but Mehdya is fresher."</div>
+          <div class="vocab-bridge">🇲🇦 Skhoun / Bared / 🇫🇷 Chaud / Froid</div>
+        </div>
+        
+        <div class="vocab-card" style="border-left-color:var(--gold);">
+          <div class="vocab-term" style="color:var(--gold);">💡 Grammar Rule: "IT IS..."</div>
+          <div class="vocab-def">Always start weather descriptions with **It is**:</div>
+          <div class="vocab-ex">"<strong>It is</strong> warm." (Not "Is warm" or "The weather are warm")</div>
+          <div class="vocab-bridge">🇫🇷 Il fait... (Il fait chaud)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 13</span>
+    <span>Page 1 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 2 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 2: MINI-STORY -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
+        <div class="step-title">The Four Lights of Mehdya</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Read about how seasons affect a painter's light and find weather terms.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> Have him read the text. Point out how the seasons change his painting light. Contrast "sunny" and "cloudy".
+    </div>
+
+    <div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
+      <p>As a painter, I love all the seasons. In **spring**, the sky is clear and the weather is warm. The light is perfect for mixing watercolors in my garden.</p>
+      <p style="margin-top:6px;">In **summer**, Mehdya is very hot and **sunny**. I sit under my umbrella on the beach and paint the bright blue sea.</p>
+      <p style="margin-top:6px;">In **autumn**, the air becomes **windy** and cool. The leaves fall **slowly** from the trees. In **winter**, the weather is **cold** and **rainy**. I stay inside my cozy home, drink hot green tea, and read my university books.</p>
+    </div>
+
+    <div class="exercise">
+      <div class="ex-label">📝 Check Your Understanding</div>
+      <p class="ex-item"><strong>1.</strong> Why does Fattah love spring for painting?</p>
+      <textarea class="answer-area" data-id="comp-1" placeholder="The sky is... and the weather is..."></textarea>
+      <p class="ex-item" style="margin-top:6px;"><strong>2.</strong> What is the weather like on the beach in summer?</p>
+      <textarea class="answer-area" data-id="comp-2" placeholder="It is... and..."></textarea>
+      <p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What does he do when the weather is rainy and cold in winter?</p>
+      <textarea class="answer-area" data-id="comp-3" placeholder="He stays... and drinks..."></textarea>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 3: GRAMMAR IN ACTION -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-name">Step 3 — 🏗️ Vocabulary in Action</div>
+        <div class="step-title">Describing Current Weather</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Practice using "It is" + weather adjectives.</div>
+
+    <div class="expressions-box">
+      <div class="exp-title">📐 Adjective structure:</div>
+      <div class="exp-item">Structure: **It is** + [weather adjective] (e.g. "It is rainy today.")</div>
+      <div class="exp-item">Action: **It is** + [verb-ing] (e.g. "It is raining now.")</div>
+    </div>
+
+    <div class="exercise" style="margin-top:10px;">
+      <div class="ex-label">✏️ Fill in the blanks with the correct weather adjective:</div>
+      <p class="ex-item"><strong>1.</strong> Put on your jacket! It is very <input type="text" class="answer-inline" data-id="grammar-1" placeholder="..."> outside.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> You need an umbrella today because it is <input type="text" class="answer-inline" data-id="grammar-2" placeholder="...">.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>3.</strong> The sun is shining brightly. It is <input type="text" class="answer-inline" data-id="grammar-3" placeholder="..."> and warm.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>4.</strong> The wind is blowing the sea sand. It is very <input type="text" class="answer-inline" data-id="grammar-4" placeholder="..."> today.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>5.</strong> I cannot see the horizon because the sky is <input type="text" class="answer-inline" data-id="grammar-5" placeholder="..."> and dark.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 13</span>
+    <span>Page 2 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 3 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 4: GAME ZONE -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-name">Step 4 — 🎮 Game Zone</div>
+        <div class="step-title">The Weather Station!</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Choose the correct weather term or season to match the description!</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> Read the descriptions aloud and help him identify key triggers like "umbrella", "sun", or "leaves falling".
+    </div>
+
+    <div class="game-container" id="weath-game">
+      <div class="game-title">🌤️ THE WEATHER STATION</div>
+      <div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:15px; margin-bottom:10px;">
+        Condition: <span id="weath-desc" style="color:var(--teal); font-size:16px;">Condition loading...</span>
+      </div>
+      
+      <div id="weath-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">What is the correct weather/season?</div>
+      
+      <div id="weath-options" style="display:grid; gap:8px; margin-top:10px; grid-template-columns: 1fr 1fr;"></div>
+      <div id="weath-feedback" class="game-feedback"></div>
+      <div id="weath-score" class="game-score"></div>
+      <div style="text-align:center; margin-top:12px;">
+        <button class="game-btn" id="weath-next" onclick="weathNext()" style="display:none;">Next Question →</button>
+        <button class="game-btn" id="weath-restart" onclick="weathStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
+      </div>
+    </div>
+
+    <div class="darija-box" style="margin-top:10px;">
+      <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> Sunny or rainy, "Alhamdulillah" is always our answer! Let's complete the weather check!
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 5: SPEAKING CHALLENGE -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">5</div>
+      <div>
+        <div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
+        <div class="step-title">My Perfect Painting Season</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Talk for 1 minute about your favorite season and why it is perfect for you.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> Have him explain why he loves spring or summer. Prompt him to use: warm, sunny, clear sky, paint outdoors.
+    </div>
+
+    <div class="gold-banner">
+      <p><strong>🎤 Season Presentation Challenge</strong></p>
+      <p style="margin-top:6px; font-size:12px;">State your favorite time of year. Try to include:</p>
+      <ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
+        <li>✅ "My favorite season is..."</li>
+        <li>✅ "The weather is usually **sunny** and..."</li>
+        <li>✅ "I love it because I can..."</li>
+      </ul>
+    </div>
+
+    <div class="exercise" style="margin-top:10px;">
+      <div class="ex-label">📝 Notes for your presentation</div>
+      <textarea class="answer-area" data-id="speaking-notes" style="min-height:90px;" placeholder="My favorite season is spring because the weather is not too hot. It is sunny and pleasant..."></textarea>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 13</span>
+    <span>Page 3 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 4 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 6: BOSS LEVEL -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">6</div>
+      <div>
+        <div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
+        <div class="step-title">The Coastal Report</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Fill in the correct weather and season terms to complete this forecast.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> This challenges his contextual understanding of Morocco's regional climates.
+    </div>
+
+    <div class="exercise">
+      <div class="ex-label">🌤️ Weather Broadcast for Morocco</div>
+      <p class="ex-item">Complete the text using: <strong>winter, hot, sunny, windy, rainy</strong>.</p>
+      <div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
+        Welcome to the Moroccan climate update. Today in Kenitra, the weather is clear and <input type="text" class="answer-inline" data-id="boss-1" style="width:100px;" placeholder="...">. 
+        However, near the sea in Mehdya, it is quite <input type="text" class="answer-inline" data-id="boss-2" style="width:100px;" placeholder="...">, so expect some waves.
+        In Marrakech, the temperature is very <input type="text" class="answer-inline" data-id="boss-3" style="width:100px;" placeholder="..."> today, reaching 38 degrees.
+        If you travel north to Tangier, you might need your coat because it is cloudy and <input type="text" class="answer-inline" data-id="boss-4" style="width:100px;" placeholder="...">.
+        This weather is typical for our mild Moroccan <input type="text" class="answer-inline" data-id="boss-5" style="width:100px;" placeholder="..."> season!
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 7: HOMEWORK -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">7</div>
+      <div>
+        <div class="step-name">Step 7 — 📚 Homework & Fun Challenge</div>
+        <div class="step-title">The Weather Diary</div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="hw-item">
+        <div class="hw-num">1</div>
+        <div>
+          <strong>Writing Task — Mehdya Weather</strong><br>
+          <span style="font-size:12px; color:var(--gray);">Write 3 sentences about your local weather in the current season. Mention one temperature word and one sky word.</span>
+          <textarea class="answer-area" data-id="hw-1" style="min-height:80px; margin-top:6px;" placeholder="1. In spring, Mehdya is...&#10;2. ...&#10;3. ..."></textarea>
+        </div>
+      </div>
+
+      <div class="hw-item">
+        <div class="hw-num">2</div>
+        <div>
+          <strong>Season Matcher</strong><br>
+          <span style="font-size:12px; color:var(--gray);">Write the name of the season:
+          <br>1. Le printemps → <input type="text" class="answer-inline" data-id="hw-weath-1" style="width:180px;" placeholder="Season name...">
+          <br>2. L'été → <input type="text" class="answer-inline" data-id="hw-weath-2" style="width:180px;" placeholder="Season name..."></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="expressions-box" style="margin-top:10px;">
+      <div class="exp-title">📋 Lesson 13 Summary — What You Learned Today</div>
+      <div class="exp-item">✅ **Seasons** → Spring, Summer, Autumn, Winter</div>
+      <div class="exp-item">✅ **Sky weather** → sunny, rainy, cloudy, windy</div>
+      <div class="exp-item">✅ **Temperature** → hot, warm, cool, cold</div>
+      <div class="exp-item">✅ **It is...** → the correct standard structure to describe conditions</div>
+    </div>
+
+    <div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
+      <span class="flag">🌟</span> <strong>Message from Saad:</strong><br>
+      <em>Baba, you have just mastered talking about the seasons! Your descriptions of the bright Mehdya sunlight are beautiful. In the next lesson, we will study "Describing Appearance & Personality" (tall, kind, funny) to help you describe family members and friends. Keep making me proud! 💪🇲🇦</em>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 13</span>
+    <span>Page 4 of 4</span>
+  </div>
+</div>
+
+<!-- CONGRATULATIONS PAGE -->
+<div class="page congratulations-page">
+  <img src="../Congratulations.png" alt="Congratulations" class="congrats-img">
+</div>
+
+<!-- SAVE STATUS -->
+<div class="save-status" id="save-status">✓ Progress saved</div>
+
+<script>
+const STORAGE_KEY = 'ts-lesson-fattah-weather';
+
+function setView(mode){
+  if(mode==='student'){
+    document.body.classList.add('student-mode');
+    document.getElementById('btn-student').classList.add('active');
+    document.getElementById('btn-teacher').classList.remove('active');
+  }else{
+    document.body.classList.remove('student-mode');
+    document.getElementById('btn-teacher').classList.add('active');
+    document.getElementById('btn-student').classList.remove('active');
+  }
+}
+function saveAll(){
+  const data={};
+  document.querySelectorAll('[data-id]').forEach(el=>{
+    data[el.dataset.id]=el.value;
+  });
+  data['weath-high-score'] = weathHighScore;
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
+  const s=document.getElementById('save-status');
+  s.style.opacity='1';
+  setTimeout(()=>s.style.opacity='0',1500);
+}
+function loadAll(){
+  const raw=localStorage.getItem(STORAGE_KEY);
+  if(!raw)return;
+  const data=JSON.parse(raw);
+  Object.keys(data).forEach(id=>{
+    const el=document.querySelector('[data-id="'+id+'"]');
+    if(el)el.value=data[id];
+  });
+  if(data['weath-high-score']) weathHighScore = data['weath-high-score'];
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  loadAll();
+  let timer;
+  document.querySelectorAll('[data-id]').forEach(el=>{
+    el.addEventListener('input',()=>{
+      clearTimeout(timer);
+      timer=setTimeout(saveAll,800);
+    });
+  });
+  weathStart();
+  setView('student');
+});
+
+// ==================== WEATHER QUIZ GAME ====================
+const weathData = [
+  { desc: "Water drops are falling from the sky. You need an umbrella.", opts: ["Sunny", "Rainy", "Windy", "Hot"], ans: 1 },
+  { desc: "The temperature is 39 degrees. Everyone goes to the beach.", opts: ["Winter", "Cold", "Hot", "Cloudy"], ans: 2 },
+  { desc: "Morocco's warm season between winter and summer.", opts: ["Autumn", "Spring", "Winter", "Rainy"], ans: 1 },
+  { desc: "The trees are moving rapidly because of the ocean air.", opts: ["Windy", "Sunny", "Cold", "Rainy"], ans: 0 },
+  { desc: "The season when leaves turn brown and fall from trees.", opts: ["Summer", "Winter", "Autumn", "Spring"], ans: 2 },
+  { desc: "The sky is covered in dark gray shapes. No sun is visible.", opts: ["Sunny", "Cloudy", "Hot", "Windy"], ans: 1 },
+  { desc: "The temperature is 5 degrees. You need a heavy coat.", opts: ["Hot", "Warm", "Cold", "Sunny"], ans: 2 },
+  { desc: "The coldest season of the year, with heavy rain.", opts: ["Summer", "Spring", "Winter", "Autumn"], ans: 2 },
+  { desc: "The sun is shining brightly in Mehdya without clouds.", opts: ["Sunny", "Rainy", "Windy", "Cold"], ans: 0 },
+  { desc: "The temperature is very pleasant and comfortable (24°C).", opts: ["Hot", "Cold", "Warm", "Rainy"], ans: 2 }
+];
+
+let weathCurrent = 0;
+let weathScore = 0;
+let weathHighScore = 0;
+let weathAnswered = false;
+
+function weathStart() {
+  weathCurrent = 0;
+  weathScore = 0;
+  weathAnswered = false;
+  document.getElementById('weath-restart').style.display = 'none';
+  document.getElementById('weath-feedback').style.display = 'none';
+  weathShow();
+}
+
+function weathShow() {
+  if (weathCurrent >= weathData.length) { weathEnd(); return; }
+  weathAnswered = false;
+  const q = weathData[weathCurrent];
+  document.getElementById('weath-question').innerHTML = `Question ${weathCurrent+1} of ${weathData.length}`;
+  document.getElementById('weath-desc').textContent = q.desc;
+  
+  const optDiv = document.getElementById('weath-options');
+  optDiv.innerHTML = '';
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'game-btn';
+    btn.textContent = opt;
+    btn.style.margin = '4px';
+    btn.onclick = () => weathCheck(i, btn);
+    optDiv.appendChild(btn);
+  });
+  document.getElementById('weath-next').style.display = 'none';
+  document.getElementById('weath-feedback').style.display = 'none';
+  document.getElementById('weath-score').textContent = `Score: ${weathScore}/${weathData.length}`;
+}
+
+function weathCheck(selected, btn) {
+  if (weathAnswered) return;
+  weathAnswered = true;
+  const q = weathData[weathCurrent];
+  const allBtns = document.querySelectorAll('#weath-options .game-btn');
+  const fb = document.getElementById('weath-feedback');
+
+  if (selected === q.ans) {
+    weathScore++;
+    btn.classList.add('correct');
+    fb.textContent = '✅ Correct! The Weather Station is calibrated!';
+    fb.style.background = '#E8F5E9';
+    fb.style.color = '#2E7D32';
+  } else {
+    btn.classList.add('wrong');
+    allBtns[q.ans].classList.add('correct');
+    fb.textContent = `❌ Oops! The correct option is "${q.opts[q.ans]}"`;
+    fb.style.background = '#FFEBEE';
+    fb.style.color = '#C62828';
+  }
+  fb.style.display = 'block';
+  document.getElementById('weath-score').textContent = `Score: ${weathScore}/${weathData.length}`;
+  document.getElementById('weath-next').style.display = 'inline-block';
+}
+
+function weathNext() {
+  weathCurrent++;
+  weathShow();
+}
+
+function weathEnd() {
+  document.getElementById('weath-desc').textContent = '🏁 Weather Station Mastered!';
+  document.getElementById('weath-question').innerHTML = '';
+  document.getElementById('weath-options').innerHTML = '';
+  document.getElementById('weath-next').style.display = 'none';
+  const fb = document.getElementById('weath-feedback');
+
+  if (weathScore > weathHighScore) weathHighScore = weathScore;
+
+  let msg = '';
+  if (weathScore >= 9) msg = '🏆 METEOROLOGY MASTER! You read the climate perfectly!';
+  else if (weathScore >= 7) msg = '🌟 EXCELLENT WORK! Great understanding of seasons and weather!';
+  else if (weathScore >= 5) msg = '💪 GOOD EFFORT! Some climate adjectives can be tricky!';
+  else msg = '📚 Practice makes perfect. Let\'s check the sky again!';
+
+  fb.innerHTML = `<div style="font-size:16px; margin-bottom:6px;">${msg}</div>
+    <div style="font-size:20px; font-weight:900;">Final Score: ${weathScore}/${weathData.length}</div>
+    <div style="font-size:12px; margin-top:4px; color:var(--gray);">🏅 High Score: ${weathHighScore}/${weathData.length}</div>`;
+  fb.style.display = 'block';
+  fb.style.background = weathScore >= 7 ? '#E8F5E9' : '#FFF8E7';
+  fb.style.color = 'var(--navy)';
+  document.getElementById('weath-score').textContent = '';
+  document.getElementById('weath-restart').style.display = 'inline-block';
+  saveAll();
+}
+</script>
+</body>
+</html>

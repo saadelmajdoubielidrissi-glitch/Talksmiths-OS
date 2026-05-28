@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fattah — Everyday Life Idioms | Talksmiths</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #007575; --gold: #D4A843; --navy: #1A2744;
+    --cream: #FAF5EF; --white: #fff; --gray: #5A6577;
+    --light: #F0EDEA;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; background:var(--cream); color:var(--navy); }
+  .page { position:relative; width:210mm; margin:20px auto; background:var(--white); border-radius:12px; padding:18mm; box-shadow:0 4px 30px rgba(0,0,0,0.08); page-break-after:always; }
+  .page:last-child { page-break-after:auto; }
+  .logo { font-size:11px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:4px; }
+  h1 { font-family:'Playfair Display',serif; font-size:28px; font-weight:800; color:var(--navy); line-height:1.2; padding-right:80px; }
+  .subtitle { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gray); margin:6px 0 18px; }
+  .badges { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
+  .badge { padding:4px 12px; border-radius:20px; font-size:11px; font-weight:700; }
+  .badge-teal { background:#E8F5F5; color:var(--teal); border:1px solid #b2dada; }
+  .badge-gold { background:#F5EDD6; color:#8a6a1a; border:1px solid #e0c97a; }
+  .badge-gray { background:var(--light); color:var(--gray); border:1px solid #ddd; }
+  .divider { height:2px; background:linear-gradient(90deg,var(--teal),var(--gold)); border-radius:2px; margin:16px 0; }
+  .step { background:var(--white); border:1px solid var(--light); border-radius:10px; padding:14px 16px; margin-bottom:12px; break-inside:avoid; }
+  .step-header { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+  .step-num { width:32px; height:32px; border-radius:50%; background:var(--teal); color:white; font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .step-name { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--teal); }
+  .step-title { font-family:'Playfair Display',serif; font-size:15px; font-weight:800; color:var(--navy); }
+  .step-time { margin-left:auto; font-size:11px; font-weight:700; color:var(--gray); }
+  .objective { font-size:11px; color:var(--gray); font-style:italic; margin-bottom:8px; padding-left:42px; }
+  .body { font-size:13px; line-height:1.6; color:var(--navy); }
+  .exercise { background:var(--cream); border-radius:8px; padding:10px 12px; margin-top:8px; }
+  .ex-label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--teal); margin-bottom:6px; }
+  .ex-item { font-size:13px; margin-bottom:5px; }
+  .vocab-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }
+  .vocab-card { background:var(--cream); border-radius:8px; padding:10px 12px; border-left:3px solid var(--teal); }
+  .vocab-term { font-weight:800; font-size:13px; color:var(--teal); }
+  .vocab-def { font-size:11px; color:var(--gray); margin:2px 0; }
+  .vocab-ex { font-size:11px; color:var(--navy); font-style:italic; }
+  .vocab-bridge { font-size:10px; color:var(--gold); font-weight:700; margin-top:3px; }
+  .expressions-box { background:#F5EDD6; border-left:4px solid var(--gold); border-radius:8px; padding:12px 16px; margin-top:12px; }
+  .exp-title { font-size:11px; font-weight:800; color:var(--navy); text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
+  .exp-item { font-size:13px; color:var(--navy); margin-bottom:4px; font-weight:600; }
+  .gold-banner { background:linear-gradient(135deg,var(--gold),#B8922E); border-radius:10px; padding:14px 16px; margin-top:8px; }
+  .gold-banner p { font-size:13px; color:var(--navy); line-height:1.6; }
+  .roleplay-box { background:#E8F5F5; border:1px solid #b2dada; border-radius:8px; padding:12px 14px; margin-top:8px; }
+  .speaker { font-size:11px; font-weight:700; color:var(--teal); margin-top:8px; }
+  .line { font-size:13px; color:var(--navy); font-style:italic; margin-top:2px; }
+  .hw-item { display:flex; gap:10px; align-items:flex-start; margin-bottom:8px; }
+  .hw-num { width:22px; height:22px; border-radius:50%; background:var(--gold); color:var(--navy); font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .darija-box { background:#FFF3E0; border-left:4px solid #FF9800; border-radius:8px; padding:10px 14px; margin-top:8px; font-size:12px; }
+  .darija-box .flag { font-size:14px; margin-right:4px; }
+  .game-container { background:var(--cream); border:2px solid var(--teal); border-radius:12px; padding:16px; margin-top:10px; }
+  .game-title { font-size:13px; font-weight:800; color:var(--teal); margin-bottom:10px; text-align:center; }
+  .game-btn { padding:10px 16px; border:2px solid var(--teal); border-radius:8px; background:var(--white); color:var(--navy); font-size:13px; font-weight:700; cursor:pointer; transition:all 0.2s; font-family:'Inter',sans-serif; display:inline-block; }
+  .game-btn:hover { background:var(--teal); color:white; transform:translateY(-1px); }
+  .game-btn.correct { background:#2E7D32; color:white; border-color:#2E7D32; }
+  .game-btn.wrong { background:#C62828; color:white; border-color:#C62828; }
+  .game-score { text-align:center; font-size:14px; font-weight:800; color:var(--teal); margin-top:10px; }
+  .game-feedback { text-align:center; font-size:13px; font-weight:700; margin-top:8px; padding:8px; border-radius:8px; display:none; }
+  
+  .view-toggle { position:fixed; top:16px; left:16px; background:var(--white); padding:6px; border-radius:30px; box-shadow:0 4px 16px rgba(0,0,0,0.1); display:flex; gap:4px; z-index:100; font-family:'Inter',sans-serif; }
+  .toggle-btn { border:none; background:transparent; padding:8px 16px; border-radius:24px; font-size:12px; font-weight:700; cursor:pointer; color:var(--gray); transition:all 0.2s; }
+  .toggle-btn.active { background:var(--teal); color:white; }
+  body.student-mode .teacher-note { display:none!important; }
+  body.student-mode .teacher-only { display:none!important; }
+  body:not(.student-mode) .student-note { display:none!important; }
+  .teacher-note { background:#FFF8E7; border:1px solid #f0d080; border-radius:8px; padding:10px 12px; margin-top:8px; font-size:11px; color:#7a5c00; }
+  .student-note { background:#E8F5F5; border:1px solid #b2dada; border-radius:8px; padding:10px 12px; margin-top:8px; font-size:11px; color:var(--teal); font-weight:600; }
+  .footer { display:flex; justify-content:space-between; font-size:10px; color:var(--gray); margin-top:16px; padding-top:10px; border-top:1px solid var(--light); }
+  .print-btn { position:fixed; top:16px; right:16px; background:var(--teal); color:white; border:none; padding:10px 22px; border-radius:25px; font-size:13px; font-weight:700; cursor:pointer; font-family:'Inter',sans-serif; box-shadow:0 4px 16px rgba(0,117,117,0.3); z-index:100; }
+  .answer-area { width:100%; min-height:40px; border:1.5px dashed #b2dada; border-radius:6px; padding:8px 10px; font-family:'Inter',sans-serif; font-size:12px; color:var(--navy); background:#f8fcfc; resize:vertical; margin-top:4px; line-height:1.5; transition:border-color 0.2s; }
+  .answer-area:focus { outline:none; border-color:var(--teal); background:var(--white); }
+  .answer-area::placeholder { color:#aab; font-style:italic; }
+  .answer-inline { border:none; border-bottom:1.5px solid var(--navy); background:transparent; font-family:'Inter',sans-serif; font-size:13px; color:var(--navy); padding:2px 4px; min-width:60px; width:100%; max-width:100%; }
+  .answer-inline:focus { outline:none; border-bottom-color:var(--teal); background:#f8fcfc; }
+  .answer-inline::placeholder { color:#aab; font-style:italic; }
+  .save-status { position:fixed; bottom:16px; right:16px; background:var(--teal); color:white; padding:6px 14px; border-radius:20px; font-size:11px; font-weight:700; opacity:0; transition:opacity 0.3s; z-index:100; font-family:'Inter',sans-serif; }
+  .ts-logo-img { position:absolute; top:18mm; right:18mm; height:60px; object-fit:contain; opacity:0.95; pointer-events:none; }
+
+  @media print {
+    .print-btn { display:none!important; }
+    .view-toggle { display:none!important; }
+    body { background:none; }
+    .page { box-shadow:none; margin:0; border-radius:0; }
+    .answer-area { border:1px solid #ddd; background:var(--white); }
+    .answer-inline { border-bottom:1px solid var(--navy); }
+    .save-status { display:none!important; }
+  }
+  @media screen {
+    body { display:block !important; background:#FAF5EF !important; }
+    .page {
+      width:95% !important; max-width:1400px !important;
+      margin:30px auto !important; height:auto !important;
+      column-count:2 !important; column-gap:40px !important;
+      display:block !important;
+    }
+    .page > * { break-inside:avoid !important; page-break-inside:avoid !important; }
+    h1, .logo, .subtitle, .badges, .divider, .footer { column-span:all !important; }
+    .page.congratulations-page {
+      column-count:1 !important; display:flex !important;
+      justify-content:center !important; align-items:center !important;
+      height:90vh !important; min-height:500px !important;
+    }
+  }
+  .congratulations-page {
+    display:flex !important; justify-content:center !important;
+    align-items:center !important; background:var(--cream) !important;
+    box-shadow:none !important; border:none !important;
+    min-height:297mm !important;
+  }
+  .congrats-img {
+    max-width:100% !important; max-height:100% !important;
+    object-fit:contain !important; mix-blend-mode:darken !important;
+  }
+</style>
+</head>
+<body class="student-mode">
+
+<!-- VIEW TOGGLE -->
+<div class="view-toggle">
+  <button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
+  <button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
+</div>
+<button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+
+<!-- ==================== PAGE 1 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+  <div class="logo">Talksmiths — Lesson Engine™</div>
+  <h1>Everyday Life Idioms</h1>
+  <div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 15</div>
+  <div class="badges">
+    <span class="badge badge-teal">A1 — Beginner</span>
+    <span class="badge badge-gold">60 min</span>
+    <span class="badge badge-gray">Vocabulary Foundations</span>
+    <span class="badge badge-gray">Lesson 15</span>
+  </div>
+  <div class="divider"></div>
+
+  <!-- Step 1 + Notebook row -->
+  <div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
+    <div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
+
+      <!-- STEP 1: WARM-UP -->
+      <div class="step">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
+            <div class="step-title">Colorful Language</div>
+          </div>
+          <div class="step-time">8 min</div>
+        </div>
+        <div class="objective">Objective: Understand that idioms are expressions that cannot be translated literally.</div>
+
+        <div class="student-note">
+          🎓 <strong>Student Strategy:</strong> Idioms are like local proverbs. If you translate them word-for-word, they sound crazy! But if you learn their real meaning, they make your English sound natural.
+        </div>
+
+        <div class="teacher-note">
+          📋 <strong>Teacher Note:</strong> Introduce the concept of idioms. Explain that just like in Darija we say "Sahl mahel" or "L-khba f-jib", English speakers have funny visual phrases.
+        </div>
+
+        <div class="exercise">
+          <div class="ex-label">🗣️ Speaking Warm-Up — Guess the Meaning</div>
+          <p class="ex-item">What do you think these funny English phrases actually mean?</p>
+          <ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
+            <li>🍰 "A piece of cake" (Literal: Un morceau de gâteau)</li>
+            <li>🐴 "Hold your horses" (Literal: Tiens tes chevaux)</li>
+            <li>🩺 "Under the weather" (Literal: Sous le temps)</li>
+          </ul>
+          <div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
+            Example: "I think 'a piece of cake' means something is very easy and sweet!"
+          </div>
+        </div>
+
+        <div class="darija-box">
+          <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> In Darija we say *Khwi l-kar* (Leave the bus/Reveal secret). Today we learn the English twin: "Spill the beans"!
+        </div>
+      </div>
+    </div>
+
+    <!-- BABA'S NOTEBOOK -->
+    <div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
+      <div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
+        <div class="step-header" style="margin-bottom:6px;">
+          <div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
+        </div>
+        <div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-size:12px; line-height:1.4; color:var(--gray);">
+            Write down your favorite English idioms and try to think of a Moroccan proverb that matches.
+          </p>
+          <textarea class="answer-area" data-id="baba-notebook-p1" style="flex:1; min-height:180px; font-size:12px;" placeholder="My idioms notes / ملاحظات الأمثال ديالي..."></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOCABULARY SECTION -->
+  <div style="column-span:all !important; margin-top:8px;">
+    <div class="step">
+      <div class="step-header">
+        <div class="step-name">📖 6 Essential Daily Life Idioms</div>
+      </div>
+
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-term">A piece of cake</div>
+          <div class="vocab-def">Something that is extremely easy to do.</div>
+          <div class="vocab-ex">"Don't worry about the exam, Baba. It's <strong>a piece of cake</strong>!"</div>
+          <div class="vocab-bridge">🇲🇦 Sahl mahel / 🇫🇷 C'est du gâteau</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Under the weather</div>
+          <div class="vocab-def">Feeling slightly sick, tired, or unwell.</div>
+          <div class="vocab-ex">"I cannot walk by the sea today because I am <strong>under the weather</strong>."</div>
+          <div class="vocab-bridge">🇲🇦 3yan shwia / 🇫🇷 Être un peu patraque / malade</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Cost an arm and a leg</div>
+          <div class="vocab-def">Extremely expensive.</div>
+          <div class="vocab-ex">"This imported oil paint <strong>costs an arm and a leg</strong>!"</div>
+          <div class="vocab-bridge">🇲🇦 Ghali bezaf / Tayyeb l-jib / 🇫🇷 Coûter les yeux de la tête</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Hold your horses</div>
+          <div class="vocab-def">Slow down, be patient, wait a moment.</div>
+          <div class="vocab-ex">"<strong>Hold your horses</strong>, Baba! Let's drink our tea first before studying."</div>
+          <div class="vocab-bridge">🇲🇦 Sbbar shwia / T9el / 🇫🇷 Minute papillon / Attends un peu</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Spill the beans</div>
+          <div class="vocab-def">To reveal a secret or show the surprise early.</div>
+          <div class="vocab-ex">"Come on, Saad! <strong>Spill the beans</strong>. What is my birthday surprise?"</div>
+          <div class="vocab-bridge">🇲🇦 Khwi l-kar / Tle9 s-sarout / 🇫🇷 Vendre la mèche</div>
+        </div>
+        
+        <div class="vocab-card" style="border-left-color:var(--gold);">
+          <div class="vocab-term" style="color:var(--gold);">💡 Once in a blue moon</div>
+          <div class="vocab-def">Happening very rarely.</div>
+          <div class="vocab-ex">"I eat fast food only <strong>once in a blue moon</strong>."</div>
+          <div class="vocab-bridge">🇲🇦 Mra fi zman / 🇫🇷 Tous les trente-six du mois</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 15</span>
+    <span>Page 1 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 2 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 2: MINI-STORY -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
+        <div class="step-title">The Art Supplies Shock</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Read a natural dialogue using daily idioms and check comprehension.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> Encourage Baba to read the dialogue. Help him identify the idioms "cost an arm and a leg", "under the weather", and "a piece of cake" in context.
+    </div>
+
+    <div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
+      <p><strong>Fattah:</strong> Hello Saad. Yesterday, I went to the art shop in Rabat to buy new brushes. They **cost an arm and a leg**!</p>
+      <p style="margin-top:6px;"><strong>Saad:</strong> Oh no! Why are they so expensive? Did you buy them?</p>
+      <p style="margin-top:6px;"><strong>Fattah:</strong> Yes, I had to. But I felt a bit **under the weather** afterwards because my wallet was empty!</p>
+      <p style="margin-top:6px;"><strong>Saad:</strong> Haha, don't worry, Baba. Tomorrow you will paint a masterpiece. Learning to paint is difficult, but learning to spend money is **a piece of cake**!</p>
+      <p style="margin-top:6px;"><strong>Fattah:</strong> That is very true. I will start painting tomorrow morning, Insha'Allah.</p>
+    </div>
+
+    <div class="exercise">
+      <div class="ex-label">📝 Check Your Understanding</div>
+      <p class="ex-item"><strong>1.</strong> What did the new paint brushes cost?</p>
+      <textarea class="answer-area" data-id="comp-1" placeholder="They cost..."></textarea>
+      <p class="ex-item" style="margin-top:6px;"><strong>2.</strong> How did Fattah feel after visiting the art shop?</p>
+      <textarea class="answer-area" data-id="comp-2" placeholder="He felt..."></textarea>
+      <p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What does Saad say is "a piece of cake"?</p>
+      <textarea class="answer-area" data-id="comp-3" placeholder="He says... is a piece of cake."></textarea>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 3: GRAMMAR IN ACTION -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-name">Step 3 — 🏗️ Idioms in Action</div>
+        <div class="step-title">Decoding the Idiom Context</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Practice choosing the correct idiom for each daily situation.</div>
+
+    <div class="expressions-box">
+      <div class="exp-title">📐 The Translation Keys:</div>
+      <div class="exp-item">If an activity is extremely easy → Use **"a piece of cake"**</div>
+      <div class="exp-item">If you need someone to wait or be patient → Say **"hold your horses"**</div>
+      <div class="exp-item">If someone is feeling slightly sick or tired → Use **"under the weather"**</div>
+    </div>
+
+    <div class="exercise" style="margin-top:10px;">
+      <div class="ex-label">✏️ Fill in the blanks with the correct idiom:</div>
+      <p class="ex-item"><strong>1.</strong> I studied all week, so the anthropology exam was <input type="text" class="answer-inline" data-id="grammar-1" placeholder="...">.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> A luxury apartment in Casablanca will <input type="text" class="answer-inline" data-id="grammar-2" placeholder="...">.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>3.</strong> My sister has a cold. She is feeling a bit <input type="text" class="answer-inline" data-id="grammar-3" placeholder="..."> today.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>4.</strong> Hey, <input type="text" class="answer-inline" data-id="grammar-4" placeholder="...">! Don't drive so fast, the road is wet.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>5.</strong> I rarely watch TV, only <input type="text" class="answer-inline" data-id="grammar-5" placeholder="..."> when there is a big match.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 15</span>
+    <span>Page 2 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 3 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 4: GAME ZONE -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-name">Step 4 — 🎮 Game Zone</div>
+        <div class="step-title">The Idiom Decoder!</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Match the visual idiom to its real conversational meaning!</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> This is a fun game to review the literal vs figurative split. Encourage him to remember the Moroccan equivalents.
+    </div>
+
+    <div class="game-container" id="idiom-game">
+      <div class="game-title">🧩 THE IDIOM DECODER</div>
+      <div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:16px; margin-bottom:10px;">
+        Idiom: <span id="idiom-text" style="color:var(--teal); font-size:18px;">Idiom loading...</span>
+      </div>
+      
+      <div id="idiom-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">What is the real meaning of this phrase?</div>
+      
+      <div id="idiom-options" style="display:grid; gap:8px; margin-top:10px;"></div>
+      <div id="idiom-feedback" class="game-feedback"></div>
+      <div id="idiom-score" class="game-score"></div>
+      <div style="text-align:center; margin-top:12px;">
+        <button class="game-btn" id="idiom-next" onclick="idiomNext()" style="display:none;">Next Idiom →</button>
+        <button class="game-btn" id="idiom-restart" onclick="idiomStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
+      </div>
+    </div>
+
+    <div class="darija-box" style="margin-top:10px;">
+      <span class="flag">🇲🇦</span> <strong>Darija Wisdom:</strong> <em>"L-fhama nour"</em> — Understanding is light! You are now decoding native English like a pro!
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 5: SPEAKING CHALLENGE -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">5</div>
+      <div>
+        <div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
+        <div class="step-title">Using Idioms at Home</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Speak for 1 minute using at least three idioms we learned today.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> This is the final speaking challenge! Ask him to tell you about his week and intentionally insert "a piece of cake", "under the weather", or "once in a blue moon".
+    </div>
+
+    <div class="gold-banner">
+      <p><strong>🎤 Idioms Presentation Challenge</strong></p>
+      <p style="margin-top:6px; font-size:12px;">Talk about your studies or paintings. Try to say:</p>
+      <ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
+        <li>✅ "Studying English is **a piece of cake** because..."</li>
+        <li>✅ "Buying imported paint **costs an arm and a leg**."</li>
+        <li>✅ "Sometimes I feel **under the weather**, so I..."</li>
+      </ul>
+    </div>
+
+    <div class="exercise" style="margin-top:10px;">
+      <div class="ex-label">📝 Write down your thoughts</div>
+      <textarea class="answer-area" data-id="speaking-notes" style="min-height:90px;" placeholder="I think studying anthropology is not a piece of cake. Sometimes I feel under the weather..."></textarea>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 15</span>
+    <span>Page 3 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 4 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 6: BOSS LEVEL -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">6</div>
+      <div>
+        <div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
+        <div class="step-title">The Dialogue Master</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Fill in the correct idioms in this conversational dialogue.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> This is a challenging synthesis of the lesson. Have him check the meanings carefully.
+    </div>
+
+    <div class="exercise">
+      <div class="ex-label">🎨 Reviewing the Exhibition Plans</div>
+      <p class="ex-item">Complete the text using: <strong>once in a blue moon, cost an arm and a leg, a piece of cake, under the weather, hold your horses</strong>.</p>
+      <div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
+        <strong>Saad:</strong> Baba! Let's rent the largest gallery in Casablanca for your next exhibition!
+        <br><strong>Fattah:</strong> Wait, <input type="text" class="answer-inline" data-id="boss-1" style="width:180px;" placeholder="...">! Casablanca galleries <input type="text" class="answer-inline" data-id="boss-2" style="width:180px;" placeholder="...">.
+        <br><strong>Saad:</strong> But many art buyers visit them.
+        <br><strong>Fattah:</strong> True, but I only visit Casablanca <input type="text" class="answer-inline" data-id="boss-3" style="width:180px;" placeholder="...">. Besides, today I am feeling a bit <input type="text" class="answer-inline" data-id="boss-4" style="width:180px;" placeholder="...">.
+        <br><strong>Saad:</strong> Don't worry. Organising an exhibition in Kenitra is <input type="text" class="answer-inline" data-id="boss-5" style="width:180px;" placeholder="..."> compared to Casablanca!
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 7: HOMEWORK -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">7</div>
+      <div>
+        <div class="step-name">Step 7 — 📚 Homework & Graduation</div>
+        <div class="step-title">The Idioms Champion</div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="hw-item">
+        <div class="hw-num">1</div>
+        <div>
+          <strong>Writing Task — A Day in the Life</strong><br>
+          <span style="font-size:12px; color:var(--gray);">Write a short story (3 sentences) about your routine using at least two idioms we studied today.</span>
+          <textarea class="answer-area" data-id="hw-1" style="min-height:80px; margin-top:6px;" placeholder="Yesterday, I woke up feeling under the weather. But drinking tea was a piece of cake..."></textarea>
+        </div>
+      </div>
+
+      <div class="hw-item">
+        <div class="hw-num">2</div>
+        <div>
+          <strong>Idiom Fixer</strong><br>
+          <span style="font-size:12px; color:var(--gray);">Write the correct meaning:
+          <br>1. "A piece of cake" means: <input type="text" class="answer-inline" data-id="hw-idiom-1" style="width:180px;" placeholder="Meaning...">
+          <br>2. "Cost an arm and a leg" means: <input type="text" class="answer-inline" data-id="hw-idiom-2" style="width:180px;" placeholder="Meaning..."></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="expressions-box" style="margin-top:10px;">
+      <div class="exp-title">📋 Lesson 15 Summary — What You Learned Today</div>
+      <div class="exp-item">✅ **A piece of cake** → Very easy to do</div>
+      <div class="exp-item">✅ **Under the weather** → Feeling slightly sick or tired</div>
+      <div class="exp-item">✅ **Cost an arm and a leg** → Extremely expensive</div>
+      <div class="exp-item">✅ **Once in a blue moon** → Very rarely</div>
+      <div class="exp-item">✅ **Hold your horses** → Be patient / Slow down</div>
+    </div>
+
+    <div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
+      <span class="flag">🎓</span> <strong>CONGRATULATIONS BABA FATTAH!</strong><br>
+      <em>You have officially completed your 15-lesson A1 English Review program! You have worked exceptionally hard. You are now fully prepared to start your A2 journey with confidence! I am incredibly proud of you! Kul youm ou t3alem, Baba! 🎓💪🇲🇦</em>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 15</span>
+    <span>Page 4 of 4</span>
+  </div>
+</div>
+
+<!-- CONGRATULATIONS PAGE -->
+<div class="page congratulations-page">
+  <img src="../Congratulations.png" alt="Congratulations" class="congrats-img">
+</div>
+
+<!-- SAVE STATUS -->
+<div class="save-status" id="save-status">✓ Progress saved</div>
+
+<script>
+const STORAGE_KEY = 'ts-lesson-fattah-idioms';
+
+function setView(mode){
+  if(mode==='student'){
+    document.body.classList.add('student-mode');
+    document.getElementById('btn-student').classList.add('active');
+    document.getElementById('btn-teacher').classList.remove('active');
+  }else{
+    document.body.classList.remove('student-mode');
+    document.getElementById('btn-teacher').classList.add('active');
+    document.getElementById('btn-student').classList.remove('active');
+  }
+}
+function saveAll(){
+  const data={};
+  document.querySelectorAll('[data-id]').forEach(el=>{
+    data[el.dataset.id]=el.value;
+  });
+  data['idiom-high-score'] = idiomHighScore;
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
+  const s=document.getElementById('save-status');
+  s.style.opacity='1';
+  setTimeout(()=>s.style.opacity='0',1500);
+}
+function loadAll(){
+  const raw=localStorage.getItem(STORAGE_KEY);
+  if(!raw)return;
+  const data=JSON.parse(raw);
+  Object.keys(data).forEach(id=>{
+    const el=document.querySelector('[data-id="'+id+'"]');
+    if(el)el.value=data[id];
+  });
+  if(data['idiom-high-score']) idiomHighScore = data['idiom-high-score'];
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  loadAll();
+  let timer;
+  document.querySelectorAll('[data-id]').forEach(el=>{
+    el.addEventListener('input',()=>{
+      clearTimeout(timer);
+      timer=setTimeout(saveAll,800);
+    });
+  });
+  idiomStart();
+  setView('student');
+});
+
+// ==================== IDIOMS QUIZ GAME ====================
+const idiomData = [
+  { phrase: "A piece of cake", opts: ["Very easy", "Very sweet", "Very expensive", "Very rare"], ans: 0 },
+  { phrase: "Under the weather", opts: ["Feeling hot", "Feeling sick/tired", "Feeling windy", "Feeling rich"], ans: 1 },
+  { phrase: "Cost an arm and a leg", opts: ["Very painful", "Very cheap", "Very expensive", "Very heavy"], ans: 2 },
+  { phrase: "Once in a blue moon", opts: ["Every night", "Very rarely", "Very often", "Next month"], ans: 1 },
+  { phrase: "Hold your horses", opts: ["Ride faster", "Be patient/wait", "Buy a horse", "Clean the stable"], ans: 1 },
+  { phrase: "Spill the beans", opts: ["Cook dinner", "Reveal a secret", "Buy vegetables", "Make a mess"], ans: 1 },
+  { phrase: "Break a leg", opts: ["Go to the doctor", "Good luck!", "Be careful", "Start running"], ans: 1 },
+  { phrase: "Bite the bullet", opts: ["Face difficulty with courage", "Eat quickly", "Shoot a gun", "Be afraid"], ans: 0 },
+  { phrase: "Hit the nail on the head", opts: ["Do carpentry work", "Make a mistake", "Describe exactly/correct answer", "Hurt your hand"], ans: 2 },
+  { phrase: "I am feeling under the weather.", opts: ["I am happy.", "I am slightly unwell/tired.", "I love autumn.", "I want to paint."], ans: 1 }
+];
+
+let idiomCurrent = 0;
+let idiomScore = 0;
+let idiomHighScore = 0;
+let idiomAnswered = false;
+
+function idiomStart() {
+  idiomCurrent = 0;
+  idiomScore = 0;
+  idiomAnswered = false;
+  document.getElementById('idiom-restart').style.display = 'none';
+  document.getElementById('idiom-feedback').style.display = 'none';
+  idiomShow();
+}
+
+function idiomShow() {
+  if (idiomCurrent >= idiomData.length) { idiomEnd(); return; }
+  idiomAnswered = false;
+  const q = idiomData[idiomCurrent];
+  document.getElementById('idiom-question').innerHTML = `Question ${idiomCurrent+1} of ${idiomData.length}`;
+  document.getElementById('idiom-text').textContent = q.phrase;
+  
+  const optDiv = document.getElementById('idiom-options');
+  optDiv.innerHTML = '';
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'game-btn';
+    btn.textContent = opt;
+    btn.style.margin = '4px';
+    btn.onclick = () => idiomCheck(i, btn);
+    optDiv.appendChild(btn);
+  });
+  document.getElementById('idiom-next').style.display = 'none';
+  document.getElementById('idiom-feedback').style.display = 'none';
+  document.getElementById('idiom-score').textContent = `Score: ${idiomScore}/${idiomData.length}`;
+}
+
+function idiomCheck(selected, btn) {
+  if (idiomAnswered) return;
+  idiomAnswered = true;
+  const q = idiomData[idiomCurrent];
+  const allBtns = document.querySelectorAll('#idiom-options .game-btn');
+  const fb = document.getElementById('idiom-feedback');
+
+  if (selected === q.ans) {
+    idiomScore++;
+    btn.classList.add('correct');
+    fb.textContent = '✅ Correct! You decoded the phrase!';
+    fb.style.background = '#E8F5E9';
+    fb.style.color = '#2E7D32';
+  } else {
+    btn.classList.add('wrong');
+    allBtns[q.ans].classList.add('correct');
+    fb.textContent = `❌ Oops! The correct meaning is "${q.opts[q.ans]}"`;
+    fb.style.background = '#FFEBEE';
+    fb.style.color = '#C62828';
+  }
+  fb.style.display = 'block';
+  document.getElementById('idiom-score').textContent = `Score: ${idiomScore}/${idiomData.length}`;
+  document.getElementById('idiom-next').style.display = 'inline-block';
+}
+
+function idiomNext() {
+  idiomCurrent++;
+  idiomShow();
+}
+
+function idiomEnd() {
+  document.getElementById('idiom-text').textContent = '🎓 Idioms Graduated!';
+  document.getElementById('idiom-question').innerHTML = '';
+  document.getElementById('idiom-options').innerHTML = '';
+  document.getElementById('idiom-next').style.display = 'none';
+  const fb = document.getElementById('idiom-feedback');
+
+  if (idiomScore > idiomHighScore) idiomHighScore = idiomScore;
+
+  let msg = '';
+  if (idiomScore >= 9) msg = '🏆 IDIOM CHAMPION! You speak like a true native speaker!';
+  else if (idiomScore >= 7) msg = '🌟 EXCELLENT WORK! Great grasp of daily life idioms!';
+  else if (idiomScore >= 5) msg = '💪 GOOD EFFORT! Figurative expressions take time to master!';
+  else msg = '📚 Practice makes perfect. Let\'s decode again!';
+
+  fb.innerHTML = `<div style="font-size:16px; margin-bottom:6px;">${msg}</div>
+    <div style="font-size:20px; font-weight:900;">Final Score: ${idiomScore}/${idiomData.length}</div>
+    <div style="font-size:12px; margin-top:4px; color:var(--gray);">🏅 High Score: ${idiomHighScore}/${idiomData.length}</div>`;
+  fb.style.display = 'block';
+  fb.style.background = idiomScore >= 7 ? '#E8F5E9' : '#FFF8E7';
+  fb.style.color = 'var(--navy)';
+  document.getElementById('idiom-score').textContent = '';
+  document.getElementById('idiom-restart').style.display = 'inline-block';
+  saveAll();
+}
+</script>
+</body>
+</html>

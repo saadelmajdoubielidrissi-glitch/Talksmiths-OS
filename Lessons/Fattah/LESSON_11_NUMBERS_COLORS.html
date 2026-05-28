@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fattah — Numbers, Colors, Days & Years | Talksmiths</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #007575; --gold: #D4A843; --navy: #1A2744;
+    --cream: #FAF5EF; --white: #fff; --gray: #5A6577;
+    --light: #F0EDEA;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; background:var(--cream); color:var(--navy); }
+  .page { position:relative; width:210mm; margin:20px auto; background:var(--white); border-radius:12px; padding:18mm; box-shadow:0 4px 30px rgba(0,0,0,0.08); page-break-after:always; }
+  .page:last-child { page-break-after:auto; }
+  .logo { font-size:11px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:4px; }
+  h1 { font-family:'Playfair Display',serif; font-size:28px; font-weight:800; color:var(--navy); line-height:1.2; padding-right:80px; }
+  .subtitle { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gray); margin:6px 0 18px; }
+  .badges { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
+  .badge { padding:4px 12px; border-radius:20px; font-size:11px; font-weight:700; }
+  .badge-teal { background:#E8F5F5; color:var(--teal); border:1px solid #b2dada; }
+  .badge-gold { background:#F5EDD6; color:#8a6a1a; border:1px solid #e0c97a; }
+  .badge-gray { background:var(--light); color:var(--gray); border:1px solid #ddd; }
+  .divider { height:2px; background:linear-gradient(90deg,var(--teal),var(--gold)); border-radius:2px; margin:16px 0; }
+  .step { background:var(--white); border:1px solid var(--light); border-radius:10px; padding:14px 16px; margin-bottom:12px; break-inside:avoid; }
+  .step-header { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+  .step-num { width:32px; height:32px; border-radius:50%; background:var(--teal); color:white; font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .step-name { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--teal); }
+  .step-title { font-family:'Playfair Display',serif; font-size:15px; font-weight:800; color:var(--navy); }
+  .step-time { margin-left:auto; font-size:11px; font-weight:700; color:var(--gray); }
+  .objective { font-size:11px; color:var(--gray); font-style:italic; margin-bottom:8px; padding-left:42px; }
+  .body { font-size:13px; line-height:1.6; color:var(--navy); }
+  .exercise { background:var(--cream); border-radius:8px; padding:10px 12px; margin-top:8px; }
+  .ex-label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--teal); margin-bottom:6px; }
+  .ex-item { font-size:13px; margin-bottom:5px; }
+  .vocab-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }
+  .vocab-card { background:var(--cream); border-radius:8px; padding:10px 12px; border-left:3px solid var(--teal); }
+  .vocab-term { font-weight:800; font-size:13px; color:var(--teal); }
+  .vocab-def { font-size:11px; color:var(--gray); margin:2px 0; }
+  .vocab-ex { font-size:11px; color:var(--navy); font-style:italic; }
+  .vocab-bridge { font-size:10px; color:var(--gold); font-weight:700; margin-top:3px; }
+  .expressions-box { background:#F5EDD6; border-left:4px solid var(--gold); border-radius:8px; padding:12px 16px; margin-top:12px; }
+  .exp-title { font-size:11px; font-weight:800; color:var(--navy); text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
+  .exp-item { font-size:13px; color:var(--navy); margin-bottom:4px; font-weight:600; }
+  .gold-banner { background:linear-gradient(135deg,var(--gold),#B8922E); border-radius:10px; padding:14px 16px; margin-top:8px; }
+  .gold-banner p { font-size:13px; color:var(--navy); line-height:1.6; }
+  .roleplay-box { background:#E8F5F5; border:1px solid #b2dada; border-radius:8px; padding:12px 14px; margin-top:8px; }
+  .speaker { font-size:11px; font-weight:700; color:var(--teal); margin-top:8px; }
+  .line { font-size:13px; color:var(--navy); font-style:italic; margin-top:2px; }
+  .hw-item { display:flex; gap:10px; align-items:flex-start; margin-bottom:8px; }
+  .hw-num { width:22px; height:22px; border-radius:50%; background:var(--gold); color:var(--navy); font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .darija-box { background:#FFF3E0; border-left:4px solid #FF9800; border-radius:8px; padding:10px 14px; margin-top:8px; font-size:12px; }
+  .darija-box .flag { font-size:14px; margin-right:4px; }
+  .game-container { background:var(--cream); border:2px solid var(--teal); border-radius:12px; padding:16px; margin-top:10px; }
+  .game-title { font-size:13px; font-weight:800; color:var(--teal); margin-bottom:10px; text-align:center; }
+  .game-btn { padding:10px 16px; border:2px solid var(--teal); border-radius:8px; background:var(--white); color:var(--navy); font-size:13px; font-weight:700; cursor:pointer; transition:all 0.2s; font-family:'Inter',sans-serif; display:inline-block; }
+  .game-btn:hover { background:var(--teal); color:white; transform:translateY(-1px); }
+  .game-btn.correct { background:#2E7D32; color:white; border-color:#2E7D32; }
+  .game-btn.wrong { background:#C62828; color:white; border-color:#C62828; }
+  .game-score { text-align:center; font-size:14px; font-weight:800; color:var(--teal); margin-top:10px; }
+  .game-feedback { text-align:center; font-size:13px; font-weight:700; margin-top:8px; padding:8px; border-radius:8px; display:none; }
+  
+  .view-toggle { position:fixed; top:16px; left:16px; background:var(--white); padding:6px; border-radius:30px; box-shadow:0 4px 16px rgba(0,0,0,0.1); display:flex; gap:4px; z-index:100; font-family:'Inter',sans-serif; }
+  .toggle-btn { border:none; background:transparent; padding:8px 16px; border-radius:24px; font-size:12px; font-weight:700; cursor:pointer; color:var(--gray); transition:all 0.2s; }
+  .toggle-btn.active { background:var(--teal); color:white; }
+  body.student-mode .teacher-note { display:none!important; }
+  body.student-mode .teacher-only { display:none!important; }
+  body:not(.student-mode) .student-note { display:none!important; }
+  .teacher-note { background:#FFF8E7; border:1px solid #f0d080; border-radius:8px; padding:10px 12px; margin-top:8px; font-size:11px; color:#7a5c00; }
+  .student-note { background:#E8F5F5; border:1px solid #b2dada; border-radius:8px; padding:10px 12px; margin-top:8px; font-size:11px; color:var(--teal); font-weight:600; }
+  .footer { display:flex; justify-content:space-between; font-size:10px; color:var(--gray); margin-top:16px; padding-top:10px; border-top:1px solid var(--light); }
+  .print-btn { position:fixed; top:16px; right:16px; background:var(--teal); color:white; border:none; padding:10px 22px; border-radius:25px; font-size:13px; font-weight:700; cursor:pointer; font-family:'Inter',sans-serif; box-shadow:0 4px 16px rgba(0,117,117,0.3); z-index:100; }
+  .answer-area { width:100%; min-height:40px; border:1.5px dashed #b2dada; border-radius:6px; padding:8px 10px; font-family:'Inter',sans-serif; font-size:12px; color:var(--navy); background:#f8fcfc; resize:vertical; margin-top:4px; line-height:1.5; transition:border-color 0.2s; }
+  .answer-area:focus { outline:none; border-color:var(--teal); background:var(--white); }
+  .answer-area::placeholder { color:#aab; font-style:italic; }
+  .answer-inline { border:none; border-bottom:1.5px solid var(--navy); background:transparent; font-family:'Inter',sans-serif; font-size:13px; color:var(--navy); padding:2px 4px; min-width:60px; width:100%; max-width:100%; }
+  .answer-inline:focus { outline:none; border-bottom-color:var(--teal); background:#f8fcfc; }
+  .answer-inline::placeholder { color:#aab; font-style:italic; }
+  .save-status { position:fixed; bottom:16px; right:16px; background:var(--teal); color:white; padding:6px 14px; border-radius:20px; font-size:11px; font-weight:700; opacity:0; transition:opacity 0.3s; z-index:100; font-family:'Inter',sans-serif; }
+  .ts-logo-img { position:absolute; top:18mm; right:18mm; height:60px; object-fit:contain; opacity:0.95; pointer-events:none; }
+
+  @media print {
+    .print-btn { display:none!important; }
+    .view-toggle { display:none!important; }
+    body { background:none; }
+    .page { box-shadow:none; margin:0; border-radius:0; }
+    .answer-area { border:1px solid #ddd; background:var(--white); }
+    .answer-inline { border-bottom:1px solid var(--navy); }
+    .save-status { display:none!important; }
+  }
+  @media screen {
+    body { display:block !important; background:#FAF5EF !important; }
+    .page {
+      width:95% !important; max-width:1400px !important;
+      margin:30px auto !important; height:auto !important;
+      column-count:2 !important; column-gap:40px !important;
+      display:block !important;
+    }
+    .page > * { break-inside:avoid !important; page-break-inside:avoid !important; }
+    h1, .logo, .subtitle, .badges, .divider, .footer { column-span:all !important; }
+    .page.congratulations-page {
+      column-count:1 !important; display:flex !important;
+      justify-content:center !important; align-items:center !important;
+      height:90vh !important; min-height:500px !important;
+    }
+  }
+  .congratulations-page {
+    display:flex !important; justify-content:center !important;
+    align-items:center !important; background:var(--cream) !important;
+    box-shadow:none !important; border:none !important;
+    min-height:297mm !important;
+  }
+  .congrats-img {
+    max-width:100% !important; max-height:100% !important;
+    object-fit:contain !important; mix-blend-mode:darken !important;
+  }
+</style>
+</head>
+<body class="student-mode">
+
+<!-- VIEW TOGGLE -->
+<div class="view-toggle">
+  <button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
+  <button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
+</div>
+<button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+
+<!-- ==================== PAGE 1 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+  <div class="logo">Talksmiths — Lesson Engine™</div>
+  <h1>Numbers, Colors, Days & Years</h1>
+  <div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 11</div>
+  <div class="badges">
+    <span class="badge badge-teal">A1 — Beginner</span>
+    <span class="badge badge-gold">60 min</span>
+    <span class="badge badge-gray">Vocabulary Foundations</span>
+    <span class="badge badge-gray">Lesson 11</span>
+  </div>
+  <div class="divider"></div>
+
+  <!-- Step 1 + Notebook row -->
+  <div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
+    <div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
+
+      <!-- STEP 1: WARM-UP -->
+      <div class="step">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
+            <div class="step-title">The Palette & The Calendar</div>
+          </div>
+          <div class="step-time">8 min</div>
+        </div>
+        <div class="objective">Objective: Learn how to name colors on your palette and read dates on a calendar.</div>
+
+        <div class="student-note">
+          🎓 <strong>Student Strategy:</strong> Numbers and colors are the building blocks of descriptions. You use them when discussing prices, your age, history lectures, and your oil paintings!
+        </div>
+
+        <div class="teacher-note">
+          📋 <strong>Teacher Note:</strong> Connect colors to his painting palette (e.g. ultramarine blue, cadmium red) and numbers to historical years (like 1960 or 2026).
+        </div>
+
+        <div class="exercise">
+          <div class="ex-label">🗣️ Speaking Warm-Up — Look and Describe</div>
+          <p class="ex-item">Describe these details using English:</p>
+          <ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
+            <li>🎨 What is your favorite **color** to paint with?</li>
+            <li>📅 What **day of the week** is today?</li>
+            <li>🔢 What **year** were you born? (e.g. nineteen sixty)</li>
+          </ul>
+          <div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
+            Example: "My favorite color is blue, today is Thursday, and my birth year is nineteen sixty-five."
+          </div>
+        </div>
+
+        <div class="darija-box">
+          <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> In Darija we say *Zreg* (Blue), *Khmes* (Thursday), and *Tlatin* (Thirty). Let's learn them in English!
+        </div>
+      </div>
+    </div>
+
+    <!-- BABA'S NOTEBOOK -->
+    <div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
+      <div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
+        <div class="step-header" style="margin-bottom:6px;">
+          <div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
+        </div>
+        <div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-size:12px; line-height:1.4; color:var(--gray);">
+            Write down the colors you see in Mehdya's sunset, the number of paintings you made, and the days you go to university.
+          </p>
+          <textarea class="answer-area" data-id="baba-notebook-p1" style="flex:1; min-height:180px; font-size:12px;" placeholder="My palette details / تفاصيل الألوان ديالي..."></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOCABULARY SECTION -->
+  <div style="column-span:all !important; margin-top:8px;">
+    <div class="step">
+      <div class="step-header">
+        <div class="step-name">📖 Core Vocabulary: Colors, Days & Years</div>
+      </div>
+
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-term">Red, Blue, Green, Yellow</div>
+          <div class="vocab-def">Primary and natural colors.</div>
+          <div class="vocab-ex">"The Mehdya sea is **blue** and the trees are **green**."</div>
+          <div class="vocab-bridge">🇲🇦 Ahmer, Zreg, Khder, Sfer / 🇫🇷 Rouge, Bleu, Vert, Jaune</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">White, Black, Brown</div>
+          <div class="vocab-def">Neutral and earthy colors.</div>
+          <div class="vocab-ex">"I mix **white** and **black** to make gray paint."</div>
+          <div class="vocab-bridge">🇲🇦 Bied, Khel, Qehwi / 🇫🇷 Blanc, Noir, Marron</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Monday, Wednesday, Friday</div>
+          <div class="vocab-def">Days of the week. Capitalize the first letter!</div>
+          <div class="vocab-ex">"I attend anthropology lectures on **Monday**."</div>
+          <div class="vocab-bridge">🇲🇦 Tnin, Larba, Jm3a / 🇫🇷 Lundi, Mercredi, Vendredi</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Saturday, Sunday</div>
+          <div class="vocab-def">The weekend. Time to rest and paint!</div>
+          <div class="vocab-ex">"On **Sunday**, I watch football."</div>
+          <div class="vocab-bridge">🇲🇦 Sebt, L7ad / 🇫🇷 Samedi, Dimanche</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Years: 1985 / 2026</div>
+          <div class="vocab-def">Read as two parts: nineteen eighty-five / twenty twenty-six.</div>
+          <div class="vocab-ex">"I retired in 2021 (twenty twenty-one)."</div>
+          <div class="vocab-bridge">🇫🇷 Dix-neuf cent quatre-vingt-cinq</div>
+        </div>
+        
+        <div class="vocab-card" style="border-left-color:var(--gold);">
+          <div class="vocab-term" style="color:var(--gold);">💡 Number Tip: Tens (-ty) vs Teens (-teen)</div>
+          <div class="vocab-def">Listen carefully to the endings!</div>
+          <div class="vocab-ex">13 = thir**teen** (🇫🇷 treize)<br>30 = thir**ty** (🇫🇷 trente)</div>
+          <div class="vocab-bridge">🇲🇦 Tletash vs Tlatin / 🇫🇷 Treize vs Trente</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 11</span>
+    <span>Page 1 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 2 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 2: MINI-STORY -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
+        <div class="step-title">The Master's Agenda</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Read about a typical week in Baba Fattah's life and find details.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> Read this out loud. Point out the pronunciation of dates and years like "nineteen eighty-two".
+    </div>
+
+    <div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
+      <p>I started working at Barid Bank in **1982** (nineteen eighty-two). I dedicated **39** (thirty-nine) years of my life to the bank before retiring in **2021** (twenty twenty-one).</p>
+      <p style="margin-top:6px;">Now, my week has a peaceful rhythm. On **Monday** and **Wednesday**, I study at Ibn Tofail University. On **Friday** morning, I visit the market to buy fresh vegetables.</p>
+      <p style="margin-top:6px;">On the weekend, I enter my art room. I paint Mehdya's sunset using bright **red**, warm **yellow**, and deep **blue** colors. I am very happy with my retired life.</p>
+    </div>
+
+    <div class="exercise">
+      <div class="ex-label">📝 Check Your Understanding</div>
+      <p class="ex-item"><strong>1.</strong> In what year did Fattah start working at the bank?</p>
+      <textarea class="answer-area" data-id="comp-1" placeholder="He started in..."></textarea>
+      <p class="ex-item" style="margin-top:6px;"><strong>2.</strong> On which days does he study at the university?</p>
+      <textarea class="answer-area" data-id="comp-2" placeholder="He studies on..."></textarea>
+      <p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What colors does he use to paint Mehdya's sunset?</p>
+      <textarea class="answer-area" data-id="comp-3" placeholder="He uses..."></textarea>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 3: GRAMMAR IN ACTION -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-name">Step 3 — 🏗️ Vocabulary in Action</div>
+        <div class="step-title">Writing Years & Dates</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Practice writing numbers and years out in English words.</div>
+
+    <div class="expressions-box">
+      <div class="exp-title">📐 Year Rules:</div>
+      <div class="exp-item">Years before 2000 → Split in half: 1994 = **nineteen** (19) **ninety-four** (94)</div>
+      <div class="exp-item">Years after 2000 → Say "two thousand and..." or split: 2026 = **twenty twenty-six**</div>
+    </div>
+
+    <div class="exercise" style="margin-top:10px;">
+      <div class="ex-label">✏️ Write the following numbers and years in words:</div>
+      <p class="ex-item"><strong>1.</strong> (55) My friend is <input type="text" class="answer-inline" data-id="grammar-1" placeholder="..."> years old.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> (1990) Saad was born in <input type="text" class="answer-inline" data-id="grammar-2" placeholder="...">.</p>
+      <p class="ex-item" style="margin-top:8px;">"><strong>3.</strong> (72) Ibn Tofail University has <input type="text" class="answer-inline" data-id="grammar-3" placeholder="..."> classrooms.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>4.</strong> (2015) I held an exhibition in Tangier in the year <input type="text" class="answer-inline" data-id="grammar-4" placeholder="...">.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>5.</strong> (12) There are <input type="text" class="answer-inline" data-id="grammar-5" placeholder="..."> months in a year.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 11</span>
+    <span>Page 2 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 3 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 4: GAME ZONE -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-name">Step 4 — 🎮 Game Zone</div>
+        <div class="step-title">The Date & Color Mixer!</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Choose the correct name for the number, date, or color block!</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> This is a rapid-fire game focusing on correct spellings of numbers and days (e.g. Wednesday, Saturday).
+    </div>
+
+    <div class="game-container" id="num-game">
+      <div class="game-title">📅 THE CALENDAR & PALETTE MIXER</div>
+      <div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:16px; margin-bottom:10px;">
+        Item: <span id="num-item" style="color:var(--teal); font-size:18px;">Item loading...</span>
+      </div>
+      
+      <div id="num-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">Which choice is spelled correctly?</div>
+      
+      <div id="num-options" style="display:grid; gap:8px; margin-top:10px; grid-template-columns: 1fr 1fr;"></div>
+      <div id="num-feedback" class="game-feedback"></div>
+      <div id="num-score" class="game-score"></div>
+      <div style="text-align:center; margin-top:12px;">
+        <button class="game-btn" id="num-next" onclick="numNext()" style="display:none;">Next Question →</button>
+        <button class="game-btn" id="num-restart" onclick="numStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
+      </div>
+    </div>
+
+    <div class="darija-box" style="margin-top:10px;">
+      <span class="flag">🇲🇦</span> <strong>Darija encouragement:</strong> <em>"Zwin bezaf!"</em> — Very beautiful! Let's get a perfect score on this!
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 5: SPEAKING CHALLENGE -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">5</div>
+      <div>
+        <div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
+        <div class="step-title">Describing My Canvas</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Describe one of your paintings using colors, sizes, and numbers.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> Ask him to look at one of his paintings in his room. Have him explain: "I used yellow for the sun and blue for the ocean. The canvas is 50 centimeters wide. I painted it in 2024."
+    </div>
+
+    <div class="gold-banner">
+      <p><strong>🎤 Painting Description Challenge</strong></p>
+      <p style="margin-top:6px; font-size:12px;">Present one of your favorite paintings. Try to say:</p>
+      <ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
+        <li>✅ "The painting has **red**, **blue**, and **white**..."</li>
+        <li>✅ "I worked on it for **four** days."</li>
+        <li>✅ "I completed it in **twenty twenty-five** (2025)."</li>
+      </ul>
+    </div>
+
+    <div class="exercise" style="margin-top:10px;">
+      <div class="ex-label">📝 Notes for your presentation</div>
+      <textarea class="answer-area" data-id="speaking-notes" style="min-height:90px;" placeholder="This painting is about Mehdya beach. It has beautiful yellow and blue colors. I finished it last Saturday..."></textarea>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 11</span>
+    <span>Page 3 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 4 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 6: BOSS LEVEL -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">6</div>
+      <div>
+        <div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
+        <div class="step-title">The Art Studio Inventory</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Fill in the correct spellings of numbers and colors.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> This challenges his writing skills for common numbers and colors.
+    </div>
+
+    <div class="exercise">
+      <div class="ex-label">🎨 Studio Inventory Report</div>
+      <p class="ex-item">Complete the text using: <strong>seventy, brown, Wednesday, blue, fifteen</strong>.</p>
+      <div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
+        Every <input type="text" class="answer-inline" data-id="boss-1" style="width:100px;" placeholder="..."> afternoon, I organize my studio. 
+        Today, I counted my paint tubes. I have <input type="text" class="answer-inline" data-id="boss-2" style="width:100px;" placeholder="..."> tubes of oil paint. 
+        Most tubes are dark <input type="text" class="answer-inline" data-id="boss-3" style="width:100px;" placeholder="...">, but I also have a few bright yellow ones.
+        My favorite easel is made of light <input type="text" class="answer-inline" data-id="boss-4" style="width:100px;" placeholder="..."> wood.
+        In total, I have painted <input type="text" class="answer-inline" data-id="boss-5" style="width:100px;" placeholder="..."> landscapes during my retirement years!
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 7: HOMEWORK -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">7</div>
+      <div>
+        <div class="step-name">Step 7 — 📚 Homework & Fun Challenge</div>
+        <div class="step-title">The Date Master</div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="hw-item">
+        <div class="hw-num">1</div>
+        <div>
+          <strong>Writing Task — My Agenda</strong><br>
+          <span style="font-size:12px; color:var(--gray);">Write 3 sentences about your schedule. Mention the day of the week, a color, and a number. (E.g. "On Monday, I buy three black pens.")</span>
+          <textarea class="answer-area" data-id="hw-1" style="min-height:80px; margin-top:6px;" placeholder="1. On Tuesday...&#10;2. ...&#10;3. ..."></textarea>
+        </div>
+      </div>
+
+      <div class="hw-item">
+        <div class="hw-num">2</div>
+        <div>
+          <strong>Calendar Check</strong><br>
+          <span style="font-size:12px; color:var(--gray);">Write out the name of the day:
+          <br>1. Le jour après Lundi → <input type="text" class="answer-inline" data-id="hw-day-1" style="width:180px;" placeholder="Day name...">
+          <br>2. Le premier jour du week-end au Maroc → <input type="text" class="answer-inline" data-id="hw-day-2" style="width:180px;" placeholder="Day name..."></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="expressions-box" style="margin-top:10px;">
+      <div class="exp-title">📋 Lesson 11 Summary — What You Learned Today</div>
+      <div class="exp-item">✅ **Colors** → Red, blue, yellow, green, white, black, brown</div>
+      <div class="exp-item">✅ **Days of the week** → always capitalized (Monday, Wednesday)</div>
+      <div class="exp-item">✅ **Years** → read in two parts (e.g. 1985 = nineteen eighty-five)</div>
+      <div class="exp-item">✅ **Numbers** → watch out for spelling changes like forty (not fourty)</div>
+    </div>
+
+    <div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
+      <span class="flag">🌟</span> <strong>Message from Saad:</strong><br>
+      <em>Baba, you are mastering the details! Now you can talk about the years of your bank career and the colors of your paintings with perfect ease. In the next lesson, we will study Everyday Expressions and Small Talk to help you hold simple conversations about the weather or your feelings. Keep up the amazing work! 💪🇲🇦</em>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 11</span>
+    <span>Page 4 of 4</span>
+  </div>
+</div>
+
+<!-- CONGRATULATIONS PAGE -->
+<div class="page congratulations-page">
+  <img src="../Congratulations.png" alt="Congratulations" class="congrats-img">
+</div>
+
+<!-- SAVE STATUS -->
+<div class="save-status" id="save-status">✓ Progress saved</div>
+
+<script>
+const STORAGE_KEY = 'ts-lesson-fattah-numbers-colors';
+
+function setView(mode){
+  if(mode==='student'){
+    document.body.classList.add('student-mode');
+    document.getElementById('btn-student').classList.add('active');
+    document.getElementById('btn-teacher').classList.remove('active');
+  }else{
+    document.body.classList.remove('student-mode');
+    document.getElementById('btn-teacher').classList.add('active');
+    document.getElementById('btn-student').classList.remove('active');
+  }
+}
+function saveAll(){
+  const data={};
+  document.querySelectorAll('[data-id]').forEach(el=>{
+    data[el.dataset.id]=el.value;
+  });
+  data['num-high-score'] = numHighScore;
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
+  const s=document.getElementById('save-status');
+  s.style.opacity='1';
+  setTimeout(()=>s.style.opacity='0',1500);
+}
+function loadAll(){
+  const raw=localStorage.getItem(STORAGE_KEY);
+  if(!raw)return;
+  const data=JSON.parse(raw);
+  Object.keys(data).forEach(id=>{
+    const el=document.querySelector('[data-id="'+id+'"]');
+    if(el)el.value=data[id];
+  });
+  if(data['num-high-score']) numHighScore = data['num-high-score'];
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  loadAll();
+  let timer;
+  document.querySelectorAll('[data-id]').forEach(el=>{
+    el.addEventListener('input',()=>{
+      clearTimeout(timer);
+      timer=setTimeout(saveAll,800);
+    });
+  });
+  numStart();
+  setView('student');
+});
+
+// ==================== NUMBERS & COLORS QUIZ GAME ====================
+const numData = [
+  { item: "Lundi (French)", opts: ["Monday", "Tuesday", "Wednesday", "Thursday"], ans: 0 },
+  { item: "Zreg / Bleu", opts: ["Red", "Blue", "Green", "Yellow"], ans: 1 },
+  { item: "30 (Number)", opts: ["Thirteen", "Thirty", "Three", "Third"], ans: 1 },
+  { item: "Mercredi (French)", opts: ["Tuesday", "Thursday", "Wednesday", "Friday"], ans: 2 },
+  { item: "Ahmer / Rouge", opts: ["Blue", "Red", "Black", "White"], ans: 1 },
+  { item: "15 (Number)", opts: ["Fifty", "Fifteen", "Five", "Fifteenth"], ans: 1 },
+  { item: "Samedi (French)", opts: ["Sunday", "Saturday", "Friday", "Monday"], ans: 1 },
+  { item: "Qehwi / Marron", opts: ["Brown", "Black", "Gray", "Yellow"], ans: 0 },
+  { item: "1995 (Year)", opts: ["Nineteen ninety-five", "Nine nine five", "Ninety ninety-five", "One nine nine five"], ans: 0 },
+  { item: "40 (Number)", opts: ["Fourty", "Forty", "Fourteen", "Four"], ans: 1 }
+];
+
+let numCurrent = 0;
+let numScore = 0;
+let numHighScore = 0;
+let numAnswered = false;
+
+function numStart() {
+  numCurrent = 0;
+  numScore = 0;
+  numAnswered = false;
+  document.getElementById('num-restart').style.display = 'none';
+  document.getElementById('num-feedback').style.display = 'none';
+  numShow();
+}
+
+function numShow() {
+  if (numCurrent >= numData.length) { numEnd(); return; }
+  numAnswered = false;
+  const q = numData[numCurrent];
+  document.getElementById('num-question').innerHTML = `Question ${numCurrent+1} of ${numData.length}`;
+  document.getElementById('num-item').textContent = q.item;
+  
+  const optDiv = document.getElementById('num-options');
+  optDiv.innerHTML = '';
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'game-btn';
+    btn.textContent = opt;
+    btn.style.margin = '4px';
+    btn.onclick = () => numCheck(i, btn);
+    optDiv.appendChild(btn);
+  });
+  document.getElementById('num-next').style.display = 'none';
+  document.getElementById('num-feedback').style.display = 'none';
+  document.getElementById('num-score').textContent = `Score: ${numScore}/${numData.length}`;
+}
+
+function numCheck(selected, btn) {
+  if (numAnswered) return;
+  numAnswered = true;
+  const q = numData[numCurrent];
+  const allBtns = document.querySelectorAll('#num-options .game-btn');
+  const fb = document.getElementById('num-feedback');
+
+  if (selected === q.ans) {
+    numScore++;
+    btn.classList.add('correct');
+    fb.textContent = '✅ Correct! Spelled perfectly!';
+    fb.style.background = '#E8F5E9';
+    fb.style.color = '#2E7D32';
+  } else {
+    btn.classList.add('wrong');
+    allBtns[q.ans].classList.add('correct');
+    fb.textContent = `❌ Oops! The correct option is "${q.opts[q.ans]}"`;
+    fb.style.background = '#FFEBEE';
+    fb.style.color = '#C62828';
+  }
+  fb.style.display = 'block';
+  document.getElementById('num-score').textContent = `Score: ${numScore}/${numData.length}`;
+  document.getElementById('num-next').style.display = 'inline-block';
+}
+
+function numNext() {
+  numCurrent++;
+  numShow();
+}
+
+function numEnd() {
+  document.getElementById('num-item').textContent = '🏁 Palette & Calendar Mastered!';
+  document.getElementById('num-question').innerHTML = '';
+  document.getElementById('num-options').innerHTML = '';
+  document.getElementById('num-next').style.display = 'none';
+  const fb = document.getElementById('num-feedback');
+
+  if (numScore > numHighScore) numHighScore = numScore;
+
+  let msg = '';
+  if (numScore >= 9) msg = '🏆 INVENTORY MASTER! You know your dates and colors perfectly!';
+  else if (numScore >= 7) msg = '🌟 EXCELLENT WORK! Great grasp of number spellings!';
+  else if (numScore >= 5) msg = '💪 GOOD EFFORT! Days of the week can have tricky spelling!';
+  else msg = '📚 Practice makes perfect. Let\'s try again!';
+
+  fb.innerHTML = `<div style="font-size:16px; margin-bottom:6px;">${msg}</div>
+    <div style="font-size:20px; font-weight:900;">Final Score: ${numScore}/${numData.length}</div>
+    <div style="font-size:12px; margin-top:4px; color:var(--gray);">🏅 High Score: ${numHighScore}/${numData.length}</div>`;
+  fb.style.display = 'block';
+  fb.style.background = numScore >= 7 ? '#E8F5E9' : '#FFF8E7';
+  fb.style.color = 'var(--navy)';
+  document.getElementById('num-score').textContent = '';
+  document.getElementById('num-restart').style.display = 'inline-block';
+  saveAll();
+}
+</script>
+</body>
+</html>

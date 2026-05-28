@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fattah — Describing Appearance & Personality | Talksmiths</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #007575; --gold: #D4A843; --navy: #1A2744;
+    --cream: #FAF5EF; --white: #fff; --gray: #5A6577;
+    --light: #F0EDEA;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; background:var(--cream); color:var(--navy); }
+  .page { position:relative; width:210mm; margin:20px auto; background:var(--white); border-radius:12px; padding:18mm; box-shadow:0 4px 30px rgba(0,0,0,0.08); page-break-after:always; }
+  .page:last-child { page-break-after:auto; }
+  .logo { font-size:11px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:4px; }
+  h1 { font-family:'Playfair Display',serif; font-size:28px; font-weight:800; color:var(--navy); line-height:1.2; padding-right:80px; }
+  .subtitle { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gray); margin:6px 0 18px; }
+  .badges { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
+  .badge { padding:4px 12px; border-radius:20px; font-size:11px; font-weight:700; }
+  .badge-teal { background:#E8F5F5; color:var(--teal); border:1px solid #b2dada; }
+  .badge-gold { background:#F5EDD6; color:#8a6a1a; border:1px solid #e0c97a; }
+  .badge-gray { background:var(--light); color:var(--gray); border:1px solid #ddd; }
+  .divider { height:2px; background:linear-gradient(90deg,var(--teal),var(--gold)); border-radius:2px; margin:16px 0; }
+  .step { background:var(--white); border:1px solid var(--light); border-radius:10px; padding:14px 16px; margin-bottom:12px; break-inside:avoid; }
+  .step-header { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+  .step-num { width:32px; height:32px; border-radius:50%; background:var(--teal); color:white; font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .step-name { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--teal); }
+  .step-title { font-family:'Playfair Display',serif; font-size:15px; font-weight:800; color:var(--navy); }
+  .step-time { margin-left:auto; font-size:11px; font-weight:700; color:var(--gray); }
+  .objective { font-size:11px; color:var(--gray); font-style:italic; margin-bottom:8px; padding-left:42px; }
+  .body { font-size:13px; line-height:1.6; color:var(--navy); }
+  .exercise { background:var(--cream); border-radius:8px; padding:10px 12px; margin-top:8px; }
+  .ex-label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--teal); margin-bottom:6px; }
+  .ex-item { font-size:13px; margin-bottom:5px; }
+  .vocab-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }
+  .vocab-card { background:var(--cream); border-radius:8px; padding:10px 12px; border-left:3px solid var(--teal); }
+  .vocab-term { font-weight:800; font-size:13px; color:var(--teal); }
+  .vocab-def { font-size:11px; color:var(--gray); margin:2px 0; }
+  .vocab-ex { font-size:11px; color:var(--navy); font-style:italic; }
+  .vocab-bridge { font-size:10px; color:var(--gold); font-weight:700; margin-top:3px; }
+  .expressions-box { background:#F5EDD6; border-left:4px solid var(--gold); border-radius:8px; padding:12px 16px; margin-top:12px; }
+  .exp-title { font-size:11px; font-weight:800; color:var(--navy); text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
+  .exp-item { font-size:13px; color:var(--navy); margin-bottom:4px; font-weight:600; }
+  .gold-banner { background:linear-gradient(135deg,var(--gold),#B8922E); border-radius:10px; padding:14px 16px; margin-top:8px; }
+  .gold-banner p { font-size:13px; color:var(--navy); line-height:1.6; }
+  .roleplay-box { background:#E8F5F5; border:1px solid #b2dada; border-radius:8px; padding:12px 14px; margin-top:8px; }
+  .speaker { font-size:11px; font-weight:700; color:var(--teal); margin-top:8px; }
+  .line { font-size:13px; color:var(--navy); font-style:italic; margin-top:2px; }
+  .hw-item { display:flex; gap:10px; align-items:flex-start; margin-bottom:8px; }
+  .hw-num { width:22px; height:22px; border-radius:50%; background:var(--gold); color:var(--navy); font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .darija-box { background:#FFF3E0; border-left:4px solid #FF9800; border-radius:8px; padding:10px 14px; margin-top:8px; font-size:12px; }
+  .darija-box .flag { font-size:14px; margin-right:4px; }
+  .game-container { background:var(--cream); border:2px solid var(--teal); border-radius:12px; padding:16px; margin-top:10px; }
+  .game-title { font-size:13px; font-weight:800; color:var(--teal); margin-bottom:10px; text-align:center; }
+  .game-btn { padding:10px 16px; border:2px solid var(--teal); border-radius:8px; background:var(--white); color:var(--navy); font-size:13px; font-weight:700; cursor:pointer; transition:all 0.2s; font-family:'Inter',sans-serif; display:inline-block; }
+  .game-btn:hover { background:var(--teal); color:white; transform:translateY(-1px); }
+  .game-btn.correct { background:#2E7D32; color:white; border-color:#2E7D32; }
+  .game-btn.wrong { background:#C62828; color:white; border-color:#C62828; }
+  .game-score { text-align:center; font-size:14px; font-weight:800; color:var(--teal); margin-top:10px; }
+  .game-feedback { text-align:center; font-size:13px; font-weight:700; margin-top:8px; padding:8px; border-radius:8px; display:none; }
+  
+  .view-toggle { position:fixed; top:16px; left:16px; background:var(--white); padding:6px; border-radius:30px; box-shadow:0 4px 16px rgba(0,0,0,0.1); display:flex; gap:4px; z-index:100; font-family:'Inter',sans-serif; }
+  .toggle-btn { border:none; background:transparent; padding:8px 16px; border-radius:24px; font-size:12px; font-weight:700; cursor:pointer; color:var(--gray); transition:all 0.2s; }
+  .toggle-btn.active { background:var(--teal); color:white; }
+  body.student-mode .teacher-note { display:none!important; }
+  body.student-mode .teacher-only { display:none!important; }
+  body:not(.student-mode) .student-note { display:none!important; }
+  .teacher-note { background:#FFF8E7; border:1px solid #f0d080; border-radius:8px; padding:10px 12px; margin-top:8px; font-size:11px; color:#7a5c00; }
+  .student-note { background:#E8F5F5; border:1px solid #b2dada; border-radius:8px; padding:10px 12px; margin-top:8px; font-size:11px; color:var(--teal); font-weight:600; }
+  .footer { display:flex; justify-content:space-between; font-size:10px; color:var(--gray); margin-top:16px; padding-top:10px; border-top:1px solid var(--light); }
+  .print-btn { position:fixed; top:16px; right:16px; background:var(--teal); color:white; border:none; padding:10px 22px; border-radius:25px; font-size:13px; font-weight:700; cursor:pointer; font-family:'Inter',sans-serif; box-shadow:0 4px 16px rgba(0,117,117,0.3); z-index:100; }
+  .answer-area { width:100%; min-height:40px; border:1.5px dashed #b2dada; border-radius:6px; padding:8px 10px; font-family:'Inter',sans-serif; font-size:12px; color:var(--navy); background:#f8fcfc; resize:vertical; margin-top:4px; line-height:1.5; transition:border-color 0.2s; }
+  .answer-area:focus { outline:none; border-color:var(--teal); background:var(--white); }
+  .answer-area::placeholder { color:#aab; font-style:italic; }
+  .answer-inline { border:none; border-bottom:1.5px solid var(--navy); background:transparent; font-family:'Inter',sans-serif; font-size:13px; color:var(--navy); padding:2px 4px; min-width:60px; width:100%; max-width:100%; }
+  .answer-inline:focus { outline:none; border-bottom-color:var(--teal); background:#f8fcfc; }
+  .answer-inline::placeholder { color:#aab; font-style:italic; }
+  .save-status { position:fixed; bottom:16px; right:16px; background:var(--teal); color:white; padding:6px 14px; border-radius:20px; font-size:11px; font-weight:700; opacity:0; transition:opacity 0.3s; z-index:100; font-family:'Inter',sans-serif; }
+  .ts-logo-img { position:absolute; top:18mm; right:18mm; height:60px; object-fit:contain; opacity:0.95; pointer-events:none; }
+
+  @media print {
+    .print-btn { display:none!important; }
+    .view-toggle { display:none!important; }
+    body { background:none; }
+    .page { box-shadow:none; margin:0; border-radius:0; }
+    .answer-area { border:1px solid #ddd; background:var(--white); }
+    .answer-inline { border-bottom:1px solid var(--navy); }
+    .save-status { display:none!important; }
+  }
+  @media screen {
+    body { display:block !important; background:#FAF5EF !important; }
+    .page {
+      width:95% !important; max-width:1400px !important;
+      margin:30px auto !important; height:auto !important;
+      column-count:2 !important; column-gap:40px !important;
+      display:block !important;
+    }
+    .page > * { break-inside:avoid !important; page-break-inside:avoid !important; }
+    h1, .logo, .subtitle, .badges, .divider, .footer { column-span:all !important; }
+    .page.congratulations-page {
+      column-count:1 !important; display:flex !important;
+      justify-content:center !important; align-items:center !important;
+      height:90vh !important; min-height:500px !important;
+    }
+  }
+  .congratulations-page {
+    display:flex !important; justify-content:center !important;
+    align-items:center !important; background:var(--cream) !important;
+    box-shadow:none !important; border:none !important;
+    min-height:297mm !important;
+  }
+  .congrats-img {
+    max-width:100% !important; max-height:100% !important;
+    object-fit:contain !important; mix-blend-mode:darken !important;
+  }
+</style>
+</head>
+<body class="student-mode">
+
+<!-- VIEW TOGGLE -->
+<div class="view-toggle">
+  <button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
+  <button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
+</div>
+<button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+
+<!-- ==================== PAGE 1 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+  <div class="logo">Talksmiths — Lesson Engine™</div>
+  <h1>Describing Appearance & Personality</h1>
+  <div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 14</div>
+  <div class="badges">
+    <span class="badge badge-teal">A1 — Beginner</span>
+    <span class="badge badge-gold">60 min</span>
+    <span class="badge badge-gray">Vocabulary Foundations</span>
+    <span class="badge badge-gray">Lesson 14</span>
+  </div>
+  <div class="divider"></div>
+
+  <!-- Step 1 + Notebook row -->
+  <div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
+    <div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
+
+      <!-- STEP 1: WARM-UP -->
+      <div class="step">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
+            <div class="step-title">The People in Our Lives</div>
+          </div>
+          <div class="step-time">8 min</div>
+        </div>
+        <div class="objective">Objective: Describe the looks and characteristics of family members and friends.</div>
+
+        <div class="student-note">
+          🎓 <strong>Student Strategy:</strong> We use **"to be"** for physical height or character qualities (He is tall, he is kind). We use **"to have"** for physical parts like hair and eyes (He has gray hair).
+        </div>
+
+        <div class="teacher-note">
+          📋 <strong>Teacher Note:</strong> Prompt Baba to describe himself and his son Saad. Make sure he correctly separates "is" and "has" during the speaking phase.
+        </div>
+
+        <div class="exercise">
+          <div class="ex-label">🗣️ Speaking Warm-Up — Family Portraits</div>
+          <p class="ex-item">Describe these details using English:</p>
+          <ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
+            <li>🧑 What does your son Saad look like? (Is he tall?)</li>
+            <li>🎨 Describe your own character. (Are you quiet or active?)</li>
+            <li>👓 Do you have gray hair and glasses?</li>
+          </ul>
+          <div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
+            Example: "My son Saad is tall and handsome. I am quiet and creative."
+          </div>
+        </div>
+
+        <div class="darija-box">
+          <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> We say *Twil* (Tall), *Drayef* (Kind), and *3inih kahlin* (He has black eyes). Let's learn them in English!
+        </div>
+      </div>
+    </div>
+
+    <!-- BABA'S NOTEBOOK -->
+    <div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
+      <div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
+        <div class="step-header" style="margin-bottom:6px;">
+          <div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
+        </div>
+        <div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-size:12px; line-height:1.4; color:var(--gray);">
+            Describe yourself using 3 character words (like kind, hardworking, creative) and 2 appearance details.
+          </p>
+          <textarea class="answer-area" data-id="baba-notebook-p1" style="flex:1; min-height:180px; font-size:12px;" placeholder="My portrait notes / تفاصيل الوصف ديالي..."></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOCABULARY SECTION -->
+  <div style="column-span:all !important; margin-top:8px;">
+    <div class="step">
+      <div class="step-header">
+        <div class="step-name">📖 Physical Appearance & Personality Vocabulary</div>
+      </div>
+
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-term">Tall / Short</div>
+          <div class="vocab-def">Describing height. Used with "is".</div>
+          <div class="vocab-ex">"Saad is **tall**, but his younger cousin is **short**."</div>
+          <div class="vocab-bridge">🇲🇦 Twil / Qsir / 🇫🇷 Grand / Petit</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Gray hair / Brown eyes</div>
+          <div class="vocab-def">Physical details. Used with "has/have".</div>
+          <div class="vocab-ex">"I have **gray hair** and **brown eyes**."</div>
+          <div class="vocab-bridge">🇲🇦 Sh3r khrif / 3inin qehwyin / 🇫🇷 Cheveux gris / Yeux marrons</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Kind / Friendly</div>
+          <div class="vocab-def">Warm personality qualities.</div>
+          <div class="vocab-ex">"The banker was always **kind** and **friendly** to customers."</div>
+          <div class="vocab-bridge">🇲🇦 Drayef / Sadiqi / 🇫🇷 Gentil / Sympathique</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Creative / Hardworking</div>
+          <div class="vocab-def">Active, productive qualities.</div>
+          <div class="vocab-ex">"A painter must be very **creative**."</div>
+          <div class="vocab-bridge">🇲🇦 Mobdi3 / Khdam / 🇫🇷 Créatif / Travailleur</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Quiet / Intelligent</div>
+          <div class="vocab-def">Calm, intellectual qualities.</div>
+          <div class="vocab-ex">"My art room is **quiet** and study is interesting."</div>
+          <div class="vocab-bridge">🇲🇦 Hadi / Daki / 🇫🇷 Calme / Intelligent</div>
+        </div>
+        
+        <div class="vocab-card" style="border-left-color:var(--gold);">
+          <div class="vocab-term" style="color:var(--gold);">💡 Grammar Rule: "IS" vs "HAS"</div>
+          <div class="vocab-def">The description split:</div>
+          <div class="vocab-ex">He **is** [Adjective] (e.g. intelligent)<br>He **has** [Noun] (e.g. gray beard)</div>
+          <div class="vocab-bridge">🇫🇷 Il est (intelligent) vs Il a (une barbe grise)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 14</span>
+    <span>Page 1 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 2 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 2: MINI-STORY -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
+        <div class="step-title">Saad's Portrait of His Father</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Read a descriptive text about Baba Fattah's appearance and traits.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> Have him read the text. It describes him perfectly. Ask him: "Do you agree with Saad's description?"
+    </div>
+
+    <div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
+      <p>My father, Fattah, **is** a retired bank director. He **is** sixty-two years old, but he is very **active** and **healthy**. He **has** gray hair, a kind smile, and brown eyes.</p>
+      <p style="margin-top:6px;">He **is** a very **creative** painter. In his studio, he works **peacefully** for hours. He **is** also a **hardworking** anthropology student at Ibn Tofail University. Everyone thinks he **is** extremely **intelligent** and **quiet**.</p>
+      <p style="margin-top:6px;">He **is** **friendly** to his university friends and loves to drink sweet mint tea with them. He is the best father in the world!</p>
+    </div>
+
+    <div class="exercise">
+      <div class="ex-label">📝 Check Your Understanding</div>
+      <p class="ex-item"><strong>1.</strong> What physical appearance details does Fattah have?</p>
+      <textarea class="answer-area" data-id="comp-1" placeholder="He has..."></textarea>
+      <p class="ex-item" style="margin-top:6px;"><strong>2.</strong> Name three personality traits of Baba Fattah mentioned in the text.</p>
+      <textarea class="answer-area" data-id="comp-2" placeholder="He is... and..."></textarea>
+      <p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What makes him a friendly host?</p>
+      <textarea class="answer-area" data-id="comp-3" placeholder="He is friendly to... and loves to..."></textarea>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 3: GRAMMAR IN ACTION -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-name">Step 3 — 🏗️ Vocabulary in Action</div>
+        <div class="step-title">Choosing "Is" or "Has"</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Correctly apply the physical descriptive verbs in sentences.</div>
+
+    <div class="expressions-box">
+      <div class="exp-title">📐 Decision Guide:</div>
+      <div class="exp-item">Use **IS** for height, age, and character adjectives (e.g. He is kind, he is old).</div>
+      <div class="exp-item">Use **HAS** for hair, eyes, beard, or clothes nouns (e.g. He has a blue shirt).</div>
+    </div>
+
+    <div class="exercise" style="margin-top:10px;">
+      <div class="ex-label">✏️ Write: "is" or "has"</div>
+      <p class="ex-item"><strong>1.</strong> Saad <input type="text" class="answer-inline" data-id="grammar-1" placeholder="..."> very tall and friendly.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> My father <input type="text" class="answer-inline" data-id="grammar-2" placeholder="..."> gray hair and brown eyes.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>3.</strong> A creative painter <input type="text" class="answer-inline" data-id="grammar-3" placeholder="..."> very imaginative.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>4.</strong> Ibn Tofail University <input type="text" class="answer-inline" data-id="grammar-4" placeholder="..."> many intelligent students.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>5.</strong> He <input type="text" class="answer-inline" data-id="grammar-5" placeholder="..."> a kind smile on his face.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 14</span>
+    <span>Page 2 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 3 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 4: GAME ZONE -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-name">Step 4 — 🎮 Game Zone</div>
+        <div class="step-title">The Portrait Painter!</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Choose the correct word or verb to complete the portrait description!</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> Read the questions aloud. Watch for the classic mix-ups of "He is gray hair" instead of "He has gray hair".
+    </div>
+
+    <div class="game-container" id="port-game">
+      <div class="game-title">🎨 THE PORTRAIT PAINTER</div>
+      <div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:15px; margin-bottom:10px;">
+        <span id="port-sent">Sentence loading...</span>
+      </div>
+      
+      <div id="port-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">Which choice is grammatically correct?</div>
+      
+      <div id="port-options" style="display:flex; justify-content:center; gap:8px; margin-top:10px;"></div>
+      <div id="port-feedback" class="game-feedback"></div>
+      <div id="port-score" class="game-score"></div>
+      <div style="text-align:center; margin-top:12px;">
+        <button class="game-btn" id="port-next" onclick="portNext()" style="display:none;">Next Question →</button>
+        <button class="game-btn" id="port-restart" onclick="portStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
+      </div>
+    </div>
+
+    <div class="darija-box" style="margin-top:10px;">
+      <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> Every person is unique. "Subhan Allah!" Let's paint the perfect verbal portrait!
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 5: SPEAKING CHALLENGE -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">5</div>
+      <div>
+        <div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
+        <div class="step-title">My Family Members</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Describe one of your close family members or a dear friend in detail.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> Have him describe his wife or one of his sons. Prompt him for details: "Is she kind?", "What color eyes does he have?", "Is he active or quiet?"
+    </div>
+
+    <div class="gold-banner">
+      <p><strong>🎤 Family Portrait Challenge</strong></p>
+      <p style="margin-top:6px; font-size:12px;">Describe a family member. You must include:</p>
+      <ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
+        <li>✅ "He/She **is** very..." (Personality)</li>
+        <li>✅ "He/She **has** beautiful..." (Eyes/Hair)</li>
+        <li>✅ "I love him/her because..."</li>
+      </ul>
+    </div>
+
+    <div class="exercise" style="margin-top:10px;">
+      <div class="ex-label">📝 Notes for your presentation</div>
+      <textarea class="answer-area" data-id="speaking-notes" style="min-height:90px;" placeholder="My family member is very kind. She has brown eyes and a friendly smile. She is always hardworking..."></textarea>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 14</span>
+    <span>Page 3 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 4 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 6: BOSS LEVEL -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">6</div>
+      <div>
+        <div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
+        <div class="step-title">The Classroom Portrait</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Place appearance and personality adjectives correctly in a story.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> This challenges his vocabulary and the correct linking verb logic in a single paragraph.
+    </div>
+
+    <div class="exercise">
+      <div class="ex-label">🎓 Meet My Anthropology Professor</div>
+      <p class="ex-item">Complete the text using: <strong>intelligent, has, tall, is, gray</strong>.</p>
+      <div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
+        My university professor is very <input type="text" class="answer-inline" data-id="boss-1" style="width:100px;" placeholder="...">. 
+        He is <input type="text" class="answer-inline" data-id="boss-2" style="width:100px;" placeholder="..."> and walks quickly to the blackboard.
+        He <input type="text" class="answer-inline" data-id="boss-3" style="width:100px;" placeholder="..."> a warm voice and a friendly smile.
+        His hair is quite <input type="text" class="answer-inline" data-id="boss-4" style="width:100px;" placeholder="..."> but his eyes are bright blue.
+        In my opinion, his lecture <input type="text" class="answer-inline" data-id="boss-5" style="width:100px;" placeholder="..."> the most interesting one in the curriculum!
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 7: HOMEWORK -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">7</div>
+      <div>
+        <div class="step-name">Step 7 — 📚 Homework & Fun Challenge</div>
+        <div class="step-title">The Portrait Master</div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="hw-item">
+        <div class="hw-num">1</div>
+        <div>
+          <strong>Writing Task — A Portrait Description</strong><br>
+          <span style="font-size:12px; color:var(--gray);">Write 3 sentences describing a fictional character in one of your paintings. Mention one color, one appearance word, and one personality word.</span>
+          <textarea class="answer-area" data-id="hw-1" style="min-height:80px; margin-top:6px;" placeholder="1. In my painting, the man is...&#10;2. He has...&#10;3. He is very..."></textarea>
+        </div>
+      </div>
+
+      <div class="hw-item">
+        <div class="hw-num">2</div>
+        <div>
+          <strong>Grammar Check — Choose Is or Has</strong><br>
+          <span style="font-size:12px; color:var(--gray);">Fill in the correct verb:
+          <br>1. He _______ creative. → <input type="text" class="answer-inline" data-id="hw-check-1" style="width:120px;" placeholder="Is / Has">
+          <br>2. She _______ brown eyes. → <input type="text" class="answer-inline" data-id="hw-check-2" style="width:120px;" placeholder="Is / Has"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="expressions-box" style="margin-top:10px;">
+      <div class="exp-title">📋 Lesson 14 Summary — What You Learned Today</div>
+      <div class="exp-item">✅ **IS** → Used for age, height, and personality (e.g. He is hardworking)</div>
+      <div class="exp-item">✅ **HAS** → Used for physical features (e.g. He has gray beard)</div>
+      <div class="exp-item">✅ **Personality words** → kind, hardworking, creative, intelligent, quiet</div>
+      <div class="exp-item">✅ **Appearance words** → tall, short, gray hair, brown eyes</div>
+    </div>
+
+    <div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
+      <span class="flag">🌟</span> <strong>Message from Saad:</strong><br>
+      <em>Baba, you have just mastered descriptions! Now you can paint a verbal picture of anyone with great detail. In the next and final lesson (Lesson 15), we will explore "Everyday Life Idioms" to give your English a beautiful native touch. Let's finish strong, Baba! 💪🇲🇦</em>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 14</span>
+    <span>Page 4 of 4</span>
+  </div>
+</div>
+
+<!-- CONGRATULATIONS PAGE -->
+<div class="page congratulations-page">
+  <img src="../Congratulations.png" alt="Congratulations" class="congrats-img">
+</div>
+
+<!-- SAVE STATUS -->
+<div class="save-status" id="save-status">✓ Progress saved</div>
+
+<script>
+const STORAGE_KEY = 'ts-lesson-fattah-description';
+
+function setView(mode){
+  if(mode==='student'){
+    document.body.classList.add('student-mode');
+    document.getElementById('btn-student').classList.add('active');
+    document.getElementById('btn-teacher').classList.remove('active');
+  }else{
+    document.body.classList.remove('student-mode');
+    document.getElementById('btn-teacher').classList.add('active');
+    document.getElementById('btn-student').classList.remove('active');
+  }
+}
+function saveAll(){
+  const data={};
+  document.querySelectorAll('[data-id]').forEach(el=>{
+    data[el.dataset.id]=el.value;
+  });
+  data['port-high-score'] = portHighScore;
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
+  const s=document.getElementById('save-status');
+  s.style.opacity='1';
+  setTimeout(()=>s.style.opacity='0',1500);
+}
+function loadAll(){
+  const raw=localStorage.getItem(STORAGE_KEY);
+  if(!raw)return;
+  const data=JSON.parse(raw);
+  Object.keys(data).forEach(id=>{
+    const el=document.querySelector('[data-id="'+id+'"]');
+    if(el)el.value=data[id];
+  });
+  if(data['port-high-score']) portHighScore = data['port-high-score'];
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  loadAll();
+  let timer;
+  document.querySelectorAll('[data-id]').forEach(el=>{
+    el.addEventListener('input',()=>{
+      clearTimeout(timer);
+      timer=setTimeout(saveAll,800);
+    });
+  });
+  portStart();
+  setView('student');
+});
+
+// ==================== DESCRIPTION QUIZ GAME ====================
+const portData = [
+  { sent: "My father _______ very tall.", opts: ["is", "has"], ans: 0 },
+  { sent: "He _______ brown eyes and glasses.", opts: ["is", "has"], ans: 1 },
+  { sent: "A hardworking student _______ study every day.", opts: ["is", "has"], ans: 0 },
+  { sent: "My professor _______ gray hair.", opts: ["is", "has"], ans: 1 },
+  { sent: "Saad _______ very friendly and funny.", opts: ["is", "has"], ans: 0 },
+  { sent: "Fattah _______ a creative painter.", opts: ["is", "has"], ans: 0 },
+  { sent: "He _______ a kind smile on his face.", opts: ["is", "has"], ans: 1 },
+  { sent: "The children _______ young and active.", opts: ["are", "have"], ans: 0 },
+  { sent: "My uncle _______ a gray beard.", opts: ["is", "has"], ans: 1 },
+  { sent: "She _______ very intelligent and quiet.", opts: ["is", "has"], ans: 0 }
+];
+
+let portCurrent = 0;
+let portScore = 0;
+let portHighScore = 0;
+let portAnswered = false;
+
+function portStart() {
+  portCurrent = 0;
+  portScore = 0;
+  portAnswered = false;
+  document.getElementById('port-restart').style.display = 'none';
+  document.getElementById('port-feedback').style.display = 'none';
+  portShow();
+}
+
+function portShow() {
+  if (portCurrent >= portData.length) { portEnd(); return; }
+  portAnswered = false;
+  const q = portData[portCurrent];
+  document.getElementById('port-question').innerHTML = `Question ${portCurrent+1} of ${portData.length}`;
+  document.getElementById('port-sent').innerHTML = q.sent;
+  
+  const optDiv = document.getElementById('port-options');
+  optDiv.innerHTML = '';
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'game-btn';
+    btn.textContent = opt.toUpperCase();
+    btn.style.margin = '0 6px';
+    btn.style.minWidth = '80px';
+    btn.onclick = () => portCheck(i, btn);
+    optDiv.appendChild(btn);
+  });
+  document.getElementById('port-next').style.display = 'none';
+  document.getElementById('port-feedback').style.display = 'none';
+  document.getElementById('port-score').textContent = `Score: ${portScore}/${portData.length}`;
+}
+
+function portCheck(selected, btn) {
+  if (portAnswered) return;
+  portAnswered = true;
+  const q = portData[portCurrent];
+  const allBtns = document.querySelectorAll('#port-options .game-btn');
+  const fb = document.getElementById('port-feedback');
+
+  if (selected === q.ans) {
+    portScore++;
+    btn.classList.add('correct');
+    fb.textContent = '✅ Correct! The portrait looks realistic!';
+    fb.style.background = '#E8F5E9';
+    fb.style.color = '#2E7D32';
+  } else {
+    btn.classList.add('wrong');
+    allBtns[q.ans].classList.add('correct');
+    fb.textContent = `❌ Oops! The correct verb is "${q.opts[q.ans].toUpperCase()}"`;
+    fb.style.background = '#FFEBEE';
+    fb.style.color = '#C62828';
+  }
+  fb.style.display = 'block';
+  document.getElementById('port-score').textContent = `Score: ${portScore}/${portData.length}`;
+  document.getElementById('port-next').style.display = 'inline-block';
+}
+
+function portNext() {
+  portCurrent++;
+  portShow();
+}
+
+function portEnd() {
+  document.getElementById('port-sent').innerHTML = '🏁 Portrait Masterpiece Fully Painted!';
+  document.getElementById('port-question').innerHTML = '';
+  document.getElementById('port-options').innerHTML = '';
+  document.getElementById('port-next').style.display = 'none';
+  const fb = document.getElementById('past-feedback'); // fallback check or target port-feedback
+  const correctFb = document.getElementById('port-feedback');
+
+  if (portScore > portHighScore) portHighScore = portScore;
+
+  let msg = '';
+  if (portScore >= 9) msg = '🏆 PORTRAIT MASTER! You describe people perfectly!';
+  else if (portScore >= 7) msg = '🌟 EXCELLENT WORK! Your eye for description is wonderful!';
+  else if (portScore >= 5) msg = '💪 GOOD EFFORT! "Is" vs "Has" takes a bit of time!';
+  else msg = '📚 Practice makes perfect. Let\'s draw again!';
+
+  correctFb.innerHTML = `<div style="font-size:16px; margin-bottom:6px;">${msg}</div>
+    <div style="font-size:20px; font-weight:900;">Final Score: ${portScore}/${portData.length}</div>
+    <div style="font-size:12px; margin-top:4px; color:var(--gray);">🏅 High Score: ${portHighScore}/${portData.length}</div>`;
+  correctFb.style.display = 'block';
+  correctFb.style.background = portScore >= 7 ? '#E8F5E9' : '#FFF8E7';
+  correctFb.style.color = 'var(--navy)';
+  document.getElementById('port-score').textContent = '';
+  document.getElementById('port-restart').style.display = 'inline-block';
+  saveAll();
+}
+</script>
+</body>
+</html>
