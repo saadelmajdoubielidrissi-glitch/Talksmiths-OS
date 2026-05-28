@@ -14,7 +14,9 @@
   .logo { font-size:11px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:8px; }
   h1 { font-family:'Playfair Display',serif; font-size:32px; font-weight:800; color:var(--navy); line-height:1.2; }
   .subtitle { font-size:13px; color:var(--gray); margin-top:8px; }
-  .welcome { background:var(--white); border-radius:12px; padding:20px 24px; margin:20px 0; box-shadow:0 4px 20px rgba(0,0,0,0.06); border-left:4px solid var(--gold); font-size:14px; line-height:1.7; }
+  .welcome { background:var(--white); border-radius:12px; padding:20px 24px; margin:20px 0; box-shadow:0 4px 20px rgba(0,0,0,0.06); border-left:4px solid var(--gold); font-size:14px; line-height:1.7; display:flex; align-items:center; gap:20px; }
+  .welcome-avatar { width:70px; height:70px; border-radius:50%; object-fit:cover; border:2.5px solid var(--teal); flex-shrink:0; background:#FAF5EF; }
+  .welcome-text { flex:1; }
   .section-title { font-size:12px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--teal); margin:30px 0 12px; }
   .lesson-grid { display:grid; gap:12px; }
   .lesson-card { background:var(--white); border-radius:12px; padding:16px 20px; box-shadow:0 4px 20px rgba(0,0,0,0.06); display:flex; align-items:center; gap:16px; text-decoration:none; color:var(--navy); transition:all 0.2s; border:2px solid transparent; }
@@ -45,7 +47,10 @@
   </div>
 
   <div class="welcome">
-    <strong>Merhba Baba! 👋</strong> Welcome to your English lesson hub. Tap any lesson to start. Your progress is saved automatically. <em>Kul youm ou t3alem!</em> — Every day, learn something new! 💪🇲🇦
+    <img src="Lessons/BabaAvatar.png" alt="Baba Fattah" class="welcome-avatar">
+    <div class="welcome-text">
+      <strong>Merhba Baba! 👋</strong> Welcome to your English lesson hub. Tap any lesson to start. Your progress is saved automatically. <em>Kul youm ou t3alem!</em> — Every day, learn something new! 💪🇲🇦
+    </div>
   </div>
 
   <div class="section-title">📐 Grammar Lessons</div>
