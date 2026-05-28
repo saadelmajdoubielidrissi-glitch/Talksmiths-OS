@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talksmiths — Baba Fattah's English Lessons</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  :root { --teal:#007575; --gold:#D4A843; --navy:#1A2744; --cream:#FAF5EF; --white:#fff; --gray:#5A6577; --light:#F0EDEA; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; background:var(--cream); color:var(--navy); min-height:100vh; padding:20px; }
+  .container { max-width:800px; margin:0 auto; }
+  .header { text-align:center; padding:40px 20px 30px; }
+  .logo { font-size:11px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:8px; }
+  h1 { font-family:'Playfair Display',serif; font-size:32px; font-weight:800; color:var(--navy); line-height:1.2; }
+  .subtitle { font-size:13px; color:var(--gray); margin-top:8px; }
+  .welcome { background:var(--white); border-radius:12px; padding:20px 24px; margin:20px 0; box-shadow:0 4px 20px rgba(0,0,0,0.06); border-left:4px solid var(--gold); font-size:14px; line-height:1.7; }
+  .section-title { font-size:12px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--teal); margin:30px 0 12px; }
+  .lesson-grid { display:grid; gap:12px; }
+  .lesson-card { background:var(--white); border-radius:12px; padding:16px 20px; box-shadow:0 4px 20px rgba(0,0,0,0.06); display:flex; align-items:center; gap:16px; text-decoration:none; color:var(--navy); transition:all 0.2s; border:2px solid transparent; }
+  .lesson-card:hover { border-color:var(--teal); transform:translateY(-2px); box-shadow:0 8px 30px rgba(0,117,117,0.15); }
+  .lesson-num { width:44px; height:44px; border-radius:50%; background:var(--teal); color:white; font-weight:800; font-size:16px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .lesson-num.vocab { background:var(--gold); color:var(--navy); }
+  .lesson-info { flex:1; }
+  .lesson-title { font-family:'Playfair Display',serif; font-size:16px; font-weight:800; }
+  .lesson-desc { font-size:12px; color:var(--gray); margin-top:2px; }
+  .lesson-badges { display:flex; gap:6px; margin-top:6px; }
+  .badge { padding:3px 10px; border-radius:20px; font-size:10px; font-weight:700; }
+  .badge-teal { background:#E8F5F5; color:var(--teal); }
+  .badge-gold { background:#F5EDD6; color:#8a6a1a; }
+  .badge-gray { background:var(--light); color:var(--gray); }
+  .lesson-arrow { font-size:20px; color:var(--teal); }
+  .footer { text-align:center; padding:30px; font-size:11px; color:var(--gray); }
+  .coming-soon { opacity:0.5; pointer-events:none; }
+  .coming-soon .lesson-arrow::after { content:" 🔒"; font-size:14px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="logo">Talksmiths — Lesson Engine™</div>
+    <h1>🇲🇦 Baba Fattah's English Program</h1>
+    <div class="subtitle">A1 Review Series — Interactive Lessons with Games & Quizzes</div>
+  </div>
+
+  <div class="welcome">
+    <strong>Merhba Baba! 👋</strong> Welcome to your English lesson hub. Tap any lesson to start. Your progress is saved automatically. <em>Kul youm ou t3alem!</em> — Every day, learn something new! 💪🇲🇦
+  </div>
+
+  <div class="section-title">📐 Grammar Lessons</div>
+  <div class="lesson-grid">
+    <a href="Lessons/Fattah/LESSON_1_PERSONAL_PRONOUNS.html" class="lesson-card">
+      <div class="lesson-num">1</div>
+      <div class="lesson-info">
+        <div class="lesson-title">Personal Pronouns</div>
+        <div class="lesson-desc">I, you, he, she, it, we, they + "to be" (am/is/are)</div>
+        <div class="lesson-badges"><span class="badge badge-teal">Grammar</span><span class="badge badge-gold">60 min</span><span class="badge badge-teal">🎮 Quiz Game</span></div>
+      </div>
+      <div class="lesson-arrow">→</div>
+    </a>
+    <a href="Lessons/Fattah/LESSON_2_ARTICLES.html" class="lesson-card">
+      <div class="lesson-num">2</div>
+      <div class="lesson-info">
+        <div class="lesson-title">Articles: A, An & The</div>
+        <div class="lesson-desc">Definite & indefinite articles — when to use a, an, the, or nothing</div>
+        <div class="lesson-badges"><span class="badge badge-teal">Grammar</span><span class="badge badge-gold">60 min</span><span class="badge badge-teal">🎮 Quiz Game</span></div>
+      </div>
+      <div class="lesson-arrow">→</div>
+    </a>
+    <div class="lesson-card coming-soon">
+      <div class="lesson-num">3</div>
+      <div class="lesson-info">
+        <div class="lesson-title">WH Questions</div>
+        <div class="lesson-desc">What, Where, When, Who, Why, How — asking questions</div>
+        <div class="lesson-badges"><span class="badge badge-gray">Coming Soon</span></div>
+      </div>
+      <div class="lesson-arrow">→</div>
+    </div>
+    <div class="lesson-card coming-soon">
+      <div class="lesson-num">4</div>
+      <div class="lesson-info">
+        <div class="lesson-title">Prepositions & Quantifiers</div>
+        <div class="lesson-desc">In, on, at, some, any, much, many — time & place</div>
+        <div class="lesson-badges"><span class="badge badge-gray">Coming Soon</span></div>
+      </div>
+      <div class="lesson-arrow">→</div>
+    </div>
+    <div class="lesson-card coming-soon">
+      <div class="lesson-num">5</div>
+      <div class="lesson-info">
+        <div class="lesson-title">Connectors</div>
+        <div class="lesson-desc">And, but, because, so, or — linking ideas together</div>
+        <div class="lesson-badges"><span class="badge badge-gray">Coming Soon</span></div>
+      </div>
+      <div class="lesson-arrow">→</div>
+    </div>
+    <div class="lesson-card coming-soon">
+      <div class="lesson-num">6</div>
+      <div class="lesson-info">
+        <div class="lesson-title">Comparatives</div>
+        <div class="lesson-desc">Bigger, more interesting, the best — comparing things</div>
+        <div class="lesson-badges"><span class="badge badge-gray">Coming Soon</span></div>
+      </div>
+      <div class="lesson-arrow">→</div>
+    </div>
+    <div class="lesson-card coming-soon">
+      <div class="lesson-num">7</div>
+      <div class="lesson-info">
+        <div class="lesson-title">Simple Past</div>
+        <div class="lesson-desc">Talking about past experiences — regular & irregular verbs</div>
+        <div class="lesson-badges"><span class="badge badge-gray">Coming Soon</span></div>
+      </div>
+      <div class="lesson-arrow">→</div>
+    </div>
+    <div class="lesson-card coming-soon">
+      <div class="lesson-num">8</div>
+      <div class="lesson-info">
+        <div class="lesson-title">Adverbs</div>
+        <div class="lesson-desc">Always, never, quickly, here — describing actions</div>
+        <div class="lesson-badges"><span class="badge badge-gray">Coming Soon</span></div>
+      </div>
+      <div class="lesson-arrow">→</div>
+    </div>
+    <div class="lesson-card coming-soon">
+      <div class="lesson-num">9</div>
+      <div class="lesson-info">
+        <div class="lesson-title">Will vs Going to</div>
+        <div class="lesson-desc">Future plans vs predictions — what will happen next?</div>
+        <div class="lesson-badges"><span class="badge badge-gray">Coming Soon</span></div>
+      </div>
+      <div class="lesson-arrow">→</div>
+    </div>
+  </div>
+
+  <div class="section-title">📖 Vocabulary Lessons</div>
+  <div class="lesson-grid">
+    <div class="lesson-card coming-soon">
+      <div class="lesson-num vocab">10</div>
+      <div class="lesson-info">
+        <div class="lesson-title">Greetings & Expressions</div>
+        <div class="lesson-desc">Hello, goodbye, please, thank you — everyday phrases</div>
+        <div class="lesson-badges"><span class="badge badge-gray">Coming Soon</span></div>
+      </div>
+      <div class="lesson-arrow">→</div>
+    </div>
+    <div class="lesson-card coming-soon">
+      <div class="lesson-num vocab">11</div>
+      <div class="lesson-info">
+        <div class="lesson-title">Numbers, Colors, Days & Years</div>
+        <div class="lesson-desc">1-100, colors, days of the week, months, dates</div>
+        <div class="lesson-badges"><span class="badge badge-gray">Coming Soon</span></div>
+      </div>
+      <div class="lesson-arrow">→</div>
+    </div>
+    <div class="lesson-card coming-soon">
+      <div class="lesson-num vocab">12</div>
+      <div class="lesson-info">
+        <div class="lesson-title">Everyday Expressions & Small Talk</div>
+        <div class="lesson-desc">How are you? / Weather chat / Simple opinions</div>
+        <div class="lesson-badges"><span class="badge badge-gray">Coming Soon</span></div>
+      </div>
+      <div class="lesson-arrow">→</div>
+    </div>
+    <div class="lesson-card coming-soon">
+      <div class="lesson-num vocab">13</div>
+      <div class="lesson-info">
+        <div class="lesson-title">The Seasons & Weather</div>
+        <div class="lesson-desc">Spring, summer, autumn, winter + weather words</div>
+        <div class="lesson-badges"><span class="badge badge-gray">Coming Soon</span></div>
+      </div>
+      <div class="lesson-arrow">→</div>
+    </div>
+    <div class="lesson-card coming-soon">
+      <div class="lesson-num vocab">14</div>
+      <div class="lesson-info">
+        <div class="lesson-title">Describing Appearance & Personality</div>
+        <div class="lesson-desc">Tall, short, kind, funny — he is / she has</div>
+        <div class="lesson-badges"><span class="badge badge-gray">Coming Soon</span></div>
+      </div>
+      <div class="lesson-arrow">→</div>
+    </div>
+    <div class="lesson-card coming-soon">
+      <div class="lesson-num vocab">15</div>
+      <div class="lesson-info">
+        <div class="lesson-title">Everyday Life Idioms</div>
+        <div class="lesson-desc">10 common idioms with Darija & French equivalents</div>
+        <div class="lesson-badges"><span class="badge badge-gray">Coming Soon</span></div>
+      </div>
+      <div class="lesson-arrow">→</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Talksmiths Lesson Engine™ · Built with ❤️ by Saad for Baba · 2026<br>
+    <span style="font-size:10px;">🇲🇦 "L3lm nour" — Knowledge is light</span>
+  </div>
+</div>
+</body>
+</html>

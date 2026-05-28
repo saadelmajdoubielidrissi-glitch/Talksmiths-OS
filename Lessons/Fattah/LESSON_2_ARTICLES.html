@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fattah — Articles (A / An / The) | Talksmiths</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #007575; --gold: #D4A843; --navy: #1A2744;
+    --cream: #FAF5EF; --white: #fff; --gray: #5A6577;
+    --light: #F0EDEA;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; background:var(--cream); color:var(--navy); }
+  .page { position:relative; width:210mm; margin:20px auto; background:var(--white); border-radius:12px; padding:18mm; box-shadow:0 4px 30px rgba(0,0,0,0.08); page-break-after:always; }
+  .page:last-child { page-break-after:auto; }
+  .logo { font-size:11px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:4px; }
+  h1 { font-family:'Playfair Display',serif; font-size:28px; font-weight:800; color:var(--navy); line-height:1.2; padding-right:80px; }
+  .subtitle { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gray); margin:6px 0 18px; }
+  .badges { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
+  .badge { padding:4px 12px; border-radius:20px; font-size:11px; font-weight:700; }
+  .badge-teal { background:#E8F5F5; color:var(--teal); border:1px solid #b2dada; }
+  .badge-gold { background:#F5EDD6; color:#8a6a1a; border:1px solid #e0c97a; }
+  .badge-gray { background:var(--light); color:var(--gray); border:1px solid #ddd; }
+  .divider { height:2px; background:linear-gradient(90deg,var(--teal),var(--gold)); border-radius:2px; margin:16px 0; }
+  .step { background:var(--white); border:1px solid var(--light); border-radius:10px; padding:14px 16px; margin-bottom:12px; break-inside:avoid; }
+  .step-header { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+  .step-num { width:32px; height:32px; border-radius:50%; background:var(--teal); color:white; font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .step-name { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--teal); }
+  .step-title { font-family:'Playfair Display',serif; font-size:15px; font-weight:800; color:var(--navy); }
+  .step-time { margin-left:auto; font-size:11px; font-weight:700; color:var(--gray); }
+  .objective { font-size:11px; color:var(--gray); font-style:italic; margin-bottom:8px; padding-left:42px; }
+  .body { font-size:13px; line-height:1.6; color:var(--navy); }
+  .exercise { background:var(--cream); border-radius:8px; padding:10px 12px; margin-top:8px; }
+  .ex-label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--teal); margin-bottom:6px; }
+  .ex-item { font-size:13px; margin-bottom:5px; }
+  .vocab-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }
+  .vocab-card { background:var(--cream); border-radius:8px; padding:10px 12px; border-left:3px solid var(--teal); }
+  .vocab-term { font-weight:800; font-size:13px; color:var(--teal); }
+  .vocab-def { font-size:11px; color:var(--gray); margin:2px 0; }
+  .vocab-ex { font-size:11px; color:var(--navy); font-style:italic; }
+  .vocab-bridge { font-size:10px; color:var(--gold); font-weight:700; margin-top:3px; }
+  .expressions-box { background:#F5EDD6; border-left:4px solid var(--gold); border-radius:8px; padding:12px 16px; margin-top:12px; }
+  .exp-title { font-size:11px; font-weight:800; color:var(--navy); text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
+  .exp-item { font-size:13px; color:var(--navy); margin-bottom:4px; font-weight:600; }
+  .gold-banner { background:linear-gradient(135deg,var(--gold),#B8922E); border-radius:10px; padding:14px 16px; margin-top:8px; }
+  .gold-banner p { font-size:13px; color:var(--navy); line-height:1.6; }
+  .roleplay-box { background:#E8F5F5; border:1px solid #b2dada; border-radius:8px; padding:12px 14px; margin-top:8px; }
+  .speaker { font-size:11px; font-weight:700; color:var(--teal); margin-top:8px; }
+  .line { font-size:13px; color:var(--navy); font-style:italic; margin-top:2px; }
+  .hw-item { display:flex; gap:10px; align-items:flex-start; margin-bottom:8px; }
+  .hw-num { width:22px; height:22px; border-radius:50%; background:var(--gold); color:var(--navy); font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .darija-box { background:#FFF3E0; border-left:4px solid #FF9800; border-radius:8px; padding:10px 14px; margin-top:8px; font-size:12px; }
+  .darija-box .flag { font-size:14px; margin-right:4px; }
+  .game-container { background:var(--cream); border:2px solid var(--teal); border-radius:12px; padding:16px; margin-top:10px; }
+  .game-title { font-size:13px; font-weight:800; color:var(--teal); margin-bottom:10px; text-align:center; }
+  .game-btn { padding:10px 16px; border:2px solid var(--teal); border-radius:8px; background:var(--white); color:var(--navy); font-size:13px; font-weight:700; cursor:pointer; transition:all 0.2s; font-family:'Inter',sans-serif; display:inline-block; }
+  .game-btn:hover { background:var(--teal); color:white; transform:translateY(-1px); }
+  .game-btn.correct { background:#2E7D32; color:white; border-color:#2E7D32; }
+  .game-btn.wrong { background:#C62828; color:white; border-color:#C62828; }
+  .game-score { text-align:center; font-size:14px; font-weight:800; color:var(--teal); margin-top:10px; }
+  .game-feedback { text-align:center; font-size:13px; font-weight:700; margin-top:8px; padding:8px; border-radius:8px; display:none; }
+  .match-card { background:var(--white); border:2px solid var(--light); border-radius:10px; padding:12px; cursor:pointer; text-align:center; font-weight:700; font-size:13px; transition:all 0.2s; user-select:none; }
+  .match-card:hover { border-color:var(--teal); transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+  .match-card.selected { border-color:var(--gold); background:#FFF8E7; box-shadow:0 0 0 2px var(--gold); }
+  .match-card.matched { border-color:#2E7D32; background:#E8F5E9; color:#2E7D32; pointer-events:none; }
+  .match-card.wrong-match { border-color:#C62828; background:#FFEBEE; animation:shake 0.4s; }
+  @keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-5px)} 75%{transform:translateX(5px)} }
+
+  .view-toggle { position:fixed; top:16px; left:16px; background:var(--white); padding:6px; border-radius:30px; box-shadow:0 4px 16px rgba(0,0,0,0.1); display:flex; gap:4px; z-index:100; font-family:'Inter',sans-serif; }
+  .toggle-btn { border:none; background:transparent; padding:8px 16px; border-radius:24px; font-size:12px; font-weight:700; cursor:pointer; color:var(--gray); transition:all 0.2s; }
+  .toggle-btn.active { background:var(--teal); color:white; }
+  body.student-mode .teacher-note { display:none!important; }
+  body.student-mode .teacher-only { display:none!important; }
+  body:not(.student-mode) .student-note { display:none!important; }
+  .teacher-note { background:#FFF8E7; border:1px solid #f0d080; border-radius:8px; padding:10px 12px; margin-top:8px; font-size:11px; color:#7a5c00; }
+  .student-note { background:#E8F5F5; border:1px solid #b2dada; border-radius:8px; padding:10px 12px; margin-top:8px; font-size:11px; color:var(--teal); font-weight:600; }
+  .footer { display:flex; justify-content:space-between; font-size:10px; color:var(--gray); margin-top:16px; padding-top:10px; border-top:1px solid var(--light); }
+  .print-btn { position:fixed; top:16px; right:16px; background:var(--teal); color:white; border:none; padding:10px 22px; border-radius:25px; font-size:13px; font-weight:700; cursor:pointer; font-family:'Inter',sans-serif; box-shadow:0 4px 16px rgba(0,117,117,0.3); z-index:100; }
+  .answer-area { width:100%; min-height:40px; border:1.5px dashed #b2dada; border-radius:6px; padding:8px 10px; font-family:'Inter',sans-serif; font-size:12px; color:var(--navy); background:#f8fcfc; resize:vertical; margin-top:4px; line-height:1.5; transition:border-color 0.2s; }
+  .answer-area:focus { outline:none; border-color:var(--teal); background:var(--white); }
+  .answer-area::placeholder { color:#aab; font-style:italic; }
+  .answer-inline { border:none; border-bottom:1.5px solid var(--navy); background:transparent; font-family:'Inter',sans-serif; font-size:13px; color:var(--navy); padding:2px 4px; min-width:60px; width:100%; max-width:100%; }
+  .answer-inline:focus { outline:none; border-bottom-color:var(--teal); background:#f8fcfc; }
+  .answer-inline::placeholder { color:#aab; font-style:italic; }
+  .save-status { position:fixed; bottom:16px; right:16px; background:var(--teal); color:white; padding:6px 14px; border-radius:20px; font-size:11px; font-weight:700; opacity:0; transition:opacity 0.3s; z-index:100; font-family:'Inter',sans-serif; }
+  .ts-logo-img { position:absolute; top:18mm; right:18mm; height:60px; object-fit:contain; opacity:0.95; pointer-events:none; }
+
+  @media print {
+    .print-btn { display:none!important; }
+    .view-toggle { display:none!important; }
+    body { background:none; }
+    .page { box-shadow:none; margin:0; border-radius:0; }
+    .answer-area { border:1px solid #ddd; background:var(--white); }
+    .answer-inline { border-bottom:1px solid var(--navy); }
+    .save-status { display:none!important; }
+  }
+  @page { size:A4; margin:0; }
+
+  @media screen {
+    body { display:block !important; background:#FAF5EF !important; }
+    .page {
+      width:95% !important; max-width:1400px !important;
+      margin:30px auto !important; height:auto !important;
+      column-count:2 !important; column-gap:40px !important;
+      display:block !important;
+    }
+    .page > * { break-inside:avoid !important; page-break-inside:avoid !important; }
+    h1, .logo, .subtitle, .badges, .divider, .footer { column-span:all !important; }
+    .page.congratulations-page {
+      column-count:1 !important; display:flex !important;
+      justify-content:center !important; align-items:center !important;
+      height:90vh !important; min-height:500px !important;
+    }
+  }
+  .congratulations-page {
+    display:flex !important; justify-content:center !important;
+    align-items:center !important; background:var(--cream) !important;
+    box-shadow:none !important; border:none !important;
+    min-height:297mm !important;
+  }
+  .congrats-img {
+    max-width:100% !important; max-height:100% !important;
+    object-fit:contain !important; mix-blend-mode:darken !important;
+  }
+</style>
+</head>
+<body class="student-mode">
+
+<!-- VIEW TOGGLE -->
+<div class="view-toggle">
+  <button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
+  <button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
+</div>
+<button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+
+<!-- ==================== PAGE 1 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+  <div class="logo">Talksmiths — Lesson Engine™</div>
+  <h1>Articles: A, An & The</h1>
+  <div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 2</div>
+  <div class="badges">
+    <span class="badge badge-teal">A1 — Beginner</span>
+    <span class="badge badge-gold">60 min</span>
+    <span class="badge badge-gray">Grammar Foundations</span>
+    <span class="badge badge-gray">Lesson 2</span>
+  </div>
+  <div class="divider"></div>
+
+  <!-- CFO-ROW: Step 1 (left) + Baba's Notebook (right) -->
+  <div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
+    <div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
+
+      <!-- STEP 1: WARM-UP -->
+      <div class="step">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
+            <div class="step-title">What's in the Room?</div>
+          </div>
+          <div class="step-time">8 min</div>
+        </div>
+        <div class="objective">Objective: Name objects around you and learn when to use "a", "an", or "the".</div>
+
+        <div class="student-note">
+          🎓 <strong>Student Strategy:</strong> Look around the room. Point at things and try to name them in English. Don't worry if you don't know every word — start with what you know!
+        </div>
+
+        <div class="teacher-note">
+          📋 <strong>Teacher Note:</strong> Articles are tricky because Darija doesn't have a/an at all, and "the" works very differently (l- prefix). French is actually the BEST bridge here — un/une = a/an, le/la/les = the. Use the French connection heavily. Start by pointing at objects: "What is this? It is A book. It is THE book on my desk." The distinction between "a" (any) and "the" (specific) is the core concept.
+        </div>
+
+        <div class="exercise">
+          <div class="ex-label">🗣️ Look & Name — What's around you?</div>
+          <p class="ex-item">Look at 5 things near you. Name each one with <strong>"a"</strong> or <strong>"an"</strong>:</p>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:6px;">
+            <div><strong>1.</strong> <input type="text" class="answer-inline" data-id="warmup-1" placeholder="a book / an apple..."></div>
+            <div><strong>2.</strong> <input type="text" class="answer-inline" data-id="warmup-2" placeholder="a pen / an orange..."></div>
+            <div><strong>3.</strong> <input type="text" class="answer-inline" data-id="warmup-3" placeholder="a table / an egg..."></div>
+            <div><strong>4.</strong> <input type="text" class="answer-inline" data-id="warmup-4" placeholder="a chair / an umbrella..."></div>
+            <div><strong>5.</strong> <input type="text" class="answer-inline" data-id="warmup-5" placeholder="a cup / an artist..."></div>
+          </div>
+        </div>
+
+        <div class="darija-box">
+          <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> In Darija, you say <em>"ktab"</em> (a book) or <em>"l-ktab"</em> (the book). That <em>"l-"</em> is like <strong>"the"</strong> in English! But Darija has NO word for <strong>"a/an"</strong> — you just say the word alone. In English, you MUST add "a" or "an" before singular nouns. <em>Khass t3erfha!</em> (You need to know this!)
+        </div>
+      </div>
+    </div>
+
+    <!-- BABA'S NOTEBOOK (right column) -->
+    <div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
+      <div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
+        <div class="step-header" style="margin-bottom:6px;">
+          <div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
+        </div>
+        <div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-size:12px; line-height:1.4; color:var(--gray);">
+            Think of articles like the <strong>frame of a painting</strong> 🖼️ — every painting needs a frame, and every English noun needs an article!
+          </p>
+          <ul style="font-size:12px; margin-left:16px; line-height:1.4; color:var(--navy); list-style-type:square;">
+            <li>🎨 "A" = any frame (general) — <em>un/une</em></li>
+            <li>🖼️ "The" = THAT specific frame — <em>le/la/les</em></li>
+            <li>❓ When do you NOT need an article?</li>
+          </ul>
+          <textarea class="answer-area" data-id="baba-notebook-p1" style="flex:1; min-height:180px; font-size:12px;" placeholder="Notes / ملاحظات / Notes en français... &#10;&#10;Think about: When do we say 'a' vs 'the' in French? Same logic applies!"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOCABULARY SECTION -->
+  <div style="column-span:all !important; margin-top:8px;">
+    <div class="step">
+      <div class="step-header">
+        <div class="step-name">📖 Articles — The Three Little Words That Change Everything</div>
+      </div>
+
+      <div class="body">
+        <p>English has <strong>3 articles</strong>: <strong>a</strong>, <strong>an</strong>, and <strong>the</strong>. Just like <em>un, une, le, la, les</em> in French — but SIMPLER!</p>
+      </div>
+
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-term">A → واحد → Un / Une</div>
+          <div class="vocab-def">Used before consonant sounds for <strong>any one thing</strong> (not specific)</div>
+          <div class="vocab-ex">"I have <strong>a</strong> book." — "She is <strong>a</strong> teacher."</div>
+          <div class="vocab-bridge">🇲🇦 Wa7ed l-ktab / 🇫🇷 Un livre</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">An → واحد → Un / Une</div>
+          <div class="vocab-def">Same as "a" but before <strong>vowel sounds</strong> (a, e, i, o, u)</div>
+          <div class="vocab-ex">"He is <strong>an</strong> artist." — "I eat <strong>an</strong> orange."</div>
+          <div class="vocab-bridge">🇲🇦 Same meaning as "a"! / 🇫🇷 Un artiste, une orange</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">The → ل- → Le / La / Les</div>
+          <div class="vocab-def">Used for <strong>one specific thing</strong> (both speaker and listener know which one)</div>
+          <div class="vocab-ex">"<strong>The</strong> painting on the wall is beautiful."</div>
+          <div class="vocab-bridge">🇲🇦 L-ktab (the book), L-bab (the door) / 🇫🇷 Le livre, la porte</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">No Article → Ø → (varies)</div>
+          <div class="vocab-def">Used with <strong>plural general</strong> things and <strong>uncountable</strong> nouns</div>
+          <div class="vocab-ex">"I love <strong>Ø</strong> football." — "<strong>Ø</strong> Water is important."</div>
+          <div class="vocab-bridge">🇲🇦 Kanbghi l-kora / 🇫🇷 J'aime LE football — English drops it!</div>
+        </div>
+        <div class="vocab-card" style="border-left-color:var(--gold);">
+          <div class="vocab-term" style="color:var(--gold);">🔑 The "A vs AN" Rule</div>
+          <div class="vocab-def">It's about <strong>SOUND</strong>, not the letter!</div>
+          <div class="vocab-ex"><strong>A</strong> university (starts with "yoo" sound) ✅<br><strong>An</strong> hour (the H is silent!) ✅</div>
+          <div class="vocab-bridge">🇫🇷 Like French liaison! It's about flow.</div>
+        </div>
+        <div class="vocab-card" style="border-left-color:var(--gold);">
+          <div class="vocab-term" style="color:var(--gold);">🔑 The "A vs THE" Rule</div>
+          <div class="vocab-def"><strong>A</strong> = any one (first time). <strong>The</strong> = this specific one (we both know)</div>
+          <div class="vocab-ex">"I see <strong>a</strong> cat." (any cat)<br>"<strong>The</strong> cat is on the roof." (THAT specific cat)</div>
+          <div class="vocab-bridge">🇫🇷 Same as un chat → le chat. Exactement pareil!</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Singular Countable</div>
+          <div class="vocab-def">MUST have an article: a/an or the</div>
+          <div class="vocab-ex">"I need <strong>a</strong> pen." ✅ "I need pen." ❌</div>
+          <div class="vocab-bridge">🇲🇦 In Darija "bghit stylo" works, in English you NEED "a"!</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Proper Nouns</div>
+          <div class="vocab-def">Names of people, cities, countries — usually NO article</div>
+          <div class="vocab-ex">"<strong>Ø</strong> Fattah lives in <strong>Ø</strong> Morocco." ✅<br>BUT: "<strong>The</strong> USA", "<strong>The</strong> Atlantic Ocean" 🤷</div>
+          <div class="vocab-bridge">🇫🇷 Like French! "Fattah habite au Maroc" — no article on Fattah!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 2</span>
+    <span>Page 1 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 2 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 2: MINI-STORY -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
+        <div class="step-title">A Day at the Beach</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Read a short story and notice how articles (a/an/the) are used naturally.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> Read aloud together. Every time you encounter an article, pause and ask "Why 'a' here? Why 'the' there?" Help him see the pattern: first mention = a/an, second mention or specific = the. The story is set in Mehdya — his own neighbourhood — making it personal and relatable.
+    </div>
+
+    <div class="body" style="background:var(--cream); border-radius:8px; padding:14px 16px; margin-top:8px; line-height:1.9;">
+      <p>Today is <strong>a</strong> beautiful day. I take <strong>a</strong> walk to <strong>the</strong> beach near my house in Mehdya. <strong>The</strong> sun is shining and <strong>the</strong> sky is blue.</p>
+      <p style="margin-top:6px;">I see <strong>a</strong> man with <strong>a</strong> fishing rod. <strong>The</strong> man is sitting on <strong>a</strong> rock near <strong>the</strong> water. He has <strong>a</strong> bucket next to him.</p>
+      <p style="margin-top:6px;">I walk to <strong>a</strong> small café by <strong>the</strong> beach. I order <strong>a</strong> coffee and <strong>an</strong> orange juice. <strong>The</strong> coffee is strong and delicious — just like <strong>Ø</strong> Moroccan coffee!</p>
+      <p style="margin-top:6px;">I sit and look at <strong>the</strong> ocean. <strong>The</strong> waves are calm today. <strong>A</strong> seagull flies over my head. <strong>The</strong> seagull lands on <strong>the</strong> sand. It is <strong>a</strong> peaceful morning.</p>
+      <p style="margin-top:6px;">After <strong>an</strong> hour, I walk back home through <strong>the</strong> forest. I love <strong>Ø</strong> nature. It makes me happy.</p>
+    </div>
+
+    <div class="exercise">
+      <div class="ex-label">📝 Comprehension — Answer in English</div>
+      <p class="ex-item"><strong>1.</strong> Where does the story take place?</p>
+      <textarea class="answer-area" data-id="comp-1" placeholder="The story takes place..."></textarea>
+      <p class="ex-item" style="margin-top:6px;"><strong>2.</strong> What does the man on the rock have?</p>
+      <textarea class="answer-area" data-id="comp-2" placeholder="He has..."></textarea>
+      <p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What does Fattah order at the café?</p>
+      <textarea class="answer-area" data-id="comp-3" placeholder="He orders..."></textarea>
+    </div>
+
+    <div class="exercise" style="margin-top:10px;">
+      <div class="ex-label">🔍 Article Detective — Why "A" or "THE"?</div>
+      <p class="ex-item">Look at these pairs from the story. Why does the article change?</p>
+      <p class="ex-item" style="margin-top:6px;"><strong>1.</strong> "I see <strong>a</strong> man" → then "<strong>The</strong> man is sitting..." — Why?</p>
+      <textarea class="answer-area" data-id="detective-1" style="min-height:30px;" placeholder="Because..."></textarea>
+      <p class="ex-item" style="margin-top:6px;"><strong>2.</strong> "I order <strong>a</strong> coffee" → "<strong>The</strong> coffee is strong" — Why?</p>
+      <textarea class="answer-area" data-id="detective-2" style="min-height:30px;" placeholder="Because..."></textarea>
+      <p class="ex-item" style="margin-top:6px;"><strong>3.</strong> Why "I love <strong>Ø</strong> nature" with NO article?</p>
+      <textarea class="answer-area" data-id="detective-3" style="min-height:30px;" placeholder="Because..."></textarea>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 3: GRAMMAR IN ACTION -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-name">Step 3 — 🏗️ Grammar in Action</div>
+        <div class="step-title">The Rules of A, An & The</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Master the 4 key rules for using articles correctly.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> Don't overwhelm with rules. Focus on the BIG TWO: 1) a/an = general/first time, 2) the = specific/known. The "no article" rule for general plurals/uncountables can be introduced gently. Use French as the constant bridge — it maps almost perfectly.
+    </div>
+
+    <!-- Grammar Rules -->
+    <div class="expressions-box">
+      <div class="exp-title">📐 Rule 1 — Use "A / AN" when...</div>
+      <div class="exp-item">✅ Talking about something for the <strong>FIRST TIME</strong></div>
+      <div class="exp-item">✅ Talking about <strong>ANY ONE</strong> of something (not specific)</div>
+      <div class="exp-item">✅ Describing someone's job: "She is <strong>a</strong> teacher."</div>
+      <div style="font-size:12px; color:var(--gray); margin-top:4px;">🇫🇷 Exactly like <em>un/une</em> in French! "Elle est <em>une</em> professeure."</div>
+    </div>
+
+    <div class="expressions-box" style="background:#E8F5F5; border-left-color:var(--teal);">
+      <div class="exp-title">📐 Rule 2 — Use "THE" when...</div>
+      <div class="exp-item">✅ Both speaker and listener know <strong>WHICH ONE</strong></div>
+      <div class="exp-item">✅ There is <strong>ONLY ONE</strong>: "the sun", "the moon", "the president"</div>
+      <div class="exp-item">✅ You already <strong>MENTIONED IT</strong> before: "a cat" → "the cat"</div>
+      <div style="font-size:12px; color:var(--gray); margin-top:4px;">🇫🇷 Exactly like <em>le/la/les</em>! / 🇲🇦 Like the "l-" prefix: <em>l-bab, sh-shems</em></div>
+    </div>
+
+    <div class="expressions-box" style="background:#FFF3E0; border-left-color:#FF9800;">
+      <div class="exp-title">📐 Rule 3 — Use NO ARTICLE when...</div>
+      <div class="exp-item">✅ General plurals: "I love <strong>Ø</strong> cats." (cats in general)</div>
+      <div class="exp-item">✅ Uncountable nouns in general: "<strong>Ø</strong> Water is life."</div>
+      <div class="exp-item">✅ Names, cities, countries: "<strong>Ø</strong> Morocco is beautiful."</div>
+      <div style="font-size:12px; color:var(--gray); margin-top:4px;">⚠️ CAREFUL: French uses articles here! "J'aime <em>les</em> chats" BUT English: "I love cats" (no "the"!)</div>
+    </div>
+
+    <div class="exercise" style="margin-top:10px;">
+      <div class="ex-label">✏️ Fill in — A, AN, THE, or Ø (nothing)</div>
+      <p class="ex-item"><strong>1.</strong> I live in ___ beautiful house near ___ beach.</p>
+      <input type="text" class="answer-inline" data-id="grammar-1" placeholder="a / an / the / Ø">
+      <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> ___ sun is very hot today.</p>
+      <input type="text" class="answer-inline" data-id="grammar-2" placeholder="a / an / the / Ø">
+      <p class="ex-item" style="margin-top:8px;"><strong>3.</strong> Lamia is ___ headmistress. She loves ___ education.</p>
+      <input type="text" class="answer-inline" data-id="grammar-3" placeholder="a / an / the / Ø">
+      <p class="ex-item" style="margin-top:8px;"><strong>4.</strong> I want to buy ___ new painting for ___ living room.</p>
+      <input type="text" class="answer-inline" data-id="grammar-4" placeholder="a / an / the / Ø">
+      <p class="ex-item" style="margin-top:8px;"><strong>5.</strong> ___ Morocco played ___ amazing match yesterday.</p>
+      <input type="text" class="answer-inline" data-id="grammar-5" placeholder="a / an / the / Ø + a / an / the / Ø">
+      <p class="ex-item" style="margin-top:8px;"><strong>6.</strong> He is ___ engineer. He studies at ___ ENSA.</p>
+      <input type="text" class="answer-inline" data-id="grammar-6" placeholder="a / an / the / Ø">
+      <p class="ex-item" style="margin-top:8px;"><strong>7.</strong> I eat ___ apple every morning. ___ apples are healthy.</p>
+      <input type="text" class="answer-inline" data-id="grammar-7" placeholder="a / an / the / Ø">
+      <p class="ex-item" style="margin-top:8px;"><strong>8.</strong> ___ Atlantic Ocean is near ___ Kenitra.</p>
+      <input type="text" class="answer-inline" data-id="grammar-8" placeholder="a / an / the / Ø">
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 2</span>
+    <span>Page 2 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 3 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 4: GAME ZONE -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-name">Step 4 — 🎮 Game Zone</div>
+        <div class="step-title">Article Matching Challenge!</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Match phrases to the correct article in a fast-paced game!</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> This is a 3-choice quiz (A, AN, THE). Let Baba play independently. Encourage speed — make it competitive! "Can you beat 10/12?" After the quiz, discuss any mistakes. The quiz reinforces the a/an vowel-sound rule and the general vs specific distinction.
+    </div>
+
+    <div class="game-container" id="article-game">
+      <div class="game-title">🏆 ARTICLE QUIZ — Pick A, AN, or THE!</div>
+      <div id="aq-question" style="font-size:15px; font-weight:700; text-align:center; margin:12px 0; min-height:40px;"></div>
+      <div id="aq-options" style="display:flex; gap:10px; justify-content:center; margin-top:10px;"></div>
+      <div id="aq-feedback" class="game-feedback"></div>
+      <div id="aq-score" class="game-score"></div>
+      <div style="text-align:center; margin-top:12px;">
+        <button class="game-btn" id="aq-next" onclick="aqNext()" style="display:none;">Next Question →</button>
+        <button class="game-btn" id="aq-restart" onclick="aqStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
+      </div>
+    </div>
+
+    <div class="darija-box" style="margin-top:10px;">
+      <span class="flag">🇲🇦</span> <strong>"Lli bgha l3sel, yesber l9ress n7al!"</strong> — If you want honey, be patient with the bees! Articles are tricky, but you'll get them with practice, Baba! 🐝
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 5: SPEAKING CHALLENGE -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">5</div>
+      <div>
+        <div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
+        <div class="step-title">Describe Your Dream House!</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Describe your house in Mehdya using articles correctly — at least 8 sentences!</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> This is gold because he BUILT this house — it's deeply personal. Prompt him: "Tell me about your house. Use 'a' for new things, 'the' for specific rooms we've talked about." Listen for article mistakes — the most common will be: 1) dropping articles entirely (Darija habit), 2) using "the" when "a" is needed. After he speaks, point out 2-3 patterns to fix.
+    </div>
+
+    <div class="student-note">
+      🎓 <strong>Your Mission:</strong> Describe your beautiful house in Mehdya! Talk about the rooms, the garden, the view. Use <strong>"a"</strong> when you mention something for the first time, and <strong>"the"</strong> when it's specific. Try <strong>8 sentences</strong> minimum!
+    </div>
+
+    <div class="gold-banner">
+      <p><strong>🏠 Speaking Challenge — "My Dream House in Mehdya"</strong></p>
+      <p style="margin-top:6px;">Describe your house using articles. Include:</p>
+      <ul style="margin-top:6px; margin-left:16px; font-size:13px;">
+        <li>🏡 "<strong>The</strong> house has 3 floors..." (specific — YOUR house)</li>
+        <li>🌳 "There is <strong>a</strong> beautiful garden..." (introducing it for the first time)</li>
+        <li>🏖️ "<strong>The</strong> beach is 5 km away..." (specific beach, we know which one)</li>
+        <li>🎨 "I have <strong>a</strong> painting room..." (first mention)</li>
+        <li>🌲 "<strong>The</strong> forest is right next to us..." (specific forest)</li>
+      </ul>
+    </div>
+
+    <div class="exercise" style="margin-top:10px;">
+      <div class="ex-label">📝 Write your description here</div>
+      <textarea class="answer-area" data-id="speaking-notes" style="min-height:100px;" placeholder="I live in a beautiful house in Mehdya. The house has 3 floors. There is a big garden with..."></textarea>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 2</span>
+    <span>Page 3 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 4 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 6: BOSS LEVEL -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">6</div>
+      <div>
+        <div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
+        <div class="step-title">The Painter's Gallery!</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Use articles in a creative scenario — describing your paintings!</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> This exercise uses painting — his deepest passion — as the vehicle for article practice. The scenario is: imagine you are showing someone your gallery and describing each painting. "This is a painting of..." vs "the painting on the left is...". This should light him up. After the fill-in, have him ACTUALLY describe 2-3 of his real paintings.
+    </div>
+
+    <div class="exercise">
+      <div class="ex-label">🎨 Fill in the Articles — Fattah's Art Gallery</div>
+      <div style="background:var(--cream); border-radius:8px; padding:12px; line-height:2; font-size:13px; margin-top:6px;">
+        <p>Welcome to my gallery! I am <input type="text" class="answer-inline" data-id="boss-1" style="width:50px;" placeholder="___"> artist from Morocco.</p>
+        <p style="margin-top:4px;">This is <input type="text" class="answer-inline" data-id="boss-2" style="width:50px;" placeholder="___"> painting of my wife Lamia. <input type="text" class="answer-inline" data-id="boss-3" style="width:50px;" placeholder="___"> painting took me two weeks to finish.</p>
+        <p style="margin-top:4px;">On <input type="text" class="answer-inline" data-id="boss-4" style="width:50px;" placeholder="___"> right, you can see <input type="text" class="answer-inline" data-id="boss-5" style="width:50px;" placeholder="___"> portrait of my son. He is <input type="text" class="answer-inline" data-id="boss-6" style="width:50px;" placeholder="___"> engineer.</p>
+        <p style="margin-top:4px;">I love <input type="text" class="answer-inline" data-id="boss-7" style="width:50px;" placeholder="___"> art. <input type="text" class="answer-inline" data-id="boss-8" style="width:50px;" placeholder="___"> colours in this painting are from <input type="text" class="answer-inline" data-id="boss-9" style="width:50px;" placeholder="___"> sunset in Mehdya.</p>
+        <p style="margin-top:4px;">I paint for <input type="text" class="answer-inline" data-id="boss-10" style="width:50px;" placeholder="___"> hour every morning. It is <input type="text" class="answer-inline" data-id="boss-11" style="width:50px;" placeholder="___"> best part of my day.</p>
+      </div>
+    </div>
+
+    <div class="exercise" style="margin-top:10px;">
+      <div class="ex-label">🗣️ Bonus — Describe a REAL Painting of Yours!</div>
+      <p class="ex-item">Choose one of your real paintings. Describe it in 5 sentences using articles:</p>
+      <textarea class="answer-area" data-id="boss-writing" style="min-height:80px;" placeholder="This is a painting of... The colours are... It is a portrait of... I painted it in the..."></textarea>
+    </div>
+
+    <div class="darija-box">
+      <span class="flag">🇲🇦</span> <strong>"L3lm nour!"</strong> — Knowledge is light! And Baba, you're painting your English with beautiful colours today! 🎨✨
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 7: HOMEWORK -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">7</div>
+      <div>
+        <div class="step-name">Step 7 — 📚 Homework & Fun Challenge</div>
+        <div class="step-title">Articles in the Wild!</div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="hw-item">
+        <div class="hw-num">1</div>
+        <div>
+          <strong>Writing Task — "My Morning Routine"</strong> (60-80 words)<br>
+          <span style="font-size:12px; color:var(--gray);">Describe your typical morning in Mehdya. Use at least 8 articles (mix of a, an, and the). Example start: "I wake up at 7. I drink <strong>a</strong> coffee in <strong>the</strong> kitchen. <strong>The</strong> kitchen has <strong>a</strong> big window..."</span>
+          <textarea class="answer-area" data-id="hw-1" style="min-height:80px; margin-top:6px;" placeholder="I wake up at... I drink a... The garden is..."></textarea>
+        </div>
+      </div>
+
+      <div class="hw-item">
+        <div class="hw-num">2</div>
+        <div>
+          <strong>Reading Hunt — "Article Spotter"</strong> (10 minutes)<br>
+          <span style="font-size:12px; color:var(--gray);">Open ANY English text (a news article, a book, a website). Find and write down:
+          <br>• 3 sentences that use <strong>"a"</strong>
+          <br>• 3 sentences that use <strong>"the"</strong>
+          <br>• 1 sentence that uses <strong>"an"</strong>
+          <br>Write them in the box below.</span>
+          <textarea class="answer-area" data-id="hw-2" style="min-height:80px; margin-top:6px;" placeholder="A: ...&#10;A: ...&#10;A: ...&#10;The: ...&#10;The: ...&#10;The: ...&#10;An: ..."></textarea>
+        </div>
+      </div>
+
+      <div class="hw-item">
+        <div class="hw-num">3</div>
+        <div>
+          <strong>Fun Challenge — "The Walking Gallery"</strong> 🎨🚶<br>
+          <span style="font-size:12px; color:var(--gray);">Walk through your house and describe 5 of your paintings out loud in English. For each one, say:
+          <br>"This is <strong>a</strong> painting of ___. <strong>The</strong> painting shows ___. I painted it in ___."
+          <br>Bonus: Record yourself on your phone!</span>
+          <textarea class="answer-area" data-id="hw-3" style="min-height:60px; margin-top:6px;" placeholder="Painting 1: This is a painting of... The colours are..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="expressions-box" style="margin-top:10px;">
+      <div class="exp-title">📋 Lesson 2 Summary — What You Learned Today</div>
+      <div class="exp-item">✅ "A" = any one thing (consonant sound) — like French <em>un/une</em></div>
+      <div class="exp-item">✅ "An" = any one thing (vowel sound) — same as "a" but smoother!</div>
+      <div class="exp-item">✅ "The" = specific thing we both know — like French <em>le/la/les</em> or Darija <em>l-</em></div>
+      <div class="exp-item">✅ No article for general plurals & uncountable nouns</div>
+      <div class="exp-item">✅ It's about SOUND not LETTER: "a university" but "an hour"</div>
+      <div class="exp-item">✅ First mention = a/an → second mention = the</div>
+    </div>
+
+    <div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
+      <span class="flag">🌟</span> <strong>Message from your teacher (your son!):</strong><br>
+      <em>Baba, Lesson 2 done! 🎉 Articles are one of the hardest things for Arabic speakers because Darija doesn't have "a/an" — but you're getting it! Think of it like painting: every noun needs its frame (article). Yallah, on continue — Lesson 3 is about WH Questions! 💪🇲🇦</em>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 2</span>
+    <span>Page 4 of 4</span>
+  </div>
+</div>
+
+<!-- CONGRATULATIONS PAGE -->
+<div class="page congratulations-page">
+  <img src="../Congratulations.png" alt="Congratulations" class="congrats-img">
+</div>
+
+<!-- SAVE STATUS -->
+<div class="save-status" id="save-status">✓ Progress saved</div>
+
+<script>
+const STORAGE_KEY = 'ts-lesson-fattah-articles';
+
+function setView(mode){
+  if(mode==='student'){
+    document.body.classList.add('student-mode');
+    document.getElementById('btn-student').classList.add('active');
+    document.getElementById('btn-teacher').classList.remove('active');
+  }else{
+    document.body.classList.remove('student-mode');
+    document.getElementById('btn-teacher').classList.add('active');
+    document.getElementById('btn-student').classList.remove('active');
+  }
+}
+function saveAll(){
+  const data={};
+  document.querySelectorAll('[data-id]').forEach(el=>{
+    data[el.dataset.id]=el.value;
+  });
+  data['aq-high-score'] = aqHighScore;
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
+  const s=document.getElementById('save-status');
+  s.style.opacity='1';
+  setTimeout(()=>s.style.opacity='0',1500);
+}
+function loadAll(){
+  const raw=localStorage.getItem(STORAGE_KEY);
+  if(!raw)return;
+  const data=JSON.parse(raw);
+  Object.keys(data).forEach(id=>{
+    const el=document.querySelector('[data-id="'+id+'"]');
+    if(el)el.value=data[id];
+  });
+  if(data['aq-high-score']) aqHighScore = data['aq-high-score'];
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  loadAll();
+  let timer;
+  document.querySelectorAll('[data-id]').forEach(el=>{
+    el.addEventListener('input',()=>{
+      clearTimeout(timer);
+      timer=setTimeout(saveAll,800);
+    });
+  });
+  aqStart();
+  setView('student');
+});
+
+// ==================== ARTICLE QUIZ GAME ====================
+const aqData = [
+  { q: "___ sun is shining today.", opts: ["A","An","The"], ans: 2 },
+  { q: "I have ___ brother. He is an engineer.", opts: ["a","an","the"], ans: 0 },
+  { q: "She is ___ artist. She paints portraits.", opts: ["a","an","the"], ans: 1 },
+  { q: "I love ___ coffee in the morning.", opts: ["a","an","Ø (nothing)"], ans: 2 },
+  { q: "___ painting on the wall is beautiful.", opts: ["A","An","The"], ans: 2 },
+  { q: "He wants to buy ___ new car.", opts: ["a","an","the"], ans: 0 },
+  { q: "I ate ___ orange for breakfast.", opts: ["a","an","the"], ans: 1 },
+  { q: "___ Morocco is in North Africa.", opts: ["A","The","Ø (nothing)"], ans: 2 },
+  { q: "Can you close ___ door, please?", opts: ["a","an","the"], ans: 2 },
+  { q: "He waited for ___ hour at the station.", opts: ["a","an","the"], ans: 1 },
+  { q: "I need ___ pen. Do you have one?", opts: ["a","an","the"], ans: 0 },
+  { q: "___ Atlantic Ocean is very big.", opts: ["A","An","The"], ans: 2 }
+];
+
+let aqCurrent = 0;
+let aqScore = 0;
+let aqHighScore = 0;
+let aqAnswered = false;
+
+function aqStart() {
+  aqCurrent = 0;
+  aqScore = 0;
+  aqAnswered = false;
+  document.getElementById('aq-restart').style.display = 'none';
+  document.getElementById('aq-feedback').style.display = 'none';
+  aqShow();
+}
+
+function aqShow() {
+  if (aqCurrent >= aqData.length) { aqEnd(); return; }
+  aqAnswered = false;
+  const q = aqData[aqCurrent];
+  document.getElementById('aq-question').innerHTML = `<span style="color:var(--gray);font-size:11px;">Question ${aqCurrent+1} of ${aqData.length}</span><br>${q.q}`;
+  const optDiv = document.getElementById('aq-options');
+  optDiv.innerHTML = '';
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'game-btn';
+    btn.textContent = opt;
+    btn.style.minWidth = '80px';
+    btn.onclick = () => aqCheck(i, btn);
+    optDiv.appendChild(btn);
+  });
+  document.getElementById('aq-next').style.display = 'none';
+  document.getElementById('aq-feedback').style.display = 'none';
+  document.getElementById('aq-score').textContent = `Score: ${aqScore}/${aqData.length}`;
+}
+
+function aqCheck(selected, btn) {
+  if (aqAnswered) return;
+  aqAnswered = true;
+  const q = aqData[aqCurrent];
+  const allBtns = document.querySelectorAll('#aq-options .game-btn');
+  const fb = document.getElementById('aq-feedback');
+
+  if (selected === q.ans) {
+    aqScore++;
+    btn.classList.add('correct');
+    fb.textContent = '✅ Mezyan bezzaf! Correct! 🎉';
+    fb.style.background = '#E8F5E9';
+    fb.style.color = '#2E7D32';
+  } else {
+    btn.classList.add('wrong');
+    allBtns[q.ans].classList.add('correct');
+    fb.textContent = `❌ Mashi hadak! The answer is "${q.opts[q.ans]}"`;
+    fb.style.background = '#FFEBEE';
+    fb.style.color = '#C62828';
+  }
+  fb.style.display = 'block';
+  document.getElementById('aq-score').textContent = `Score: ${aqScore}/${aqData.length}`;
+  document.getElementById('aq-next').style.display = 'inline-block';
+}
+
+function aqNext() {
+  aqCurrent++;
+  aqShow();
+}
+
+function aqEnd() {
+  document.getElementById('aq-question').innerHTML = '';
+  document.getElementById('aq-options').innerHTML = '';
+  document.getElementById('aq-next').style.display = 'none';
+  const fb = document.getElementById('aq-feedback');
+
+  if (aqScore > aqHighScore) aqHighScore = aqScore;
+
+  let msg = '';
+  if (aqScore >= 11) msg = '🏆 PERFECT, Baba! You are THE master of articles! Hamdoulilah! 🇲🇦';
+  else if (aqScore >= 9) msg = '🌟 EXCELLENT! You know your articles! Bravo, nta un champion!';
+  else if (aqScore >= 7) msg = '💪 GREAT JOB! A few tricky ones, but you\'re doing well!';
+  else if (aqScore >= 5) msg = '📚 GOOD START! Keep practicing — qtra qtra taymtla l7awed! 💧';
+  else msg = '🎯 No worries Baba! Articles are THE hardest part for Arabic speakers. Let\'s play again!';
+
+  fb.innerHTML = `<div style="font-size:16px; margin-bottom:6px;">${msg}</div>
+    <div style="font-size:20px; font-weight:900;">Final Score: ${aqScore}/${aqData.length}</div>
+    <div style="font-size:12px; margin-top:4px; color:var(--gray);">🏅 High Score: ${aqHighScore}/${aqData.length}</div>`;
+  fb.style.display = 'block';
+  fb.style.background = aqScore >= 9 ? '#E8F5E9' : '#FFF8E7';
+  fb.style.color = 'var(--navy)';
+  document.getElementById('aq-score').textContent = '';
+  document.getElementById('aq-restart').style.display = 'inline-block';
+  saveAll();
+}
+</script>
+</body>
+</html>
