@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fattah — WH Questions | Talksmiths</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #007575; --gold: #D4A843; --navy: #1A2744;
+    --cream: #FAF5EF; --white: #fff; --gray: #5A6577;
+    --light: #F0EDEA;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; background:var(--cream); color:var(--navy); }
+  .page { position:relative; width:210mm; margin:20px auto; background:var(--white); border-radius:12px; padding:18mm; box-shadow:0 4px 30px rgba(0,0,0,0.08); page-break-after:always; }
+  .page:last-child { page-break-after:auto; }
+  .logo { font-size:11px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:4px; }
+  h1 { font-family:'Playfair Display',serif; font-size:28px; font-weight:800; color:var(--navy); line-height:1.2; padding-right:80px; }
+  .subtitle { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gray); margin:6px 0 18px; }
+  .badges { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
+  .badge { padding:4px 12px; border-radius:20px; font-size:11px; font-weight:700; }
+  .badge-teal { background:#E8F5F5; color:var(--teal); border:1px solid #b2dada; }
+  .badge-gold { background:#F5EDD6; color:#8a6a1a; border:1px solid #e0c97a; }
+  .badge-gray { background:var(--light); color:var(--gray); border:1px solid #ddd; }
+  .divider { height:2px; background:linear-gradient(90deg,var(--teal),var(--gold)); border-radius:2px; margin:16px 0; }
+  .step { background:var(--white); border:1px solid var(--light); border-radius:10px; padding:14px 16px; margin-bottom:12px; break-inside:avoid; }
+  .step-header { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+  .step-num { width:32px; height:32px; border-radius:50%; background:var(--teal); color:white; font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .step-name { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--teal); }
+  .step-title { font-family:'Playfair Display',serif; font-size:15px; font-weight:800; color:var(--navy); }
+  .step-time { margin-left:auto; font-size:11px; font-weight:700; color:var(--gray); }
+  .objective { font-size:11px; color:var(--gray); font-style:italic; margin-bottom:8px; padding-left:42px; }
+  .body { font-size:13px; line-height:1.6; color:var(--navy); }
+  .exercise { background:var(--cream); border-radius:8px; padding:10px 12px; margin-top:8px; }
+  .ex-label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--teal); margin-bottom:6px; }
+  .ex-item { font-size:13px; margin-bottom:5px; }
+  .vocab-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }
+  .vocab-card { background:var(--cream); border-radius:8px; padding:10px 12px; border-left:3px solid var(--teal); }
+  .vocab-term { font-weight:800; font-size:13px; color:var(--teal); }
+  .vocab-def { font-size:11px; color:var(--gray); margin:2px 0; }
+  .vocab-ex { font-size:11px; color:var(--navy); font-style:italic; }
+  .vocab-bridge { font-size:10px; color:var(--gold); font-weight:700; margin-top:3px; }
+  .expressions-box { background:#F5EDD6; border-left:4px solid var(--gold); border-radius:8px; padding:12px 16px; margin-top:12px; }
+  .exp-title { font-size:11px; font-weight:800; color:var(--navy); text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
+  .exp-item { font-size:13px; color:var(--navy); margin-bottom:4px; font-weight:600; }
+  .gold-banner { background:linear-gradient(135deg,var(--gold),#B8922E); border-radius:10px; padding:14px 16px; margin-top:8px; }
+  .gold-banner p { font-size:13px; color:var(--navy); line-height:1.6; }
+  .roleplay-box { background:#E8F5F5; border:1px solid #b2dada; border-radius:8px; padding:12px 14px; margin-top:8px; }
+  .speaker { font-size:11px; font-weight:700; color:var(--teal); margin-top:8px; }
+  .line { font-size:13px; color:var(--navy); font-style:italic; margin-top:2px; }
+  .hw-item { display:flex; gap:10px; align-items:flex-start; margin-bottom:8px; }
+  .hw-num { width:22px; height:22px; border-radius:50%; background:var(--gold); color:var(--navy); font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .darija-box { background:#FFF3E0; border-left:4px solid #FF9800; border-radius:8px; padding:10px 14px; margin-top:8px; font-size:12px; }
+  .darija-box .flag { font-size:14px; margin-right:4px; }
+  .game-container { background:var(--cream); border:2px solid var(--teal); border-radius:12px; padding:16px; margin-top:10px; }
+  .game-title { font-size:13px; font-weight:800; color:var(--teal); margin-bottom:10px; text-align:center; }
+  .game-btn { padding:10px 16px; border:2px solid var(--teal); border-radius:8px; background:var(--white); color:var(--navy); font-size:13px; font-weight:700; cursor:pointer; transition:all 0.2s; font-family:'Inter',sans-serif; display:inline-block; }
+  .game-btn:hover { background:var(--teal); color:white; transform:translateY(-1px); }
+  .game-btn.correct { background:#2E7D32; color:white; border-color:#2E7D32; }
+  .game-btn.wrong { background:#C62828; color:white; border-color:#C62828; }
+  .game-score { text-align:center; font-size:14px; font-weight:800; color:var(--teal); margin-top:10px; }
+  .game-feedback { text-align:center; font-size:13px; font-weight:700; margin-top:8px; padding:8px; border-radius:8px; display:none; }
+  .match-card { background:var(--white); border:2px solid var(--light); border-radius:10px; padding:12px; cursor:pointer; text-align:center; font-weight:700; font-size:13px; transition:all 0.2s; user-select:none; }
+  .match-card:hover { border-color:var(--teal); transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+  .match-card.selected { border-color:var(--gold); background:#FFF8E7; box-shadow:0 0 0 2px var(--gold); }
+  .match-card.matched { border-color:#2E7D32; background:#E8F5E9; color:#2E7D32; pointer-events:none; }
+  .match-card.wrong-match { border-color:#C62828; background:#FFEBEE; animation:shake 0.4s; }
+  @keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-5px)} 75%{transform:translateX(5px)} }
+
+  .view-toggle { position:fixed; top:16px; left:16px; background:var(--white); padding:6px; border-radius:30px; box-shadow:0 4px 16px rgba(0,0,0,0.1); display:flex; gap:4px; z-index:100; font-family:'Inter',sans-serif; }
+  .toggle-btn { border:none; background:transparent; padding:8px 16px; border-radius:24px; font-size:12px; font-weight:700; cursor:pointer; color:var(--gray); transition:all 0.2s; }
+  .toggle-btn.active { background:var(--teal); color:white; }
+  body.student-mode .teacher-note { display:none!important; }
+  body.student-mode .teacher-only { display:none!important; }
+  body:not(.student-mode) .student-note { display:none!important; }
+  .teacher-note { background:#FFF8E7; border:1px solid #f0d080; border-radius:8px; padding:10px 12px; margin-top:8px; font-size:11px; color:#7a5c00; }
+  .student-note { background:#E8F5F5; border:1px solid #b2dada; border-radius:8px; padding:10px 12px; margin-top:8px; font-size:11px; color:var(--teal); font-weight:600; }
+  .footer { display:flex; justify-content:space-between; font-size:10px; color:var(--gray); margin-top:16px; padding-top:10px; border-top:1px solid var(--light); }
+  .print-btn { position:fixed; top:16px; right:16px; background:var(--teal); color:white; border:none; padding:10px 22px; border-radius:25px; font-size:13px; font-weight:700; cursor:pointer; font-family:'Inter',sans-serif; box-shadow:0 4px 16px rgba(0,117,117,0.3); z-index:100; }
+  .answer-area { width:100%; min-height:40px; border:1.5px dashed #b2dada; border-radius:6px; padding:8px 10px; font-family:'Inter',sans-serif; font-size:12px; color:var(--navy); background:#f8fcfc; resize:vertical; margin-top:4px; line-height:1.5; transition:border-color 0.2s; }
+  .answer-area:focus { outline:none; border-color:var(--teal); background:var(--white); }
+  .answer-area::placeholder { color:#aab; font-style:italic; }
+  .answer-inline { border:none; border-bottom:1.5px solid var(--navy); background:transparent; font-family:'Inter',sans-serif; font-size:13px; color:var(--navy); padding:2px 4px; min-width:60px; width:100%; max-width:100%; }
+  .answer-inline:focus { outline:none; border-bottom-color:var(--teal); background:#f8fcfc; }
+  .answer-inline::placeholder { color:#aab; font-style:italic; }
+  .save-status { position:fixed; bottom:16px; right:16px; background:var(--teal); color:white; padding:6px 14px; border-radius:20px; font-size:11px; font-weight:700; opacity:0; transition:opacity 0.3s; z-index:100; font-family:'Inter',sans-serif; }
+  .ts-logo-img { position:absolute; top:18mm; right:18mm; height:60px; object-fit:contain; opacity:0.95; pointer-events:none; }
+
+  @media print {
+    .print-btn { display:none!important; }
+    .view-toggle { display:none!important; }
+    body { background:none; }
+    .page { box-shadow:none; margin:0; border-radius:0; }
+    .answer-area { border:1px solid #ddd; background:var(--white); }
+    .answer-inline { border-bottom:1px solid var(--navy); }
+    .save-status { display:none!important; }
+  }
+  @page { size:A4; margin:0; }
+
+  @media screen {
+    body { display:block !important; background:#FAF5EF !important; }
+    .page {
+      width:95% !important; max-width:1400px !important;
+      margin:30px auto !important; height:auto !important;
+      column-count:2 !important; column-gap:40px !important;
+      display:block !important;
+    }
+    .page > * { break-inside:avoid !important; page-break-inside:avoid !important; }
+    h1, .logo, .subtitle, .badges, .divider, .footer { column-span:all !important; }
+    .page.congratulations-page {
+      column-count:1 !important; display:flex !important;
+      justify-content:center !important; align-items:center !important;
+      height:90vh !important; min-height:500px !important;
+    }
+  }
+  .congratulations-page {
+    display:flex !important; justify-content:center !important;
+    align-items:center !important; background:var(--cream) !important;
+    box-shadow:none !important; border:none !important;
+    min-height:297mm !important;
+  }
+  .congrats-img {
+    max-width:100% !important; max-height:100% !important;
+    object-fit:contain !important; mix-blend-mode:darken !important;
+  }
+</style>
+</head>
+<body class="student-mode">
+
+<!-- VIEW TOGGLE -->
+<div class="view-toggle">
+  <button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
+  <button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
+</div>
+<button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+
+<!-- ==================== PAGE 1 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+  <div class="logo">Talksmiths — Lesson Engine™</div>
+  <h1>WH Questions</h1>
+  <div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 3</div>
+  <div class="badges">
+    <span class="badge badge-teal">A1 — Beginner</span>
+    <span class="badge badge-gold">60 min</span>
+    <span class="badge badge-gray">Grammar Foundations</span>
+    <span class="badge badge-gray">Lesson 3</span>
+  </div>
+  <div class="divider"></div>
+
+  <!-- CFO-ROW: Step 1 (left) + Baba's Notebook (right) -->
+  <div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
+    <div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
+
+      <!-- STEP 1: WARM-UP -->
+      <div class="step">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
+            <div class="step-title">The Curious Student</div>
+          </div>
+          <div class="step-time">8 min</div>
+        </div>
+        <div class="objective">Objective: Learn how to ask for information. You are a student of Anthropology — asking questions is your superpower!</div>
+
+        <div class="student-note">
+          🎓 <strong>Student Strategy:</strong> Don't try to translate the whole sentence from Darija. Start by learning just the FIRST word of the question. 
+        </div>
+
+        <div class="teacher-note">
+          📋 <strong>Teacher Note:</strong> Arabic and French speakers sometimes struggle with WH words because they sound very similar (Who vs How, What vs Which). Start by writing "WHAT" and "WHERE" big on a paper. Point to objects and ask "What is this?". Point to the window and ask "Where are we?".
+        </div>
+
+        <div class="exercise">
+          <div class="ex-label">🗣️ Match the Question to the Answer</div>
+          <p class="ex-item">Read the answers. What is the right question word? <em>What, Where, Who, or How?</em></p>
+          <div style="display:grid; gap:8px; margin-top:6px;">
+            <div><strong>1.</strong> <input type="text" class="answer-inline" data-id="warmup-1" style="width:60px;" placeholder="???"> is your name? <br><span style="color:var(--gray);font-style:italic;">→ My name is Fattah.</span></div>
+            <div><strong>2.</strong> <input type="text" class="answer-inline" data-id="warmup-2" style="width:60px;" placeholder="???"> are you from? <br><span style="color:var(--gray);font-style:italic;">→ I am from Morocco.</span></div>
+            <div><strong>3.</strong> <input type="text" class="answer-inline" data-id="warmup-3" style="width:60px;" placeholder="???"> is that man? <br><span style="color:var(--gray);font-style:italic;">→ He is my son Saad.</span></div>
+            <div><strong>4.</strong> <input type="text" class="answer-inline" data-id="warmup-4" style="width:60px;" placeholder="???"> are you today? <br><span style="color:var(--gray);font-style:italic;">→ I am very well, thank you!</span></div>
+          </div>
+        </div>
+
+        <div class="darija-box">
+          <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> In Darija, we have <em>Ash? Fin? Shkoun? Kifash?</em> English calls these the "WH-Questions" because most of them start with the letters W and H.
+        </div>
+      </div>
+    </div>
+
+    <!-- BABA'S NOTEBOOK (right column) -->
+    <div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
+      <div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
+        <div class="step-header" style="margin-bottom:6px;">
+          <div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
+        </div>
+        <div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-size:12px; line-height:1.4; color:var(--gray);">
+            Write down the WH words as you learn them. It helps to write the French or Darija word next to it!
+          </p>
+          <ul style="font-size:12px; margin-left:16px; line-height:1.4; color:var(--navy); list-style-type:square;">
+            <li>What = __________</li>
+            <li>Where = __________</li>
+            <li>Who = __________</li>
+          </ul>
+          <textarea class="answer-area" data-id="baba-notebook-p1" style="flex:1; min-height:180px; font-size:12px;" placeholder="Notes / ملاحظات / Notes en français... &#10;&#10;"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOCABULARY SECTION -->
+  <div style="column-span:all !important; margin-top:8px;">
+    <div class="step">
+      <div class="step-header">
+        <div class="step-name">📖 The 6 Important Question Words</div>
+      </div>
+
+      <div class="body">
+        <p>There are 6 main question words in English. 5 start with "W" and 1 starts with "H".</p>
+      </div>
+
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-term">What → أشنو → Quoi / Que</div>
+          <div class="vocab-def">Asking for information about a thing or action.</div>
+          <div class="vocab-ex">"<strong>What</strong> is this?" — "<strong>What</strong> is your job?"</div>
+          <div class="vocab-bridge">🇲🇦 Ash / Ashnou / 🇫🇷 Quoi / Quel</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Where → فين → Où</div>
+          <div class="vocab-def">Asking about a place or location.</div>
+          <div class="vocab-ex">"<strong>Where</strong> is my phone?" — "<strong>Where</strong> do you live?"</div>
+          <div class="vocab-bridge">🇲🇦 Fin / 🇫🇷 Où</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Who → شكون → Qui</div>
+          <div class="vocab-def">Asking about a person.</div>
+          <div class="vocab-ex">"<strong>Who</strong> is she?" — "<strong>Who</strong> won the match?"</div>
+          <div class="vocab-bridge">🇲🇦 Shkoun / 🇫🇷 Qui</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">When → إمتى → Quand</div>
+          <div class="vocab-def">Asking about time or dates.</div>
+          <div class="vocab-ex">"<strong>When</strong> is the game?" — "<strong>When</strong> are you coming?"</div>
+          <div class="vocab-bridge">🇲🇦 Imta / Fou9ash / 🇫🇷 Quand</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Why → علاش → Pourquoi</div>
+          <div class="vocab-def">Asking for a reason. (Answer usually starts with "Because").</div>
+          <div class="vocab-ex">"<strong>Why</strong> are you happy?" — "<strong>Why</strong> is he late?"</div>
+          <div class="vocab-bridge">🇲🇦 3lash / 🇫🇷 Pourquoi</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">How → كيفاش → Comment</div>
+          <div class="vocab-def">Asking about the way something happens, or someone's condition.</div>
+          <div class="vocab-ex">"<strong>How</strong> are you?" — "<strong>How</strong> do you paint this?"</div>
+          <div class="vocab-bridge">🇲🇦 Kifash / 🇫🇷 Comment</div>
+        </div>
+        
+        <!-- Extra combined cards -->
+        <div class="vocab-card" style="border-left-color:var(--gold);">
+          <div class="vocab-term" style="color:var(--gold);">💡 How + Old / Much / Many</div>
+          <div class="vocab-def">"How" can combine with other words!</div>
+          <div class="vocab-ex"><strong>How old</strong> are you? (Age)<br><strong>How much</strong> is this? (Price/Quantity)</div>
+          <div class="vocab-bridge">🇲🇦 Sh7al f 3emrek? / Sh7al taman?</div>
+        </div>
+        <div class="vocab-card" style="border-left-color:var(--gold);">
+          <div class="vocab-term" style="color:var(--gold);">💡 Because = Parce que / 7it</div>
+          <div class="vocab-def">When someone asks <strong>Why</strong>, you answer with <strong>Because</strong>.</div>
+          <div class="vocab-ex">"Why are you tired?" → "<strong>Because</strong> I studied all night."</div>
+          <div class="vocab-bridge">🇫🇷 Pourquoi → Parce que</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 3</span>
+    <span>Page 1 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 2 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 2: MINI-STORY -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
+        <div class="step-title">The Anthropology Student Interview</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Read an interview and notice how questions and answers fit together.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> This is a dialogue. You read the Interviewer (Saad), and Baba reads "Fattah". This is great speaking practice. Focus on the intonation of questions (voice goes down at the end of WH questions in English, unlike yes/no questions!).
+    </div>
+
+    <div class="roleplay-box" style="margin-top:8px;">
+      <div class="speaker">🗣️ Interviewer:</div>
+      <div class="line">Hello sir! <strong>What</strong> is your name?</div>
+      
+      <div class="speaker" style="color:var(--navy);">🗣️ Fattah:</div>
+      <div class="line">My name is Fattah.</div>
+      
+      <div class="speaker">🗣️ Interviewer:</div>
+      <div class="line"><strong>Where</strong> are you from?</div>
+      
+      <div class="speaker" style="color:var(--navy);">🗣️ Fattah:</div>
+      <div class="line">I am from Morocco. I live in Mehdya.</div>
+      
+      <div class="speaker">🗣️ Interviewer:</div>
+      <div class="line">I see you have many books. <strong>What</strong> do you study?</div>
+      
+      <div class="speaker" style="color:var(--navy);">🗣️ Fattah:</div>
+      <div class="line">I study Anthropology at the university.</div>
+      
+      <div class="speaker">🗣️ Interviewer:</div>
+      <div class="line">That is very interesting. <strong>Why</strong> do you study Anthropology?</div>
+      
+      <div class="speaker" style="color:var(--navy);">🗣️ Fattah:</div>
+      <div class="line"><strong>Because</strong> I want to understand human culture and society.</div>
+      
+      <div class="speaker">🗣️ Interviewer:</div>
+      <div class="line"><strong>When</strong> are your classes?</div>
+      
+      <div class="speaker" style="color:var(--navy);">🗣️ Fattah:</div>
+      <div class="line">My classes are in the afternoon.</div>
+      
+      <div class="speaker">🗣️ Interviewer:</div>
+      <div class="line"><strong>Who</strong> helps you practice English for your studies?</div>
+      
+      <div class="speaker" style="color:var(--navy);">🗣️ Fattah:</div>
+      <div class="line">My son Saad helps me. He is a teacher.</div>
+      
+      <div class="speaker">🗣️ Interviewer:</div>
+      <div class="line"><strong>How</strong> is your English now?</div>
+      
+      <div class="speaker" style="color:var(--navy);">🗣️ Fattah:</div>
+      <div class="line">It is getting better every day!</div>
+    </div>
+
+    <div class="exercise" style="margin-top:10px;">
+      <div class="ex-label">🔍 Find the Match</div>
+      <p class="ex-item">Look at the interview. Write the answer Fattah gives for each question word:</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:6px;">
+        <div><strong>Where?</strong> (Place) <br><textarea class="answer-area" data-id="comp-1" style="min-height:30px;" placeholder="He answers: I am from..."></textarea></div>
+        <div><strong>Why?</strong> (Reason) <br><textarea class="answer-area" data-id="comp-2" style="min-height:30px;" placeholder="He answers: Because..."></textarea></div>
+        <div><strong>Who?</strong> (Person) <br><textarea class="answer-area" data-id="comp-3" style="min-height:30px;" placeholder="He answers: My son..."></textarea></div>
+        <div><strong>When?</strong> (Time) <br><textarea class="answer-area" data-id="comp-4" style="min-height:30px;" placeholder="He answers: In the..."></textarea></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 3: GRAMMAR IN ACTION -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-name">Step 3 — 🏗️ Grammar in Action</div>
+        <div class="step-title">The Question Formula</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Learn the correct word order for making questions.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> In French, we can just raise our voice: "Tu es marocain ?". In English, we must INVERT the verb and the subject. This is the biggest hurdle. Focus heavily on: "You are" -> "Are you?". "He is" -> "Is he?".
+    </div>
+
+    <!-- Grammar Rules -->
+    <div class="expressions-box">
+      <div class="exp-title">📐 The Magic Question Formula</div>
+      <div style="font-size:16px; font-weight:800; text-align:center; margin:10px 0; color:var(--teal);">
+        WH-Word + Verb (to be) + Subject ?
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; background:var(--white); padding:10px; border-radius:6px; font-size:13px; text-align:center;">
+        <div><strong>Where</strong></div><div><strong>are</strong></div><div><strong>you?</strong></div>
+        <div><strong>Who</strong></div><div><strong>is</strong></div><div><strong>he?</strong></div>
+        <div><strong>What</strong></div><div><strong>is</strong></div><div><strong>that?</strong></div>
+      </div>
+    </div>
+
+    <div class="darija-box" style="margin-top:10px;">
+      <span class="flag">🇫🇷</span> <strong>French Parallel:</strong> English questions use "inversion" just like formal French: <br>
+      <em>"Tu es Fattah."</em> → <em>"Es-tu Fattah ?"</em><br>
+      <em>"You are Fattah."</em> → <em>"<strong>Are you</strong> Fattah?"</em>
+    </div>
+
+    <div class="exercise" style="margin-top:10px;">
+      <div class="ex-label">✏️ Unscramble the Questions</div>
+      <p class="ex-item">Put the words in the correct order to make a question.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>1.</strong> (are / where / you / ?)</p>
+      <input type="text" class="answer-inline" data-id="grammar-1" placeholder="Where are you?">
+      <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> (is / who / she / ?)</p>
+      <input type="text" class="answer-inline" data-id="grammar-2" placeholder="...">
+      <p class="ex-item" style="margin-top:8px;"><strong>3.</strong> (your name / what / is / ?)</p>
+      <input type="text" class="answer-inline" data-id="grammar-3" placeholder="...">
+      <p class="ex-item" style="margin-top:8px;"><strong>4.</strong> (the match / when / is / ?)</p>
+      <input type="text" class="answer-inline" data-id="grammar-4" placeholder="...">
+      <p class="ex-item" style="margin-top:8px;"><strong>5.</strong> (happy / why / are / they / ?)</p>
+      <input type="text" class="answer-inline" data-id="grammar-5" placeholder="...">
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 3</span>
+    <span>Page 2 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 3 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 4: GAME ZONE -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-name">Step 4 — 🎮 Game Zone</div>
+        <div class="step-title">The "WH" Detective Quiz!</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Choose the correct WH word to complete the question based on the answer.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> Baba has to look at the ANSWER to know which question word is missing. E.g. if the answer is "In Mehdya", the question must be "Where". Guide him to look at the clue first!
+    </div>
+
+    <div class="game-container" id="wh-game">
+      <div class="game-title">🏆 WH DETECTIVE — Find the Missing Word!</div>
+      <div id="wh-question" style="font-size:15px; font-weight:700; text-align:center; margin:12px 0; min-height:40px;"></div>
+      <div id="wh-clue" style="font-size:13px; font-style:italic; color:var(--gray); text-align:center; margin-bottom:12px;"></div>
+      <div id="wh-options" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-top:10px;"></div>
+      <div id="wh-feedback" class="game-feedback"></div>
+      <div id="wh-score" class="game-score"></div>
+      <div style="text-align:center; margin-top:12px;">
+        <button class="game-btn" id="wh-next" onclick="whNext()" style="display:none;">Next Question →</button>
+        <button class="game-btn" id="wh-restart" onclick="whStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
+      </div>
+    </div>
+
+    <div class="darija-box" style="margin-top:10px;">
+      <span class="flag">🇲🇦</span> <strong>"Lli fat mat"</strong> — The past is dead. If you get one wrong, forget it and focus on the next one! You're doing great.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 5: SPEAKING CHALLENGE -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">5</div>
+      <div>
+        <div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
+        <div class="step-title">The Family Interview!</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Ask 5 questions using 5 different WH words.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> Have Baba pretend he is interviewing YOU (Saad) or Lamia. He must formulate the questions. Don't let him write them first — make him think on his feet and say them out loud.
+    </div>
+
+    <div class="student-note">
+      🎓 <strong>Your Mission:</strong> You are a journalist! Ask me 5 questions about my life. You must use a different word for each question: <strong>What, Where, Who, When, Why</strong>.
+    </div>
+
+    <div class="gold-banner">
+      <p><strong>🎤 Interview Challenge</strong></p>
+      <p style="margin-top:6px;">Ask 5 questions:</p>
+      <ul style="margin-top:6px; margin-left:16px; font-size:13px;">
+        <li>❓ <strong>What...?</strong> (Ask about my job or food)</li>
+        <li>❓ <strong>Where...?</strong> (Ask about my city or house)</li>
+        <li>❓ <strong>Who...?</strong> (Ask about my friends)</li>
+        <li>❓ <strong>When...?</strong> (Ask about my next visit to Morocco)</li>
+        <li>❓ <strong>Why...?</strong> (Ask for a reason!)</li>
+      </ul>
+    </div>
+
+    <div class="exercise" style="margin-top:10px;">
+      <div class="ex-label">📝 Write the questions you asked here</div>
+      <textarea class="answer-area" data-id="speaking-notes" style="min-height:100px;" placeholder="1. What is...? &#10;2. Where are...? &#10;3. Who is...?"></textarea>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 3</span>
+    <span>Page 3 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 4 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 6: BOSS LEVEL -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">6</div>
+      <div>
+        <div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
+        <div class="step-title">Interview with Walid Regragui!</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Formulate questions for the Moroccan national team coach.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> This requires him to read the coach's answer and figure out the exact question. This is a high-level cognitive task. Walk him through the first one: "If he says 'The match is tomorrow', what did you ask him?" -> "When is the match?".
+    </div>
+
+    <div class="exercise">
+      <div class="ex-label">⚽ Be the Sports Journalist!</div>
+      <div style="background:var(--cream); border-radius:8px; padding:12px; line-height:2; font-size:13px; margin-top:6px;">
+        <p><strong>Fattah:</strong> Hello coach! <input type="text" class="answer-inline" data-id="boss-1" style="width:120px;" placeholder="___ is the next match?"></p>
+        <p style="margin-top:4px;"><strong>Walid Regragui:</strong> The next match is on Sunday.</p>
+        
+        <p style="margin-top:10px;"><strong>Fattah:</strong> <input type="text" class="answer-inline" data-id="boss-2" style="width:120px;" placeholder="___ are we playing?"></p>
+        <p style="margin-top:4px;"><strong>Walid Regragui:</strong> We are playing in Casablanca.</p>
+        
+        <p style="margin-top:10px;"><strong>Fattah:</strong> <input type="text" class="answer-inline" data-id="boss-3" style="width:120px;" placeholder="___ is the captain?"></p>
+        <p style="margin-top:4px;"><strong>Walid Regragui:</strong> Hakimi is the captain today.</p>
+        
+        <p style="margin-top:10px;"><strong>Fattah:</strong> <input type="text" class="answer-inline" data-id="boss-4" style="width:120px;" placeholder="___ is the strategy?"></p>
+        <p style="margin-top:4px;"><strong>Walid Regragui:</strong> The strategy is to attack and score early!</p>
+        
+        <p style="margin-top:10px;"><strong>Fattah:</strong> <input type="text" class="answer-inline" data-id="boss-5" style="width:120px;" placeholder="___ are the fans so loud?"></p>
+        <p style="margin-top:4px;"><strong>Walid Regragui:</strong> Because Moroccan fans are the best in the world! Dima Maghrib! 🇲🇦</p>
+      </div>
+    </div>
+
+    <div class="darija-box">
+      <span class="flag">🇲🇦</span> <strong>"Niya!"</strong> — Walid Regragui always talks about "Niya" (good intention and faith). You have Niya in your English learning, Baba, and it's paying off!
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 7: HOMEWORK -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">7</div>
+      <div>
+        <div class="step-name">Step 7 — 📚 Homework & Fun Challenge</div>
+        <div class="step-title">Stay Curious!</div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="hw-item">
+        <div class="hw-num">1</div>
+        <div>
+          <strong>Writing Task — "The 5 Questions"</strong><br>
+          <span style="font-size:12px; color:var(--gray);">Write 5 questions you want to ask a famous person (an artist, a football player, or an author you read in Anthropology). Use What, Where, Who, When, Why.</span>
+          <textarea class="answer-area" data-id="hw-1" style="min-height:80px; margin-top:6px;" placeholder="1. Who...&#10;2. What...&#10;3. Where..."></textarea>
+        </div>
+      </div>
+
+      <div class="hw-item">
+        <div class="hw-num">2</div>
+        <div>
+          <strong>Reading Hunt — "Question Spotter"</strong><br>
+          <span style="font-size:12px; color:var(--gray);">Find an English article or a YouTube video title that has a WH question in it. Write it down here and translate it to French or Darija.</span>
+          <textarea class="answer-area" data-id="hw-2" style="min-height:60px; margin-top:6px;" placeholder="English: ...&#10;Translation: ..."></textarea>
+        </div>
+      </div>
+
+      <div class="hw-item">
+        <div class="hw-num">3</div>
+        <div>
+          <strong>Fun Challenge — "Ask Lamia!"</strong> 🗣️<br>
+          <span style="font-size:12px; color:var(--gray);">Teach Lamia how to say "What is your name?" and "Where are you from?" in English. Have a tiny conversation with her!</span>
+          <textarea class="answer-area" data-id="hw-3" style="min-height:60px; margin-top:6px;" placeholder="How did it go? Did she say it right?"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="expressions-box" style="margin-top:10px;">
+      <div class="exp-title">📋 Lesson 3 Summary — What You Learned Today</div>
+      <div class="exp-item">✅ The 6 WH Words: What, Where, Who, When, Why, How</div>
+      <div class="exp-item">✅ Why + Because = The perfect pair!</div>
+      <div class="exp-item">✅ Inversion rule: WH-word + Verb + Subject (Where are you?)</div>
+      <div class="exp-item">✅ How to interview people in English</div>
+    </div>
+
+    <div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
+      <span class="flag">🌟</span> <strong>Message from your teacher (your son!):</strong><br>
+      <em>Baba, you are becoming a true English speaker! Asking questions is the most important skill for a traveler and a student. Next lesson we will learn about Prepositions (In, On, At). Keep up the great work! 💪🇲🇦</em>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 3</span>
+    <span>Page 4 of 4</span>
+  </div>
+</div>
+
+<!-- CONGRATULATIONS PAGE -->
+<div class="page congratulations-page">
+  <img src="../Congratulations.png" alt="Congratulations" class="congrats-img">
+</div>
+
+<!-- SAVE STATUS -->
+<div class="save-status" id="save-status">✓ Progress saved</div>
+
+<script>
+const STORAGE_KEY = 'ts-lesson-fattah-wh-questions';
+
+function setView(mode){
+  if(mode==='student'){
+    document.body.classList.add('student-mode');
+    document.getElementById('btn-student').classList.add('active');
+    document.getElementById('btn-teacher').classList.remove('active');
+  }else{
+    document.body.classList.remove('student-mode');
+    document.getElementById('btn-teacher').classList.add('active');
+    document.getElementById('btn-student').classList.remove('active');
+  }
+}
+function saveAll(){
+  const data={};
+  document.querySelectorAll('[data-id]').forEach(el=>{
+    data[el.dataset.id]=el.value;
+  });
+  data['wh-high-score'] = whHighScore;
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
+  const s=document.getElementById('save-status');
+  s.style.opacity='1';
+  setTimeout(()=>s.style.opacity='0',1500);
+}
+function loadAll(){
+  const raw=localStorage.getItem(STORAGE_KEY);
+  if(!raw)return;
+  const data=JSON.parse(raw);
+  Object.keys(data).forEach(id=>{
+    const el=document.querySelector('[data-id="'+id+'"]');
+    if(el)el.value=data[id];
+  });
+  if(data['wh-high-score']) whHighScore = data['wh-high-score'];
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  loadAll();
+  let timer;
+  document.querySelectorAll('[data-id]').forEach(el=>{
+    el.addEventListener('input',()=>{
+      clearTimeout(timer);
+      timer=setTimeout(saveAll,800);
+    });
+  });
+  whStart();
+  setView('student');
+});
+
+// ==================== WH QUIZ GAME ====================
+const whData = [
+  { q: "___ is your name?", clue: "Answer: My name is Fattah.", opts: ["Where","What","Who"], ans: 1 },
+  { q: "___ are you from?", clue: "Answer: I am from Morocco.", opts: ["What","Who","Where"], ans: 2 },
+  { q: "___ is that man?", clue: "Answer: He is my son.", opts: ["Who","When","How"], ans: 0 },
+  { q: "___ is the football match?", clue: "Answer: It is on Sunday.", opts: ["Where","What","When"], ans: 2 },
+  { q: "___ are you so happy?", clue: "Answer: Because Morocco won!", opts: ["Why","Who","How"], ans: 0 },
+  { q: "___ are you today?", clue: "Answer: I am very well, thank you.", opts: ["Who","How","What"], ans: 1 },
+  { q: "___ is your favourite colour?", clue: "Answer: Red, like the Moroccan flag.", opts: ["What","Where","Why"], ans: 0 },
+  { q: "___ does Saad live?", clue: "Answer: He lives in Hungary.", opts: ["When","Where","Who"], ans: 1 },
+  { q: "___ painted this beautiful picture?", clue: "Answer: I painted it!", opts: ["What","How","Who"], ans: 2 },
+  { q: "___ do you study Anthropology?", clue: "Answer: Because I love learning about people.", opts: ["Why","When","Where"], ans: 0 }
+];
+
+let whCurrent = 0;
+let whScore = 0;
+let whHighScore = 0;
+let whAnswered = false;
+
+function whStart() {
+  whCurrent = 0;
+  whScore = 0;
+  whAnswered = false;
+  document.getElementById('wh-restart').style.display = 'none';
+  document.getElementById('wh-feedback').style.display = 'none';
+  whShow();
+}
+
+function whShow() {
+  if (whCurrent >= whData.length) { whEnd(); return; }
+  whAnswered = false;
+  const q = whData[whCurrent];
+  document.getElementById('wh-question').innerHTML = `<span style="color:var(--gray);font-size:11px;">Question ${whCurrent+1} of ${whData.length}</span><br>${q.q}`;
+  document.getElementById('wh-clue').textContent = q.clue;
+  const optDiv = document.getElementById('wh-options');
+  optDiv.innerHTML = '';
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'game-btn';
+    btn.textContent = opt;
+    btn.onclick = () => whCheck(i, btn);
+    optDiv.appendChild(btn);
+  });
+  document.getElementById('wh-next').style.display = 'none';
+  document.getElementById('wh-feedback').style.display = 'none';
+  document.getElementById('wh-score').textContent = `Score: ${whScore}/${whData.length}`;
+}
+
+function whCheck(selected, btn) {
+  if (whAnswered) return;
+  whAnswered = true;
+  const q = whData[whCurrent];
+  const allBtns = document.querySelectorAll('#wh-options .game-btn');
+  const fb = document.getElementById('wh-feedback');
+
+  if (selected === q.ans) {
+    whScore++;
+    btn.classList.add('correct');
+    fb.textContent = '✅ Excellent! Correct! 🎉';
+    fb.style.background = '#E8F5E9';
+    fb.style.color = '#2E7D32';
+  } else {
+    btn.classList.add('wrong');
+    allBtns[q.ans].classList.add('correct');
+    fb.textContent = `❌ Oops! The right word is "${q.opts[q.ans]}"`;
+    fb.style.background = '#FFEBEE';
+    fb.style.color = '#C62828';
+  }
+  fb.style.display = 'block';
+  document.getElementById('wh-score').textContent = `Score: ${whScore}/${whData.length}`;
+  document.getElementById('wh-next').style.display = 'inline-block';
+}
+
+function whNext() {
+  whCurrent++;
+  whShow();
+}
+
+function whEnd() {
+  document.getElementById('wh-question').innerHTML = '';
+  document.getElementById('wh-clue').textContent = '';
+  document.getElementById('wh-options').innerHTML = '';
+  document.getElementById('wh-next').style.display = 'none';
+  const fb = document.getElementById('wh-feedback');
+
+  if (whScore > whHighScore) whHighScore = whScore;
+
+  let msg = '';
+  if (whScore >= 9) msg = '🏆 FANTASTIC, Baba! You are a master interviewer! 🎤';
+  else if (whScore >= 7) msg = '🌟 GREAT JOB! You know your questions well!';
+  else if (whScore >= 5) msg = '💪 GOOD EFFORT! Keep practicing those WH words!';
+  else msg = '📚 Practice makes perfect! Give it another try, Baba!';
+
+  fb.innerHTML = `<div style="font-size:16px; margin-bottom:6px;">${msg}</div>
+    <div style="font-size:20px; font-weight:900;">Final Score: ${whScore}/${whData.length}</div>
+    <div style="font-size:12px; margin-top:4px; color:var(--gray);">🏅 High Score: ${whHighScore}/${whData.length}</div>`;
+  fb.style.display = 'block';
+  fb.style.background = whScore >= 7 ? '#E8F5E9' : '#FFF8E7';
+  fb.style.color = 'var(--navy)';
+  document.getElementById('wh-score').textContent = '';
+  document.getElementById('wh-restart').style.display = 'inline-block';
+  saveAll();
+}
+</script>
+</body>
+</html>
