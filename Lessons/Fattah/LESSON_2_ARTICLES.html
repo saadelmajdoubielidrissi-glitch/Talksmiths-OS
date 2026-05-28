@@ -107,7 +107,7 @@
       display:block !important;
     }
     .page > * { break-inside:avoid !important; page-break-inside:avoid !important; }
-    h1, .logo, .subtitle, .badges, .divider, .footer { column-span:all !important; }
+    h1, .logo, .subtitle, .badges, .footer { column-span:all !important; }
     .page.congratulations-page {
       column-count:1 !important; display:flex !important;
       justify-content:center !important; align-items:center !important;
@@ -123,6 +123,12 @@
   .congrats-img {
     max-width:100% !important; max-height:100% !important;
     object-fit:contain !important; mix-blend-mode:darken !important;
+  }
+  @media screen and (max-width: 1200px) {
+    .page { column-count: 1 !important; }
+  }
+  @media screen and (max-width: 768px) {
+    .vocab-grid { grid-template-columns: 1fr !important; }
   }
 </style>
 </head>
