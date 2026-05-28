@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fattah — Comparatives | Talksmiths</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #007575; --gold: #D4A843; --navy: #1A2744;
+    --cream: #FAF5EF; --white: #fff; --gray: #5A6577;
+    --light: #F0EDEA;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; background:var(--cream); color:var(--navy); }
+  .page { position:relative; width:210mm; margin:20px auto; background:var(--white); border-radius:12px; padding:18mm; box-shadow:0 4px 30px rgba(0,0,0,0.08); page-break-after:always; }
+  .page:last-child { page-break-after:auto; }
+  .logo { font-size:11px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:4px; }
+  h1 { font-family:'Playfair Display',serif; font-size:28px; font-weight:800; color:var(--navy); line-height:1.2; padding-right:80px; }
+  .subtitle { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gray); margin:6px 0 18px; }
+  .badges { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
+  .badge { padding:4px 12px; border-radius:20px; font-size:11px; font-weight:700; }
+  .badge-teal { background:#E8F5F5; color:var(--teal); border:1px solid #b2dada; }
+  .badge-gold { background:#F5EDD6; color:#8a6a1a; border:1px solid #e0c97a; }
+  .badge-gray { background:var(--light); color:var(--gray); border:1px solid #ddd; }
+  .divider { height:2px; background:linear-gradient(90deg,var(--teal),var(--gold)); border-radius:2px; margin:16px 0; }
+  .step { background:var(--white); border:1px solid var(--light); border-radius:10px; padding:14px 16px; margin-bottom:12px; break-inside:avoid; }
+  .step-header { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+  .step-num { width:32px; height:32px; border-radius:50%; background:var(--teal); color:white; font-weight:800; font-size:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .step-name { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--teal); }
+  .step-title { font-family:'Playfair Display',serif; font-size:15px; font-weight:800; color:var(--navy); }
+  .step-time { margin-left:auto; font-size:11px; font-weight:700; color:var(--gray); }
+  .objective { font-size:11px; color:var(--gray); font-style:italic; margin-bottom:8px; padding-left:42px; }
+  .body { font-size:13px; line-height:1.6; color:var(--navy); }
+  .exercise { background:var(--cream); border-radius:8px; padding:10px 12px; margin-top:8px; }
+  .ex-label { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--teal); margin-bottom:6px; }
+  .ex-item { font-size:13px; margin-bottom:5px; }
+  .vocab-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; }
+  .vocab-card { background:var(--cream); border-radius:8px; padding:10px 12px; border-left:3px solid var(--teal); }
+  .vocab-term { font-weight:800; font-size:13px; color:var(--teal); }
+  .vocab-def { font-size:11px; color:var(--gray); margin:2px 0; }
+  .vocab-ex { font-size:11px; color:var(--navy); font-style:italic; }
+  .vocab-bridge { font-size:10px; color:var(--gold); font-weight:700; margin-top:3px; }
+  .expressions-box { background:#F5EDD6; border-left:4px solid var(--gold); border-radius:8px; padding:12px 16px; margin-top:12px; }
+  .exp-title { font-size:11px; font-weight:800; color:var(--navy); text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
+  .exp-item { font-size:13px; color:var(--navy); margin-bottom:4px; font-weight:600; }
+  .gold-banner { background:linear-gradient(135deg,var(--gold),#B8922E); border-radius:10px; padding:14px 16px; margin-top:8px; }
+  .gold-banner p { font-size:13px; color:var(--navy); line-height:1.6; }
+  .roleplay-box { background:#E8F5F5; border:1px solid #b2dada; border-radius:8px; padding:12px 14px; margin-top:8px; }
+  .speaker { font-size:11px; font-weight:700; color:var(--teal); margin-top:8px; }
+  .line { font-size:13px; color:var(--navy); font-style:italic; margin-top:2px; }
+  .hw-item { display:flex; gap:10px; align-items:flex-start; margin-bottom:8px; }
+  .hw-num { width:22px; height:22px; border-radius:50%; background:var(--gold); color:var(--navy); font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .darija-box { background:#FFF3E0; border-left:4px solid #FF9800; border-radius:8px; padding:10px 14px; margin-top:8px; font-size:12px; }
+  .darija-box .flag { font-size:14px; margin-right:4px; }
+  .game-container { background:var(--cream); border:2px solid var(--teal); border-radius:12px; padding:16px; margin-top:10px; }
+  .game-title { font-size:13px; font-weight:800; color:var(--teal); margin-bottom:10px; text-align:center; }
+  .game-btn { padding:10px 16px; border:2px solid var(--teal); border-radius:8px; background:var(--white); color:var(--navy); font-size:13px; font-weight:700; cursor:pointer; transition:all 0.2s; font-family:'Inter',sans-serif; display:inline-block; }
+  .game-btn:hover { background:var(--teal); color:white; transform:translateY(-1px); }
+  .game-btn.correct { background:#2E7D32; color:white; border-color:#2E7D32; }
+  .game-btn.wrong { background:#C62828; color:white; border-color:#C62828; }
+  .game-score { text-align:center; font-size:14px; font-weight:800; color:var(--teal); margin-top:10px; }
+  .game-feedback { text-align:center; font-size:13px; font-weight:700; margin-top:8px; padding:8px; border-radius:8px; display:none; }
+  
+  .view-toggle { position:fixed; top:16px; left:16px; background:var(--white); padding:6px; border-radius:30px; box-shadow:0 4px 16px rgba(0,0,0,0.1); display:flex; gap:4px; z-index:100; font-family:'Inter',sans-serif; }
+  .toggle-btn { border:none; background:transparent; padding:8px 16px; border-radius:24px; font-size:12px; font-weight:700; cursor:pointer; color:var(--gray); transition:all 0.2s; }
+  .toggle-btn.active { background:var(--teal); color:white; }
+  body.student-mode .teacher-note { display:none!important; }
+  body.student-mode .teacher-only { display:none!important; }
+  body:not(.student-mode) .student-note { display:none!important; }
+  .teacher-note { background:#FFF8E7; border:1px solid #f0d080; border-radius:8px; padding:10px 12px; margin-top:8px; font-size:11px; color:#7a5c00; }
+  .student-note { background:#E8F5F5; border:1px solid #b2dada; border-radius:8px; padding:10px 12px; margin-top:8px; font-size:11px; color:var(--teal); font-weight:600; }
+  .footer { display:flex; justify-content:space-between; font-size:10px; color:var(--gray); margin-top:16px; padding-top:10px; border-top:1px solid var(--light); }
+  .print-btn { position:fixed; top:16px; right:16px; background:var(--teal); color:white; border:none; padding:10px 22px; border-radius:25px; font-size:13px; font-weight:700; cursor:pointer; font-family:'Inter',sans-serif; box-shadow:0 4px 16px rgba(0,117,117,0.3); z-index:100; }
+  .answer-area { width:100%; min-height:40px; border:1.5px dashed #b2dada; border-radius:6px; padding:8px 10px; font-family:'Inter',sans-serif; font-size:12px; color:var(--navy); background:#f8fcfc; resize:vertical; margin-top:4px; line-height:1.5; transition:border-color 0.2s; }
+  .answer-area:focus { outline:none; border-color:var(--teal); background:var(--white); }
+  .answer-area::placeholder { color:#aab; font-style:italic; }
+  .answer-inline { border:none; border-bottom:1.5px solid var(--navy); background:transparent; font-family:'Inter',sans-serif; font-size:13px; color:var(--navy); padding:2px 4px; min-width:60px; width:100%; max-width:100%; }
+  .answer-inline:focus { outline:none; border-bottom-color:var(--teal); background:#f8fcfc; }
+  .answer-inline::placeholder { color:#aab; font-style:italic; }
+  .save-status { position:fixed; bottom:16px; right:16px; background:var(--teal); color:white; padding:6px 14px; border-radius:20px; font-size:11px; font-weight:700; opacity:0; transition:opacity 0.3s; z-index:100; font-family:'Inter',sans-serif; }
+  .ts-logo-img { position:absolute; top:18mm; right:18mm; height:60px; object-fit:contain; opacity:0.95; pointer-events:none; }
+
+  @media print {
+    .print-btn { display:none!important; }
+    .view-toggle { display:none!important; }
+    body { background:none; }
+    .page { box-shadow:none; margin:0; border-radius:0; }
+    .answer-area { border:1px solid #ddd; background:var(--white); }
+    .answer-inline { border-bottom:1px solid var(--navy); }
+    .save-status { display:none!important; }
+  }
+  @media screen {
+    body { display:block !important; background:#FAF5EF !important; }
+    .page {
+      width:95% !important; max-width:1400px !important;
+      margin:30px auto !important; height:auto !important;
+      column-count:2 !important; column-gap:40px !important;
+      display:block !important;
+    }
+    .page > * { break-inside:avoid !important; page-break-inside:avoid !important; }
+    h1, .logo, .subtitle, .badges, .divider, .footer { column-span:all !important; }
+    .page.congratulations-page {
+      column-count:1 !important; display:flex !important;
+      justify-content:center !important; align-items:center !important;
+      height:90vh !important; min-height:500px !important;
+    }
+  }
+  .congratulations-page {
+    display:flex !important; justify-content:center !important;
+    align-items:center !important; background:var(--cream) !important;
+    box-shadow:none !important; border:none !important;
+    min-height:297mm !important;
+  }
+  .congrats-img {
+    max-width:100% !important; max-height:100% !important;
+    object-fit:contain !important; mix-blend-mode:darken !important;
+  }
+</style>
+</head>
+<body class="student-mode">
+
+<!-- VIEW TOGGLE -->
+<div class="view-toggle">
+  <button class="toggle-btn" id="btn-student" onclick="setView('student')">● Student View</button>
+  <button class="toggle-btn" id="btn-teacher" onclick="setView('teacher')">Teacher View</button>
+</div>
+<button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+
+<!-- ==================== PAGE 1 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+  <div class="logo">Talksmiths — Lesson Engine™</div>
+  <h1>Comparatives</h1>
+  <div class="subtitle">Abdelfattah El Majdoubi El Idrissi · A1 · General English · Lesson 6</div>
+  <div class="badges">
+    <span class="badge badge-teal">A1 — Beginner</span>
+    <span class="badge badge-gold">60 min</span>
+    <span class="badge badge-gray">Grammar Foundations</span>
+    <span class="badge badge-gray">Lesson 6</span>
+  </div>
+  <div class="divider"></div>
+
+  <!-- Step 1 + Notebook row -->
+  <div class="cfo-row" style="column-span:all !important; display:flex; flex-wrap:wrap; gap:20px; align-items:stretch; margin-bottom:12px; width:100%;">
+    <div style="flex:1; min-width:320px; display:flex; flex-direction:column; gap:12px;">
+
+      <!-- STEP 1: WARM-UP -->
+      <div class="step">
+        <div class="step-header">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-name">Step 1 — 🎬 Warm-Up (Conversation Starter)</div>
+            <div class="step-title">Comparing Our Worlds</div>
+          </div>
+          <div class="step-time">8 min</div>
+        </div>
+        <div class="objective">Objective: Talk about differences between cities, weather, and interests.</div>
+
+        <div class="student-note">
+          🎓 <strong>Student Strategy:</strong> When comparing, we add "-er" to short words (tall → taller) or use "more" for long words (interesting → more interesting). And we always use **than**!
+        </div>
+
+        <div class="teacher-note">
+          📋 <strong>Teacher Note:</strong> Use concrete comparisons Baba loves. Kenitra vs. Casablanca, football vs. tennis, or oil painting vs. watercolor. Get him speaking right away by contrasting two items.
+        </div>
+
+        <div class="exercise">
+          <div class="ex-label">🗣️ Speaking Warm-Up — Which do you prefer?</div>
+          <p class="ex-item">Look at these choices and explain why using French or Darija if needed:</p>
+          <ul style="font-size:12px; margin-left:16px; margin-top:4px; line-height:1.5;">
+            <li>⚽ <strong>Football</strong> OR 🎾 <strong>Tennis</strong>?</li>
+            <li>🎨 <strong>Oil Painting</strong> OR ✏️ <strong>Sketching</strong>?</li>
+            <li>🏠 <strong>Kenitra</strong> OR 🏙️ <strong>Casablanca</strong>?</li>
+          </ul>
+          <div style="font-size:12px; margin-top:6px; font-style:italic; color:var(--gray);">
+            Example: "I think Kenitra is smaller and quieter than Casablanca."
+          </div>
+        </div>
+
+        <div class="darija-box">
+          <span class="flag">🇲🇦</span> <strong>Darija Connection:</strong> In Darija we say "Kber men" (Bigger than) or "Ahsen men" (Better than). Today we learn how to make these comparisons in English!
+        </div>
+      </div>
+    </div>
+
+    <!-- BABA'S NOTEBOOK -->
+    <div style="flex:1; min-width:320px; display:flex; flex-direction:column;">
+      <div class="step" style="border:1.5px solid var(--gold); background:#FAF8F4; flex:1; display:flex; flex-direction:column; margin-bottom:0;">
+        <div class="step-header" style="margin-bottom:6px;">
+          <div class="step-name" style="color:var(--gold); font-weight:800; font-size:11px;">🧠 Baba's Notebook</div>
+        </div>
+        <div class="body" style="flex:1; display:flex; flex-direction:column; gap:8px;">
+          <p style="font-size:12px; line-height:1.4; color:var(--gray);">
+            Write down your comparisons. Try to list 3 things that are different between Kenitra and Casablanca.
+          </p>
+          <ul style="font-size:12px; margin-left:16px; line-height:1.4; color:var(--navy); list-style-type:square;">
+            <li>Kenitra is __________ than Casablanca.</li>
+            <li>Moroccan tea is __________ than coffee.</li>
+          </ul>
+          <textarea class="answer-area" data-id="baba-notebook-p1" style="flex:1; min-height:180px; font-size:12px;" placeholder="My comparisons / المقارنات ديالي..."></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOCABULARY SECTION -->
+  <div style="column-span:all !important; margin-top:8px;">
+    <div class="step">
+      <div class="step-header">
+        <div class="step-name">📖 Comparative Vocabulary & Rules</div>
+      </div>
+
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-term">Taller / Smaller</div>
+          <div class="vocab-def">Used for short adjectives (+ -er).</div>
+          <div class="vocab-ex">"I am <strong>taller than</strong> my brother."</div>
+          <div class="vocab-bridge">🇫🇷 Plus grand / plus petit</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">More beautiful / More interesting</div>
+          <div class="vocab-def">Used for long adjectives (more + word).</div>
+          <div class="vocab-ex">"Painting is <strong>more interesting than</strong> watching TV."</div>
+          <div class="vocab-bridge">🇫🇷 Plus beau / plus intéressant</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Better (Irregular)</div>
+          <div class="vocab-def">The comparative of "good". Never say "gooder"!</div>
+          <div class="vocab-ex">"Moroccan tagine is <strong>better than</strong> fast food."</div>
+          <div class="vocab-bridge">🇲🇦 7sen men / 🇫🇷 Meilleur que</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Worse (Irregular)</div>
+          <div class="vocab-def">The comparative of "bad". Never say "badder"!</div>
+          <div class="vocab-ex">"Rain is bad, but a storm is <strong>worse than</strong> rain."</div>
+          <div class="vocab-bridge">🇲🇦 Kفسد من / 🇫🇷 Pire que</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">As... as → بحال... بحال</div>
+          <div class="vocab-def">Shows that two things are equal (=).</div>
+          <div class="vocab-ex">"Mehdya is <strong>as warm as</strong> Rabat today."</div>
+          <div class="vocab-bridge">🇲🇦 B7al b7al / 🇫🇷 Aussi... que</div>
+        </div>
+        
+        <div class="vocab-card" style="border-left-color:var(--gold);">
+          <div class="vocab-term" style="color:var(--gold);">💡 The Golden Rule: "THAN"</div>
+          <div class="vocab-def">We always use **than** (que) after the comparative!</div>
+          <div class="vocab-ex">"Morocco is warm<strong>er than</strong> France." (NOT "tahat" or "that")</div>
+          <div class="vocab-bridge">🇲🇦 Men / 🇫🇷 Que</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 6</span>
+    <span>Page 1 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 2 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 2: MINI-STORY -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-name">Step 2 — 📖 Mini-Story (Reading)</div>
+        <div class="step-title">The Art Studio vs The Lecture Hall</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Read a short dialogue comparing two favorite hobbies.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> Have Fattah read both roles (or play them together). Focus on the pronunciation of "-er" (tall-er, loud-er) and the word "than".
+    </div>
+
+    <div class="body" style="background:var(--cream); border-radius:8px; padding:16px; margin-top:8px; line-height:1.9; border-left:4px solid var(--teal);">
+      <p><strong>Fattah:</strong> I love painting <strong>because</strong> my studio is quiet. It is <strong>quieter than</strong> the university lecture hall.</p>
+      <p style="margin-top:6px;"><strong>Saad:</strong> That is true, Baba. But at the university, you meet many students. Isn't that <strong>more exciting than</strong> sitting alone?</p>
+      <p style="margin-top:6px;"><strong>Fattah:</strong> Yes, it is <strong>more exciting</strong>, but it is also <strong>more tiring</strong>! Painting makes me feel relaxed. The beach in Mehdya is <strong>better than</strong> a busy classroom.</p>
+      <p style="margin-top:6px;"><strong>Saad:</strong> Haha, I agree! Mehdya's sea air is <strong>fresher than</strong> anything else!</p>
+    </div>
+
+    <div class="exercise">
+      <div class="ex-label">📝 Comprehension & Logic Check</div>
+      <p class="ex-item"><strong>1.</strong> Why does Fattah prefer his art studio over the university lecture hall?</p>
+      <textarea class="answer-area" data-id="comp-1" placeholder="It is quieter than..."></textarea>
+      <p class="ex-item" style="margin-top:6px;"><strong>2.</strong> What does Saad think is more exciting than sitting alone?</p>
+      <textarea class="answer-area" data-id="comp-2" placeholder="Meeting..."></textarea>
+      <p class="ex-item" style="margin-top:6px;"><strong>3.</strong> What does Fattah say about the sea air in Mehdya?</p>
+      <textarea class="answer-area" data-id="comp-3" placeholder="It is fresher than..."></textarea>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 3: GRAMMAR IN ACTION -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-name">Step 3 — 🏗️ Grammar in Action</div>
+        <div class="step-title">Building Comparisons</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Practice modifying adjectives into comparative forms.</div>
+
+    <div class="expressions-box">
+      <div class="exp-title">📐 How to build them:</div>
+      <div class="exp-item">Short words (1 syllable): Add <strong>-er</strong> (fast → fast<strong>er</strong>)</div>
+      <div class="exp-item">Short words ending in -y: Change y to <strong>-ier</strong> (busy → bus<strong>ier</strong>)</div>
+      <div class="exp-item">Long words (2+ syllables): Use <strong>more</strong> (famous → <strong>more</strong> famous)</div>
+    </div>
+
+    <div class="exercise" style="margin-top:10px;">
+      <div class="ex-label">✏️ Write the correct comparative form (e.g. "taller than", "more expensive than")</div>
+      <p class="ex-item"><strong>1.</strong> (big) A house is <input type="text" class="answer-inline" data-id="grammar-1" placeholder="..."> an apartment.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>2.</strong> (easy) English is <input type="text" class="answer-inline" data-id="grammar-2" placeholder="..."> Chinese.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>3.</strong> (expensive) A new car is <input type="text" class="answer-inline" data-id="grammar-3" placeholder="..."> a bicycle.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>4.</strong> (good) Painting with oil is <input type="text" class="answer-inline" data-id="grammar-4" placeholder="..."> drawing with a pencil.</p>
+      <p class="ex-item" style="margin-top:8px;"><strong>5.</strong> (hot) Marrakech is <input type="text" class="answer-inline" data-id="grammar-5" placeholder="..."> Kenitra.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 6</span>
+    <span>Page 2 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 3 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 4: GAME ZONE -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-name">Step 4 — 🎮 Game Zone</div>
+        <div class="step-title">The Comparison Scale!</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Tap the grammatically correct comparative block to balance the scale!</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> This is a fun game focusing on common pitfalls (like double comparatives: "more better" or "more bigger"). Encourage Baba to notice these!
+    </div>
+
+    <div class="game-container" id="comp-game">
+      <div class="game-title">⚖️ THE COMPARISON SCALE</div>
+      <div style="background:var(--white); border:2px solid var(--navy); border-radius:6px; padding:12px; text-align:center; font-weight:700; font-size:14px; margin-bottom:10px;">
+        <span id="comp-sent">Sentence loading...</span>
+      </div>
+      
+      <div id="comp-question" style="font-size:12px; text-align:center; margin-bottom:8px; color:var(--gray);">Choose the correct comparative:</div>
+      
+      <div id="comp-options" style="display:flex; justify-content:center; gap:8px; margin-top:10px;"></div>
+      <div id="comp-feedback" class="game-feedback"></div>
+      <div id="comp-score" class="game-score"></div>
+      <div style="text-align:center; margin-top:12px;">
+        <button class="game-btn" id="comp-next" onclick="compNext()" style="display:none;">Next Sentence →</button>
+        <button class="game-btn" id="comp-restart" onclick="compStart()" style="display:none; background:var(--gold); border-color:var(--gold);">🔄 Play Again!</button>
+      </div>
+    </div>
+
+    <div class="darija-box" style="margin-top:10px;">
+      <span class="flag">🇲🇦</span> <strong>Darija Wisdom:</strong> <em>"Zaydoun fi dini khayr"</em> — More is better! Especially when practicing your grammar!
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 5: SPEAKING CHALLENGE -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">5</div>
+      <div>
+        <div class="step-name">Step 5 — 🗣️ Speaking Challenge</div>
+        <div class="step-title">Moroccan Football Debate</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Compare two football teams or players using comparative words.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> This is Baba's specialty! Ask him to compare Real Madrid and Barcelona, or Kenitra AC (KAC) and Wydad Casablanca. Get him to use words like: older, better, more exciting, more famous.
+    </div>
+
+    <div class="gold-banner">
+      <p><strong>⚽ The Great Football Debate</strong></p>
+      <p style="margin-top:6px; font-size:12px;">Compare two teams or two sports. Try to use these structures:</p>
+      <ul style="margin-top:4px; margin-left:16px; font-size:12px; line-height:1.5;">
+        <li>✅ "Team A is **better than** Team B."</li>
+        <li>✅ "Moroccan football is **more exciting than** European football."</li>
+        <li>✅ "Player X is **faster than** Player Y."</li>
+      </ul>
+    </div>
+
+    <div class="exercise" style="margin-top:10px;">
+      <div class="ex-label">📝 Write down your debate points</div>
+      <textarea class="answer-area" data-id="speaking-notes" style="min-height:90px;" placeholder="I think Real Madrid is better than Barcelona because..."></textarea>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 6</span>
+    <span>Page 3 of 4</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 4 ==================== -->
+<div class="page">
+  <img src="../Logo2.png" alt="Talksmiths" class="ts-logo-img">
+
+  <!-- STEP 6: BOSS LEVEL -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">6</div>
+      <div>
+        <div class="step-name">Step 6 — 🎯 Boss Level Challenge</div>
+        <div class="step-title">The Master Painter's Review</div>
+      </div>
+      <div class="step-time">10 min</div>
+    </div>
+    <div class="objective">Objective: Fill in the correct comparative forms to complete this art critique.</div>
+
+    <div class="teacher-note">
+      📋 <strong>Teacher Note:</strong> Help him see that "beautiful" is a long word, while "old" and "cheap" are short.
+    </div>
+
+    <div class="exercise">
+      <div class="ex-label">🎨 Comparing Two Paintings</div>
+      <p class="ex-item">Complete the text using: <strong>more beautiful, older, cheaper, better, more colorful</strong>.</p>
+      <div style="background:var(--cream); border-radius:8px; padding:14px; line-height:2.2; font-size:13px; margin-top:6px;">
+        Look at these two paintings. The landscape of Mehdya is <input type="text" class="answer-inline" data-id="boss-1" style="width:100px;" placeholder="..."> the portrait. 
+        It has red, blue, and yellow, so it is <input type="text" class="answer-inline" data-id="boss-2" style="width:100px;" placeholder="...">. 
+        The landscape costs 500 Dirhams, but the portrait is 300 Dirhams, so the portrait is <input type="text" class="answer-inline" data-id="boss-3" style="width:100px;" placeholder="...">.
+        However, the portrait was painted in 1950, so it is <input type="text" class="answer-inline" data-id="boss-4" style="width:100px;" placeholder="..."> than the landscape.
+        In my opinion, oil paint is <input type="text" class="answer-inline" data-id="boss-5" style="width:100px;" placeholder="..."> than watercolor!
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STEP 7: HOMEWORK -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">7</div>
+      <div>
+        <div class="step-name">Step 7 — 📚 Homework & Fun Challenge</div>
+        <div class="step-title">The Comparison Master</div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="hw-item">
+        <div class="hw-num">1</div>
+        <div>
+          <strong>Writing Task — My Hometown</strong><br>
+          <span style="font-size:12px; color:var(--gray);">Write 3 sentences comparing Kenitra to another city you have visited (like Rabat or Tangier). Use at least three different comparative words (e.g. larger, cleaner, calmer).</span>
+          <textarea class="answer-area" data-id="hw-1" style="min-height:80px; margin-top:6px;" placeholder="1. Kenitra is...&#10;2. ...&#10;3. ..."></textarea>
+        </div>
+      </div>
+
+      <div class="hw-item">
+        <div class="hw-num">2</div>
+        <div>
+          <strong>Grammar Fixer — Spot the Error!</strong><br>
+          <span style="font-size:12px; color:var(--gray);">Correct these incorrect sentences:
+          <br>1. "He is more tall than me." → <input type="text" class="answer-inline" data-id="hw-correct-1" style="width:200px;" placeholder="Correction...">
+          <br>2. "Morocco is more good than Spain." → <input type="text" class="answer-inline" data-id="hw-correct-2" style="width:200px;" placeholder="Correction..."></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="expressions-box" style="margin-top:10px;">
+      <div class="exp-title">📋 Lesson 6 Summary — What You Learned Today</div>
+      <div class="exp-item">✅ **Short Adjectives** → Add **-er** + **than** (cooler than)</div>
+      <div class="exp-item">✅ **Long Adjectives** → Add **more** + word + **than** (more interesting than)</div>
+      <div class="exp-item">✅ **Better** & **Worse** → Irregular comparison forms</div>
+      <div class="exp-item">✅ **As... as** → Shows that two things are equal</div>
+    </div>
+
+    <div class="darija-box" style="margin-top:10px; background:#E8F5E9; border-left-color:#4CAF50;">
+      <span class="flag">🌟</span> <strong>Message from Saad:</strong><br>
+      <em>Baba, you are getting better and better every day! "Kul youm t3alam shwia." Your English is growing stronger! In the next lesson, we will dive into the Simple Past to talk about your wonderful memories and career experiences. Let's keep it up! 💪🇲🇦</em>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Talksmiths Lesson Engine™ — Fattah · Lesson 6</span>
+    <span>Page 4 of 4</span>
+  </div>
+</div>
+
+<!-- CONGRATULATIONS PAGE -->
+<div class="page congratulations-page">
+  <img src="../Congratulations.png" alt="Congratulations" class="congrats-img">
+</div>
+
+<!-- SAVE STATUS -->
+<div class="save-status" id="save-status">✓ Progress saved</div>
+
+<script>
+const STORAGE_KEY = 'ts-lesson-fattah-comparatives';
+
+function setView(mode){
+  if(mode==='student'){
+    document.body.classList.add('student-mode');
+    document.getElementById('btn-student').classList.add('active');
+    document.getElementById('btn-teacher').classList.remove('active');
+  }else{
+    document.body.classList.remove('student-mode');
+    document.getElementById('btn-teacher').classList.add('active');
+    document.getElementById('btn-student').classList.remove('active');
+  }
+}
+function saveAll(){
+  const data={};
+  document.querySelectorAll('[data-id]').forEach(el=>{
+    data[el.dataset.id]=el.value;
+  });
+  data['comp-high-score'] = compHighScore;
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
+  const s=document.getElementById('save-status');
+  s.style.opacity='1';
+  setTimeout(()=>s.style.opacity='0',1500);
+}
+function loadAll(){
+  const raw=localStorage.getItem(STORAGE_KEY);
+  if(!raw)return;
+  const data=JSON.parse(raw);
+  Object.keys(data).forEach(id=>{
+    const el=document.querySelector('[data-id="'+id+'"]');
+    if(el)el.value=data[id];
+  });
+  if(data['comp-high-score']) compHighScore = data['comp-high-score'];
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  loadAll();
+  let timer;
+  document.querySelectorAll('[data-id]').forEach(el=>{
+    el.addEventListener('input',()=>{
+      clearTimeout(timer);
+      timer=setTimeout(saveAll,800);
+    });
+  });
+  compStart();
+  setView('student');
+});
+
+// ==================== COMPARISON QUIZ GAME ====================
+const compData = [
+  { sent: "A plane is _______ than a train.", opts: ["faster", "more fast"], ans: 0 },
+  { sent: "Casablanca is _______ than Kenitra.", opts: ["more big", "bigger"], ans: 1 },
+  { sent: "Moroccan tagine is _______ than pizza.", opts: ["better", "gooder"], ans: 0 },
+  { sent: "Learning English is _______ than watching TV.", opts: ["more interesting", "interestinger"], ans: 0 },
+  { sent: "A bicycle is _______ than a motorcycle.", opts: ["more slow", "slower"], ans: 1 },
+  { sent: "My painting is _______ than yours.", opts: ["more colorful", "colorfuler"], ans: 0 },
+  { sent: "Today's weather is _______ than yesterday's.", opts: ["badder", "worse"], ans: 1 },
+  { sent: "Studying anthropology is _______ than sitting idle.", opts: ["more exciting", "excitinger"], ans: 0 },
+  { sent: "A laptop is _______ than a notebook.", opts: ["heavier", "more heavy"], ans: 0 },
+  { sent: "Water is _______ than soda.", opts: ["healthier", "more healthy"], ans: 0 }
+];
+
+let compCurrent = 0;
+let compScore = 0;
+let compHighScore = 0;
+let compAnswered = false;
+
+function compStart() {
+  compCurrent = 0;
+  compScore = 0;
+  compAnswered = false;
+  document.getElementById('comp-restart').style.display = 'none';
+  document.getElementById('comp-feedback').style.display = 'none';
+  compShow();
+}
+
+function compShow() {
+  if (compCurrent >= compData.length) { compEnd(); return; }
+  compAnswered = false;
+  const q = compData[compCurrent];
+  document.getElementById('comp-question').innerHTML = `Question ${compCurrent+1} of ${compData.length}`;
+  document.getElementById('comp-sent').innerHTML = q.sent;
+  
+  const optDiv = document.getElementById('comp-options');
+  optDiv.innerHTML = '';
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'game-btn';
+    btn.textContent = opt;
+    btn.style.margin = '0 6px';
+    btn.onclick = () => compCheck(i, btn);
+    optDiv.appendChild(btn);
+  });
+  document.getElementById('comp-next').style.display = 'none';
+  document.getElementById('comp-feedback').style.display = 'none';
+  document.getElementById('comp-score').textContent = `Score: ${compScore}/${compData.length}`;
+}
+
+function compCheck(selected, btn) {
+  if (compAnswered) return;
+  compAnswered = true;
+  const q = compData[compCurrent];
+  const allBtns = document.querySelectorAll('#comp-options .game-btn');
+  const fb = document.getElementById('comp-feedback');
+
+  if (selected === q.ans) {
+    compScore++;
+    btn.classList.add('correct');
+    fb.textContent = '✅ Correct! The scale is perfectly balanced!';
+    fb.style.background = '#E8F5E9';
+    fb.style.color = '#2E7D32';
+  } else {
+    btn.classList.add('wrong');
+    allBtns[q.ans].classList.add('correct');
+    fb.textContent = `❌ Oops! The correct comparative is "${q.opts[q.ans]}"`;
+    fb.style.background = '#FFEBEE';
+    fb.style.color = '#C62828';
+  }
+  fb.style.display = 'block';
+  document.getElementById('comp-score').textContent = `Score: ${compScore}/${compData.length}`;
+  document.getElementById('comp-next').style.display = 'inline-block';
+}
+
+function compNext() {
+  compCurrent++;
+  compShow();
+}
+
+function compEnd() {
+  document.getElementById('comp-sent').innerHTML = '⚖️ Comparison Complete!';
+  document.getElementById('comp-question').innerHTML = '';
+  document.getElementById('comp-options').innerHTML = '';
+  document.getElementById('comp-next').style.display = 'none';
+  const fb = document.getElementById('comp-feedback');
+
+  if (compScore > compHighScore) compHighScore = compScore;
+
+  let msg = '';
+  if (compScore >= 9) msg = '🏆 COMPARATIVE MASTER! The scale is perfectly in your balance!';
+  else if (compScore >= 7) msg = '🌟 EXCELLENT WORK! You have a great eye for differences!';
+  else if (compScore >= 5) msg = '💪 GOOD EFFORT! Some of those rules can be tricky!';
+  else msg = '📚 Practice makes perfect. Let\'s try again!';
+
+  fb.innerHTML = `<div style="font-size:16px; margin-bottom:6px;">${msg}</div>
+    <div style="font-size:20px; font-weight:900;">Final Score: ${compScore}/${compData.length}</div>
+    <div style="font-size:12px; margin-top:4px; color:var(--gray);">🏅 High Score: ${compHighScore}/${compData.length}</div>`;
+  fb.style.display = 'block';
+  fb.style.background = compScore >= 7 ? '#E8F5E9' : '#FFF8E7';
+  fb.style.color = 'var(--navy)';
+  document.getElementById('comp-score').textContent = '';
+  document.getElementById('comp-restart').style.display = 'inline-block';
+  saveAll();
+}
+</script>
+</body>
+</html>
