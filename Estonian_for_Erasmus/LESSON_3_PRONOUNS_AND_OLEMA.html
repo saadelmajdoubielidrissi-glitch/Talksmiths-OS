@@ -1,0 +1,447 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estonian for Erasmus — A1: Personal Pronouns & Verb "To Be" | Talksmiths</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  :root{--teal:#007575;--gold:#D4A843;--navy:#1A2744;--cream:#FAF5EF;--white:#fff;--gray:#5A6577;--light:#F0EDEA;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--navy);}
+  .page{position:relative;width:210mm;margin:20px auto;background:var(--white);border-radius:12px;padding:18mm;box-shadow:0 4px 30px rgba(0,0,0,0.08);page-break-after:always;}
+  .page:last-child{page-break-after:auto;}
+  .logo{font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:4px;}
+  h1{font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:var(--navy);line-height:1.2;padding-right:80px;}
+  .subtitle{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin:6px 0 18px;}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;}
+  .badge{padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;}
+  .badge-teal{background:#E8F5F5;color:var(--teal);border:1px solid #b2dada;}
+  .badge-gold{background:#F5EDD6;color:#8a6a1a;border:1px solid #e0c97a;}
+  .badge-gray{background:var(--light);color:var(--gray);border:1px solid #ddd;}
+  .divider{height:2px;background:linear-gradient(90deg,var(--teal),var(--gold));border-radius:2px;margin:16px 0;}
+  .step{background:var(--white);border:1px solid var(--light);border-radius:10px;padding:14px 16px;margin-bottom:12px;break-inside:avoid;}
+  .step-header{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+  .step-num{width:32px;height:32px;border-radius:50%;background:var(--teal);color:white;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .step-name{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);}
+  .step-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:800;color:var(--navy);}
+  .step-time{margin-left:auto;font-size:11px;font-weight:700;color:var(--gray);}
+  .objective{font-size:11px;color:var(--gray);font-style:italic;margin-bottom:8px;padding-left:42px;}
+  .body{font-size:12px;line-height:1.6;color:var(--navy);}
+  .exercise{background:var(--cream);border-radius:8px;padding:10px 12px;margin-top:8px;}
+  .ex-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--teal);margin-bottom:6px;}
+  .ex-item{font-size:12px;margin-bottom:5px;}
+  .vocab-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;}
+  .vocab-card{background:var(--cream);border-radius:8px;padding:10px 12px;border-left:3px solid var(--teal);}
+  .vocab-term{font-weight:800;font-size:12px;color:var(--teal);}
+  .vocab-def{font-size:11px;color:var(--gray);margin:2px 0;}
+  .vocab-ex{font-size:11px;color:var(--navy);font-style:italic;}
+  .vocab-bridge{font-size:10px;color:#D4A843;font-weight:700;margin-top:2px;}
+  .expressions-box{background:#F5EDD6;border-left:4px solid var(--gold);border-radius:8px;padding:12px 16px;margin-top:12px;}
+  .exp-title{font-size:11px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+  .exp-item{font-size:12px;color:var(--navy);margin-bottom:4px;font-weight:600;}
+  .gold-banner{background:linear-gradient(135deg,var(--gold),#B8922E);border-radius:10px;padding:14px 16px;margin-top:8px;}
+  .gold-banner p{font-size:12px;color:var(--navy);line-height:1.6;}
+  .roleplay-box{background:#E8F5F5;border:1px solid #b2dada;border-radius:8px;padding:12px 14px;margin-top:8px;}
+  .speaker{font-size:11px;font-weight:700;color:var(--teal);margin-top:8px;}
+  .line{font-size:12px;color:var(--navy);font-style:italic;margin-top:2px;}
+  .hw-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;}
+  .hw-num{width:22px;height:22px;border-radius:50%;background:var(--gold);color:var(--navy);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .view-toggle{position:fixed;top:16px;left:16px;background:var(--white);padding:6px;border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,0.1);display:flex;gap:4px;z-index:100;font-family:'Inter',sans-serif;}
+  .toggle-btn{border:none;background:transparent;padding:8px 16px;border-radius:24px;font-size:12px;font-weight:700;cursor:pointer;color:var(--gray);transition:all 0.2s;}
+  .toggle-btn.active{background:var(--teal);color:white;}
+  body.student-mode .teacher-note{display:none!important;}
+  .teacher-note{background:#FFF8E7;border:1px solid #f0d080;border-radius:8px;padding:10px 12px;margin-top:8px;font-size:11px;color:#7a5c00;}
+  .footer{display:flex;justify-content:space-between;font-size:10px;color:var(--gray);margin-top:16px;padding-top:10px;border-top:1px solid var(--light);}
+  .print-btn{position:absolute;top:16px;right:16px;background:var(--teal);color:white;border:none;padding:10px 22px;border-radius:25px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;box-shadow:0 4px 16px rgba(0,117,117,0.3);z-index:100;}
+  .answer-area{width:100%;min-height:40px;border:1.5px dashed #b2dada;border-radius:6px;padding:8px 10px;font-family:'Inter',sans-serif;font-size:11px;color:var(--navy);background:#f8fcfc;resize:vertical;margin-top:4px;line-height:1.5;transition:border-color 0.2s;}
+  .answer-area:focus{outline:none;border-color:var(--teal);background:var(--white);}
+  .answer-area::placeholder{color:#aab;font-style:italic;}
+  .answer-inline{border:none;border-bottom:1.5px solid var(--navy);background:transparent;font-family:'Inter',sans-serif;font-size:12px;color:var(--navy);padding:2px 4px;min-width:160px;}
+  .answer-inline:focus{outline:none;border-bottom-color:var(--teal);background:#f8fcfc;}
+  .answer-inline::placeholder{color:#aab;font-style:italic;}
+  .save-status{position:fixed;bottom:16px;right:16px;background:var(--teal);color:white;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700;opacity:0;transition:opacity 0.3s;z-index:100;font-family:'Inter',sans-serif;}
+  @media print{.print-btn,.view-toggle,.save-status{display:none!important;}body{background:none;}.page{box-shadow:none;margin:0;border-radius:0;}.game-container{display:none!important;}}
+  .ts-logo-img{position:absolute;top:18mm;right:18mm;height:60px;object-fit:contain;opacity:0.95;pointer-events:none;}
+  @page{size:A4;margin:0;}
+  @media screen{body{display:block!important;background:#FAF5EF!important;}.page{width:95%!important;max-width:1400px!important;margin:30px auto!important;height:auto!important;column-count:2!important;column-gap:40px!important;display:block!important;}.page>*{break-inside:avoid!important;page-break-inside:avoid!important;}h1,.logo,.subtitle,.badges,.divider,.footer{column-span:all!important;}}
+  @media screen and (max-width:1200px){.page{column-count:1!important;}}
+  .flag-stripe{display:flex;height:5px;border-radius:3px;overflow:hidden;margin-bottom:14px;}
+  .flag-stripe .s1{background:#0072CE;flex:1;}.flag-stripe .s2{background:#1a1a1a;flex:1;}.flag-stripe .s3{background:#fff;flex:1;border:1px solid #ddd;}
+  .conj-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px;}
+  .conj-table th{background:var(--teal);color:white;padding:6px 10px;font-size:10px;text-transform:uppercase;letter-spacing:1px;text-align:left;}
+  .conj-table td{padding:7px 10px;border-bottom:1px solid var(--light);}
+  .conj-table tr:nth-child(even){background:var(--cream);}
+  .conj-table .pron{color:var(--navy);font-weight:700;}
+  .conj-table .est{color:var(--teal);font-weight:800;font-size:13px;}
+  .conj-table .phon{font-style:italic;color:#0072CE;font-size:11px;}
+  .conj-table .en{color:var(--gray);}
+  .game-container{background:var(--cream);border:2px solid var(--teal);border-radius:12px;padding:14px;margin-top:10px;}
+  .game-title{font-size:12px;font-weight:800;color:var(--teal);margin-bottom:8px;text-align:center;}
+  .game-btn{padding:8px 14px;border:2px solid var(--teal);border-radius:8px;background:var(--white);color:var(--navy);font-size:12px;font-weight:700;cursor:pointer;transition:all 0.2s;font-family:'Inter',sans-serif;margin:3px;}
+  .game-btn:hover{background:var(--teal);color:white;}
+  .game-btn.correct{background:#2E7D32;color:white;border-color:#2E7D32;}
+  .game-btn.wrong{background:#C62828;color:white;border-color:#C62828;animation:shake 0.4s;}
+  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+  .game-score{text-align:center;font-size:13px;font-weight:800;color:var(--teal);margin-top:8px;}
+  .game-feedback{text-align:center;font-size:12px;font-weight:700;margin-top:6px;padding:6px;border-radius:6px;display:none;}
+  .quiz-q{font-size:14px;font-weight:700;color:var(--navy);text-align:center;padding:10px;background:var(--light);border-radius:8px;margin-bottom:8px;}
+  .quiz-opts{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+  .res-link{display:flex;gap:10px;align-items:flex-start;padding:8px;background:var(--cream);border-radius:6px;border-left:3px solid var(--teal);margin-bottom:6px;}
+  .res-link span{font-size:18px;flex-shrink:0;}
+  .res-link a{font-size:11px;color:var(--teal);}
+  .res-link strong{font-size:12px;display:block;margin-bottom:2px;}
+  .res-link p{font-size:11px;color:var(--gray);margin:2px 0;}
+  .video-container { position:relative; width:100%; display:flex; justify-content:center; background:#000; border-radius:8px; margin-top:8px; overflow:hidden; max-height:550px; }
+  .video-container iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+
+  .custom-yt-player { position:absolute; top:0; left:0; width:100%; height:100%; cursor:pointer; background:#000; border-radius:8px; overflow:hidden; }
+  .custom-yt-player img { width:100%; height:100%; object-fit:contain; background:#000; opacity:0.8; transition:opacity 0.2s; }
+  .custom-yt-player:hover img { opacity:1; }
+  .custom-yt-player .play-btn { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:60px; height:40px; background:rgba(255,0,0,0.8); border-radius:10px; display:flex; align-items:center; justify-content:center; }
+  .custom-yt-player .play-btn::before { content:''; border-style:solid; border-width:10px 0 10px 16px; border-color:transparent transparent transparent #fff; margin-left:4px; }
+  .custom-yt-player:hover .play-btn { background:rgba(255,0,0,1); }
+  .two-col{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:start;margin-top:8px;}
+
+  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â• ERASMUS+ & UNIVERSITY OF TARTU BRANDING â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+  .erasmus-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px;background:linear-gradient(135deg,#003399 0%,#004494 100%);border-radius:10px;margin-bottom:14px;}
+  .erasmus-left{display:flex;align-items:center;gap:12px;}
+  .erasmus-stars{display:flex;align-items:center;justify-content:center;width:36px;height:36px;position:relative;}
+  .erasmus-stars svg{width:36px;height:36px;}
+  .erasmus-info{color:white;}
+  .erasmus-title{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#FFD700;margin-bottom:1px;}
+  .erasmus-sub{font-size:10px;color:rgba(255,255,255,0.85);font-weight:600;}
+  .ut-badge{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);padding:6px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);}
+  .ut-icon{width:28px;height:28px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#003399;flex-shrink:0;}
+  .ut-text{font-size:9px;color:rgba(255,255,255,0.9);font-weight:700;letter-spacing:0.5px;line-height:1.3;}
+  .erasmus-welcome{background:linear-gradient(135deg,#E8F0FE,#F0F4FF);border:1px solid #c4d4f0;border-radius:10px;padding:12px 16px;margin-bottom:14px;display:flex;align-items:flex-start;gap:12px;}
+  .erasmus-welcome-icon{font-size:28px;flex-shrink:0;line-height:1;}
+  .erasmus-welcome-text{font-size:11px;color:#1a3a6a;line-height:1.6;}
+  .erasmus-welcome-text strong{color:#003399;font-size:12px;}
+  .erasmus-footer-badge{display:inline-flex;align-items:center;gap:4px;background:#003399;color:white;padding:2px 8px;border-radius:10px;font-size:9px;font-weight:700;letter-spacing:0.5px;}
+  .erasmus-footer-badge .star{color:#FFD700;font-size:8px;}
+  @media print{.erasmus-header{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
+</style>
+
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+
+<!-- PAGE 1 -->
+<div class="page">
+  <img src="Logo2.png" class="ts-logo-img" alt="Talksmiths">
+  <div class="flag-stripe"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
+  <div class="logo">Talksmiths — Eesti Keel · Erasmus+ Edition</div>
+  <h1>Ma olen, sa oled — Personal Pronouns & the Verb "Olema"</h1>
+  <div class="subtitle">Month 1 · Week 3 · Lesson 3 — A1 Beginner</div>
+  <div class="badges">
+    <span class="badge badge-teal">🇪🇪 A1 Estonian</span>
+    <span class="badge badge-gold">📚 Keeleklikk · Sõnaveeb · ETV Jupiter</span>
+    <span class="badge badge-teal" style="background:#E8F0FE;color:#003399;border:1px solid #c4d4f0;">🎓 Erasmus+ Student Course</span>
+    <span class="badge badge-gray">⏱ 60 MIN</span>
+  </div>
+  <div class="divider"></div>
+
+  <!-- STEP 01: KUULAMINE (LISTENING) -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">01</div>
+      <div>
+        <div class="step-name">Kuulamine</div>
+        <div class="step-title">Listen & Observe — Pronouns in Action 🎧</div>
+      </div>
+      <div class="step-time">5 MIN</div>
+    </div>
+    <div class="objective">Every sentence you build uses pronouns. Watch the video and listen to the pronunciation.</div>
+    <div class="body">
+      <div class="video-container">
+        <video src="Videos/ZcTkB-bqRFM.mp4" poster="https://img.youtube.com/vi/ZcTkB-bqRFM/hqdefault.jpg" controls width="100%" height="100%" style="width:100%; height:auto; max-height:550px; border-radius:8px; object-fit:contain; background:#000;" controlsList="nodownload"></video>
+      </div>
+        <div class="exercise" style="margin-top:10px;">
+        <div class="ex-label">Comprehension Check</div>
+        <div class="ex-item">How do you say "I" in Estonian?</div>
+        <input class="answer-inline" data-id="kick-1" type="text" placeholder="...">
+        <div class="ex-item" style="margin-top:6px;">Did you notice how they pronounce "ma olen"? Write your thoughts:</div>
+        <input class="answer-inline" data-id="kick-2" type="text" placeholder="...">
+      </div>
+      </div>
+    </div>
+
+  <!-- STEP 02: DISCOVERY — PRONOUNS -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">02</div>
+      <div>
+        <div class="step-name">Discovery</div>
+        <div class="step-title">Personal Pronouns — Isikulised asesõnad 👥</div>
+      </div>
+      <div class="step-time">8 MIN</div>
+    </div>
+    <div class="objective">From Keeleklikk Module 3. Estonian has two forms of "you": formal <em>teie/te</em> and informal <em>sina/sa</em>. Use formal with strangers.</div>
+    <div class="body">
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-term">mina / ma</div><div class="vocab-def">I (full / contracted)</div><div class="vocab-ex">Ma olen tudeng. (I am a student.)</div></div>
+        <div class="vocab-card"><div class="vocab-term">sina / sa</div><div class="vocab-def">you (informal singular)</div><div class="vocab-ex">Sa oled tore. (You are nice.)</div></div>
+        <div class="vocab-card"><div class="vocab-term">tema / ta</div><div class="vocab-def">he / she / it (same word!)</div><div class="vocab-ex">Ta on Eestist. (He/She is from Estonia.)</div></div>
+        <div class="vocab-card"><div class="vocab-term">meie / me</div><div class="vocab-def">we</div><div class="vocab-ex">Me oleme sõbrad. (We are friends.)</div></div>
+        <div class="vocab-card"><div class="vocab-term">teie / te</div><div class="vocab-def">you (formal/plural)</div><div class="vocab-ex">Te olete väga lahked. (You are very kind.)</div></div>
+        <div class="vocab-card"><div class="vocab-term">nemad / nad</div><div class="vocab-def">they</div><div class="vocab-ex">Nad on Tartus. (They are in Tartu.)</div></div>
+      </div>
+      <div class="expressions-box" style="margin-top:10px;">
+        <div class="exp-title">⚠️ Key Cultural Note — Tema (ta)</div>
+        <div class="exp-item">Estonian has NO gendered pronouns. <strong>Tema/ta</strong> means he, she, AND it.</div>
+        <div class="exp-item">This means you cannot tell someone's gender from the pronoun alone — context does the work.</div>
+        <div class="exp-item">This is different from many European languages like French (il/elle), German (er/sie), and English (he/she).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 03: LANGUAGE STRUCTURE — OLEMA -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">03</div>
+      <div>
+        <div class="step-name">Language Structure</div>
+        <div class="step-title">Olema (To Be) — Full Conjugation 🏗️</div>
+      </div>
+      <div class="step-time">12 MIN</div>
+    </div>
+    <div class="objective">From Keeleklikk Module 3. Master this table — you will use every single form in daily life. Note the negative forms use "ei ole" for all persons.</div>
+    <div class="body">
+      <table class="conj-table">
+        <tr><th>Pronoun</th><th>Affirmative</th><th>Pronunciation</th><th>Negative</th><th>English</th></tr>
+        <tr><td class="pron">ma / mina</td><td class="est">olen</td><td class="phon">OH-len</td><td>ei ole</td><td class="en">I am / I am not</td></tr>
+        <tr><td class="pron">sa / sina</td><td class="est">oled</td><td class="phon">OH-led</td><td>ei ole</td><td class="en">you are / you are not</td></tr>
+        <tr><td class="pron">ta / tema</td><td class="est">on</td><td class="phon">ON</td><td>ei ole</td><td class="en">he/she is / is not</td></tr>
+        <tr><td class="pron">me / meie</td><td class="est">oleme</td><td class="phon">OH-leh-meh</td><td>ei ole</td><td class="en">we are / we are not</td></tr>
+        <tr><td class="pron">te / teie</td><td class="est">olete</td><td class="phon">OH-leh-teh</td><td>ei ole</td><td class="en">you are / you are not</td></tr>
+        <tr><td class="pron">nad / nemad</td><td class="est">on</td><td class="phon">ON</td><td>ei ole</td><td class="en">they are / they are not</td></tr>
+      </table>
+      <div class="teacher-note">💡 Note that the negative "ei ole" is the SAME for ALL persons in Estonian. This is a relief compared to many European languages! Keeleklikk Module 3 has excellent animated exercises for this.</div>
+      <div class="exercise" style="margin-top:10px;">
+        <div class="ex-label">Fill in the blanks — conjugate "olema"</div>
+        <div class="ex-item">1. Ta ___ Tartust. (She is from Tartu.) → <input class="answer-inline" data-id="conj-1" type="text" placeholder="..."></div>
+        <div class="ex-item">2. Me ___ väsinud. (We are tired.) → <input class="answer-inline" data-id="conj-2" type="text" placeholder="..."></div>
+        <div class="ex-item">3. Ma ___ ei ___ Eestist. (I am not from Estonia.) → <input class="answer-inline" data-id="conj-3" type="text" placeholder="... ei ..."></div>
+        <div class="ex-item">4. Nad ___ sõbrad. (They are friends.) → <input class="answer-inline" data-id="conj-4" type="text" placeholder="..."></div>
+        <div class="ex-item">5. Te ___ väga toredad! (You are very nice!) → <input class="answer-inline" data-id="conj-5" type="text" placeholder="..."></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <img src="Logo2.png" class="ts-logo-img" alt="Talksmiths">
+
+  <!-- STEP 04: VOCABULARY — ADJECTIVES -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">04</div>
+      <div>
+        <div class="step-name">Vocabulary</div>
+        <div class="step-title">Essential Adjectives with "Olema" 🎯</div>
+      </div>
+      <div class="step-time">10 MIN</div>
+    </div>
+    <div class="objective">These 12 adjectives combine directly with "olema" to form your first complete descriptions. From Keeleklikk + Sõnaveeb database.</div>
+    <div class="body">
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-term">väsinud</div><div class="vocab-def">tired</div><div class="vocab-ex">Ma olen väga väsinud. (I'm very tired.)</div></div>
+        <div class="vocab-card"><div class="vocab-term">näljane</div><div class="vocab-def">hungry</div><div class="vocab-ex">Sa oled näljane? (Are you hungry?)</div></div>
+        <div class="vocab-card"><div class="vocab-term">õnnelik</div><div class="vocab-def">happy</div><div class="vocab-ex">Ta on väga õnnelik. (She is very happy.)</div></div>
+        <div class="vocab-card"><div class="vocab-term">kurb</div><div class="vocab-def">sad</div><div class="vocab-ex">Me oleme kurvad. (We are sad.)</div></div>
+        <div class="vocab-card"><div class="vocab-term">tore / lahke</div><div class="vocab-def">nice / kind</div><div class="vocab-ex">Eestlased on väga toredad. (Estonians are very nice.)</div></div>
+        <div class="vocab-card"><div class="vocab-term">raske / kerge</div><div class="vocab-def">hard / easy</div><div class="vocab-ex">Eesti keel on raske aga huvitav. (Estonian is hard but interesting.)</div></div>
+        <div class="vocab-card"><div class="vocab-term">vana / noor</div><div class="vocab-def">old / young</div><div class="vocab-ex">Ta on noor. (He/she is young.)</div></div>
+        <div class="vocab-card"><div class="vocab-term">suur / väike</div><div class="vocab-def">big / small</div><div class="vocab-ex">Tallinn on väike linn. (Tallinn is a small city.)</div></div>
+      </div>
+      <div class="exercise" style="margin-top:10px;">
+        <div class="ex-label">Build your own sentences — use pronouns + olema + adjective</div>
+        <div class="ex-item">How are you feeling right now? (Ma olen...) → <input class="answer-inline" data-id="adj-1" type="text" placeholder="Ma olen ..."></div>
+        <div class="ex-item">Describe Estonia in one sentence → <input class="answer-inline" data-id="adj-2" type="text" placeholder="Eesti on ..."></div>
+        <div class="ex-item">Is Estonian hard for you? → <input class="answer-inline" data-id="adj-3" type="text" placeholder="Eesti keel on ..."></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 05: ROLEPLAY -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">05</div>
+      <div>
+        <div class="step-name">Roleplay</div>
+        <div class="step-title">Doctor's Visit — Arstil käimine 🏥</div>
+      </div>
+      <div class="step-time">10 MIN</div>
+    </div>
+    <div class="objective">A real-life A1 scenario from Konsta.app. At the doctor, you must describe how you feel using "olema" + adjective.</div>
+    <div class="body">
+      <div class="roleplay-box">
+        <div class="speaker">👩‍⚕️ Arst (Dr. Kask):</div>
+        <div class="line">Tere! Kuidas te ennast tunnete? (Hello! How do you feel?)</div>
+        <div class="speaker">🙋 Sina (You):</div>
+        <div class="line">Tere! Ma olen väga väsinud ja natuke haige. (Hello! I am very tired and a little sick.)</div>
+        <div class="speaker">👩‍⚕️ Dr. Kask:</div>
+        <div class="line">Kas teil on palavik? (Do you have a fever?)</div>
+        <div class="speaker">🙋 Sina (You):</div>
+        <div class="line">Jah, ma arvan, et mul on palavik. (Yes, I think I have a fever.)</div>
+        <div class="speaker">👩‍⚕️ Dr. Kask:</div>
+        <div class="line">Olge rahulik. Kõik saab korda! (Be calm. Everything will be fine!)</div>
+      </div>
+      <div class="expressions-box" style="margin-top:8px;">
+        <div class="exp-title">🇪🇪 Key Medical Phrases (Sõnaveeb)</div>
+        <div class="exp-item">haige — sick | palabik — fever | valu — pain</div>
+        <div class="exp-item">peavalu — headache (pea = head + valu = pain)</div>
+        <div class="exp-item">kõhuvalu — stomachache (kõht = stomach + valu = pain)</div>
+        <div class="exp-item">Mul on valu. — I have pain. | Mul on peavalu. — I have a headache.</div>
+      </div>
+      <div class="exercise" style="margin-top:8px;">
+        <div class="ex-label">Write your own response to the doctor</div>
+        <textarea class="answer-area" data-id="rp-1" placeholder="Describe how you feel using 3 adjectives and at least 2 full sentences with olema..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 06: RÄÄKIMINE (SPEAKING) -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">06</div>
+      <div>
+        <div class="step-name">Rääkimine</div>
+        <div class="step-title">Pronunciation Challenge 🗣️</div>
+      </div>
+      <div class="step-time">5 MIN</div>
+    </div>
+    <div class="body">
+      <div class="gold-banner"><p>Record yourself reading the roleplay dialogue aloud. Focus on the word "olen" and "väsinud". Listen back and compare it to the video you watched.</p></div>
+      <textarea class="answer-area" data-id="prod-1" placeholder="Self-correction notes: Which adjectives were hardest to pronounce?" style="min-height:80px;"></textarea>
+    </div>
+  </div>
+
+  <!-- STEP 07: QUIZ -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">07</div>
+      <div>
+        <div class="step-name">Quiz</div>
+        <div class="step-title">Pronouns & Olema Challenge 🏆</div>
+      </div>
+      <div class="step-time">6 MIN</div>
+    </div>
+    <div class="game-container">
+      <div class="game-title" id="quiz-progress">Question 1 of 8</div>
+      <div class="quiz-q" id="quiz-q">Loading...</div>
+      <div class="quiz-opts" id="quiz-opts"></div>
+      <div class="game-feedback" id="quiz-feedback"></div>
+      <div class="game-score" id="quiz-score"></div>
+    </div>
+  </div>
+
+  <!-- STEP 08: HOMEWORK -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">08</div>
+      <div>
+        <div class="step-name">Homework & Resources</div>
+        <div class="step-title">This Week's Daily Practice 📚</div>
+      </div>
+      <div class="step-time">Daily</div>
+    </div>
+    <div class="body">
+      <div class="res-link">
+        <span>📚</span>
+        <div><strong>Keeleklikk — Module 3</strong><p>Complete Module 3 (Personal Pronouns). It includes video explanations and interactive exercises.</p><a href="https://www.keeleklikk.ee/en/" target="_blank">→ keeleklikk.ee/en</a></div>
+      </div>
+      <div class="res-link" style="border-left-color:#0072CE;">
+        <span>📖</span>
+        <div><strong>Sõnaveeb — Adjectives Deep Dive</strong><p>Search: väsinud, õnnelik, raske, tore. Read example sentences and listen to pronunciation.</p><a href="https://www.sonaveeb.ee" target="_blank">→ sonaveeb.ee</a></div>
+      </div>
+      <div class="res-link" style="border-left-color:var(--gold);">
+        <span>📺</span>
+        <div><strong>ETV Jupiter — Language Show</strong><p>Estonia's public broadcaster has language learning shows. Even watching 5 min of Estonian TV daily trains your ear.</p><a href="https://jupiter.err.ee" target="_blank">→ jupiter.err.ee</a></div>
+      </div>
+      <div style="margin-top:8px;">
+        <div class="hw-item"><div class="hw-num">1</div><div class="ex-item">Write 10 sentences about yourself using "ma olen" — vary the adjectives each time.</div></div>
+        <div class="hw-item"><div class="hw-num">2</div><div class="ex-item">Conjugate "olema" 5 times from memory for all 6 pronouns. Time yourself — target under 30 seconds.</div></div>
+        <div class="hw-item"><div class="hw-num">3</div><div class="ex-item">Go to Sõnaveeb and look up 5 adjectives not in this lesson. Add them to your personal word list.</div></div>
+      </div>
+      <textarea class="answer-area" data-id="hw-notes" placeholder="Self-assessment: How confident are you with olema? What adjectives do you keep forgetting?"></textarea>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>🇪🇪 Lesson 3 of 12 — Month 1, Week 3</span>
+    <span>Next: Directions, Transport & Getting Around Tallinn</span>
+    <span>Talksmiths © 2026</span>
+  </div>
+</div>
+
+<!-- CONGRATULATIONS PAGE -->
+<div class="page" style="column-count: 1 !important; display: flex !important; justify-content: center; align-items: center; background: var(--cream); box-shadow: none; border: none;">
+  <img src="Congratulations.png" alt="Congratulations" style="max-width: 100%; height: auto; mix-blend-mode: darken; margin: 0 auto;">
+</div>
+
+<div class="save-status" id="save-status">✓ Saved</div>
+<script>
+const STORAGE_KEY='ts-lesson-erasmus-tartu-3';
+function setView(mode){if(mode==='student'){document.body.classList.add('student-mode');document.getElementById('btn-student').classList.add('active');document.getElementById('btn-teacher').classList.remove('active');}else{document.body.classList.remove('student-mode');document.getElementById('btn-teacher').classList.add('active');document.getElementById('btn-student').classList.remove('active');}}
+function saveAll(){const d={};document.querySelectorAll('[data-id]').forEach(el=>{d[el.dataset.id]=el.value;});localStorage.setItem(STORAGE_KEY,JSON.stringify(d));const s=document.getElementById('save-status');s.style.opacity='1';setTimeout(()=>s.style.opacity='0',1500);}
+function loadAll(){const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return;const d=JSON.parse(raw);Object.keys(d).forEach(id=>{const el=document.querySelector('[data-id="'+id+'"]');if(el)el.value=d[id];});}
+const quiz=[
+  {q:'"She is" in Estonian (ta)',a:'on',o:['on','oled','olen','oleme']},
+  {q:'"We are" in Estonian',a:'oleme',o:['oleme','olete','on','olen']},
+  {q:'tema / ta means...',a:'he / she / it',o:['he / she / it','they','you (formal)','we']},
+  {q:'The negative of olema for ALL persons',a:'ei ole',o:['ei ole','ei olen','ei oled','ei on']},
+  {q:'väsinud',a:'tired',o:['tired','hungry','happy','sick']},
+  {q:'õnnelik',a:'happy',o:['sad','tired','happy','young']},
+  {q:'"I am not from Estonia" in Estonian',a:'Ma ei ole Eestist',o:['Ma ei ole Eestist','Ma olen Eestist','Ma on Eestist','Ta ei ole Eestist']},
+  {q:'Which pronoun has NO gender in Estonian?',a:'ta (tema)',o:['ta (tema)','sa (sina)','ma (mina)','nad (nemad)']},
+];
+let qi=0,sc=0;
+function showQ(){if(qi>=quiz.length){document.getElementById('quiz-q').textContent='Quiz Complete! 🎉';document.getElementById('quiz-opts').innerHTML='';document.getElementById('quiz-progress').textContent='';document.getElementById('quiz-score').textContent='Score: '+sc+'/'+quiz.length;return;}const q=quiz[qi];document.getElementById('quiz-progress').textContent='Question '+(qi+1)+' of '+quiz.length+' | Score: '+sc;document.getElementById('quiz-q').textContent=q.q;const opts=document.getElementById('quiz-opts');opts.innerHTML='';[...q.o].sort(()=>Math.random()-0.5).forEach(opt=>{const b=document.createElement('button');b.className='game-btn';b.textContent=opt;b.onclick=function(){check(opt,q.a,b);};opts.appendChild(b);});document.getElementById('quiz-feedback').style.display='none';}
+function check(ch,cor,btn){document.querySelectorAll('#quiz-opts .game-btn').forEach(b=>b.onclick=null);const fb=document.getElementById('quiz-feedback');if(ch===cor){btn.classList.add('correct');sc++;fb.textContent='✅ Õige!';fb.style.background='#e6f4ea';fb.style.color='#2E7D32';}else{btn.classList.add('wrong');fb.textContent='❌ Answer: '+cor;fb.style.background='#fce8e6';fb.style.color='#C62828';document.querySelectorAll('#quiz-opts .game-btn').forEach(b=>{if(b.textContent===cor)b.classList.add('correct');});}fb.style.display='block';qi++;setTimeout(showQ,1800);}
+document.addEventListener('DOMContentLoaded',()=>{loadAll();showQ();let t;document.querySelectorAll('[data-id]').forEach(el=>{el.addEventListener('input',()=>{clearTimeout(t);t=setTimeout(saveAll,800);});});});
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.vocab-card').forEach(card => {
+    const termEl = card.querySelector('.vocab-term');
+    const bridgeEl = card.querySelector('.vocab-bridge');
+    if (termEl && bridgeEl && typeof speak === 'function') {
+      bridgeEl.style.cursor = 'pointer';
+      bridgeEl.title = 'Click to play audio';
+      bridgeEl.addEventListener('click', () => {
+        speak(termEl.textContent.trim());
+      });
+    }
+  });
+});
+</script>
+
+
+<style id="lesson-nav-style">
+.lesson-nav{background:var(--navy,#1A2744);padding:20px 24px;margin-top:32px;}
+.nav-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.nav-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:30px;font-size:12px;font-weight:800;text-decoration:none;transition:all 0.2s;letter-spacing:0.05em;font-family:'Inter',sans-serif;}
+.nav-home{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.12);}
+.nav-home:hover{background:rgba(255,255,255,0.15);color:#fff;}
+.nav-prev{background:rgba(0,117,117,0.15);color:#5bd0d0;border:1px solid rgba(0,117,117,0.3);}
+.nav-prev:hover{background:rgba(0,117,117,0.3);color:#fff;}
+.nav-next{background:#007575;color:#fff;border:1px solid #007575;box-shadow:0 4px 14px rgba(0,117,117,0.35);}
+.nav-next:hover{background:#005f5f;transform:translateX(2px);}
+.nav-indicator{font-size:11px;color:rgba(255,255,255,0.4);font-weight:700;letter-spacing:0.08em;text-align:center;}
+.nav-spacer{flex:1;}
+@media(max-width:600px){.nav-inner{justify-content:center;}.nav-spacer{display:none;}}
+</style>
+<div class="lesson-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-btn nav-home">↩ All Lessons</a>
+    <div class="nav-spacer"></div>
+    <a href="LESSON_2_NUMBERS_COLOURS_COFFEE.html" class="nav-btn nav-prev">← ☕ Lesson 2</a>
+    <span class="nav-indicator">Lesson 3 of 12</span>
+    <a href="LESSON_4_DIRECTIONS_AND_TRANSPORT.html" class="nav-btn nav-next">Lesson 4 🚌 →</a>
+  </div>
+</div>
+</body>
+</html>

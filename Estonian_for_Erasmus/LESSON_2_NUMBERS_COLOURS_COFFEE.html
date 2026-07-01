@@ -1,0 +1,508 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estonian for Erasmus — A1: Numbers, Colours & Ordering Coffee | Talksmiths</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  :root{--teal:#007575;--gold:#D4A843;--navy:#1A2744;--cream:#FAF5EF;--white:#fff;--gray:#5A6577;--light:#F0EDEA;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--navy);}
+  .page{position:relative;width:210mm;margin:20px auto;background:var(--white);border-radius:12px;padding:18mm;box-shadow:0 4px 30px rgba(0,0,0,0.08);page-break-after:always;}
+  .page:last-child{page-break-after:auto;}
+  .logo{font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:4px;}
+  h1{font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:var(--navy);line-height:1.2;padding-right:80px;}
+  .subtitle{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin:6px 0 18px;}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;}
+  .badge{padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;}
+  .badge-teal{background:#E8F5F5;color:var(--teal);border:1px solid #b2dada;}
+  .badge-gold{background:#F5EDD6;color:#8a6a1a;border:1px solid #e0c97a;}
+  .badge-gray{background:var(--light);color:var(--gray);border:1px solid #ddd;}
+  .divider{height:2px;background:linear-gradient(90deg,var(--teal),var(--gold));border-radius:2px;margin:16px 0;}
+  .step{background:var(--white);border:1px solid var(--light);border-radius:10px;padding:14px 16px;margin-bottom:12px;break-inside:avoid;}
+  .step-header{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+  .step-num{width:32px;height:32px;border-radius:50%;background:var(--teal);color:white;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .step-name{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);}
+  .step-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:800;color:var(--navy);}
+  .step-time{margin-left:auto;font-size:11px;font-weight:700;color:var(--gray);}
+  .objective{font-size:11px;color:var(--gray);font-style:italic;margin-bottom:8px;padding-left:42px;}
+  .body{font-size:12px;line-height:1.6;color:var(--navy);}
+  .exercise{background:var(--cream);border-radius:8px;padding:10px 12px;margin-top:8px;}
+  .ex-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--teal);margin-bottom:6px;}
+  .ex-item{font-size:12px;margin-bottom:5px;}
+  .vocab-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;}
+  .vocab-card{background:var(--cream);border-radius:8px;padding:10px 12px;border-left:3px solid var(--teal);}
+  .vocab-term{font-weight:800;font-size:12px;color:var(--teal);}
+  .vocab-def{font-size:11px;color:var(--gray);margin:2px 0;}
+  .vocab-ex{font-size:11px;color:var(--navy);font-style:italic;}
+  .vocab-bridge{font-size:10px;color:#D4A843;font-weight:700;margin-top:2px;}
+  .expressions-box{background:#F5EDD6;border-left:4px solid var(--gold);border-radius:8px;padding:12px 16px;margin-top:12px;}
+  .exp-title{font-size:11px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+  .exp-item{font-size:12px;color:var(--navy);margin-bottom:4px;font-weight:600;}
+  .gold-banner{background:linear-gradient(135deg,var(--gold),#B8922E);border-radius:10px;padding:14px 16px;margin-top:8px;}
+  .gold-banner p{font-size:12px;color:var(--navy);line-height:1.6;}
+  .roleplay-box{background:#E8F5F5;border:1px solid #b2dada;border-radius:8px;padding:12px 14px;margin-top:8px;}
+  .speaker{font-size:11px;font-weight:700;color:var(--teal);margin-top:8px;}
+  .line{font-size:12px;color:var(--navy);font-style:italic;margin-top:2px;}
+  .hw-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;}
+  .hw-num{width:22px;height:22px;border-radius:50%;background:var(--gold);color:var(--navy);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .view-toggle{position:fixed;top:16px;left:16px;background:var(--white);padding:6px;border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,0.1);display:flex;gap:4px;z-index:100;font-family:'Inter',sans-serif;}
+  .toggle-btn{border:none;background:transparent;padding:8px 16px;border-radius:24px;font-size:12px;font-weight:700;cursor:pointer;color:var(--gray);transition:all 0.2s;}
+  .toggle-btn.active{background:var(--teal);color:white;}
+  body.student-mode .teacher-note{display:none!important;}
+  body.student-mode .teacher-only{display:none!important;}
+  body:not(.student-mode) .student-note{display:none!important;}
+  .teacher-note{background:#FFF8E7;border:1px solid #f0d080;border-radius:8px;padding:10px 12px;margin-top:8px;font-size:11px;color:#7a5c00;}
+  .footer{display:flex;justify-content:space-between;font-size:10px;color:var(--gray);margin-top:16px;padding-top:10px;border-top:1px solid var(--light);}
+  .print-btn{position:absolute;top:16px;right:16px;background:var(--teal);color:white;border:none;padding:10px 22px;border-radius:25px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;box-shadow:0 4px 16px rgba(0,117,117,0.3);z-index:100;}
+  .answer-area{width:100%;min-height:40px;border:1.5px dashed #b2dada;border-radius:6px;padding:8px 10px;font-family:'Inter',sans-serif;font-size:11px;color:var(--navy);background:#f8fcfc;resize:vertical;margin-top:4px;line-height:1.5;transition:border-color 0.2s;}
+  .answer-area:focus{outline:none;border-color:var(--teal);background:var(--white);}
+  .answer-area::placeholder{color:#aab;font-style:italic;}
+  .answer-inline{border:none;border-bottom:1.5px solid var(--navy);background:transparent;font-family:'Inter',sans-serif;font-size:12px;color:var(--navy);padding:2px 4px;min-width:200px;width:100%;max-width:100%;}
+  .answer-inline:focus{outline:none;border-bottom-color:var(--teal);background:#f8fcfc;}
+  .answer-inline::placeholder{color:#aab;font-style:italic;}
+  .save-status{position:fixed;bottom:16px;right:16px;background:var(--teal);color:white;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700;opacity:0;transition:opacity 0.3s;z-index:100;font-family:'Inter',sans-serif;}
+  @media print{.print-btn,.view-toggle,.save-status{display:none!important;}body{background:none;}.page{box-shadow:none;margin:0;border-radius:0;}.answer-area{border:1px solid #ddd;}.answer-inline{border-bottom:1px solid var(--navy);}.game-container{display:none!important;}.colour-grid{display:none!important;}}
+  .ts-logo-img{position:absolute;top:18mm;right:18mm;height:60px;object-fit:contain;opacity:0.95;pointer-events:none;}
+  @page{size:A4;margin:0;}
+  @media screen{body{display:block!important;background:#FAF5EF!important;}.page{width:95%!important;max-width:1400px!important;margin:30px auto!important;height:auto!important;column-count:2!important;column-gap:40px!important;display:block!important;}.page>*{break-inside:avoid!important;page-break-inside:avoid!important;}h1,.logo,.subtitle,.badges,.divider,.footer{column-span:all!important;}}
+  @media screen and (max-width:1200px){.page{column-count:1!important;}}
+  /* Estonian Extensions */
+  .flag-stripe{display:flex;height:5px;border-radius:3px;overflow:hidden;margin-bottom:14px;}
+  .flag-stripe .s1{background:#0072CE;flex:1;}.flag-stripe .s2{background:#1a1a1a;flex:1;}.flag-stripe .s3{background:#fff;flex:1;border:1px solid #ddd;}
+  .num-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px;}
+  .num-table th{background:var(--teal);color:white;padding:5px 8px;font-size:10px;text-transform:uppercase;letter-spacing:1px;text-align:left;}
+  .num-table td{padding:6px 8px;border-bottom:1px solid var(--light);vertical-align:middle;}
+  .num-table tr:nth-child(even){background:var(--cream);}
+  .num-table .n{font-size:16px;font-weight:800;color:var(--teal);min-width:30px;}
+  .num-table .est{font-weight:700;color:var(--navy);}
+  .num-table .phon{font-style:italic;color:#0072CE;font-size:11px;}
+  .colour-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px;}
+  .colour-card{border-radius:8px;padding:10px;text-align:center;cursor:pointer;transition:transform 0.2s;}
+  .colour-card:hover{transform:scale(1.05);}
+  .colour-card .c-name{font-size:11px;font-weight:800;color:white;text-shadow:0 1px 3px rgba(0,0,0,0.4);}
+  .colour-card .c-en{font-size:10px;color:rgba(255,255,255,0.85);}
+  .game-container{background:var(--cream);border:2px solid var(--teal);border-radius:12px;padding:14px;margin-top:10px;}
+  .game-title{font-size:12px;font-weight:800;color:var(--teal);margin-bottom:8px;text-align:center;}
+  .game-btn{padding:8px 14px;border:2px solid var(--teal);border-radius:8px;background:var(--white);color:var(--navy);font-size:12px;font-weight:700;cursor:pointer;transition:all 0.2s;font-family:'Inter',sans-serif;margin:3px;}
+  .game-btn:hover{background:var(--teal);color:white;}
+  .game-btn.correct{background:#2E7D32;color:white;border-color:#2E7D32;}
+  .game-btn.wrong{background:#C62828;color:white;border-color:#C62828;animation:shake 0.4s;}
+  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+  .game-score{text-align:center;font-size:13px;font-weight:800;color:var(--teal);margin-top:8px;}
+  .game-feedback{text-align:center;font-size:12px;font-weight:700;margin-top:6px;padding:6px;border-radius:6px;display:none;}
+  .quiz-q{font-size:14px;font-weight:700;color:var(--navy);text-align:center;padding:10px;background:var(--light);border-radius:8px;margin-bottom:8px;}
+  .quiz-opts{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+  .res-link{display:flex;gap:10px;align-items:flex-start;padding:8px;background:var(--cream);border-radius:6px;border-left:3px solid var(--teal);margin-bottom:6px;}
+  .res-link span{font-size:18px;flex-shrink:0;}
+  .res-link a{font-size:11px;color:var(--teal);}
+  .res-link strong{font-size:12px;display:block;margin-bottom:2px;}
+  .res-link p{font-size:11px;color:var(--gray);margin:2px 0;}
+  .video-container { position:relative; width:100%; display:flex; justify-content:center; background:#000; border-radius:8px; margin-top:8px; overflow:hidden; max-height:550px; }
+  .video-container iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+
+  .custom-yt-player { position:absolute; top:0; left:0; width:100%; height:100%; cursor:pointer; background:#000; border-radius:8px; overflow:hidden; }
+  .custom-yt-player img { width:100%; height:100%; object-fit:contain; background:#000; opacity:0.8; transition:opacity 0.2s; }
+  .custom-yt-player:hover img { opacity:1; }
+  .custom-yt-player .play-btn { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:60px; height:40px; background:rgba(255,0,0,0.8); border-radius:10px; display:flex; align-items:center; justify-content:center; }
+  .custom-yt-player .play-btn::before { content:''; border-style:solid; border-width:10px 0 10px 16px; border-color:transparent transparent transparent #fff; margin-left:4px; }
+  .custom-yt-player:hover .play-btn { background:rgba(255,0,0,1); }
+  .two-col{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:start;margin-top:8px;}
+
+  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â• ERASMUS+ & UNIVERSITY OF TARTU BRANDING â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+  .erasmus-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px;background:linear-gradient(135deg,#003399 0%,#004494 100%);border-radius:10px;margin-bottom:14px;}
+  .erasmus-left{display:flex;align-items:center;gap:12px;}
+  .erasmus-stars{display:flex;align-items:center;justify-content:center;width:36px;height:36px;position:relative;}
+  .erasmus-stars svg{width:36px;height:36px;}
+  .erasmus-info{color:white;}
+  .erasmus-title{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#FFD700;margin-bottom:1px;}
+  .erasmus-sub{font-size:10px;color:rgba(255,255,255,0.85);font-weight:600;}
+  .ut-badge{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);padding:6px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);}
+  .ut-icon{width:28px;height:28px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#003399;flex-shrink:0;}
+  .ut-text{font-size:9px;color:rgba(255,255,255,0.9);font-weight:700;letter-spacing:0.5px;line-height:1.3;}
+  .erasmus-welcome{background:linear-gradient(135deg,#E8F0FE,#F0F4FF);border:1px solid #c4d4f0;border-radius:10px;padding:12px 16px;margin-bottom:14px;display:flex;align-items:flex-start;gap:12px;}
+  .erasmus-welcome-icon{font-size:28px;flex-shrink:0;line-height:1;}
+  .erasmus-welcome-text{font-size:11px;color:#1a3a6a;line-height:1.6;}
+  .erasmus-welcome-text strong{color:#003399;font-size:12px;}
+  .erasmus-footer-badge{display:inline-flex;align-items:center;gap:4px;background:#003399;color:white;padding:2px 8px;border-radius:10px;font-size:9px;font-weight:700;letter-spacing:0.5px;}
+  .erasmus-footer-badge .star{color:#FFD700;font-size:8px;}
+  @media print{.erasmus-header{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
+</style>
+
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+
+<!-- PAGE 1 -->
+<div class="page">
+  <img src="Logo2.png" class="ts-logo-img" alt="Talksmiths">
+  <div class="flag-stripe"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
+  <div class="logo">Talksmiths — Eesti Keel · Erasmus+ Edition</div>
+  <h1>Üks, kaks, kolm — Numbers, Colours & Your First Coffee</h1>
+  <div class="subtitle">Month 1 · Week 2 · Lesson 2 — A1 Beginner</div>
+  <div class="badges">
+    <span class="badge badge-teal">🇪🇪 A1 Estonian</span>
+    <span class="badge badge-gold">📚 Loecsen · Konsta.app · LingoHut</span>
+    <span class="badge badge-teal" style="background:#E8F0FE;color:#003399;border:1px solid #c4d4f0;">🎓 Erasmus+ Student Course</span>
+    <span class="badge badge-gray">⏱ 60 MIN</span>
+  </div>
+  <div class="divider"></div>
+
+  <!-- STEP 01: KUULAMINE (LISTENING) -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">01</div>
+      <div>
+        <div class="step-name">Kuulamine</div>
+        <div class="step-title">Listen & Observe — Estonian Numbers 🎧</div>
+      </div>
+      <div class="step-time">5 MIN</div>
+    </div>
+    <div class="objective">Numbers are the first survival skill. Watch the video and listen to the pronunciation of numbers 1-10.</div>
+    <div class="body">
+      <div class="video-container">
+        <video src="Videos/Gep0wkpqWDM.mp4" poster="https://img.youtube.com/vi/Gep0wkpqWDM/hqdefault.jpg" controls width="100%" height="100%" style="width:100%; height:auto; max-height:550px; border-radius:8px; object-fit:contain; background:#000;" controlsList="nodownload"></video>
+      </div>
+        <div class="exercise" style="margin-top:10px;">
+        <div class="ex-label">Comprehension Check</div>
+        <div class="ex-item">How do you say "one" in Estonian?</div>
+        <input class="answer-inline" data-id="kick-1" type="text" placeholder="...">
+        <div class="ex-item" style="margin-top:6px;">Write down two other numbers you remember from the video:</div>
+        <input class="answer-inline" data-id="kick-2" type="text" placeholder="...">
+      </div>
+      </div>
+    </div>
+
+  <!-- STEP 02: DISCOVERY — NUMBERS 1-20 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">02</div>
+      <div>
+        <div class="step-name">Discovery</div>
+        <div class="step-title">Numbers 1–20 — Üks kuni kakskümmend 🔢</div>
+      </div>
+      <div class="step-time">12 MIN</div>
+    </div>
+    <div class="objective">From Loecsen "Numbers" and Keeleklikk Module 4. Estonian numbers 11–19 follow a clear pattern: root + -teist (meaning "on ten").</div>
+    <div class="body">
+      <table class="num-table">
+        <tr><th>#</th><th>Estonian</th><th>Pronunciation</th><th>#</th><th>Estonian</th><th>Pronunciation</th></tr>
+        <tr><td class="n">1</td><td class="est">üks</td><td class="phon">EWKS</td><td class="n">11</td><td class="est">üksteist</td><td class="phon">EWKS-taist</td></tr>
+        <tr><td class="n">2</td><td class="est">kaks</td><td class="phon">KAKS</td><td class="n">12</td><td class="est">kaksteist</td><td class="phon">KAKS-taist</td></tr>
+        <tr><td class="n">3</td><td class="est">kolm</td><td class="phon">KOLM</td><td class="n">13</td><td class="est">kolmteist</td><td class="phon">KOLM-taist</td></tr>
+        <tr><td class="n">4</td><td class="est">neli</td><td class="phon">NEH-li</td><td class="n">14</td><td class="est">neliteist</td><td class="phon">NEH-li-taist</td></tr>
+        <tr><td class="n">5</td><td class="est">viis</td><td class="phon">VEES</td><td class="n">15</td><td class="est">viisteist</td><td class="phon">VEES-taist</td></tr>
+        <tr><td class="n">6</td><td class="est">kuus</td><td class="phon">KOOS</td><td class="n">16</td><td class="est">kuusteist</td><td class="phon">KOOS-taist</td></tr>
+        <tr><td class="n">7</td><td class="est">seitse</td><td class="phon">SAYT-seh</td><td class="n">17</td><td class="est">seitseteist</td><td class="phon">SAYT-seh-taist</td></tr>
+        <tr><td class="n">8</td><td class="est">kaheksa</td><td class="phon">KAH-hek-sah</td><td class="n">18</td><td class="est">kaheksateist</td><td class="phon">KAH-hek-sah-taist</td></tr>
+        <tr><td class="n">9</td><td class="est">üheksa</td><td class="phon">EW-hek-sah</td><td class="n">19</td><td class="est">üheksateist</td><td class="phon">EW-hek-sah-taist</td></tr>
+        <tr><td class="n">10</td><td class="est">kümme</td><td class="phon">KEW-meh</td><td class="n">20</td><td class="est">kakskümmend</td><td class="phon">KAKS-kew-mend</td></tr>
+      </table>
+      <div class="expressions-box" style="margin-top:10px;">
+        <div class="exp-title">🔢 Pattern: Tens in Estonian</div>
+        <div class="exp-item">20 = kaks<strong>kümmend</strong> (two-tens) | 30 = kolm<strong>kümmend</strong> | 40 = nelikümmend</div>
+        <div class="exp-item">50 = viiskümmend | 100 = sada | 1000 = tuhat</div>
+        <div class="exp-item">Combined: 32 = kolmkümmend kaks | 85 = kaheksakümmend viis</div>
+      </div>
+      <div class="exercise">
+        <div class="ex-label">Write these numbers in Estonian</div>
+        <div class="ex-item">7 → <input class="answer-inline" data-id="num-1" type="text" placeholder="..."> | 13 → <input class="answer-inline" data-id="num-2" type="text" placeholder="..."> | 45 → <input class="answer-inline" data-id="num-3" type="text" placeholder="..."></div>
+        <div class="ex-item">Your age in Estonian → <input class="answer-inline" data-id="num-4" type="text" placeholder="Mul on ... aastat"></div>
+        <div class="ex-item">Your phone number in Estonian → <textarea class="answer-area" data-id="num-5" placeholder="Say each digit: null-null-üks-kaks-kolm..."></textarea></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <img src="Logo2.png" class="ts-logo-img" alt="Talksmiths">
+
+  <!-- STEP 03: LANGUAGE STRUCTURE — COLOURS -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">03</div>
+      <div>
+        <div class="step-name">Language Structure</div>
+        <div class="step-title">Colours — Värvid 🎨</div>
+      </div>
+      <div class="step-time">10 MIN</div>
+    </div>
+    <div class="objective">Colours are essential for shopping, describing things, and giving directions. From Keeleklikk Module 5 and LingoHut vocabulary series.</div>
+    <div class="body">
+      <div class="colour-grid">
+        <div class="colour-card" style="background:#E53935;"><div class="c-name">punane</div><div class="c-en">red</div></div>
+        <div class="colour-card" style="background:#1E88E5;"><div class="c-name">sinine</div><div class="c-en">blue</div></div>
+        <div class="colour-card" style="background:#43A047;"><div class="c-name">roheline</div><div class="c-en">green</div></div>
+        <div class="colour-card" style="background:#FFB300;"><div class="c-name">kollane</div><div class="c-en">yellow</div></div>
+        <div class="colour-card" style="background:#FF6F00;"><div class="c-name">oranž</div><div class="c-en">orange</div></div>
+        <div class="colour-card" style="background:#6A1B9A;"><div class="c-name">lilla</div><div class="c-en">purple</div></div>
+        <div class="colour-card" style="background:#F06292;"><div class="c-name">roosa</div><div class="c-en">pink</div></div>
+        <div class="colour-card" style="background:#4E342E;"><div class="c-name">pruun</div><div class="c-en">brown</div></div>
+        <div class="colour-card" style="background:#1a1a1a;"><div class="c-name">must</div><div class="c-en">black</div></div>
+        <div class="colour-card" style="background:#BDBDBD; border:1px solid #999;"><div class="c-name" style="color:#333;">hall</div><div class="c-en" style="color:#555;">grey</div></div>
+        <div class="colour-card" style="background:#f5f5f5;border:1px solid #ccc;"><div class="c-name" style="color:#333;">valge</div><div class="c-en" style="color:#555;">white</div></div>
+        <div class="colour-card" style="background:#00BCD4;"><div class="c-name">türkiis</div><div class="c-en">turquoise</div></div>
+      </div>
+      <div class="exercise" style="margin-top:10px;">
+        <div class="ex-label">Fill in the blanks — describing objects</div>
+        <div class="ex-item">The sky is <input class="answer-inline" data-id="col-1" type="text" placeholder="... (Estonian colour)"> (Taevas on ...)</div>
+        <div class="ex-item">Grass is <input class="answer-inline" data-id="col-2" type="text" placeholder="..."> (Muru on ...)</div>
+        <div class="ex-item">My favourite colour is <input class="answer-inline" data-id="col-3" type="text" placeholder="..."> (Minu lemmikvärv on ...)</div>
+        <div class="ex-item">Coffee is <input class="answer-inline" data-id="col-4" type="text" placeholder="... or ..."> (Kohv on ... / ...)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 04: ROLEPLAY — CAFÉ -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">04</div>
+      <div>
+        <div class="step-name">Roleplay</div>
+        <div class="step-title">Kohvik — Ordering at a Tallinn Café ☕</div>
+      </div>
+      <div class="step-time">10 MIN</div>
+    </div>
+    <div class="objective">From Konsta.app "Ordering Coffee" scenario. This is a real survival conversation you'll need on Week 1 in Estonia.</div>
+    <div class="body">
+      <div class="roleplay-box">
+        <div class="speaker">☕ Barrista (Liis):</div>
+        <div class="line">Tere! Mida soovite? (Hello! What would you like?)</div>
+        <div class="speaker">🙋 Sina (You):</div>
+        <div class="line">Tere! Üks kohv, palun. Kui palju maksab? (Hello! One coffee, please. How much does it cost?)</div>
+        <div class="speaker">☕ Liis:</div>
+        <div class="line">Kaks eurot viiskümmend senti. (€2.50)</div>
+        <div class="speaker">🙋 Sina (You):</div>
+        <div class="line">Palun. Aitäh! (Here you go. Thank you!)</div>
+        <div class="speaker">☕ Liis:</div>
+        <div class="line">Palun! Head isu! (You're welcome! Enjoy!)</div>
+      </div>
+      <div class="teacher-note">💡 "Kui palju maksab?" (How much does it cost?) is one of the most useful A1 phrases. "Kui palju maksab see?" = "How much does THIS cost?" (pointing). Practice this until it's automatic.</div>
+      <div class="exercise" style="margin-top:8px;">
+        <div class="ex-label">Extend the dialogue — write your own café order</div>
+        <textarea class="answer-area" data-id="rp-1" placeholder="Try ordering: Kaks kohvi ja üks kook, palun. (Two coffees and one cake, please.) Then ask the price..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>🇪🇪 Lesson 2 · Month 1 · Week 2</span>
+    <span>Sources: Loecsen · Konsta.app · Keeleklikk</span>
+    <span>Talksmiths © 2026</span>
+  </div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page">
+  <img src="Logo2.png" class="ts-logo-img" alt="Talksmiths">
+
+  <!-- STEP 05: VOCABULARY — SHOPPING & PRICES -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">05</div>
+      <div>
+        <div class="step-name">Vocabulary</div>
+        <div class="step-title">Shopping Phrases — Poes ostlemine 🛒</div>
+      </div>
+      <div class="step-time">10 MIN</div>
+    </div>
+    <div class="objective">You will need these phrases in supermarkets, pharmacies, and markets within your first week in Tallinn.</div>
+    <div class="body">
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="vocab-term">Kui palju maksab?</div>
+          <div class="vocab-def">How much does it cost?</div>
+          <div class="vocab-ex">Kui palju maksab see? (How much is this?)</div>
+          <div class="vocab-bridge">🔊 KOO-ee PAL-yoo MAK-sab</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Kus asub...?</div>
+          <div class="vocab-def">Where is...?</div>
+          <div class="vocab-ex">Kus asub kassа? (Where is the checkout?)</div>
+          <div class="vocab-bridge">🔊 Koos AH-soob</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Kas teil on...?</div>
+          <div class="vocab-def">Do you have...?</div>
+          <div class="vocab-ex">Kas teil on piim? (Do you have milk?)</div>
+          <div class="vocab-bridge">🔊 Kas tail on</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Ma tahan...</div>
+          <div class="vocab-def">I want...</div>
+          <div class="vocab-ex">Ma tahan leiba. (I want bread.)</div>
+          <div class="vocab-bridge">🔊 Mah TAH-han</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Arve, palun</div>
+          <div class="vocab-def">The bill / receipt, please</div>
+          <div class="vocab-ex">Used in restaurants and cafés</div>
+          <div class="vocab-bridge">🔊 AR-veh PAH-loon</div>
+        </div>
+        <div class="vocab-card">
+          <div class="vocab-term">Kaardiga / Sularahas</div>
+          <div class="vocab-def">By card / In cash</div>
+          <div class="vocab-ex">Maksan kaardiga. (I'll pay by card.)</div>
+          <div class="vocab-bridge">🔊 KAAR-di-gah / SOO-lah-rah-has</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 06: RÄÄKIMINE (SPEAKING) -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">06</div>
+      <div>
+        <div class="step-name">Rääkimine</div>
+        <div class="step-title">Pronunciation Challenge 🗣️</div>
+      </div>
+      <div class="step-time">8 MIN</div>
+    </div>
+    <div class="objective">Record yourself reading the numbers and café dialogue aloud. This builds mouth-muscle memory.</div>
+    <div class="body">
+      <div class="gold-banner"><p>Practice your phone number and your café order: "Üks kohv, palun." Record it on your phone and listen back.</p></div>
+      <textarea class="answer-area" data-id="prod-1" placeholder="Self-correction notes: Which sounds are hardest? For example, rolling the 'R' or saying 'Ü' in 'üks'?" style="min-height:80px;"></textarea>
+    </div>
+  </div>
+
+  <!-- STEP 07: QUIZ -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">07</div>
+      <div>
+        <div class="step-name">Quiz</div>
+        <div class="step-title">Numbers & Colours Challenge 🏆</div>
+      </div>
+      <div class="step-time">6 MIN</div>
+    </div>
+    <div class="objective">Test your retention from today. No notes!</div>
+    <div class="game-container">
+      <div class="game-title" id="quiz-progress">Question 1 of 8</div>
+      <div class="quiz-q" id="quiz-q">Loading...</div>
+      <div class="quiz-opts" id="quiz-opts"></div>
+      <div class="game-feedback" id="quiz-feedback"></div>
+      <div class="game-score" id="quiz-score"></div>
+    </div>
+  </div>
+
+  <!-- STEP 08: HOMEWORK -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">08</div>
+      <div>
+        <div class="step-name">Homework & Resources</div>
+        <div class="step-title">This Week's Daily Practice 📚</div>
+      </div>
+      <div class="step-time">Daily</div>
+    </div>
+    <div class="body">
+      <div class="res-link">
+        <span>🎧</span>
+        <div><strong>Loecsen — Numbers Section</strong><p>Listen to Estonian numbers audio 3× daily. Repeat all numbers 1–20 aloud until automatic.</p><a href="https://www.loecsen.com/en/course-estonian/numbers" target="_blank">→ loecsen.com/en/course-estonian/numbers</a></div>
+      </div>
+      <div class="res-link" style="border-left-color:var(--gold);">
+        <span>🗣️</span>
+        <div><strong>Konsta.app — "Ordering Coffee" Scenario</strong><p>Complete the scenario at least 3 times this week. The app rewards you for correct responses.</p><a href="https://www.konsta.app" target="_blank">→ konsta.app</a></div>
+      </div>
+      <div class="res-link" style="border-left-color:#2E7D32;">
+        <span>📺</span>
+        <div><strong>YouTube — the Estonian video Numbers</strong><p>Search "the Estonian video numbers" on YouTube. Eli's lessons are native, short, and perfect for building your listening skills.</p><a href="https://www.youtube.com/@EstonianwithEli" target="_blank">→ youtube.com/@EstonianwithEli</a></div>
+      </div>
+      <div style="margin-top:8px;">
+        <div class="hw-item"><div class="hw-num">1</div><div class="ex-item">Count all objects in your room in Estonian. Write the count of at least 10 objects.</div></div>
+        <div class="hw-item"><div class="hw-num">2</div><div class="ex-item">Pick 3 items from your wardrobe — name the colour in Estonian for each.</div></div>
+        <div class="hw-item"><div class="hw-num">3</div><div class="ex-item">Practice saying your phone number in Estonian 5 times without stopping.</div></div>
+      </div>
+      <textarea class="answer-area" data-id="hw-notes" placeholder="Self-assessment: What numbers are hardest? Which colours do you keep mixing up?"></textarea>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>🇪🇪 Lesson 2 of 12 — Month 1, Week 2</span>
+    <span>Next: Personal Pronouns & the Verb "To Be"</span>
+    <span>Talksmiths © 2026</span>
+  </div>
+</div>
+
+<!-- CONGRATULATIONS PAGE -->
+<div class="page" style="column-count: 1 !important; display: flex !important; justify-content: center; align-items: center; background: var(--cream); box-shadow: none; border: none;">
+  <img src="Congratulations.png" alt="Congratulations" style="max-width: 100%; height: auto; mix-blend-mode: darken; margin: 0 auto;">
+</div>
+
+<div class="save-status" id="save-status">✓ Saved</div>
+<script>
+const STORAGE_KEY='ts-lesson-erasmus-tartu-2';
+function setView(mode){if(mode==='student'){document.body.classList.add('student-mode');document.getElementById('btn-student').classList.add('active');document.getElementById('btn-teacher').classList.remove('active');}else{document.body.classList.remove('student-mode');document.getElementById('btn-teacher').classList.add('active');document.getElementById('btn-student').classList.remove('active');}}
+function saveAll(){const d={};document.querySelectorAll('[data-id]').forEach(el=>{d[el.dataset.id]=el.value;});localStorage.setItem(STORAGE_KEY,JSON.stringify(d));const s=document.getElementById('save-status');s.style.opacity='1';setTimeout(()=>s.style.opacity='0',1500);}
+function loadAll(){const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return;const d=JSON.parse(raw);Object.keys(d).forEach(id=>{const el=document.querySelector('[data-id="'+id+'"]');if(el)el.value=d[id];});}
+const quiz=[
+  {q:'5 in Estonian',a:'viis',o:['viis','kolm','neli','kuus']},
+  {q:'12 in Estonian',a:'kaksteist',o:['kaksteist','kaheksa','kakskümmend','kümme']},
+  {q:'punane',a:'red',o:['red','blue','green','black']},
+  {q:'roheline',a:'green',o:['yellow','green','white','grey']},
+  {q:'Kui palju maksab?',a:'How much does it cost?',o:['How much does it cost?','Where is it?','Do you have...?','I want...']},
+  {q:'kaks eurot',a:'two euros',o:['two euros','two cents','twenty euros','twelve euros']},
+  {q:'must',a:'black',o:['black','white','grey','brown']},
+  {q:'Maksan kaardiga',a:"I'll pay by card",o:["I'll pay by card",'The bill please','I want a coffee','How much?']},
+];
+let qi=0,sc=0;
+function showQ(){
+  if(qi>=quiz.length){document.getElementById('quiz-q').textContent='Quiz Complete! 🎉';document.getElementById('quiz-opts').innerHTML='';document.getElementById('quiz-progress').textContent='';document.getElementById('quiz-score').textContent='Score: '+sc+'/'+quiz.length;return;}
+  const q=quiz[qi];document.getElementById('quiz-progress').textContent='Question '+(qi+1)+' of '+quiz.length+' | Score: '+sc;document.getElementById('quiz-q').textContent=q.q;
+  const opts=document.getElementById('quiz-opts');opts.innerHTML='';[...q.o].sort(()=>Math.random()-0.5).forEach(opt=>{const b=document.createElement('button');b.className='game-btn';b.textContent=opt;b.onclick=function(){check(opt,q.a,b);};opts.appendChild(b);});
+  document.getElementById('quiz-feedback').style.display='none';
+}
+function check(ch,cor,btn){
+  document.querySelectorAll('#quiz-opts .game-btn').forEach(b=>b.onclick=null);
+  const fb=document.getElementById('quiz-feedback');
+  if(ch===cor){btn.classList.add('correct');sc++;fb.textContent='✅ Õige!';fb.style.background='#e6f4ea';fb.style.color='#2E7D32';}
+  else{btn.classList.add('wrong');fb.textContent='❌ Answer: '+cor;fb.style.background='#fce8e6';fb.style.color='#C62828';document.querySelectorAll('#quiz-opts .game-btn').forEach(b=>{if(b.textContent===cor)b.classList.add('correct');});}
+  fb.style.display='block';qi++;setTimeout(showQ,1800);
+}
+document.addEventListener('DOMContentLoaded',()=>{loadAll();showQ();let t;document.querySelectorAll('[data-id]').forEach(el=>{el.addEventListener('input',()=>{clearTimeout(t);t=setTimeout(saveAll,800);});});});
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.vocab-card').forEach(card => {
+    const termEl = card.querySelector('.vocab-term');
+    const bridgeEl = card.querySelector('.vocab-bridge');
+    if (termEl && bridgeEl && typeof speak === 'function') {
+      bridgeEl.style.cursor = 'pointer';
+      bridgeEl.title = 'Click to play audio';
+      bridgeEl.addEventListener('click', () => {
+        speak(termEl.textContent.trim());
+      });
+    }
+  });
+});
+</script>
+
+
+<style id="lesson-nav-style">
+.lesson-nav{background:var(--navy,#1A2744);padding:20px 24px;margin-top:32px;}
+.nav-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.nav-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:30px;font-size:12px;font-weight:800;text-decoration:none;transition:all 0.2s;letter-spacing:0.05em;font-family:'Inter',sans-serif;}
+.nav-home{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.12);}
+.nav-home:hover{background:rgba(255,255,255,0.15);color:#fff;}
+.nav-prev{background:rgba(0,117,117,0.15);color:#5bd0d0;border:1px solid rgba(0,117,117,0.3);}
+.nav-prev:hover{background:rgba(0,117,117,0.3);color:#fff;}
+.nav-next{background:#007575;color:#fff;border:1px solid #007575;box-shadow:0 4px 14px rgba(0,117,117,0.35);}
+.nav-next:hover{background:#005f5f;transform:translateX(2px);}
+.nav-indicator{font-size:11px;color:rgba(255,255,255,0.4);font-weight:700;letter-spacing:0.08em;text-align:center;}
+.nav-spacer{flex:1;}
+@media(max-width:600px){.nav-inner{justify-content:center;}.nav-spacer{display:none;}}
+</style>
+<div class="lesson-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-btn nav-home">↩ All Lessons</a>
+    <div class="nav-spacer"></div>
+    <a href="LESSON_1_GREETINGS_AND_ALPHABET.html" class="nav-btn nav-prev">← 👋 Lesson 1</a>
+    <span class="nav-indicator">Lesson 2 of 12</span>
+    <a href="LESSON_3_PRONOUNS_AND_OLEMA.html" class="nav-btn nav-next">Lesson 3 🗣️ →</a>
+  </div>
+</div>
+</body>
+</html>

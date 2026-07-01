@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estonian for Erasmus — Talksmiths</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+  :root{--teal:#007575;--gold:#C9981F;--navy:#1A2744;--cream:#FAF5EF;--white:#fff;--gray:#5A6577;--border:#E6E0D9;--eu-blue:#003399;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--navy);}
+  a{text-decoration:none;color:inherit;}
+
+  /* ── PAGE WRAPPER ── */
+  .page{max-width:720px;margin:0 auto;padding:48px 24px 72px;}
+
+  /* ── HEADER ── */
+  .header{text-align:center;margin-bottom:36px;}
+  .ts-logo{height:56px;width:auto;display:inline-block;margin-bottom:12px;mix-blend-mode:multiply;}
+  .ts-kicker{
+    font-size:10px;font-weight:700;letter-spacing:0.2em;
+    text-transform:uppercase;color:var(--teal);margin-bottom:16px;
+  }
+  .course-title{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(30px,5vw,46px);font-weight:900;
+    color:var(--navy);line-height:1.1;margin-bottom:6px;
+  }
+  .course-title em{font-style:italic;color:var(--teal);}
+  .course-subtitle{
+    font-family:'Playfair Display',serif;font-style:italic;
+    font-size:16px;color:var(--gray);margin-bottom:20px;
+  }
+
+  /* ── PARTNER LOGOS ── */
+  .partners{
+    display:flex;align-items:center;justify-content:center;
+    gap:24px;flex-wrap:wrap;margin-bottom:32px;
+    padding:16px 20px;
+    border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  }
+  .partner-sep{width:1px;height:28px;background:var(--border);}
+
+  /* Erasmus+ — navy text, flag SVG, all on cream */
+  .erasmus-logo{display:flex;align-items:center;gap:7px;}
+  .erasmus-text{font-size:14px;font-weight:800;color:var(--eu-blue);letter-spacing:-0.01em;}
+
+  /* University of Tartu */
+  .ut-logo{display:flex;align-items:center;gap:7px;}
+  .ut-name{font-size:10px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;color:var(--eu-blue);display:block;line-height:1.2;}
+  .ut-year{font-size:8.5px;color:#8a9bc0;font-weight:600;}
+
+  /* ── WELCOME CARD ── */
+  .welcome{
+    background:var(--white);border-radius:12px;border:1px solid var(--border);
+    border-left:4px solid var(--gold);
+    padding:18px 20px;display:flex;align-items:center;gap:16px;
+    margin-bottom:32px;box-shadow:0 1px 4px rgba(0,0,0,0.05);
+  }
+  .welcome-icon{font-size:28px;flex-shrink:0;}
+  .welcome-text{font-size:13px;color:var(--gray);line-height:1.6;}
+  .welcome-text strong{color:var(--navy);}
+
+  /* ── STATS STRIP ── */
+  .stats{
+    display:flex;gap:0;border:1px solid var(--border);border-radius:8px;
+    overflow:hidden;margin-bottom:36px;background:var(--white);
+  }
+  .stat{
+    flex:1;text-align:center;padding:12px 8px;
+    border-right:1px solid var(--border);
+  }
+  .stat:last-child{border-right:none;}
+  .stat-val{font-size:18px;font-weight:800;color:var(--teal);display:block;line-height:1;}
+  .stat-lbl{font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray);display:block;margin-top:4px;}
+
+  /* ── SECTION LABEL ── */
+  .section-label{
+    display:flex;align-items:center;gap:10px;
+    font-size:10px;font-weight:700;letter-spacing:0.15em;
+    text-transform:uppercase;color:var(--teal);margin-bottom:14px;
+  }
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+
+  /* ── LESSON CARDS ── */
+  .lessons{display:flex;flex-direction:column;gap:10px;margin-bottom:48px;}
+  .lesson-card{
+    background:var(--white);border:1px solid var(--border);border-radius:10px;
+    padding:16px 18px;display:flex;align-items:center;gap:16px;
+    transition:border-color 0.15s,box-shadow 0.15s;position:relative;
+  }
+  .lesson-card:hover{border-color:var(--teal);box-shadow:0 2px 12px rgba(0,117,117,0.1);}
+  .lesson-card:hover .lesson-arrow{opacity:1;transform:translateX(0);}
+
+  .lesson-num{
+    width:36px;height:36px;border-radius:50%;
+    background:var(--teal);color:#fff;
+    font-weight:800;font-size:13px;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .lesson-num.final{background:var(--gold);}
+  .lesson-body{flex:1;min-width:0;}
+  .lesson-title{
+    font-family:'Playfair Display',serif;font-weight:700;
+    font-size:15px;color:var(--navy);margin-bottom:3px;
+  }
+  .lesson-desc{font-size:11.5px;color:var(--gray);line-height:1.5;margin-bottom:7px;}
+  .lesson-tags{display:flex;gap:6px;flex-wrap:wrap;}
+  .tag{
+    font-size:9px;font-weight:700;padding:2px 8px;border-radius:10px;
+    letter-spacing:0.04em;
+  }
+  .tag-week{background:#e8f5f5;color:var(--teal);}
+  .tag-time{background:#f5edda;color:#8a6a1a;}
+  .tag-final{background:#fef3cd;color:#8a6a1a;border:1px solid #e0c97a;}
+  .lesson-emoji{font-size:20px;flex-shrink:0;opacity:0.9;}
+  .lesson-arrow{
+    font-size:14px;color:var(--teal);flex-shrink:0;
+    opacity:0;transform:translateX(-4px);
+    transition:opacity 0.15s,transform 0.15s;
+    font-weight:700;
+  }
+
+  /* ── RESOURCES ── */
+  .resources{border-top:1px solid var(--border);padding-top:32px;}
+  .res-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+    gap:10px;margin-top:14px;
+  }
+  .res-card{
+    background:var(--white);border:1px solid var(--border);
+    border-radius:8px;padding:14px;
+    border-left:3px solid var(--teal);
+    transition:transform 0.12s;
+  }
+  .res-card:hover{transform:translateX(2px);}
+  .res-name{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:3px;}
+  .res-desc{font-size:10.5px;color:var(--gray);line-height:1.45;margin-bottom:6px;}
+  .res-link{font-size:10.5px;font-weight:700;color:var(--teal);}
+  .res-link:hover{text-decoration:underline;}
+
+  /* ── FOOTER ── */
+  .footer{
+    text-align:center;margin-top:48px;padding-top:24px;
+    border-top:1px solid var(--border);
+    font-size:11px;color:#aaa;
+  }
+  .footer a{color:var(--teal);font-weight:700;}
+
+  @media(max-width:500px){
+    .lesson-card{flex-wrap:wrap;}
+    .lesson-arrow{display:none;}
+    .stats{flex-wrap:wrap;}
+    .stat{min-width:50%;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <img src="Logo2.png" class="ts-logo" alt="Talksmiths">
+    <div class="ts-kicker">Talksmiths — Lesson Engine™</div>
+    <h1 class="course-title">Estonian <em>for Erasmus</em></h1>
+    <div class="course-subtitle">Eesti Keel Erasmuse Tudengitele</div>
+
+    <!-- Partner logos — natural on cream, no containers -->
+    <div class="partners">
+
+      <!-- Erasmus+ official style: EU flag SVG + wordmark -->
+      <div class="erasmus-logo">
+        <svg width="38" height="26" viewBox="0 0 38 26" xmlns="http://www.w3.org/2000/svg">
+          <rect width="38" height="26" rx="2" fill="#003399"/>
+          <!-- 12 gold stars placed at correct positions in a circle, r=7.5 from centre (19,13) -->
+          <g fill="#FFD700">
+            <circle cx="19"    cy="5.5"  r="1.3"/>
+            <circle cx="22.75" cy="6.25" r="1.3"/>
+            <circle cx="25.5"  cy="9"    r="1.3"/>
+            <circle cx="26.5"  cy="13"   r="1.3"/>
+            <circle cx="25.5"  cy="17"   r="1.3"/>
+            <circle cx="22.75" cy="19.75"r="1.3"/>
+            <circle cx="19"    cy="20.5" r="1.3"/>
+            <circle cx="15.25" cy="19.75"r="1.3"/>
+            <circle cx="12.5"  cy="17"   r="1.3"/>
+            <circle cx="11.5"  cy="13"   r="1.3"/>
+            <circle cx="12.5"  cy="9"    r="1.3"/>
+            <circle cx="15.25" cy="6.25" r="1.3"/>
+          </g>
+        </svg>
+        <span class="erasmus-text">Erasmus+</span>
+      </div>
+
+      <div class="partner-sep"></div>
+
+      <!-- University of Tartu -->
+      <div class="ut-logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="21" width="22" height="2.2" rx="0.8" fill="#003399"/>
+          <rect x="2" y="18.5" width="20" height="1.3" rx="0.5" fill="#003399"/>
+          <polygon points="12,1.5 2,7.5 22,7.5" fill="#003399"/>
+          <rect x="2" y="7.5" width="20" height="1.5" rx="0.5" fill="#003399"/>
+          <rect x="3.5" y="9" width="2.2" height="9.5" rx="0.7" fill="#003399"/>
+          <rect x="7.8" y="9" width="2.2" height="9.5" rx="0.7" fill="#003399"/>
+          <rect x="14" y="9" width="2.2" height="9.5" rx="0.7" fill="#003399"/>
+          <rect x="18.3" y="9" width="2.2" height="9.5" rx="0.7" fill="#003399"/>
+        </svg>
+        <div>
+          <span class="ut-name">University of Tartu</span>
+          <span class="ut-year">Est. 1632</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WELCOME -->
+  <div class="welcome">
+    <div class="welcome-icon">🇪🇪</div>
+    <div class="welcome-text">
+      <strong>Welcome, Erasmus student!</strong> Tap any lesson to start learning Estonian.
+      Each lesson is ~60 minutes with audio, vocabulary, quizzes, and Tartu-based roleplays.
+      <em>Tere tulemast Eestisse!</em>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat"><span class="stat-val">12</span><span class="stat-lbl">Lessons</span></div>
+    <div class="stat"><span class="stat-val">60'</span><span class="stat-lbl">Per lesson</span></div>
+    <div class="stat"><span class="stat-val">A1</span><span class="stat-lbl">Level</span></div>
+    <div class="stat"><span class="stat-val">Tartu</span><span class="stat-lbl">Estonia</span></div>
+  </div>
+
+  <!-- LESSONS -->
+  <div class="section-label">📘 Your 12-Lesson Journey</div>
+  <div class="lessons">
+
+    <a href="LESSON_1_GREETINGS_AND_ALPHABET.html" class="lesson-card">
+      <div class="lesson-num">1</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Greetings & the Alphabet</div>
+        <div class="lesson-desc">Tere! Estonian greetings, the unique Õ sound, and your first introduction.</div>
+        <div class="lesson-tags"><span class="tag tag-week">Month 1 · Week 1</span><span class="tag tag-time">60 min</span></div>
+      </div>
+      <div class="lesson-emoji">👋</div>
+      <div class="lesson-arrow">→</div>
+    </a>
+
+    <a href="LESSON_2_NUMBERS_COLOURS_COFFEE.html" class="lesson-card">
+      <div class="lesson-num">2</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Numbers, Colours & Coffee</div>
+        <div class="lesson-desc">Count to 100, learn colours, and order your first kohv at a Tartu café.</div>
+        <div class="lesson-tags"><span class="tag tag-week">Month 1 · Week 2</span><span class="tag tag-time">60 min</span></div>
+      </div>
+      <div class="lesson-emoji">☕</div>
+      <div class="lesson-arrow">→</div>
+    </a>
+
+    <a href="LESSON_3_PRONOUNS_AND_OLEMA.html" class="lesson-card">
+      <div class="lesson-num">3</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Pronouns & Verb "To Be"</div>
+        <div class="lesson-desc">Ma olen, sa oled, ta on — master pronouns and the verb olema.</div>
+        <div class="lesson-tags"><span class="tag tag-week">Month 1 · Week 3</span><span class="tag tag-time">60 min</span></div>
+      </div>
+      <div class="lesson-emoji">🗣️</div>
+      <div class="lesson-arrow">→</div>
+    </a>
+
+    <a href="LESSON_4_DIRECTIONS_AND_TRANSPORT.html" class="lesson-card">
+      <div class="lesson-num">4</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Directions & Transport</div>
+        <div class="lesson-desc">Navigate Tartu by bus, ask for directions, find the university and landmarks.</div>
+        <div class="lesson-tags"><span class="tag tag-week">Month 1 · Week 4</span><span class="tag tag-time">60 min</span></div>
+      </div>
+      <div class="lesson-emoji">🚌</div>
+      <div class="lesson-arrow">→</div>
+    </a>
+
+    <a href="LESSON_5_TIME_AND_DAYS.html" class="lesson-card">
+      <div class="lesson-num">5</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Telling Time & Days</div>
+        <div class="lesson-desc">Days of the week, months, seasons — schedule meetings in Estonian.</div>
+        <div class="lesson-tags"><span class="tag tag-week">Month 2 · Week 1</span><span class="tag tag-time">60 min</span></div>
+      </div>
+      <div class="lesson-emoji">🕐</div>
+      <div class="lesson-arrow">→</div>
+    </a>
+
+    <a href="LESSON_6_FOOD_AND_GROCERIES.html" class="lesson-card">
+      <div class="lesson-num">6</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Food & Groceries</div>
+        <div class="lesson-desc">Shop at Rimi and Maxima, read labels, navigate the supermarket in Estonian.</div>
+        <div class="lesson-tags"><span class="tag tag-week">Month 2 · Week 2</span><span class="tag tag-time">60 min</span></div>
+      </div>
+      <div class="lesson-emoji">🛒</div>
+      <div class="lesson-arrow">→</div>
+    </a>
+
+    <a href="LESSON_7_HOME_AND_RENTING.html" class="lesson-card">
+      <div class="lesson-num">7</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Home & Renting</div>
+        <div class="lesson-desc">Find an apartment in Tartu, talk to landlords, describe rooms and furniture.</div>
+        <div class="lesson-tags"><span class="tag tag-week">Month 2 · Week 3</span><span class="tag tag-time">60 min</span></div>
+      </div>
+      <div class="lesson-emoji">🏠</div>
+      <div class="lesson-arrow">→</div>
+    </a>
+
+    <a href="LESSON_8_HEALTH_AND_PHARMACY.html" class="lesson-card">
+      <div class="lesson-num">8</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Health & Pharmacy</div>
+        <div class="lesson-desc">Visit the apteek, describe symptoms, navigate Estonian healthcare.</div>
+        <div class="lesson-tags"><span class="tag tag-week">Month 2 · Week 4</span><span class="tag tag-time">60 min</span></div>
+      </div>
+      <div class="lesson-emoji">💊</div>
+      <div class="lesson-arrow">→</div>
+    </a>
+
+    <a href="LESSON_9_WORK_AND_PROFESSIONS.html" class="lesson-card">
+      <div class="lesson-num">9</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Work & Professions</div>
+        <div class="lesson-desc">Talk about your studies and career. Learn job titles and workplace vocabulary.</div>
+        <div class="lesson-tags"><span class="tag tag-week">Month 3 · Week 1</span><span class="tag tag-time">60 min</span></div>
+      </div>
+      <div class="lesson-emoji">💼</div>
+      <div class="lesson-arrow">→</div>
+    </a>
+
+    <a href="LESSON_10_NATURE_AND_WEATHER.html" class="lesson-card">
+      <div class="lesson-num">10</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Nature & Weather</div>
+        <div class="lesson-desc">Estonian nature vocabulary, weather talk, and surviving the seasons.</div>
+        <div class="lesson-tags"><span class="tag tag-week">Month 3 · Week 2</span><span class="tag tag-time">60 min</span></div>
+      </div>
+      <div class="lesson-emoji">🌲</div>
+      <div class="lesson-arrow">→</div>
+    </a>
+
+    <a href="LESSON_11_HOBBIES_AND_SOCIAL_LIFE.html" class="lesson-card">
+      <div class="lesson-num">11</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Hobbies & Social Life</div>
+        <div class="lesson-desc">Sports, café culture, and making Estonian friends during your Erasmus.</div>
+        <div class="lesson-tags"><span class="tag tag-week">Month 3 · Week 3</span><span class="tag tag-time">60 min</span></div>
+      </div>
+      <div class="lesson-emoji">🎭</div>
+      <div class="lesson-arrow">→</div>
+    </a>
+
+    <a href="LESSON_12_GRAND_REVIEW_AND_NEXT_STEPS.html" class="lesson-card">
+      <div class="lesson-num final">12</div>
+      <div class="lesson-body">
+        <div class="lesson-title">Grand Review & Next Steps</div>
+        <div class="lesson-desc">The final test — review everything, take the speaking exam, and plan your A2 journey.</div>
+        <div class="lesson-tags"><span class="tag tag-final">🏆 Grand Final</span><span class="tag tag-time">60 min</span></div>
+      </div>
+      <div class="lesson-emoji">🏆</div>
+      <div class="lesson-arrow">→</div>
+    </a>
+
+  </div>
+
+  <!-- RESOURCES -->
+  <div class="resources">
+    <div class="section-label">📚 Recommended Resources</div>
+    <div class="res-grid">
+      <div class="res-card">
+        <div class="res-name">Keeleklikk</div>
+        <div class="res-desc">Free A1–B1 Estonian by University of Tartu — animated videos and exercises.</div>
+        <a href="https://www.keeleklikk.ee/en/" target="_blank" class="res-link">keeleklikk.ee →</a>
+      </div>
+      <div class="res-card" style="border-left-color:var(--gold)">
+        <div class="res-name">Sõnaveeb</div>
+        <div class="res-desc">Official Estonian dictionary with native audio for every word.</div>
+        <a href="https://www.sonaveeb.ee" target="_blank" class="res-link">sonaveeb.ee →</a>
+      </div>
+      <div class="res-card" style="border-left-color:#0072CE">
+        <div class="res-name">Loecsen</div>
+        <div class="res-desc">Audio-first basic Estonian phrases — great for commute listening.</div>
+        <a href="https://www.loecsen.com/en/course-estonian" target="_blank" class="res-link">loecsen.com →</a>
+      </div>
+      <div class="res-card" style="border-left-color:#2E7D32">
+        <div class="res-name">MukiMuri</div>
+        <div class="res-desc">Gamified Estonian — 5 minutes a day keeps forgetting away.</div>
+        <a href="https://mukimuri.net" target="_blank" class="res-link">mukimuri.net →</a>
+      </div>
+      <div class="res-card" style="border-left-color:#9C27B0">
+        <div class="res-name">Estonian with Eli</div>
+        <div class="res-desc">Native YouTube channel with short beginner-focused lessons.</div>
+        <a href="https://www.youtube.com/@EstonianwithEli" target="_blank" class="res-link">YouTube →</a>
+      </div>
+      <div class="res-card" style="border-left-color:#E65100">
+        <div class="res-name">Speakly</div>
+        <div class="res-desc">Learn the most statistically important Estonian words first.</div>
+        <a href="https://www.speakly.me" target="_blank" class="res-link">speakly.me →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>Powered by <a href="https://talksmiths.com" target="_blank">Talksmiths</a> · A1 Estonian for Erasmus+ · Tartu, Estonia</p>
+    <p style="margin-top:6px;font-size:10px;">© 2026 Talksmiths. Created for the Erasmus community.</p>
+  </div>
+
+</div>
+</body>
+</html>
