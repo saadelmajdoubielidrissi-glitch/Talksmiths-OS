@@ -214,8 +214,23 @@
   .footer-copy a{color:var(--gold);font-weight:700;text-decoration:none;}
 
   @media(max-width:600px){
-    .hero{height:60vh;min-height:400px;}
-    .hero-card{padding:28px 24px 36px;border-radius:20px 20px 0 0;}
+    .hero{
+      height:78vh;
+      min-height:520px;
+      max-height:none;
+      background-position:center 58%;
+    }
+    .hero-card{
+      padding:20px 18px 24px;
+      border-radius:20px 20px 0 0;
+      width:100%;
+      max-width:100%;
+    }
+    .ts-logo{height:34px;margin-bottom:8px;}
+    .ts-kicker{margin-bottom:10px;}
+    .course-title{font-size:clamp(24px,7vw,32px);margin-bottom:4px;}
+    .course-subtitle{font-size:13px;margin-bottom:14px;}
+    .partners{padding:12px 8px 0;gap:14px;}
     .lesson-card{flex-wrap:wrap;}
     .lesson-arrow{display:none;}
     .stats{flex-wrap:wrap;}
