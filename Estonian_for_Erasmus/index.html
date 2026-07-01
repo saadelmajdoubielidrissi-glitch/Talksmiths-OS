@@ -90,7 +90,7 @@
     padding:18px 20px;display:flex;align-items:center;gap:16px;
     margin-bottom:32px;box-shadow:0 1px 4px rgba(0,0,0,0.05);
   }
-  .welcome-icon{font-size:28px;flex-shrink:0;}
+  .welcome-icon{flex-shrink:0;display:flex;align-items:center;}
   .welcome-text{font-size:13px;color:var(--gray);line-height:1.6;}
   .welcome-text strong{color:var(--navy);}
 
@@ -296,7 +296,13 @@
 
   <!-- WELCOME -->
   <div class="welcome">
-    <div class="welcome-icon">🇪🇪</div>
+    <div class="welcome-icon">
+      <svg width="36" height="24" viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg" style="border-radius:3px;display:block;flex-shrink:0;">
+        <rect width="36" height="8" fill="#0072CE"/>
+        <rect y="8" width="36" height="8" fill="#000000"/>
+        <rect y="16" width="36" height="8" fill="#FFFFFF"/>
+      </svg>
+    </div>
     <div class="welcome-text">
       <strong>Welcome, Erasmus student!</strong> Tap any lesson to start learning Estonian.
       Each lesson is ~60 minutes with audio, vocabulary, quizzes, and Tartu-based roleplays.
