@@ -324,5 +324,22 @@ document.addEventListener('DOMContentLoaded', () => {
     <a href="LESSON_11_HOBBIES_AND_SOCIAL_LIFE.html" class="nav-btn nav-next">Lesson 11 🎭 →</a>
   </div>
 </div>
+
+<!-- ts-play-race -->
+<style>
+@keyframes tsPlayPulse{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+#ts-play-race{position:fixed;bottom:20px;right:20px;z-index:2147483000;display:flex;align-items:center;gap:9px;
+background:linear-gradient(135deg,#0d7a7e,#0b686d);color:#fff;font-family:'Inter',system-ui,-apple-system,sans-serif;
+font-weight:800;font-size:14px;text-decoration:none;padding:13px 19px;border-radius:999px;
+box-shadow:0 8px 28px rgba(13,122,126,.5);border-bottom:3px solid #095f63;animation:tsPlayPulse 2.4s ease-in-out infinite;
+-webkit-tap-highlight-color:transparent;}
+#ts-play-race:hover{filter:brightness(1.06)}
+#ts-play-race .xp{background:#D4A843;color:#0e1830;font-size:10px;font-weight:900;padding:2px 7px;border-radius:6px;letter-spacing:.5px}
+@media(max-width:520px){#ts-play-race{font-size:13px;padding:11px 15px;bottom:14px;right:14px}}
+</style>
+<a id="ts-play-race" href="https://race.talksmiths.net" target="_blank" rel="noopener">
+🔨 Play this on the Race <span class="xp">EARN XP</span>
+</a>
+
 </body>
 </html>
